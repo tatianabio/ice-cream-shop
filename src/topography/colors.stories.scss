@@ -1,0 +1,9 @@
+.color-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.color-section__body {
+  display: flex;
+  gap: 20px;
+}

@@ -1,0 +1,11 @@
+.color-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.color-box__square {
+  width: 146px;
+  height: 69px;
+  box-shadow: 0 0 0 1px var(--basic-neutral);
+}

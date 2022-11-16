@@ -1,3 +1,5 @@
+@use './mixins' as *;
+
 *,
 *::before,
 *::after {
@@ -5,7 +7,7 @@
 }
 
 body {
-  font-family: "Inter", "Arial", sans-serif;
+  font-family: var(--basic-font);
   margin: 0;
 }
 
@@ -13,6 +15,16 @@ img {
   max-width: 100%;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
+}
+
+.visually-hidden {
+  @include visually-hidden;
 }
