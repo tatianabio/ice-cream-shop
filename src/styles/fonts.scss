@@ -1,15 +1,26 @@
 @font-face {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  src: url("../assets/fonts/interregular.woff2") format("woff2"), url("../assets/fonts/interregular.woff") format("woff");
+  src: url('../assets/fonts/interregular.woff2') format('woff2'),
+    url('../assets/fonts/interregular.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  src: url("../assets/fonts/interbold.woff2") format("woff2"), url("../assets/fonts/interbold.woff") format("woff");
+  src: url('../assets/fonts/interbold.woff2') format('woff2'),
+    url('../assets/fonts/interbold.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../assets/fonts/interextrabold.woff2') format('woff2'),
+    url('../assets/fonts/interextrabold.woff') format('woff');
   font-display: swap;
 }

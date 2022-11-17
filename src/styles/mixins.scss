@@ -8,3 +8,87 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+@mixin h1($color: var(--basic-extra-dark)) {
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 46px;
+  color: $color;
+}
+
+@mixin h2($color: var(--basic-extra-dark)) {
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 46px;
+  color: $color;
+}
+
+@mixin h3($color: var(--basic-extra-dark)) {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: $color;
+}
+
+@mixin h4($color: var(--basic-extra-dark)) {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: $color;
+}
+
+@mixin h5($color: var(--basic-extra-dark)) {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: $color;
+}
+
+@mixin p1($color: var(--basic-extra-dark)) {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: $color;
+}
+
+@mixin p2($color: var(--basic-dark)) {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color;
+}
+
+@mixin p3($color: var(--basic-dark)) {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $color;
+}
+
+@mixin p3-bold($color: var(--basic-dark)) {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: $color;
+}
+
+@mixin s1($color: var(--basic-dark)) {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: $color;
+}
+
+@mixin s1-bold($color: var(--basic-dark)) {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  color: $color;
+}
+
+@mixin s2($color: var(--basic-dark)) {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: $color;
+}
