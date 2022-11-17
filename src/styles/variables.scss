@@ -28,4 +28,9 @@ $mobile-width-only: 767px;
   --status-error: #ea5454;
   --status-warning: #fd912e;
   --status-success: #00e484;
+
+  // Shadows
+  --soft-shadow: 0px 4px 12px rgba(45, 52, 64, 0.1);
+  --medium-shadow: 0px 8px 16px rgba(45, 52, 64, 0.12);
+  --strong-shadow: 0px 15px 40px rgba(45, 52, 64, 0.12);
 }
