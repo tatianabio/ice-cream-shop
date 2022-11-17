@@ -32,7 +32,7 @@ const statusColors = {
 };
 
 export const Demo = () => {
-  const colorsTsx = (object: Record<string, string>) => {
+  const colorsTSX = (object: Record<string, string>) => {
     let arr: ReactElement[] = [];
 
     for (let key in object) {
@@ -47,15 +47,15 @@ export const Demo = () => {
       <h1 className='color-story__title'>Pallet</h1>
       <section className='color-story__section color-section'>
         <h2 className='color-section__title'>Basic colors</h2>
-        <div className='color-section__body'>{colorsTsx(basicColors)}</div>
+        <div className='color-section__body'>{colorsTSX(basicColors)}</div>
       </section>
       <section className='color-story__section color-section'>
         <h2 className='color-section__title'>Special colors</h2>
-        <div className='color-section__body'>{colorsTsx(specialColors)}</div>
+        <div className='color-section__body'>{colorsTSX(specialColors)}</div>
       </section>
       <section className='color-story__section color-section'>
         <h2 className='color-section__title'>Status colors</h2>
-        <div className='color-section__body'>{colorsTsx(statusColors)}</div>
+        <div className='color-section__body'>{colorsTSX(statusColors)}</div>
       </section>
     </div>
   );

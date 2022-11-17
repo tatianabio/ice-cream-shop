@@ -1,3 +1,5 @@
+@use '../../styles/mixins' as *;
+
 .color-box {
   display: flex;
   flex-direction: column;
@@ -8,4 +10,14 @@
   width: 146px;
   height: 69px;
   box-shadow: 0 0 0 1px var(--basic-neutral);
+}
+
+.color-box__title {
+  @include s1(var(--basic-extra-dark));
+  text-align: center;
+}
+
+.color-box__id {
+  @include p3-bold(var(--basic-extra-dark));
+  text-align: center;
 }

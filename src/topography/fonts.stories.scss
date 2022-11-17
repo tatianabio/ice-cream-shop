@@ -1,0 +1,13 @@
+.headings {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.paragraphs,
+.subscriptions {
+  display: grid;
+  grid-template-columns: 400px 400px;
+  gap: 40px;
+  margin-bottom: 40px;
+}
