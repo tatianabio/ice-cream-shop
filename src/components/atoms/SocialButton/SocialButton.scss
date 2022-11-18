@@ -4,25 +4,27 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background-color: var(--special-light);
-  color: var(--basic-extra-light);
-  box-shadow: 0 0 0 3px var(--special-extra-light);
+  background-color: var(--basic-extra-light);
+  color: var(--special-light);
+  box-shadow: 0 0 0 2px var(--special-extra-light);
 
   svg {
-    zoom: 1.02;
+    width: 14px;
+    height: 14px;
   }
 
   &:hover {
-    background-color: var(--basic-extra-dark);
+    color: var(--basic-extra-dark);
   }
 
   &:focus {
-    background-color: var(--basic-extra-dark);
-    box-shadow: 0 0 0 3px var(--basic-extra-dark);
+    color: var(--basic-extra-dark);
+    box-shadow: 0 0 0 2px var(--basic-extra-dark);
     outline: none;
   }
 
   &:active {
     opacity: 50%;
+    box-shadow: 0 0 0 2px var(--special-extra-light);
   }
 }
