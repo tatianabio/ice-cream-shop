@@ -1,0 +1,17 @@
+@use '../../../styles/mixins' as *;
+
+.story-container {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.story-container__title {
+  @include h4;
+}
+
+.story-container__text {
+  @include p2;
+}

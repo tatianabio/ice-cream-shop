@@ -48,3 +48,24 @@ export const Demo = () => {
     </div>
   );
 };
+
+// export const Playground = ({ headers, paragraphs }: any) => {
+//   return (
+//     <TextBox
+//       title={`Subscription ${'item'}`}
+//       text={textExample}
+//       className={headers || paragraphs}
+//     />
+//   );
+// };
+//
+// Playground.argTypes = {
+//   headers: {
+//     options: ['h1', 'h2', 'h3'],
+//     control: { type: 'select' },
+//   },
+//   paragraphs: {
+//     options: ['p1', 'p2', 'p3'],
+//     control: { type: 'radio' },
+//   },
+// };

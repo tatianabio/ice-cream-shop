@@ -1,0 +1,28 @@
+.social-network-link {
+  display: grid;
+  place-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--special-light);
+  color: var(--basic-extra-light);
+  box-shadow: 0 0 0 3px var(--special-extra-light);
+
+  svg {
+    zoom: 1.02;
+  }
+
+  &:hover {
+    background-color: var(--basic-extra-dark);
+  }
+
+  &:active {
+    opacity: 50%;
+  }
+
+  &:focus {
+    background-color: var(--basic-extra-dark);
+    box-shadow: 0 0 0 3px var(--basic-extra-dark);
+    outline: none;
+  }
+}
