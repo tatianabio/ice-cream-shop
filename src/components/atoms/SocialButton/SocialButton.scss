@@ -16,13 +16,13 @@
     background-color: var(--basic-extra-dark);
   }
 
-  &:active {
-    opacity: 50%;
-  }
-
   &:focus {
     background-color: var(--basic-extra-dark);
     box-shadow: 0 0 0 3px var(--basic-extra-dark);
     outline: none;
+  }
+
+  &:active {
+    opacity: 50%;
   }
 }

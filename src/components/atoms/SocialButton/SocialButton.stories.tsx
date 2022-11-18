@@ -17,13 +17,16 @@ export const Demo = () => {
       }}
     >
       <StoryContainer title={'Social Networks Links'} text={'vkontakte'}>
-        <SocialButton socialMedia={'vkontakte'} />
+        <SocialButton
+          socialMedia={'vkontakte'}
+          data-testid={'vkontakte-link'}
+        />
       </StoryContainer>
       <StoryContainer text={'telegram'}>
-        <SocialButton socialMedia={'telegram'} />
+        <SocialButton socialMedia={'telegram'} data-testid={'telegram-link'} />
       </StoryContainer>
       <StoryContainer text={'youtube'}>
-        <SocialButton socialMedia={'youtube'} />
+        <SocialButton socialMedia={'youtube'} data-testid={'youtube-link'} />
       </StoryContainer>
     </div>
   );
