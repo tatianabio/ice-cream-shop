@@ -1,15 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.scss';
 import { useTranslation } from 'react-i18next';
 
 function App() {
-  const { t, i18n } = useTranslation();
-
-  useEffect(() => {
-    setTimeout(() => {
-      i18n.changeLanguage('en');
-    }, 3000);
-  }, []);
+  const { t } = useTranslation();
 
   return <h1>{t('Welcome to React')}</h1>;
 }

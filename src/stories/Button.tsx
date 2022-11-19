@@ -1,4 +1,4 @@
-import React, { HTMLProps, useEffect } from 'react';
+import React, { HTMLProps } from 'react';
 import './button.css';
 import cx from 'classnames';
 import { useTranslation } from 'react-i18next';
@@ -26,11 +26,6 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const { t, i18n } = useTranslation();
-  useEffect(() => {
-    setTimeout(() => {
-      i18n.changeLanguage('en');
-    }, 3000);
-  }, []);
 
   const mode = primary
     ? 'storybook-button--primary'
