@@ -1,0 +1,65 @@
+@use '../../../styles/mixins' as *;
+
+.button--primary {
+  position: relative;
+
+  @include p3-bold(var(--basic-extra-dark));
+  padding: 12px 32px;
+  width: min-content;
+  background-color: var(--basic-extra-light);
+  border-radius: 26px;
+  box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1),
+    0 0 0 4px rgba(252, 252, 252, 0.4);
+
+  &:hover:not(.button--loading) {
+    transition: 0.5s;
+    background-color: rgba(252, 252, 252, 0.4);
+    box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1),
+      0 0 0 4px var(--basic-extra-light);
+  }
+
+  &:active:not(.button--loading) {
+    background-color: var(--basic-extra-light);
+    box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1),
+      0 0 0 2px var(--basic-extra-dark);
+  }
+
+  &:focus:not(.button--loading) {
+    background-color: rgba(252, 252, 252, 0.4);
+    box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1),
+      0 0 0 2px var(--basic-extra-dark);
+  }
+
+  &:disabled:not(.button--loading) {
+    @include p3(var(--basic-neutral));
+    background-color: var(--basic-light);
+    box-shadow: 0 0 0 4px rgba(252, 252, 252, 0.4);
+    cursor: default;
+  }
+}
+
+.button--loading {
+  cursor: default;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    border: 2px solid var(--basic-neutral);
+    border-top-color: var(--basic-extra-dark);
+    animation: loading 2s linear infinite;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
