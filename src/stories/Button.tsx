@@ -1,6 +1,7 @@
-import React, { HTMLProps } from 'react';
+import React, { HTMLProps, useEffect } from 'react';
 import './button.css';
 import cx from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 export interface ButtonProps
   extends Omit<HTMLProps<HTMLButtonElement>, 'size'> {
@@ -24,6 +25,13 @@ export const Button = ({
   label,
   ...props
 }: ButtonProps) => {
+  const { t, i18n } = useTranslation();
+  useEffect(() => {
+    setTimeout(() => {
+      i18n.changeLanguage('en');
+    }, 3000);
+  }, []);
+
   const mode = primary
     ? 'storybook-button--primary'
     : 'storybook-button--secondary';
@@ -34,7 +42,7 @@ export const Button = ({
       className={cx('storybook-button', `storybook-button--${size}`, mode)}
       style={{ backgroundColor }}
     >
-      {label}
+      {t('Welcome to React')}
     </button>
   );
 };
