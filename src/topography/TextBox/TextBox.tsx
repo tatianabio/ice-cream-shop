@@ -8,13 +8,11 @@ interface ITextBox {
   className?: string;
 }
 
-const TextBox = ({ title, text, className }: ITextBox) => {
-  return (
-    <div className='text-box'>
-      <div className={cx('text-box__title', className)}>{title}</div>
-      <div className={cx('text-box__text', className)}>{text}</div>
-    </div>
-  );
-};
+const TextBox = ({ title, text, className }: ITextBox) => (
+  <div className='text-box'>
+    <div className={cx('text-box__title', className)}>{title}</div>
+    <div className={cx('text-box__text', className)}>{text}</div>
+  </div>
+);
 
 export default TextBox;

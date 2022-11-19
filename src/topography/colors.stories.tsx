@@ -33,9 +33,9 @@ const statusColors = {
 
 export const Demo = () => {
   const colorsTSX = (object: Record<string, string>) => {
-    let arr: ReactElement[] = [];
+    const arr: ReactElement[] = [];
 
-    for (let key in object) {
+    for (const key in object) {
       arr.push(<ColorBox id={object[key]} title={key} />);
     }
 

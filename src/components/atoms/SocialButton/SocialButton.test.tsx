@@ -1,5 +1,5 @@
-import { Demo } from './SocialButton.stories';
 import { render, screen } from '@testing-library/react';
+import { Demo } from './SocialButton.stories';
 import { ISocial, socialNetworks } from './SocialButton';
 
 describe('SocialButton Tests', () => {

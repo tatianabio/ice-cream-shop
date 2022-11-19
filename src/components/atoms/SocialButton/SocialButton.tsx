@@ -6,7 +6,7 @@ import SocialVkontakte from '../../../assets/svg/social-vkontakte';
 
 export type ISocial = 'vkontakte' | 'youtube' | 'telegram';
 interface ISocialButton extends HTMLProps<HTMLAnchorElement> {
-  /** Links to our social networks*/
+  /** Links to our social networks */
   socialMedia: ISocial;
   'data-testid': string;
 }
@@ -20,22 +20,21 @@ export const socialNetworks: Record<
   telegram: { link: 'https://telegram.org/', icon: <SocialTelegram /> },
 };
 
-const SocialButton = ({ socialMedia, ...props }: ISocialButton) => {
+function SocialButton({ socialMedia, ...props }: ISocialButton) {
   const currentNetwork = socialNetworks[socialMedia];
 
   return (
     <a
       {...props}
       href={currentNetwork.link}
-      className={'social-network-link'}
+      className='social-network-link'
       target='_blank'
+      rel='noreferrer'
     >
-      <>
-        <span className='visually-hidden'>{socialMedia}</span>
-        {currentNetwork.icon}
-      </>
+      <span className='visually-hidden'>{socialMedia}</span>
+      {currentNetwork.icon}
     </a>
   );
-};
+}
 
 export default SocialButton;
