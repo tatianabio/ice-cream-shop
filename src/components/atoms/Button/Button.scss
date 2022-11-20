@@ -1,40 +1,110 @@
 @use '../../../styles/mixins' as *;
 
-.button--primary {
-  position: relative;
+.button {
+  --button-extra-color-1: rgba(252, 252, 252, 0.4);
+  --button-extra-color-2: rgba(255, 47, 100, 0.3);
+  --button-extra-color-3: rgba(185, 185, 185, 0.3);
 
+  position: relative;
+  width: min-content;
+  text-align: center;
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+.button--primary {
   @include p3-bold(var(--basic-extra-dark));
   padding: 12px 32px;
-  width: min-content;
   background-color: var(--basic-extra-light);
   border-radius: 26px;
-  box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1),
-    0 0 0 4px rgba(252, 252, 252, 0.4);
+  box-shadow: var(--soft-shadow), 0 0 0 4px var(--button-extra-color-1);
 
   &:hover:not(.button--loading) {
     transition: 0.5s;
-    background-color: rgba(252, 252, 252, 0.4);
-    box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1),
-      0 0 0 4px var(--basic-extra-light);
+    background-color: var(--button-extra-color-1);
+    box-shadow: var(--additional-shadow), 0 0 0 4px var(--basic-extra-light);
+  }
+
+  &:focus:not(.button--loading) {
+    background-color: var(--button-extra-color-1);
+    box-shadow: var(--soft-shadow), 0 0 0 2px var(--basic-extra-dark);
   }
 
   &:active:not(.button--loading) {
     background-color: var(--basic-extra-light);
-    box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1),
-      0 0 0 2px var(--basic-extra-dark);
-  }
-
-  &:focus:not(.button--loading) {
-    background-color: rgba(252, 252, 252, 0.4);
-    box-shadow: 0 4px 12px rgba(45, 52, 64, 0.1),
-      0 0 0 2px var(--basic-extra-dark);
+    box-shadow: var(--soft-shadow), 0 0 0 2px var(--basic-extra-dark);
   }
 
   &:disabled:not(.button--loading) {
     @include p3(var(--basic-neutral));
     background-color: var(--basic-light);
-    box-shadow: 0 0 0 4px rgba(252, 252, 252, 0.4);
-    cursor: default;
+    box-shadow: 0 0 0 4px var(--button-extra-color-1);
+  }
+}
+
+.button--secondary {
+  @include p3-bold(var(--basic-extra-light));
+  padding: 12px 32px;
+  background-color: var(--special-extra-bright);
+  border-radius: 26px;
+  box-shadow: var(--soft-shadow), 0 0 0 4px var(--button-extra-color-2);
+
+  &:hover:not(.button--loading) {
+    transition: 0.5s;
+    color: var(--basic-extra-dark);
+    background-color: var(--button-extra-color-1);
+    box-shadow: 0 0 0 4px var(--special-extra-bright);
+  }
+
+  &:focus:not(.button--loading) {
+    color: var(--basic-extra-light);
+    background-color: var(--special-extra-bright);
+    box-shadow: var(--soft-shadow), 0 0 0 2px var(--basic-extra-dark);
+  }
+
+  &:active:not(.button--loading) {
+    color: var(--basic-extra-light);
+    background-color: var(--special-light);
+    box-shadow: var(--soft-shadow), 0 0 0 2px var(--basic-extra-dark);
+  }
+
+  &:disabled:not(.button--loading) {
+    @include p3(var(--basic-neutral));
+    color: var(--basic-dark);
+    background-color: var(--basic-neutral);
+    box-shadow: 0 0 0 4px var(--button-extra-color-3);
+  }
+}
+
+.button--thirdly {
+  @include s1-bold(var(--basic-extra-dark));
+  padding: 8px 32px;
+  background-color: var(--button-extra-color-1);
+  border-radius: 20px;
+  box-shadow: 0 0 0 2px var(--basic-extra-light);
+
+  &:hover:not(.button--loading) {
+    transition: 0.5s;
+    background-color: var(--basic-extra-light);
+    box-shadow: 0 0 0 2px var(--button-extra-color-1);
+  }
+
+  &:focus:not(.button--loading) {
+    background-color: var(--button-extra-color-1);
+    box-shadow: 0 0 0 2px var(--basic-extra-dark);
+  }
+
+  &:active:not(.button--loading) {
+    background-color: var(--button-extra-color-1);
+    box-shadow: 0 0 0 2px var(--button-extra-color-1);
+  }
+
+  &:disabled:not(.button--loading) {
+    opacity: 0.4;
+    background-color: var(--button-extra-color-1);
+    box-shadow: 0 0 0 2px var(--basic-extra-light);
   }
 }
 
@@ -49,10 +119,23 @@
     width: 16px;
     height: 16px;
     border-radius: 50px;
-    border: 2px solid var(--basic-neutral);
-    border-top-color: var(--basic-extra-dark);
     animation: loading 2s linear infinite;
   }
+}
+
+.button--primary.button--loading::after {
+  border: 2px solid var(--basic-neutral);
+  border-top-color: var(--basic-extra-dark);
+}
+
+.button--secondary.button--loading::after {
+  border: 2px solid var(--button-extra-color-1);
+  border-top-color: var(--basic-extra-light);
+}
+
+.button--thirdly.button--loading::after {
+  border: 2px solid var(--basic-extra-light);
+  border-top-color: var(--basic-neutral);
 }
 
 @keyframes loading {

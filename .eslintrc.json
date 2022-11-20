@@ -6,7 +6,7 @@
   "plugins": ["prettier","@typescript-eslint", "react-hooks"],
 
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": 0,
     "import/no-unresolved": 0,
     "import/extensions": 0,
     "import/no-extraneous-dependencies": 0,
@@ -23,6 +23,8 @@
     "react/require-default-props": 0,
     "react-hooks/exhaustive-deps": 0,
     "arrow-body-style": 0,
-    "react/button-has-type": 0
+    "react/button-has-type": 0,
+    "no-unused-expressions": 0,
+    "object-curly-newline": 0
   }
 }
