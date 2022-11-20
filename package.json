@@ -49,10 +49,22 @@
     "lint": "eslint src --fix",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test src --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.stories.{ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!src/topography/**/*.*",
+      "!src/i18n.ts",
+      "!src/index.tsx"
+
+
+    ]
   },
   "eslintConfig": {
     "extends": [
