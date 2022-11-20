@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { useTranslation } from 'react-i18next';
 import './Button.scss';
 
-interface IButton extends HTMLProps<HTMLButtonElement> {
+export interface IButton extends HTMLProps<HTMLButtonElement> {
   text: string;
   variant: 'primary' | 'secondary' | 'thirdly';
   loading?: boolean;

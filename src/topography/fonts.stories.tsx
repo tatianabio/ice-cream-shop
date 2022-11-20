@@ -44,24 +44,3 @@ Demo.parameters = {
     url: 'https://www.figma.com/file/PGyn99Nrq2fXcnwGJqj0hR/HTML-1-%2F-%D0%93%D0%BB%D0%B5%D0%B9%D1%81%D0%B8-(34)-(Copy)?node-id=576%3A2664&t=mTfv2Qdgxem0exJb-4',
   },
 };
-
-// export const Playground = ({ headers, paragraphs }: any) => {
-//   return (
-//     <TextBox
-//       title={`Subscription ${'item'}`}
-//       text={textExample}
-//       className={headers || paragraphs}
-//     />
-//   );
-// };
-//
-// Playground.argTypes = {
-//   headers: {
-//     options: ['h1', 'h2', 'h3'],
-//     control: { type: 'select' },
-//   },
-//   paragraphs: {
-//     options: ['p1', 'p2', 'p3'],
-//     control: { type: 'radio' },
-//   },
-// };

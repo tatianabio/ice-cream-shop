@@ -1,6 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import Button from './Button';
+import Button, { IButton } from './Button';
 import StoryContainer from '../../utils/StoryContainer';
 
 export default {
@@ -106,4 +106,17 @@ Demo.parameters = {
       url: 'https://www.figma.com/file/PGyn99Nrq2fXcnwGJqj0hR/HTML-1-%2F-%D0%93%D0%BB%D0%B5%D0%B9%D1%81%D0%B8-(34)-(Copy)?node-id=7581%3A3920&t=mTfv2Qdgxem0exJb-4',
     },
   ],
+};
+
+export const Playground = (props: IButton) => {
+  return <Button {...props} onClick={action('onClick')} />;
+};
+
+Playground.argTypes = {
+  text: { control: 'text', defaultValue: 'order' },
+  variant: { control: 'inline-radio', options: ['primary', 'secondary', 'thirdly'], defaultValue: 'primary' },
+  loading: { control: 'boolean', defaultValue: 'true' },
+  'data-testid': {
+    table: { disable: true },
+  },
 };
