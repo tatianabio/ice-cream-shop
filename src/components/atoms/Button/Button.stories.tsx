@@ -87,3 +87,23 @@ export const Demo = ({ onClickTest }: IDemo) => {
     </>
   );
 };
+
+Demo.parameters = {
+  design: [
+    {
+      name: 'Primary',
+      type: 'figma',
+      url: 'https://www.figma.com/file/PGyn99Nrq2fXcnwGJqj0hR/HTML-1-%2F-%D0%93%D0%BB%D0%B5%D0%B9%D1%81%D0%B8-(34)-(Copy)?node-id=7581%3A3909&t=mTfv2Qdgxem0exJb-4',
+    },
+    {
+      name: 'Secondary',
+      type: 'figma',
+      url: 'https://www.figma.com/file/PGyn99Nrq2fXcnwGJqj0hR/HTML-1-%2F-%D0%93%D0%BB%D0%B5%D0%B9%D1%81%D0%B8-(34)-(Copy)?node-id=7581%3A3915&t=mTfv2Qdgxem0exJb-4',
+    },
+    {
+      name: 'Thirdly',
+      type: 'figma',
+      url: 'https://www.figma.com/file/PGyn99Nrq2fXcnwGJqj0hR/HTML-1-%2F-%D0%93%D0%BB%D0%B5%D0%B9%D1%81%D0%B8-(34)-(Copy)?node-id=7581%3A3920&t=mTfv2Qdgxem0exJb-4',
+    },
+  ],
+};

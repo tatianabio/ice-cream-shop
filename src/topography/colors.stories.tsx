@@ -60,3 +60,10 @@ export const Demo = () => {
     </div>
   );
 };
+
+Demo.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/PGyn99Nrq2fXcnwGJqj0hR/HTML-1-%2F-%D0%93%D0%BB%D0%B5%D0%B9%D1%81%D0%B8-(34)-(Copy)?node-id=576%3A2677&t=mTfv2Qdgxem0exJb-4',
+  },
+};

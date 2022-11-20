@@ -11,10 +11,7 @@ interface ISocialButton extends HTMLProps<HTMLAnchorElement> {
   'data-testid': string;
 }
 
-export const socialNetworks: Record<
-  ISocial,
-  { link: string; icon: ReactElement }
-> = {
+export const socialNetworks: Record<ISocial, { link: string; icon: ReactElement }> = {
   vkontakte: { link: 'https://vk.com/', icon: <SocialVkontakte /> },
   youtube: { link: 'https://www.youtube.com/', icon: <SocialYoutube /> },
   telegram: { link: 'https://telegram.org/', icon: <SocialTelegram /> },
@@ -24,13 +21,7 @@ function SocialButton({ socialMedia, ...props }: ISocialButton) {
   const currentNetwork = socialNetworks[socialMedia];
 
   return (
-    <a
-      {...props}
-      href={currentNetwork.link}
-      className='social-network-link'
-      target='_blank'
-      rel='noreferrer'
-    >
+    <a {...props} href={currentNetwork.link} className='social-network-link' target='_blank' rel='noreferrer'>
       <span className='visually-hidden'>{socialMedia}</span>
       {currentNetwork.icon}
     </a>
