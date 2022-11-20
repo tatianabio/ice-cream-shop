@@ -9,9 +9,9 @@ describe('Button Tests', () => {
     render(<Demo onClickTest={onClick} />);
   });
   it.each(['primary', 'secondary', 'thirdly'])('Buttons render', (variant) => {
-    expect(screen.getByTestId(`${variant}-button-default`)).toBeInTheDocument();
-    expect(screen.getByTestId(`${variant}-button-disabled`)).toBeInTheDocument();
-    expect(screen.getByTestId(`${variant}-button-loading`)).toBeInTheDocument();
+    expect(screen.getByTestId(`${variant}-button-default`)).toHaveTextContent('order');
+    expect(screen.getByTestId(`${variant}-button-disabled`)).toHaveTextContent('order');
+    expect(screen.getByTestId(`${variant}-button-loading`)).toHaveTextContent('order');
   });
 
   it.each(['primary', 'secondary', 'thirdly'])('Buttons action', async (variant) => {
@@ -23,5 +23,14 @@ describe('Button Tests', () => {
     expect(onClick).toBeCalledTimes(2);
     await userEvent.click(screen.getByTestId(`${variant}-button-loading`));
     expect(onClick).toBeCalledTimes(2);
+  });
+
+  it('Buttons focus', async () => {
+    await userEvent.keyboard('{Tab}');
+    expect(screen.getByTestId('primary-button-default')).toHaveFocus();
+    await userEvent.keyboard('{Tab}');
+    expect(screen.getByTestId('secondary-button-default')).toHaveFocus();
+    await userEvent.keyboard('{Tab}');
+    expect(screen.getByTestId('thirdly-button-default')).toHaveFocus();
   });
 });
