@@ -1,6 +1,10 @@
 import '../src/styles/index.scss';
+import { initialize, mswDecorator } from 'msw-storybook-addon';
 
 import i18n from './i18next.js';
+
+// Initialize MSW
+initialize();
 
 export const parameters = {
   i18n,
@@ -17,3 +21,6 @@ export const parameters = {
     },
   },
 };
+
+// Provide the MSW addon decorator globally
+export const decorators = [mswDecorator];
