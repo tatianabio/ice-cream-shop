@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { IProduct } from '../../../mock/data/products';
 import './ProductCard.scss';
 import Cart from '../../../assets/svg/cart';
+import cx from 'classnames';
 
 interface IProductCard {
   data: IProduct;
@@ -10,7 +11,7 @@ interface IProductCard {
 }
 
 const ProductCard = ({ data, addToCart }: IProductCard) => {
-  const { name, description, price, imgLink } = data;
+  const { name, description, price, imgLink, isAvailable } = data;
   const { t } = useTranslation();
   const cartButtonOnClick = () => addToCart(data);
 
@@ -21,19 +22,25 @@ const ProductCard = ({ data, addToCart }: IProductCard) => {
         <p className='product-card__description'>{t(description)}</p>
         <div className='product-card__price-wrapper'>
           <span className='product-card__price'>{`${price} $/kg`}</span>
-          <button className='product-card__cart-button' type='button' onClick={cartButtonOnClick}>
+          <button
+            className='product-card__cart-button'
+            type='button'
+            onClick={cartButtonOnClick}
+            disabled={!isAvailable}
+          >
             <Cart />
             <span className='visually-hidden'>{t('addToCart')}</span>
           </button>
         </div>
       </div>
       <img
-        className='product-card__img'
+        className={cx('product-card__img', !isAvailable && 'product-card__img--disabled')}
         src={imgLink}
         alt={`${t('iceCreamScoop')} ${t(name)}`}
         width='168px'
         height='168px'
       />
+      {!isAvailable && <span className='product-card__availability-info'>{t('notAvailable').toLowerCase()}</span>}
     </div>
   );
 };

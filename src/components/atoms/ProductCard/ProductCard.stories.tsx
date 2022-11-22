@@ -16,8 +16,13 @@ export default {
 
 export const Demo = () => {
   return (
-    <StoryContainer title='Product card'>
-      <ProductCard data={products[0]} addToCart={action('Add to cart')} />
-    </StoryContainer>
+    <>
+      <StoryContainer title='Product card' text='Available product'>
+        <ProductCard data={products[0]} addToCart={action('Add to cart')} />
+      </StoryContainer>
+      <StoryContainer text='Not available product'>
+        <ProductCard data={{ ...products[0], isAvailable: false }} addToCart={action('Add to cart')} />
+      </StoryContainer>
+    </>
   );
 };

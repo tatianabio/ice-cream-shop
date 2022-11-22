@@ -29,6 +29,10 @@
   left: 50%;
   transform: translateX(-50%);
   object-fit: cover;
+
+  &--disabled {
+    filter: grayscale(1);
+  }
 }
 
 .product-card__description {
@@ -83,4 +87,16 @@
     box-shadow: inset 0 0 0 2px var(--basic-neutral);
     cursor: default;
   }
+}
+
+.product-card__availability-info {
+  @include h4;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  display: block;
+  min-width: 130px;
+  text-align: center;
+  background-color: var(--special-extra-light);
+  border-radius: 8px;
 }

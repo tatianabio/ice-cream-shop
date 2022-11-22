@@ -16,6 +16,7 @@ const resources = {
       // Product Card
       iceCreamScoop: 'Scoop of ice cream',
       addToCart: 'Add one kilogram of the ice cream to the cart',
+      notAvailable: 'Not available',
 
       // Ice cream tastes
       raspberry: 'Raspberry',
@@ -36,6 +37,7 @@ const resources = {
       // Product Card
       iceCreamScoop: 'Boule de crème glacée',
       addToCart: 'Ajouter un kilogramme de crème glacée au panier',
+      notAvailable: 'Indisponible',
 
       // Ice cream tastes
       raspberry: 'Framboise',

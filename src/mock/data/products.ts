@@ -6,6 +6,7 @@ export interface IProduct {
   price: number;
   rating: number;
   fatContent: number;
+  isAvailable: boolean;
   fillers?: IFillers[];
 }
 
@@ -47,5 +48,6 @@ export const products: IProduct[] = [
     rating: 100,
     imgLink: '/raspberry',
     fillers: [fillers[4]],
+    isAvailable: true,
   },
 ];
