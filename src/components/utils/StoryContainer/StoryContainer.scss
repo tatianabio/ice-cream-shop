@@ -6,6 +6,15 @@
   flex-direction: column;
   gap: 16px;
   margin-bottom: 20px;
+  background-color: var(--basic-extra-light);
+
+  &--padding {
+    padding: 20px;
+  }
+
+  &--pink {
+    background-color: var(--special-light);
+  }
 }
 
 .story-container__title {

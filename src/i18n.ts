@@ -5,11 +5,41 @@ const resources = {
   en: {
     translation: {
       order: 'Order',
+
+      // Fillers
+      jams: 'Jams',
+      syrups: 'Syrups',
+      fruit: 'Fruit',
+      sprinkles: 'Sprinkles',
+      chocolate: 'Chocolate',
+
+      // Product Card
+      iceCreamScoop: 'Scoop of ice cream',
+      addToCart: 'Add one kilogram of the ice cream to the cart',
+
+      // Ice cream tastes
+      raspberry: 'Raspberry',
+      raspberryDescription: 'Vanilla ice cream with raspberry jam',
     },
   },
   fr: {
     translation: {
       order: 'Ordre',
+
+      // Fillers
+      jams: 'Confitures',
+      syrups: 'Sirops',
+      fruit: 'Fruit',
+      sprinkles: 'Pépites de sucre',
+      chocolate: 'Chocolat',
+
+      // Product Card
+      iceCreamScoop: 'Boule de crème glacée',
+      addToCart: 'Ajouter un kilogramme de crème glacée au panier',
+
+      // Ice cream tastes
+      raspberry: 'Framboise',
+      raspberryDescription: 'Glace vanille à la confiture de framboise',
     },
   },
 };

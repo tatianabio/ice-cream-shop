@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import ProductCard from './ProductCard';
 import productsMswHandlers from '../../../mock/msw-handlers';
 import StoryContainer from '../../utils/StoryContainer';
@@ -15,14 +16,8 @@ export default {
 
 export const Demo = () => {
   return (
-    <StoryContainer
-      title='Product card'
-      style={{
-        backgroundColor: 'var(--special-light)',
-        padding: '20px',
-      }}
-    >
-      <ProductCard data={products[0]} />
+    <StoryContainer title='Product card'>
+      <ProductCard data={products[0]} addToCart={action('Add to cart')} />
     </StoryContainer>
   );
 };

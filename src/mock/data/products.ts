@@ -20,11 +20,11 @@ const fillers: IFillers[] = [
     id: 0,
   },
   {
-    name: 'sugar',
+    name: 'sprinkles',
     id: 1,
   },
   {
-    name: 'fruits',
+    name: 'fruit',
     id: 2,
   },
   {
@@ -40,12 +40,12 @@ const fillers: IFillers[] = [
 export const products: IProduct[] = [
   {
     id: 0,
-    name: 'Малинка',
-    description: 'Сливочное мороженое с малиновым джемом',
-    price: 310,
+    name: 'raspberry',
+    description: 'raspberryDescription',
+    price: 5.1,
     fatContent: 5,
     rating: 100,
-    imgLink: 'https://myserver.com/0',
-    fillers: [fillers[0], fillers[2]],
+    imgLink: '/raspberry',
+    fillers: [fillers[4]],
   },
 ];

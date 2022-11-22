@@ -18,14 +18,7 @@ export const Demo = ({ onClickTest }: IDemo) => {
   };
   return (
     <>
-      <StoryContainer
-        title='Buttons'
-        text='Primary button (default, disabled, loading)'
-        style={{
-          backgroundColor: 'var(--special-light)',
-          padding: '20px',
-        }}
-      >
+      <StoryContainer title='Buttons' text='Primary button (default, disabled, loading)'>
         <div style={{ display: 'flex', gap: '16px' }}>
           <Button data-testid='primary-button-default' text='order' variant='primary' onClick={buttonOnClick} />
           <Button
@@ -39,13 +32,7 @@ export const Demo = ({ onClickTest }: IDemo) => {
         </div>
       </StoryContainer>
 
-      <StoryContainer
-        text='Secondary button (default, disabled, loading)'
-        style={{
-          backgroundColor: 'var(--basic-extra-light)',
-          padding: '20px',
-        }}
-      >
+      <StoryContainer text='Secondary button (default, disabled, loading)' hasPinkBackground={false}>
         <div style={{ display: 'flex', gap: '16px' }}>
           <Button data-testid='secondary-button-default' text='order' variant='secondary' onClick={buttonOnClick} />
           <Button
@@ -65,13 +52,7 @@ export const Demo = ({ onClickTest }: IDemo) => {
         </div>
       </StoryContainer>
 
-      <StoryContainer
-        text='Thirdly button (default, disabled, loading)'
-        style={{
-          backgroundColor: 'var(--special-light)',
-          padding: '20px',
-        }}
-      >
+      <StoryContainer text='Thirdly button (default, disabled, loading)'>
         <div style={{ display: 'flex', gap: '16px' }}>
           <Button data-testid='thirdly-button-default' text='order' variant='thirdly' onClick={buttonOnClick} />
           <Button

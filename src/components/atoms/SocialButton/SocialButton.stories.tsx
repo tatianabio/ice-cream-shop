@@ -15,13 +15,13 @@ export const Demo = () => (
       width: 'fit-content',
     }}
   >
-    <StoryContainer title='Social Networks Links' text='vkontakte'>
+    <StoryContainer title='Social Networks Links' text='vkontakte' hasPadding={false}>
       <SocialButton socialMedia='vkontakte' data-testid='vkontakte-link' />
     </StoryContainer>
-    <StoryContainer text='telegram'>
+    <StoryContainer text='telegram' hasPadding={false}>
       <SocialButton socialMedia='telegram' data-testid='telegram-link' />
     </StoryContainer>
-    <StoryContainer text='youtube'>
+    <StoryContainer text='youtube' hasPadding={false}>
       <SocialButton socialMedia='youtube' data-testid='youtube-link' />
     </StoryContainer>
   </div>
