@@ -4,8 +4,11 @@ import { useTranslation } from 'react-i18next';
 import './Button.scss';
 
 export interface IButton extends HTMLProps<HTMLButtonElement> {
+  /** Text inside the button */
   text: string;
+  /** Variant of the button */
   variant: 'primary' | 'secondary' | 'thirdly';
+  /** A state of the button while loading */
   loading?: boolean;
   'data-testid': string;
 }

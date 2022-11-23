@@ -7,7 +7,9 @@ import Cart from '../../../assets/svg/cart';
 import cx from 'classnames';
 
 interface IProductCard {
+  /** Data of the product: id, title, description, price, img, fat content, rating, availability, fillers */
   data: IProduct;
+  /** OnClick CartButton Handler */
   addToCart: (product: IProduct) => void;
   'data-testid': string;
 }
