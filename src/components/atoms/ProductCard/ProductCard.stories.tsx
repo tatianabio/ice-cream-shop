@@ -1,8 +1,9 @@
 import { action } from '@storybook/addon-actions';
+import React from 'react';
 import ProductCard from './ProductCard';
 import productsMswHandlers from '../../../mock/msw-handlers';
 import StoryContainer from '../../utils/StoryContainer';
-import { products } from '../../../mock/data/products';
+import { IProduct, products } from '../../../mock/data/products';
 
 export default {
   title: 'Components/Atoms/ProductCard',
@@ -18,14 +19,26 @@ export default {
   },
 };
 
-export const Demo = () => {
+interface IDemo {
+  onClickTest?: (product: IProduct) => void;
+}
+
+export const Demo = ({ onClickTest }: IDemo) => {
+  const buttonOnClick = (product: IProduct) => {
+    onClickTest ? onClickTest(product) : action('Add to cart')(product);
+  };
+
   return (
     <>
       <StoryContainer title='Product card' text='Available product'>
-        <ProductCard data={products[0]} addToCart={action('Add to cart')} />
+        <ProductCard data={products[0]} addToCart={buttonOnClick} data-testid='available-product' />
       </StoryContainer>
       <StoryContainer text='Not available product'>
-        <ProductCard data={{ ...products[0], isAvailable: false }} addToCart={action('Add to cart')} />
+        <ProductCard
+          data={{ ...products[0], isAvailable: false }}
+          addToCart={action('Add to cart')}
+          data-testid='not-available-product'
+        />
       </StoryContainer>
     </>
   );
