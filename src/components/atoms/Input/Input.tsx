@@ -1,14 +1,24 @@
-import React, { HTMLProps } from 'react';
+import React, { ChangeEvent, HTMLProps, useEffect, useState } from 'react';
 import cx from 'classnames';
 import './Input.scss';
 
-interface IInput extends HTMLProps<HTMLInputElement> {
+interface IInput extends Omit<HTMLProps<HTMLInputElement>, 'value' | 'defaultValue'> {
   isInvalid?: boolean;
-  defaultValue?: string;
+  initialValue?: string;
 }
 
-const Input = ({ isInvalid = false, defaultValue, ...props }: IInput) => {
-  return <input {...props} value={defaultValue} className={cx('input', isInvalid && 'input--invalid')} />;
+const Input = ({ isInvalid = false, initialValue, ...props }: IInput) => {
+  const [value, setValue] = useState(initialValue);
+
+  useEffect(() => {
+    setValue(initialValue);
+  }, [initialValue]);
+
+  const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => setValue(event.target.value);
+
+  return (
+    <input {...props} value={value} onChange={onChangeHandler} className={cx('input', isInvalid && 'input--invalid')} />
+  );
 };
 
 export default Input;

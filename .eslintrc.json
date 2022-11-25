@@ -3,7 +3,7 @@
   "parser": "@typescript-eslint/parser",
   "extends": ["airbnb", "airbnb/hooks","plugin:@typescript-eslint/recommended"],
 
-  "plugins": ["prettier","@typescript-eslint", "react-hooks"],
+  "plugins": ["prettier","@typescript-eslint", "react-hooks", "react"],
 
   "rules": {
     "prettier/prettier": 0,
