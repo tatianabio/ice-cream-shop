@@ -2,11 +2,15 @@ import React from 'react';
 import './BenefitsTile.scss';
 import { useTranslation } from 'react-i18next';
 
-const BenefitsTile = () => {
+interface IBenefitsTile {
+  'data-testid'?: string;
+}
+
+const BenefitsTile = ({ 'data-testid': testId = 'benefits-tile' }: IBenefitsTile) => {
   const { t } = useTranslation();
 
   return (
-    <section className='benefits-tile'>
+    <section className='benefits-tile' data-testid={`${testId}-section`}>
       <div className='benefits-tile__container'>
         <h2 className='benefits-tile__title'>{t('benefitsTitle')}</h2>
         <ul className='benefits-tile__list'>

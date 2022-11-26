@@ -12,5 +12,5 @@ export default {
 };
 
 export const Demo = () => {
-  return <BenefitsTile />;
+  return <BenefitsTile data-testid='test' />;
 };

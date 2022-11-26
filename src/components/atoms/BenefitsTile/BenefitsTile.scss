@@ -30,6 +30,7 @@
   text-align: center;
 
   @media (max-width: v.$mobile-width-only) {
+    @include h4;
     margin-bottom: 20px;
   }
 
@@ -67,6 +68,10 @@
     left: 0;
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  @media (max-width: v.$mobile-width-only) {
+    @include p3;
   }
 }
 
