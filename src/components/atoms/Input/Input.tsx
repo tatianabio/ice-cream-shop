@@ -3,7 +3,9 @@ import cx from 'classnames';
 import './Input.scss';
 
 interface IInput extends Omit<HTMLProps<HTMLInputElement>, 'value' | 'defaultValue'> {
+  /** Does this input's value invalid or not? */
   isInvalid?: boolean;
+  /** Initial value of the input after rendering */
   initialValue?: string;
   'data-testid': string;
 }
