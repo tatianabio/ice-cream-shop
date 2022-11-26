@@ -4,6 +4,12 @@ import StoryContainer from '../../utils/StoryContainer';
 export default {
   title: 'Components/Atoms/Input',
   component: Input,
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/PGyn99Nrq2fXcnwGJqj0hR/HTML-1-%2F-%D0%93%D0%BB%D0%B5%D0%B9%D1%81%D0%B8-(34)-(Copy)?node-id=7574%3A3227&t=GvLTiUQXqsXN2Gjj-4',
+    },
+  },
 };
 
 export const Demo = () => {

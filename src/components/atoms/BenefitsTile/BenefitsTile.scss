@@ -1,0 +1,87 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/variables' as v;
+
+.benefits-tile {
+  max-width: 1170px;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: var(--basic-neutral);
+  background-image: url('../../../assets/img/waffle-background.png');
+  background-repeat: repeat-x;
+  background-size: cover;
+}
+
+.benefits-tile__container {
+  border-radius: 16px;
+  background-color: var(--basic-white);
+
+  @media (max-width: v.$mobile-width-only) {
+    padding: 20px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    padding: 56px 40px;
+  }
+}
+
+.benefits-tile__title {
+  @include h2;
+  margin-top: 0;
+  text-align: center;
+
+  @media (max-width: v.$mobile-width-only) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    margin-bottom: 56px;
+  }
+}
+
+.benefits-tile__list {
+  display: grid;
+  gap: 32px;
+
+  @media (max-width: v.$mobile-width-only) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
+  }
+}
+
+.benefits-tile__benefit {
+  @include p2;
+  position: relative;
+  margin: 0;
+  padding-left: 64px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 48px;
+    height: 48px;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.benefits-tile__benefit--manufacturing::after {
+  background-image: url('../../../assets/svg/ice-cream.svg');
+}
+
+.benefits-tile__benefit--quality::after {
+  background-image: url('../../../assets/svg/leave.svg');
+}
+
+.benefits-tile__benefit--farms::after {
+  background-image: url('../../../assets/svg/cow.svg');
+}
+
+.benefits-tile__benefit--delivery::after {
+  background-image: url('../../../assets/svg/thermometer.svg');
+}
