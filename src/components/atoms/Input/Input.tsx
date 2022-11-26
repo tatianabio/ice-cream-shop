@@ -5,6 +5,7 @@ import './Input.scss';
 interface IInput extends Omit<HTMLProps<HTMLInputElement>, 'value' | 'defaultValue'> {
   isInvalid?: boolean;
   initialValue?: string;
+  'data-testid': string;
 }
 
 const Input = ({ isInvalid = false, initialValue, ...props }: IInput) => {

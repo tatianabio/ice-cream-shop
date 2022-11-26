@@ -10,9 +10,9 @@ export const Demo = () => {
   return (
     <StoryContainer title='Input' text='Default, invalid, disabled' hasPinkBackground={false}>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px' }}>
-        <Input placeholder='Placeholder' />
-        <Input initialValue='Invalid value' isInvalid placeholder='Placeholder' />
-        <Input initialValue='Disabled' disabled placeholder='Placeholder' />
+        <Input placeholder='Placeholder' data-testid='input-default' />
+        <Input initialValue='Invalid value' isInvalid placeholder='Placeholder' data-testid='input-invalid' />
+        <Input initialValue='Disabled' disabled placeholder='Placeholder' data-testid='input-disabled' />
       </div>
     </StoryContainer>
   );
