@@ -35,6 +35,18 @@ const resources = {
       // Blog article tile
       recentInBlog: 'New in our blog',
       serveFruitSorbets: '10 ways to serve fruit sorbets to the table',
+
+      // Gift tile
+      getGift: 'Get a gift',
+
+      // Gifts
+      raspberryGift: 'Raspberry for free!',
+      raspberryGiftDescription:
+        'If you buy 2 kg of any fruit ice cream, we will add a jar of raspberry jam to your order for free.',
+
+      marshmallowGift: 'Marshmallow for free!',
+      marshmallowGiftDescription:
+        'If you buy 2 kg of ice cream, we will add a package of tender marshmallows to your order for free.',
     },
   },
   fr: {
@@ -72,6 +84,18 @@ const resources = {
       // Blog article tile
       recentInBlog: 'Nouveau dans notre blog',
       serveFruitSorbets: '10 façons de servir des sorbets aux fruits à table',
+
+      // Gift tile
+      getGift: 'Recevez un cadeau',
+
+      // Gifts
+      raspberryGift: 'Framboise gratuitement!',
+      raspberryGiftDescription:
+        "Lors de l'achat de 2 kg de n'importe quelle glace aux fruits, nous ajouterons gratuitement un pot de confiture de framboises à votre commande.",
+
+      marshmallowGift: 'Guimauve gratuitement!',
+      marshmallowGiftDescription:
+        "Lors de l'achat de 2 kg de crème glacée, nous ajouterons gratuitement un paquet de tendres guimauves à votre commande.",
     },
   },
 };
