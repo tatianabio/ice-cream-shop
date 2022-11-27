@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import { Demo } from './BenefitsTile.stories';
+import BenefitsTile from './BenefitsTile';
 
 describe('Benefits Tile render', () => {
-  it('should render', () => {
-    render(<Demo />);
-    expect(screen.getByTestId('test-section')).toBeInTheDocument();
+  it('should render without testId', () => {
+    render(<BenefitsTile />);
+    expect(screen.getByTestId('benefits-tile-section')).toBeInTheDocument();
   });
 });

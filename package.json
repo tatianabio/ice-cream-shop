@@ -65,7 +65,8 @@
       "!<rootDir>/node_modules/",
       "!src/topography/**/*.*",
       "!src/i18n.ts",
-      "!src/index.tsx"
+      "!src/index.tsx",
+      "!src/mock/**/*.*"
     ]
   },
   "eslintConfig": {
