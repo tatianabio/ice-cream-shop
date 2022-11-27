@@ -21,11 +21,11 @@ const BlogArticleTile = ({ info, 'data-testid': testID, ...props }: IBlogArticle
       className={cx('article-tile', props.className)}
       target='_blank'
       rel='noreferrer'
-      data-testid={`${testID}--link`}
+      data-testid={`${testID}-link`}
       style={{ backgroundImage: `url(${imgLink})` }}
     >
       <span className='article-tile__label-new'>{t('recentInBlog')}</span>
-      <h2 className='article-tile__title' data-testid={`${testID}--title`}>
+      <h2 className='article-tile__title' data-testid={`${testID}-title`}>
         {t(title)}
       </h2>
     </a>
