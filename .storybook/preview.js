@@ -1,5 +1,5 @@
 import '../src/styles/index.scss';
-import './normalize-storybook.scss';
+import './normalizeStorybook.scss';
 import { initialize, mswDecorator } from 'msw-storybook-addon';
 
 import i18n from './i18next.js';

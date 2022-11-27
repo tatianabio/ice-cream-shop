@@ -1,5 +1,5 @@
 import BlogArticleTile from './BlogArticleTile';
-import blogArticleMswHandlers from '../../../mock/msw-handlers/blog-article';
+import blogArticleMswHandlers from '../../../mock/mswHandlers/blogArticle';
 import StoryContainer from '../../utils/StoryContainer';
 import { blogArticleInfo } from '../../../mock/data/blog-article-info';
 

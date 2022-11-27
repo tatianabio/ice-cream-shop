@@ -1,9 +1,9 @@
 import { rest } from 'msw';
-import raspberry from '../../assets/img/ice-cream/ice-cream-scoops/raspberry.png';
-import pistachio from '../../assets/img/ice-cream/ice-cream-scoops/pistachio.png';
-import fruitSorbets from '../../assets/img/ice-cream/fruit-sorbets.png';
-import cornRaspberry from '../../assets/img/ice-cream/corn-raspberry.png';
-import cornMarshmallow from '../../assets/img/ice-cream/corn-marshmallow.png';
+import raspberry from '../../../assets/img/iceCream/iceCreamScoops/raspberry.png';
+import pistachio from '../../../assets/img/iceCream/iceCreamScoops/pistachio.png';
+import fruitSorbets from '../../../assets/img/iceCream/fruit-sorbets.png';
+import cornRaspberry from '../../../assets/img/iceCream/corn-raspberry.png';
+import cornMarshmallow from '../../../assets/img/iceCream/corn-marshmallow.png';
 
 const iceCreamImages = [
   {
