@@ -10,6 +10,7 @@ export interface IButton extends HTMLProps<HTMLButtonElement> {
   variant: 'primary' | 'secondary' | 'thirdly';
   /** A state of the button while loading */
   loading?: boolean;
+  /** Technical attributes */
   'data-testid': string;
 }
 
@@ -21,7 +22,7 @@ const Button = ({ text, variant, loading, type = 'button', ...props }: IButton) 
       {...props}
       type={type as 'button'}
       disabled={props.disabled || loading}
-      className={cx('button', `button--${variant}`, loading && 'button--loading')}
+      className={cx('button', `button--${variant}`, loading && 'button--loading', props.className)}
       tabIndex={loading ? -1 : props.tabIndex}
     >
       {t(text)}

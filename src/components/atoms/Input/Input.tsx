@@ -7,6 +7,7 @@ interface IInput extends Omit<HTMLProps<HTMLInputElement>, 'value' | 'defaultVal
   isInvalid?: boolean;
   /** Initial value of the input after rendering */
   initialValue?: string;
+  /** Technical attributes */
   'data-testid': string;
 }
 
@@ -20,7 +21,12 @@ const Input = ({ isInvalid = false, initialValue, ...props }: IInput) => {
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => setValue(event.target.value);
 
   return (
-    <input {...props} value={value} onChange={onChangeHandler} className={cx('input', isInvalid && 'input--invalid')} />
+    <input
+      {...props}
+      value={value}
+      onChange={onChangeHandler}
+      className={cx('input', props.className, isInvalid && 'input--invalid')}
+    />
   );
 };
 

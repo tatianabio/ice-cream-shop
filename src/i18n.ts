@@ -31,6 +31,10 @@ const resources = {
       // Ice cream tastes
       raspberry: 'Raspberry',
       raspberryDescription: 'Vanilla ice cream with raspberry jam',
+
+      // Blog article tile
+      recentInBlog: 'New in our blog',
+      serveFruitSorbets: '10 ways to serve fruit sorbets to the table',
     },
   },
   fr: {
@@ -64,6 +68,10 @@ const resources = {
       // Ice cream tastes
       raspberry: 'Framboise',
       raspberryDescription: 'Glace vanille à la confiture de framboise',
+
+      // Blog article tile
+      recentInBlog: 'Nouveau dans notre blog',
+      serveFruitSorbets: '10 façons de servir des sorbets aux fruits à table',
     },
   },
 };

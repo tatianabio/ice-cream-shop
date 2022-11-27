@@ -1,6 +1,7 @@
 import { rest } from 'msw';
 import raspberry from '../../assets/img/ice-cream-tastes/raspberry.png';
 import pistachio from '../../assets/img/ice-cream-tastes/pistachio.png';
+import fruitSorbets from '../../assets/img/ice-cream-tastes/fruit-sorbets.png';
 
 const iceCreamImages = [
   {
@@ -10,6 +11,10 @@ const iceCreamImages = [
   {
     path: '/pistachio',
     content: pistachio,
+  },
+  {
+    path: '/fruit-sorbets',
+    content: fruitSorbets,
   },
 ];
 

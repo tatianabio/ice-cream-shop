@@ -3,6 +3,7 @@ import './BenefitsTile.scss';
 import { useTranslation } from 'react-i18next';
 
 interface IBenefitsTile {
+  /** Technical attributes */
   'data-testid'?: string;
 }
 

@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 import ProductCard from './ProductCard';
-import productsMswHandlers from '../../../mock/msw-handlers';
+import productsMswHandlers from '../../../mock/msw-handlers/products';
 import StoryContainer from '../../utils/StoryContainer';
 import { IProduct, products } from '../../../mock/data/products';
 

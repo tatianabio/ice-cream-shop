@@ -11,6 +11,7 @@ interface IProductCard {
   data: IProduct;
   /** OnClick CartButton Handler */
   addToCart: (product: IProduct) => void;
+  /** Technical attributes */
   'data-testid': string;
 }
 
