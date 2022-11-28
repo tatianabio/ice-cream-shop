@@ -1,16 +1,16 @@
 import { action } from '@storybook/addon-actions';
 import React from 'react';
 import ProductCard from './ProductCard';
-import productsMswHandlers from '../../../mock/mswHandlers/products';
 import StoryContainer from '../../utils/StoryContainer';
 import { IProduct, products } from '../../../mock/data/products';
+import globalMswHandlers from '../../../mock/mswHandlers';
 
 export default {
   title: 'Components/Atoms/ProductCard',
   component: ProductCard,
   parameters: {
     msw: {
-      handlers: productsMswHandlers,
+      handlers: globalMswHandlers,
     },
     design: {
       type: 'figma',

@@ -1,14 +1,14 @@
 import BlogArticleTile from './BlogArticleTile';
-import blogArticleMswHandlers from '../../../mock/mswHandlers/blogArticle';
 import StoryContainer from '../../utils/StoryContainer';
 import { blogArticleInfo } from '../../../mock/data/blog-article-info';
+import globalMswHandlers from '../../../mock/mswHandlers';
 
 export default {
   title: 'Components/Atoms/BlogArticleTile',
   component: BlogArticleTile,
   parameters: {
     msw: {
-      handlers: blogArticleMswHandlers,
+      handlers: globalMswHandlers,
     },
     design: {
       type: 'figma',
