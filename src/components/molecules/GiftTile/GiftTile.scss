@@ -1,0 +1,74 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/variables' as v;
+
+.gift-tile {
+  display: flex;
+  max-width: 570px;
+
+  background-color: var(--special-neutral);
+  border-radius: 16px;
+
+  @media (max-width: v.$mobile-width-only) {
+    padding: 16px 16px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    padding: 32px 20px 0 32px;
+    justify-content: space-between;
+    gap: 4px;
+  }
+}
+
+.gift-tile__title {
+  @include h3;
+  margin-top: 0;
+
+  @media (max-width: v.$mobile-width-only) {
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    margin-bottom: 28px;
+  }
+}
+
+.gift-tile__info-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: v.$mobile-width-only) {
+    padding-bottom: 12px;
+    align-items: center;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    padding-bottom: 20px;
+  }
+}
+
+.gift-tile__description {
+  @include p2(var(--basic-extra-dark));
+  margin-top: 0;
+
+  @media (max-width: v.$mobile-width-only) {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    margin-bottom: 28px;
+  }
+}
+
+.gift-tile__img {
+  object-fit: contain;
+  height: 252px;
+
+  @media (min-width: v.$tablet-width) {
+    align-self: flex-end;
+  }
+}

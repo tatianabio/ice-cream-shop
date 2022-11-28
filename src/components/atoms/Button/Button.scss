@@ -9,6 +9,7 @@
   width: min-content;
   height: min-content;
   text-align: center;
+  white-space: nowrap;
 
   &:disabled {
     cursor: default;

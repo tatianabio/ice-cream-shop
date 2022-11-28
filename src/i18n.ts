@@ -37,7 +37,8 @@ const resources = {
       serveFruitSorbets: '10 ways to serve fruit sorbets to the table',
 
       // Gift tile
-      getGift: 'Get a gift',
+      readGiftDetails: 'More details',
+      giftIllustration: 'Illustrative representation of the gift',
 
       // Gifts
       raspberryGift: 'Raspberry for free!',
@@ -86,7 +87,8 @@ const resources = {
       serveFruitSorbets: '10 façons de servir des sorbets aux fruits à table',
 
       // Gift tile
-      getGift: 'Recevez un cadeau',
+      readGiftDetails: 'Plus de détails',
+      giftIllustration: 'Représentation illustrative du cadeau',
 
       // Gifts
       raspberryGift: 'Framboise gratuitement!',

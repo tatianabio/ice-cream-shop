@@ -7,7 +7,7 @@ export interface IGift {
   imgLink: string;
   /** Description of the gift */
   description: string;
-  /** Link to the page of the gift */
+  /** Link to the page describing the conditions of getting the gift in details */
   link: string;
 }
 
