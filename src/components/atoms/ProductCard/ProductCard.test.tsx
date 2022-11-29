@@ -11,16 +11,16 @@ describe('Product Card Tests', () => {
 
   it('Render', () => {
     // Title render
-    expect(screen.getByTestId('available-product-title')).toHaveTextContent('raspberry');
-    expect(screen.getByTestId('not-available-product-title')).toHaveTextContent('raspberry');
+    expect(screen.getByTestId('available-product-title')).toHaveTextContent(products[0].name);
+    expect(screen.getByTestId('not-available-product-title')).toHaveTextContent(products[0].name);
 
     // Description render
-    expect(screen.getByTestId('available-product-description')).toHaveTextContent('raspberryDescription');
-    expect(screen.getByTestId('not-available-product-description')).toHaveTextContent('raspberryDescription');
+    expect(screen.getByTestId('available-product-description')).toHaveTextContent(products[0].description);
+    expect(screen.getByTestId('not-available-product-description')).toHaveTextContent(products[0].description);
 
     // Price render
-    expect(screen.getByTestId('available-product-price')).toHaveTextContent('5.1 $/kg');
-    expect(screen.getByTestId('not-available-product-price')).toHaveTextContent('5.1 $/kg');
+    expect(screen.getByTestId('available-product-price')).toHaveTextContent(`${products[0].price} $/kg`);
+    expect(screen.getByTestId('not-available-product-price')).toHaveTextContent(`${products[0].price} $/kg`);
 
     // Img render, img--disabled class
     expect(screen.getByTestId('available-product-card')).toContainElement(screen.getByTestId('available-product-img'));

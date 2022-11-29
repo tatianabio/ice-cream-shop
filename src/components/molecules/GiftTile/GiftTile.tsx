@@ -17,8 +17,12 @@ const GiftTile = ({ data, 'data-testid': testId }: IGiftTile) => {
   return (
     <div className='gift-tile'>
       <div className='gift-tile__info-wrapper'>
-        <h3 className='gift-tile__title'>{t(name)}</h3>
-        <p className='gift-tile__description'>{t(description)}</p>
+        <h3 className='gift-tile__title' data-testid={`${testId}-title`}>
+          {t(name)}
+        </h3>
+        <p className='gift-tile__description' data-testid={`${testId}-description`}>
+          {t(description)}
+        </p>
         <ButtonLink
           text={t('readGiftDetails')}
           variant='primary'
@@ -33,6 +37,7 @@ const GiftTile = ({ data, 'data-testid': testId }: IGiftTile) => {
         alt={`${t('giftIllustration')} ${t(name)}`}
         width='219 px'
         height='268 px'
+        data-testid={`${testId}-img`}
       />
     </div>
   );
