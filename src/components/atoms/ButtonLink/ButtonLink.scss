@@ -1,0 +1,87 @@
+@use '../../../styles/mixins' as *;
+
+.button-link {
+  --button-extra-color-1: rgba(252, 252, 252, 0.4);
+  --button-extra-color-2: rgba(255, 47, 100, 0.3);
+  --button-extra-color-3: rgba(185, 185, 185, 0.3);
+
+  width: min-content;
+  height: min-content;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.button-link--primary {
+  @include p3-bold(var(--basic-extra-dark));
+  padding: 12px 32px;
+  background-color: var(--basic-extra-light);
+  border-radius: 26px;
+  box-shadow: var(--soft-shadow), 0 0 0 4px var(--button-extra-color-1);
+
+  &:hover {
+    transition: 0.5s;
+    background-color: var(--button-extra-color-1);
+    box-shadow: var(--additional-shadow), 0 0 0 4px var(--basic-extra-light);
+  }
+
+  &:focus {
+    background-color: var(--button-extra-color-1);
+    box-shadow: var(--soft-shadow), 0 0 0 2px var(--basic-extra-dark);
+  }
+
+  &:active {
+    background-color: var(--basic-extra-light);
+    box-shadow: var(--soft-shadow), 0 0 0 2px var(--basic-extra-dark);
+  }
+}
+
+.button-link--secondary {
+  @include p3-bold(var(--basic-extra-light));
+  padding: 12px 32px;
+  background-color: var(--special-extra-bright);
+  border-radius: 26px;
+  box-shadow: var(--soft-shadow), 0 0 0 4px var(--button-extra-color-2);
+
+  &:hover {
+    transition: 0.5s;
+    color: var(--basic-extra-dark);
+    background-color: var(--button-extra-color-1);
+    box-shadow: 0 0 0 4px var(--special-extra-bright);
+  }
+
+  &:focus {
+    color: var(--basic-extra-light);
+    background-color: var(--special-extra-bright);
+    box-shadow: var(--soft-shadow), 0 0 0 2px var(--basic-extra-dark);
+  }
+
+  &:active {
+    color: var(--basic-extra-light);
+    background-color: var(--special-light);
+    box-shadow: var(--soft-shadow), 0 0 0 2px var(--basic-extra-dark);
+  }
+}
+
+.button-link--thirdly {
+  @include s1-bold(var(--basic-extra-dark));
+  padding: 8px 32px;
+  background-color: var(--button-extra-color-1);
+  border-radius: 20px;
+  box-shadow: 0 0 0 2px var(--basic-extra-light);
+
+  &:hover {
+    transition: 0.5s;
+    background-color: var(--basic-extra-light);
+    box-shadow: 0 0 0 2px var(--button-extra-color-1);
+  }
+
+  &:focus {
+    background-color: var(--button-extra-color-1);
+    box-shadow: 0 0 0 2px var(--basic-extra-dark);
+  }
+
+  &:active {
+    background-color: var(--button-extra-color-1);
+    box-shadow: 0 0 0 2px var(--button-extra-color-1);
+  }
+}

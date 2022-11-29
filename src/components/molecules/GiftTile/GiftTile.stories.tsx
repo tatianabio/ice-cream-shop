@@ -22,7 +22,7 @@ export const Demo = () => {
     <StoryContainer title='Two gift tiles as examples'>
       <>
         <GiftTile data-testid='raspberry-gift' data={gifts[0]} />
-        <GiftTile data-testid='raspberry-gift' data={gifts[1]} />
+        <GiftTile data-testid='marshmallow-gift' data={gifts[1]} />
       </>
     </StoryContainer>
   );
