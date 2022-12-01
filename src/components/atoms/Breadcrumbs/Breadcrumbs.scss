@@ -33,7 +33,7 @@
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px var(--basic-extra-dark);
+    box-shadow: 0 0 0 1px var(--basic-extra-dark);
   }
 
   &:active {
@@ -43,18 +43,7 @@
 
 .breadcrumb__link--active {
   color: var(--basic-extra-dark);
-
-  &:hover {
-    color: var(--basic-dark);
-  }
-
-  &:focus {
-    box-shadow: 0 0 0 2px var(--basic-dark);
-  }
-
-  &:active {
-    color: rgba(45, 52, 64, 0.5);
-  }
+  pointer-events: none;
 
   &::after {
     position: absolute;

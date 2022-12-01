@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import Breadcrumbs, { IBreadcrumb } from './Breadcrumbs';
+import Breadcrumbs, { breadcrumbsCatalog } from './Breadcrumbs';
 import StoryContainer from '../../utils/StoryContainer';
 
 export default {
@@ -12,19 +12,6 @@ export default {
     },
   },
 };
-
-export const breadcrumbsCatalog: IBreadcrumb[] = [
-  {
-    name: 'main',
-    link: '/main',
-    isActive: false,
-  },
-  {
-    name: 'catalog',
-    link: '/catalog',
-    isActive: true,
-  },
-];
 
 export const Demo = () => {
   return (
