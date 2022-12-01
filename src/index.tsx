@@ -4,11 +4,13 @@ import ReactDOM from 'react-dom/client';
 import './styles/index.scss';
 import './i18n';
 import App from './App';
+import Breadcrumbs from './components/atoms/Breadcrumbs';
+import { breadcrumbsCatalog } from './components/atoms/Breadcrumbs/Breadcrumbs.stories';
 
 const router = createBrowserRouter([
   {
-    path: '/home',
-    element: <div>Hello world!</div>,
+    path: '/main',
+    element: <Breadcrumbs breadcrumbsArray={breadcrumbsCatalog} />,
   },
   {
     path: '/catalog',
@@ -16,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: '*',
-    element: <Navigate replace to='/home' />,
+    element: <Navigate replace to='/main' />,
   },
 ]);
 

@@ -6,6 +6,10 @@ const resources = {
     translation: {
       order: 'Order',
 
+      // Breadcrumbs
+      main: 'Main',
+      catalog: 'Catalog',
+
       // Benefits tile
       benefitsTitle: 'Gllacy Shop is an online and offline store selling ice cream of its own production by weight',
       benefitManufacturing: 'All our ice cream is made in-house using modern equipment and time-tested technologies.',
@@ -53,6 +57,10 @@ const resources = {
   fr: {
     translation: {
       order: 'Ordre',
+
+      // Breadcrumbs
+      main: "D'accueil",
+      catalog: 'Catalogue',
 
       // Benefits tile
       benefitsTitle:
