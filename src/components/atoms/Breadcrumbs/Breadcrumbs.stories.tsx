@@ -1,6 +1,8 @@
-import { BrowserRouter } from 'react-router-dom';
-import Breadcrumbs, { breadcrumbsCatalog } from './Breadcrumbs';
+import { createMemoryRouter, RouterProvider } from 'react-router-dom';
+import React from 'react';
+import Breadcrumbs from './Breadcrumbs';
 import StoryContainer from '../../utils/StoryContainer';
+import { routerArray } from './utils';
 
 export default {
   title: 'Components/Atoms/Breadcrumbs',
@@ -14,11 +16,11 @@ export default {
 };
 
 export const Demo = () => {
+  const router = createMemoryRouter(routerArray, { initialEntries: ['/catalog'] });
+
   return (
     <StoryContainer title='Breadcrumbs' text='in Catalog page as an example'>
-      <BrowserRouter>
-        <Breadcrumbs breadcrumbsArray={breadcrumbsCatalog} />
-      </BrowserRouter>
+      <RouterProvider router={router} />
     </StoryContainer>
   );
 };

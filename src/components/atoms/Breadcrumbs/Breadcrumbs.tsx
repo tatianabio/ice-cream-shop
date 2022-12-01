@@ -5,27 +5,18 @@ import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
 export interface IBreadcrumb {
+  /** Displayed name of the breadcrumb */
   name: string;
+  /** Link of the breadcrumb */
   link: string;
+  /** Is this breadcrumb active (represent the current page)? */
   isActive: boolean;
 }
 
 interface IBreadcrumbs {
+  /** Breadcrumbs List Data for a page */
   breadcrumbsArray: IBreadcrumb[];
 }
-
-export const breadcrumbsCatalog: IBreadcrumb[] = [
-  {
-    name: 'main',
-    link: '/main',
-    isActive: false,
-  },
-  {
-    name: 'catalog',
-    link: '/catalog',
-    isActive: true,
-  },
-];
 
 const Breadcrumbs = ({ breadcrumbsArray }: IBreadcrumbs) => {
   const { t } = useTranslation();
