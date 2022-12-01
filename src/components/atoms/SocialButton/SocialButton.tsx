@@ -6,21 +6,24 @@ import SocialYoutube from '../../../assets/svg/social-youtube';
 import SocialVkontakte from '../../../assets/svg/social-vkontakte';
 
 export type ISocial = 'vkontakte' | 'youtube' | 'telegram';
+
+export type ISocialNetworksList = Record<ISocial, { link: string; icon: ReactElement }>;
+
 interface ISocialButton extends HTMLProps<HTMLAnchorElement> {
   /** Links to our social networks */
-  socialMedia: ISocial;
+  socialNetwork: ISocial;
   /** Technical attributes */
   'data-testid': string;
 }
 
-export const socialNetworks: Record<ISocial, { link: string; icon: ReactElement }> = {
+export const socialNetworks: ISocialNetworksList = {
   vkontakte: { link: 'https://vk.com/', icon: <SocialVkontakte /> },
   youtube: { link: 'https://www.youtube.com/', icon: <SocialYoutube /> },
   telegram: { link: 'https://telegram.org/', icon: <SocialTelegram /> },
 };
 
-function SocialButton({ socialMedia, ...props }: ISocialButton) {
-  const currentNetwork = socialNetworks[socialMedia];
+function SocialButton({ socialNetwork, ...props }: ISocialButton) {
+  const currentNetwork = socialNetworks[socialNetwork];
 
   return (
     <a
@@ -30,7 +33,7 @@ function SocialButton({ socialMedia, ...props }: ISocialButton) {
       target='_blank'
       rel='noreferrer'
     >
-      <span className='visually-hidden'>{socialMedia}</span>
+      <span className='visually-hidden'>{socialNetwork}</span>
       {currentNetwork.icon}
     </a>
   );
