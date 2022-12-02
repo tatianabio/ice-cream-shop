@@ -1,7 +1,7 @@
 import React, { HTMLProps } from 'react';
 import cx from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { IBlogArticleInfo } from '../../../mock/data/blog-article-info';
+import { IBlogArticleInfo } from '../../../mock/data/blogArticleInfo';
 import './BlogArticleTile.scss';
 
 interface IBlogArticleTile extends HTMLProps<HTMLAnchorElement> {
