@@ -18,11 +18,20 @@ const SliderTile = ({ themes }: ISliderTile) => {
   const themesList = themes.map((item, idx) => {
     const { imgLink, title, id } = item;
     const isActive = idx === active;
+
+    const onClickHandler = (direction: 1 | -1) => {
+      let current = active + direction;
+      current === themes.length && (current = 0);
+      current < 0 && (current = themes.length - 1);
+      setActive(current);
+    };
+
     return (
       <li className={cx('ice-cream-item', isActive && 'ice-cream-item--active')} key={id}>
         <button
           className={cx('slider-button', 'slider-button--previous', isActive && 'slider-button--active')}
           type='button'
+          onClick={() => onClickHandler(-1)}
         >
           <span className='visually-hidden'>{t('showPrevious')}</span>
           <Chevron />
@@ -30,6 +39,7 @@ const SliderTile = ({ themes }: ISliderTile) => {
         <button
           className={cx('slider-button', 'slider-button--next', isActive && 'slider-button--active')}
           type='button'
+          onClick={() => onClickHandler(1)}
         >
           <span className='visually-hidden'>{t('showNext')}</span>
           <Chevron />
