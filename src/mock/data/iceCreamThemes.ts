@@ -1,4 +1,6 @@
 export interface IIceCreamTheme {
+  /** The unique identification number of the ice cream of the theme */
+  id: number;
   /** The short description of the ice cream of the theme */
   title: string;
   /** The link to the representative image of the ice cream of the theme */
@@ -11,21 +13,24 @@ export interface IIceCreamTheme {
 
 export const iceCreamThemes: IIceCreamTheme[] = [
   {
-    title: '',
-    description: '',
-    imgLink: '',
-    backgroundColor: '',
+    id: 1,
+    title: 'strawberryCornTitle',
+    description: 'strawberryCornDescription',
+    imgLink: '/corn-strawberry',
+    backgroundColor: 'var(--special-light)',
   },
   {
-    title: '',
-    description: '',
-    imgLink: '',
-    backgroundColor: '',
+    id: 2,
+    title: 'bananaCornTitle',
+    description: 'bananaCornDescription',
+    imgLink: '/corn-banana',
+    backgroundColor: 'var(--special-blue)',
   },
   {
-    title: '',
-    description: '',
-    imgLink: '',
-    backgroundColor: '',
+    id: 3,
+    title: 'caramelCornTitle',
+    description: 'caramelCornDescription',
+    imgLink: '/corn-caramel',
+    backgroundColor: 'var(--special-yellow)',
   },
 ];

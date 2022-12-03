@@ -4,6 +4,9 @@ import pistachio from '../../../assets/img/iceCream/iceCreamScoops/pistachio.png
 import fruitSorbets from '../../../assets/img/iceCream/fruit-sorbets.png';
 import cornRaspberry from '../../../assets/img/iceCream/corn-raspberry.png';
 import cornMarshmallow from '../../../assets/img/iceCream/corn-marshmallow.png';
+import cornStrawberry from '../../../assets/img/iceCream/corn-strawberry.png';
+import cornBanana from '../../../assets/img/iceCream/corn-banana.png';
+import cornCaramel from '../../../assets/img/iceCream/corn-caramel.png';
 
 const iceCreamImages = [
   {
@@ -25,6 +28,18 @@ const iceCreamImages = [
   {
     path: '/corn-marshmallow',
     content: cornMarshmallow,
+  },
+  {
+    path: '/corn-strawberry',
+    content: cornStrawberry,
+  },
+  {
+    path: '/corn-banana',
+    content: cornBanana,
+  },
+  {
+    path: '/corn-caramel',
+    content: cornCaramel,
   },
 ];
 

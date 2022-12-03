@@ -10,6 +10,19 @@ const resources = {
       main: 'Main',
       catalog: 'Catalog',
 
+      // Ice cream themes
+      strawberryCornTitle: 'Soft ice cream with strawberry jam',
+      strawberryCornDescription:
+        'Natural ice cream made from fresh cream and milk with delicious strawberry jam is the perfect dessert for the whole family.',
+
+      bananaCornTitle: 'Ice cream with banana flavor',
+      bananaCornDescription:
+        'Ice cream with a bright banana flavor will give you freshness and enjoyment even on the hottest summer day.',
+
+      caramelCornTitle: 'Caramel ice cream with marshmallows',
+      caramelCornDescription:
+        'An unusual sweet dessert with caramel topping and marshmallow pieces will win the hearts of sweet teeth of all ages.',
+
       // Benefits tile
       benefitsTitle: 'Gllacy Shop is an online and offline store selling ice cream of its own production by weight',
       benefitManufacturing: 'All our ice cream is made in-house using modern equipment and time-tested technologies.',
@@ -61,6 +74,19 @@ const resources = {
       // Breadcrumbs
       main: "D'accueil",
       catalog: 'Catalogue',
+
+      // Ice cream themes
+      strawberryCornTitle: 'Glace molle à la confiture de fraise',
+      strawberryCornDescription:
+        'Une glace naturelle à base de crème fraîche et de lait avec une délicieuse confiture de fraises est le dessert parfait pour toute la famille.',
+
+      bananaCornTitle: 'Glace au goût de banane',
+      bananaCornDescription:
+        "Une crème glacée au goût éclatant de banane vous procurera fraîcheur et plaisir même lors des journées d'été les plus chaudes.",
+
+      caramelCornTitle: 'Glace au caramel avec des guimauves',
+      caramelCornDescription:
+        'Un dessert sucré inhabituel avec une garniture au caramel et des morceaux de guimauve gagnera le cœur des becs sucrés de tous âges.',
 
       // Benefits tile
       benefitsTitle:
