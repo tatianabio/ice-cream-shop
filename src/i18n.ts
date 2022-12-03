@@ -11,6 +11,9 @@ const resources = {
       catalog: 'Catalog',
 
       // Ice cream themes
+      showPrevious: 'Show previous ice cream',
+      showNext: 'Show next ice cream',
+
       strawberryCornTitle: 'Soft ice cream with strawberry jam',
       strawberryCornDescription:
         'Natural ice cream made from fresh cream and milk with delicious strawberry jam is the perfect dessert for the whole family.',
@@ -76,6 +79,9 @@ const resources = {
       catalog: 'Catalogue',
 
       // Ice cream themes
+      showPrevious: 'Afficher la glace précédente',
+      showNext: 'Afficher la glace suivante',
+
       strawberryCornTitle: 'Glace molle à la confiture de fraise',
       strawberryCornDescription:
         'Une glace naturelle à base de crème fraîche et de lait avec une délicieuse confiture de fraises est le dessert parfait pour toute la famille.',
