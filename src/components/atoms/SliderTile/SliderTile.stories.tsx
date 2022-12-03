@@ -19,7 +19,7 @@ export default {
 
 export const Demo = () => {
   return (
-    <StoryContainer title='Slider tile'>
+    <StoryContainer title='Slider tile' style={{ maxWidth: '800px', paddingLeft: '30px' }}>
       <SliderTile themes={iceCreamThemes} />
     </StoryContainer>
   );
