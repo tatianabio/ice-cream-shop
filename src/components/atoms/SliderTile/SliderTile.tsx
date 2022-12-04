@@ -18,6 +18,7 @@ const SliderTile = ({ themes }: ISliderTile) => {
   const themesList = themes.map((item, idx) => {
     const { imgLink, title, id } = item;
     const isActive = idx === active;
+    const order = idx < active ? idx + themes.length - 1 : idx - active;
 
     const onClickHandler = (direction: 1 | -1) => {
       let current = active + direction;
@@ -27,7 +28,7 @@ const SliderTile = ({ themes }: ISliderTile) => {
     };
 
     return (
-      <li className={cx('ice-cream-item', isActive && 'ice-cream-item--active')} key={id}>
+      <li className={cx('ice-cream-item', isActive && 'ice-cream-item--active')} style={{ order }} key={id}>
         <button
           className={cx('slider-button', 'slider-button--previous', isActive && 'slider-button--active')}
           type='button'
