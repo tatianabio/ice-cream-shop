@@ -1,8 +1,15 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as *;
+
 .ice-cream-list {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   gap: 40px;
+
+  @media (max-width: v.$mobile-width-only) {
+    justify-content: center;
+  }
 }
 
 .ice-cream-item {
@@ -24,11 +31,30 @@
   }
 
   &--active {
-    width: 306px;
-    min-width: 306px;
-    height: 507px;
     margin-right: 16px;
     opacity: 1;
+
+    @media (max-width: v.$mobile-width-only) {
+      width: 200px;
+      min-width: 200px;
+      height: 300px;
+    }
+
+    @media (min-width: v.$tablet-width) {
+      width: 306px;
+      min-width: 306px;
+      height: 507px;
+    }
+  }
+
+  &--hidden {
+    display: none;
+  }
+}
+
+@media (max-width: v.$mobile-width-only) {
+  .ice-cream-item:not(.ice-cream-item--active) {
+    display: none;
   }
 }
 
