@@ -1,18 +1,29 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Demo } from './SliderTile.stories';
-import { iceCreamThemes } from '../../../mock/data/iceCreamThemes';
+import { iceCreamThemes, IIceCreamTheme } from '../../../mock/data/iceCreamThemes';
+import SliderTile from './SliderTile';
+
+const extraTestTheme: IIceCreamTheme = {
+  id: 3,
+  title: 'bananaCornTitle',
+  description: 'bananaCornDescription',
+  imgLink: '/corn-banana',
+  backgroundColor: 'var(--special-blue)',
+};
+
+const iceCreamThemesTest: IIceCreamTheme[] = [...iceCreamThemes, extraTestTheme];
 
 describe('SliderTile Tests', () => {
-  beforeEach(() => render(<Demo />));
+  beforeEach(() => render(<SliderTile themes={iceCreamThemesTest} data-testid='themes' />));
 
-  const lastItemIndex = iceCreamThemes.length - 1;
+  const lastItemIndex = iceCreamThemesTest.length - 1;
 
   it('SliderTile render', () => {
     expect(screen.getByTestId('themes-list')).toBeInTheDocument();
     expect(screen.getByTestId('themes-item-0')).toHaveClass('ice-cream-item--active');
     expect(screen.getByTestId('themes-item-1')).not.toHaveClass('ice-cream-item--active');
     expect(screen.getByTestId(`themes-item-${lastItemIndex}`)).not.toHaveClass('ice-cream-item--active');
+    expect(screen.getByTestId(`themes-item-${lastItemIndex}`)).toHaveClass('ice-cream-item--hidden');
   });
 
   it('SliderTile: buttons focus', async () => {
@@ -28,10 +39,13 @@ describe('SliderTile Tests', () => {
     await userEvent.click(screen.getByTestId('themes-previous-button-0'));
     expect(screen.getByTestId('themes-item-0')).not.toHaveClass('ice-cream-item--active');
     expect(screen.getByTestId(`themes-item-${lastItemIndex}`)).toHaveClass('ice-cream-item--active');
+    expect(screen.getByTestId(`themes-item-${lastItemIndex - 1}`)).toHaveClass('ice-cream-item--hidden');
 
     await userEvent.click(screen.getByTestId(`themes-next-button-${lastItemIndex}`));
     expect(screen.getByTestId(`themes-item-${lastItemIndex}`)).not.toHaveClass('ice-cream-item--active');
     expect(screen.getByTestId('themes-item-0')).toHaveClass('ice-cream-item--active');
+    expect(screen.getByTestId(`themes-item-${lastItemIndex - 1}`)).not.toHaveClass('ice-cream-item--hidden');
+    expect(screen.getByTestId(`themes-item-${lastItemIndex}`)).toHaveClass('ice-cream-item--hidden');
 
     await userEvent.click(screen.getByTestId('themes-next-button-0'));
     expect(screen.getByTestId('themes-item-0')).not.toHaveClass('ice-cream-item--active');
