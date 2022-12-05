@@ -13,21 +13,21 @@ export interface IIceCreamTheme {
 
 export const iceCreamThemes: IIceCreamTheme[] = [
   {
-    id: 1,
+    id: 0,
     title: 'strawberryCornTitle',
     description: 'strawberryCornDescription',
     imgLink: '/corn-strawberry',
     backgroundColor: 'var(--special-light)',
   },
   {
-    id: 2,
+    id: 1,
     title: 'bananaCornTitle',
     description: 'bananaCornDescription',
     imgLink: '/corn-banana',
     backgroundColor: 'var(--special-blue)',
   },
   {
-    id: 3,
+    id: 2,
     title: 'caramelCornTitle',
     description: 'caramelCornDescription',
     imgLink: '/corn-caramel',

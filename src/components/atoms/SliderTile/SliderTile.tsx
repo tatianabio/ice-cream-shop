@@ -8,9 +8,11 @@ import Chevron from '../../../assets/svg/chevron';
 interface ISliderTile {
   /** The array including the list of ice cream themes */
   themes: IIceCreamTheme[];
+  /** Technical attributes */
+  'data-testid': string;
 }
 
-const SliderTile = ({ themes }: ISliderTile) => {
+const SliderTile = ({ themes, 'data-testid': testId }: ISliderTile) => {
   const { t } = useTranslation();
 
   const [active, setActive] = useState(0);
@@ -33,11 +35,13 @@ const SliderTile = ({ themes }: ISliderTile) => {
         className={cx('ice-cream-item', isActive && 'ice-cream-item--active', isHidden && 'ice-cream-item--hidden')}
         style={{ order }}
         key={id}
+        data-testid={`${testId}-item-${id}`}
       >
         <button
           className={cx('slider-button', 'slider-button--previous', isActive && 'slider-button--active')}
           type='button'
           onClick={() => onClickHandler(-1)}
+          data-testid={`${testId}-previous-button-${id}`}
         >
           <span className='visually-hidden'>{t('showPrevious')}</span>
           <Chevron />
@@ -46,17 +50,27 @@ const SliderTile = ({ themes }: ISliderTile) => {
           className={cx('slider-button', 'slider-button--next', isActive && 'slider-button--active')}
           type='button'
           onClick={() => onClickHandler(1)}
+          data-testid={`${testId}-next-button-${id}`}
         >
           <span className='visually-hidden'>{t('showNext')}</span>
           <Chevron />
         </button>
-        <img className='ice-cream-item__img' src={imgLink} alt={`${t(title)}`} width='306 px' height='507 px' />
+        <img
+          className='ice-cream-item__img'
+          src={imgLink}
+          alt={`${t(title)}`}
+          width='306 px'
+          height='507 px'
+          data-testid={`${testId}-img-${id}`}
+        />
       </li>
     );
   });
   return (
     <div>
-      <ul className='ice-cream-list'>{themesList}</ul>
+      <ul className='ice-cream-list' data-testid={`${testId}-list`}>
+        {themesList}
+      </ul>
     </div>
   );
 };

@@ -20,7 +20,7 @@ export default {
 export const Demo = () => {
   return (
     <StoryContainer title='Slider tile' style={{ maxWidth: '800px', minHeight: '500px', paddingLeft: '30px' }}>
-      <SliderTile themes={iceCreamThemes} />
+      <SliderTile themes={iceCreamThemes} data-testid='themes' />
     </StoryContainer>
   );
 };
