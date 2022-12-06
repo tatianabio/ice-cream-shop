@@ -1,7 +1,6 @@
 import globalMswHandlers from '../../../mock/mswHandlers';
 import SliderTile from './SliderTile';
 import StoryContainer from '../../utils/StoryContainer';
-import { iceCreamThemes } from '../../../mock/data/iceCreamThemes';
 
 export default {
   title: 'Components/Atoms/SliderTile',
@@ -20,7 +19,7 @@ export default {
 export const Demo = () => {
   return (
     <StoryContainer title='Slider tile' style={{ maxWidth: '800px', minHeight: '500px', paddingLeft: '30px' }}>
-      <SliderTile themes={iceCreamThemes} data-testid='themes' />
+      <SliderTile data-testid='themes' />
     </StoryContainer>
   );
 };

@@ -1,7 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import shallow from 'zustand/shallow';
+import { useEffect } from 'react';
 import { iceCreamThemes, IIceCreamTheme } from '../../../mock/data/iceCreamThemes';
 import SliderTile from './SliderTile';
+import { IStore, useSliderTileStore } from './SliderTile.store';
 
 const extraTestTheme: IIceCreamTheme = {
   id: 3,
@@ -13,8 +16,16 @@ const extraTestTheme: IIceCreamTheme = {
 
 const iceCreamThemesTest: IIceCreamTheme[] = [...iceCreamThemes, extraTestTheme];
 
+const TestComponent = () => {
+  const setThemes = useSliderTileStore((store: IStore) => store.setThemes, shallow);
+  useEffect(() => {
+    setThemes(iceCreamThemesTest);
+  }, []);
+  return <SliderTile data-testid='themes' />;
+};
+
 describe('SliderTile Tests', () => {
-  beforeEach(() => render(<SliderTile themes={iceCreamThemesTest} data-testid='themes' />));
+  beforeEach(() => render(<TestComponent />));
 
   const lastItemIndex = iceCreamThemesTest.length - 1;
 

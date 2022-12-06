@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SliderTile.scss';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
-import { IIceCreamTheme } from '../../../mock/data/iceCreamThemes';
+import shallow from 'zustand/shallow';
 import Chevron from '../../../assets/svg/chevron';
+import { IStore, useSliderTileStore } from './SliderTile.store';
 
 interface ISliderTile {
-  /** The array including the list of ice cream themes */
-  themes: IIceCreamTheme[];
   /** Technical attributes */
   'data-testid': string;
 }
 
-const SliderTile = ({ themes, 'data-testid': testId }: ISliderTile) => {
+const SliderTile = ({ 'data-testid': testId }: ISliderTile) => {
   const { t } = useTranslation();
-
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useSliderTileStore((store: IStore) => [store.active, store.setActive], shallow);
+  const themes = useSliderTileStore((store: IStore) => store.themes, shallow);
 
   const themesList = themes.map((item, idx) => {
     const { imgLink, title, id } = item;
