@@ -4,7 +4,7 @@ import shallow from 'zustand/shallow';
 import { useEffect } from 'react';
 import { iceCreamThemes, IIceCreamTheme } from '../../../mock/data/iceCreamThemes';
 import SliderTile from './SliderTile';
-import { IStore, useSliderTileStore } from './SliderTile.store';
+import { ISliderTileStore, useSliderTileStore } from './SliderTile.store';
 
 const extraTestTheme: IIceCreamTheme = {
   id: 3,
@@ -17,7 +17,7 @@ const extraTestTheme: IIceCreamTheme = {
 const iceCreamThemesTest: IIceCreamTheme[] = [...iceCreamThemes, extraTestTheme];
 
 const TestComponent = () => {
-  const setThemes = useSliderTileStore((store: IStore) => store.setThemes, shallow);
+  const setThemes = useSliderTileStore((store: ISliderTileStore) => store.setThemes, shallow);
   useEffect(() => {
     setThemes(iceCreamThemesTest);
   }, []);

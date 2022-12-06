@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
 import shallow from 'zustand/shallow';
 import Chevron from '../../../assets/svg/chevron';
-import { IStore, useSliderTileStore } from './SliderTile.store';
+import { activeIndexSelector, ISliderTileStore, useSliderTileStore } from './SliderTile.store';
 
 interface ISliderTile {
   /** Technical attributes */
@@ -13,20 +13,20 @@ interface ISliderTile {
 
 const SliderTile = ({ 'data-testid': testId }: ISliderTile) => {
   const { t } = useTranslation();
-  const [active, setActive] = useSliderTileStore((store: IStore) => [store.active, store.setActive], shallow);
-  const themes = useSliderTileStore((store: IStore) => store.themes, shallow);
+  const { activeItemIndex, setActiveItemIndex } = useSliderTileStore(activeIndexSelector, shallow);
+  const themes = useSliderTileStore((store: ISliderTileStore) => store.themes, shallow);
 
   const themesList = themes.map((item, idx) => {
     const { imgLink, title, id } = item;
-    const isActive = idx === active;
-    const order = idx < active ? idx + themes.length - active : idx - active;
+    const isActive = idx === activeItemIndex;
+    const order = idx < activeItemIndex ? idx + themes.length - activeItemIndex : idx - activeItemIndex;
     const isHidden = order > 2;
 
     const onClickHandler = (direction: 1 | -1) => {
-      let current = active + direction;
+      let current = activeItemIndex + direction;
       current === themes.length && (current = 0);
       current < 0 && (current = themes.length - 1);
-      setActive(current);
+      setActiveItemIndex(current);
     };
 
     return (

@@ -26,6 +26,11 @@ const resources = {
       caramelCornDescription:
         'An unusual sweet dessert with caramel topping and marshmallow pieces will win the hearts of sweet teeth of all ages.',
 
+      // Themes bullet pagination
+      iceCreamNo: 'Ice cream Number',
+      iceIsShown: 'This ice cream is on the screen now',
+      iceIsNotShown: 'This ice cream is not on the screen now',
+
       // Benefits tile
       benefitsTitle: 'Gllacy Shop is an online and offline store selling ice cream of its own production by weight',
       benefitManufacturing: 'All our ice cream is made in-house using modern equipment and time-tested technologies.',
@@ -93,6 +98,11 @@ const resources = {
       caramelCornTitle: 'Glace au caramel avec des guimauves',
       caramelCornDescription:
         'Un dessert sucré inhabituel avec une garniture au caramel et des morceaux de guimauve gagnera le cœur des becs sucrés de tous âges.',
+
+      // Themes bullet pagination
+      iceCreamNo: 'Numéro de crème glacée',
+      iceIsShown: "Cette glace est à l'écran maintenant",
+      iceIsNotShown: "Cette glace n'est pas à l'écran maintenant",
 
       // Benefits tile
       benefitsTitle:

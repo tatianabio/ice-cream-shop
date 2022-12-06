@@ -1,21 +1,32 @@
 import React from 'react';
+import './BulletPagination.scss';
 import { useTranslation } from 'react-i18next';
+import shallow from 'zustand/shallow';
+import cx from 'classnames';
+import { activeIndexSelector, ISliderTileStore, useSliderTileStore } from '../SliderTile/SliderTile.store';
 
 interface IBulletPagination {
-  /** The array of items which represented in bullets of the pagination */
-  array: [];
   /** Technical attributes */
   'data-testid': string;
 }
 
-const BulletPagination = ({ array, 'data-testid': testId }: IBulletPagination) => {
+const BulletPagination = ({ 'data-testid': testId }: IBulletPagination) => {
   const { t } = useTranslation();
-  const bulletsList = array.map((_, index) => {
+  const { activeItemIndex } = useSliderTileStore(activeIndexSelector, shallow);
+  const themes = useSliderTileStore((store: ISliderTileStore) => store.themes, shallow);
+
+  const bulletsList = themes.map((item, idx) => {
+    const { id } = item;
+    const isActive = idx === activeItemIndex;
     return (
-      <li className='bullet-item' data-testid={`${testId}-bullet-item-${index}`}>
-        <button className='bullet-item__button' data-testid={`${testId}-bullet-item-button-${index}`}>
-          {t('')}
-        </button>
+      <li
+        key={id}
+        className={cx('bullet-item', isActive && 'bullet-item--active')}
+        data-testid={`${testId}-bullet-item-${idx}`}
+      >
+        <span className='visually-hidden'>
+          {`${t('iceCreamNo')} ${idx + 1}. ${isActive ? t('iceIsShown') : t('iceIsNotShown')}`}
+        </span>
       </li>
     );
   });
