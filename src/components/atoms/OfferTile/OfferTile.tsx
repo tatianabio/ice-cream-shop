@@ -4,16 +4,21 @@ import { useTranslation } from 'react-i18next';
 import shallow from 'zustand/shallow';
 import { activeIndexSelector, ISliderTileStore, useSliderTileStore } from '../SliderTile/SliderTile.store';
 import Button from '../Button';
+import { IIceCreamTheme } from '../../../mock/data/iceCreamThemes';
 
 interface IOfferTile {
+  /** OnClick OrderButton Handler */
+  addToCart: (theme: IIceCreamTheme) => void;
   /** Technical attributes */
   'data-testid': string;
 }
 
-const OfferTile = ({ 'data-testid': testId }: IOfferTile) => {
+const OfferTile = ({ 'data-testid': testId, addToCart }: IOfferTile) => {
   const { t } = useTranslation();
+
   const { activeItemIndex } = useSliderTileStore(activeIndexSelector, shallow);
   const themes = useSliderTileStore((store: ISliderTileStore) => store.themes, shallow);
+  const cartButtonOnClick = () => addToCart(themes[activeItemIndex]);
 
   const { title, description } = themes[activeItemIndex];
 
@@ -26,6 +31,7 @@ const OfferTile = ({ 'data-testid': testId }: IOfferTile) => {
         data-testid={`${testId}-offer-block-button-${activeItemIndex}`}
         text={t('order')}
         variant='primary'
+        onClick={cartButtonOnClick}
       />
     </div>
   );

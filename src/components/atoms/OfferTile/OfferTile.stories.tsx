@@ -1,6 +1,8 @@
+import { action } from '@storybook/addon-actions';
 import globalMswHandlers from '../../../mock/mswHandlers';
 import StoryContainer from '../../utils/StoryContainer';
 import OfferTile from './OfferTile';
+import { IIceCreamTheme } from '../../../mock/data/iceCreamThemes';
 
 export default {
   title: 'Components/Atoms/OfferTile',
@@ -16,10 +18,18 @@ export default {
   },
 };
 
-export const Demo = () => {
+interface IDemo {
+  onClickTest?: (theme: IIceCreamTheme) => void;
+}
+
+export const Demo = ({ onClickTest }: IDemo) => {
+  const buttonOnClick = (theme: IIceCreamTheme) => {
+    onClickTest ? onClickTest(theme) : action('Add to cart')(theme);
+  };
+
   return (
     <StoryContainer title='Offer Tile'>
-      <OfferTile data-testid='themes' />
+      <OfferTile addToCart={buttonOnClick} data-testid='themes' />
     </StoryContainer>
   );
 };
