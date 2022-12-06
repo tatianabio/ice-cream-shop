@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
+      // Offer to buy Tile
       order: 'Order',
 
       // Breadcrumbs
@@ -77,6 +78,7 @@ const resources = {
   },
   fr: {
     translation: {
+      // Offer to buy Tile
       order: 'Ordre',
 
       // Breadcrumbs

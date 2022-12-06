@@ -1,0 +1,33 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/variables' as v;
+
+.offer-block {
+  @media (min-width: v.$tablet-width) {
+    width: 460px;
+  }
+}
+
+.offer-block__title {
+  margin-top: 0;
+  margin-bottom: 24px;
+
+  @media (max-width: v.$mobile-width-only) {
+    @include h3;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    @include h1;
+  }
+}
+
+.offer-block__description {
+  @media (max-width: v.$mobile-width-only) {
+    @include p3(var(--basic-extra-dark));
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    @include p1;
+    margin-bottom: 48px;
+  }
+}
