@@ -9,9 +9,10 @@ import { activeIndexSelector, ISliderTileStore, useSliderTileStore } from './Sli
 interface ISliderTile {
   /** Technical attributes */
   'data-testid': string;
+  className?: string;
 }
 
-const SliderTile = ({ 'data-testid': testId }: ISliderTile) => {
+const SliderTile = ({ 'data-testid': testId, className }: ISliderTile) => {
   const { t } = useTranslation();
   const { activeItemIndex, setActiveItemIndex } = useSliderTileStore(activeIndexSelector, shallow);
   const offers = useSliderTileStore((store: ISliderTileStore) => store.offers, shallow);
@@ -66,11 +67,9 @@ const SliderTile = ({ 'data-testid': testId }: ISliderTile) => {
     );
   });
   return (
-    <div>
-      <ul className='ice-cream-list' data-testid={`${testId}-list`}>
-        {themesList}
-      </ul>
-    </div>
+    <ul className={cx('ice-cream-list', className)} data-testid={`${testId}-list`}>
+      {themesList}
+    </ul>
   );
 };
 

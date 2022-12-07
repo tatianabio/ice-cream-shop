@@ -8,9 +8,10 @@ import { activeIndexSelector, ISliderTileStore, useSliderTileStore } from '../Sl
 interface IBulletPagination {
   /** Technical attributes */
   'data-testid': string;
+  className?: string;
 }
 
-const BulletPagination = ({ 'data-testid': testId }: IBulletPagination) => {
+const BulletPagination = ({ 'data-testid': testId, className }: IBulletPagination) => {
   const { t } = useTranslation();
   const { activeItemIndex } = useSliderTileStore(activeIndexSelector, shallow);
   const offers = useSliderTileStore((store: ISliderTileStore) => store.offers, shallow);
@@ -32,7 +33,7 @@ const BulletPagination = ({ 'data-testid': testId }: IBulletPagination) => {
   });
 
   return (
-    <ul className='bullet-list' data-testid={`${testId}-bullet-list`}>
+    <ul className={cx('bullet-list', className)} data-testid={`${testId}-bullet-list`}>
       {bulletsList}
     </ul>
   );

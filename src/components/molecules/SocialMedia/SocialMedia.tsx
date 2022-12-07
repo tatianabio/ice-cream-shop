@@ -1,8 +1,14 @@
 import React from 'react';
 import './SocialMedia.scss';
+import cx from 'classnames';
 import SocialButton, { ISocial, socialNetworks } from '../../atoms/SocialButton/SocialButton';
 
-const SocialMedia = () => {
+interface ISocialMedia {
+  /** Technical attributes */
+  className?: string;
+}
+
+const SocialMedia = ({ className }: ISocialMedia) => {
   const socialMediaList = Object.keys(socialNetworks).map((socialNetwork: string) => {
     return (
       <li key={socialNetwork}>
@@ -11,7 +17,7 @@ const SocialMedia = () => {
     );
   });
 
-  return <ul className='social-media-list'>{socialMediaList}</ul>;
+  return <ul className={cx('social-media-list', className)}>{socialMediaList}</ul>;
 };
 
 export default SocialMedia;

@@ -30,7 +30,8 @@ export const Demo = ({ onClickTest }: IDemo) => {
   return (
     <StoryContainer
       title='Offer Section'
-      style={{ maxWidth: '1200px', minHeight: '600px', height: 'min-content', padding: '30px' }}
+      style={{ maxWidth: '1200px', minHeight: '600px', height: 'min-content', padding: '15px' }}
+      hasPinkBackground={false}
     >
       <OfferSection data-testid='demo' addToCart={buttonOnClick} />
     </StoryContainer>

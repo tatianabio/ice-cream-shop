@@ -2,7 +2,12 @@
 @use '../../../styles/variables' as v;
 
 .offer-block {
-  @media (min-width: v.$tablet-width) {
+  @media (max-width: v.$mobile-width-only) {
+    text-align: center;
+    min-height: 240px;
+  }
+
+  @media (min-width: v.$desktop-width) {
     width: 460px;
   }
 }

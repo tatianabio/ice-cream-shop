@@ -1,4 +1,5 @@
 import React from 'react';
+import './OfficeSection.scss';
 import { useTranslation } from 'react-i18next';
 import shallow from 'zustand/shallow';
 import cx from 'classnames';
@@ -32,10 +33,10 @@ const OfferSection = ({ 'data-testid': testId, addToCart }: IOfferSection) => {
       style={{ backgroundColor: `var(--special-${backgroundColor})` }}
     >
       <h2 className='visually-hidden'>{t('offerSectionTitle')}</h2>
-      <OfferTile addToCart={cartButtonOnClick} data-testid={testId} />
-      <SliderTile data-testid={testId} />
-      <BulletPagination data-testid={testId} />
-      <SocialMedia />
+      <OfferTile className='offer-section__offer-tile' addToCart={cartButtonOnClick} data-testid={testId} />
+      <SliderTile className='offer-section__slide-tile' data-testid={testId} />
+      <BulletPagination className='offer-section__bullet-pagination' data-testid={testId} />
+      <SocialMedia className='offer-section__social-media' />
     </section>
   );
 };

@@ -1,5 +1,6 @@
 // Viewports
 $tablet-width: 768px;
+$tablet-width-only: 1199px;
 $desktop-width: 1200px;
 $mobile-width-only: 767px;
 
@@ -36,4 +37,7 @@ $mobile-width-only: 767px;
   --medium-shadow: 0px 8px 16px rgba(45, 52, 64, 0.12);
   --strong-shadow: 0px 15px 40px rgba(45, 52, 64, 0.12);
   --additional-shadow: 0px 4px 15px rgba(133, 133, 133, 0.15);
+
+  // SliderTile
+  --second-background: var(--special-light-pink);
 }

@@ -1,0 +1,37 @@
+@use '../../../styles/variables' as v;
+
+.offer-section {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @media (max-width: v.$mobile-width-only) {
+    flex-direction: column;
+    padding-left: 20px;
+    min-height: min-content;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    padding-left: 70px;
+  }
+
+  @media (max-width: v.$tablet-width-only) {
+    padding-right: 20px;
+  }
+}
+
+.offer-section__bullet-pagination {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.offer-section__social-media {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+}
