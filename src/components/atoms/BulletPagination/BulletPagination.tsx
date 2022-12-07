@@ -13,9 +13,9 @@ interface IBulletPagination {
 const BulletPagination = ({ 'data-testid': testId }: IBulletPagination) => {
   const { t } = useTranslation();
   const { activeItemIndex } = useSliderTileStore(activeIndexSelector, shallow);
-  const themes = useSliderTileStore((store: ISliderTileStore) => store.themes, shallow);
+  const offers = useSliderTileStore((store: ISliderTileStore) => store.offers, shallow);
 
-  const bulletsList = themes.map((item, idx) => {
+  const bulletsList = offers.map((item, idx) => {
     const { id } = item;
     const isActive = idx === activeItemIndex;
     return (

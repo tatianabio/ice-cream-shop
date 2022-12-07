@@ -11,7 +11,7 @@ const resources = {
       main: 'Main',
       catalog: 'Catalog',
 
-      // Ice cream themes
+      // Ice cream offers
       showPrevious: 'Show previous ice cream',
       showNext: 'Show next ice cream',
 
@@ -27,7 +27,7 @@ const resources = {
       caramelCornDescription:
         'An unusual sweet dessert with caramel topping and marshmallow pieces will win the hearts of sweet teeth of all ages.',
 
-      // Themes bullet pagination
+      // offers bullet pagination
       iceCreamNo: 'Ice cream Number',
       iceIsShown: 'This ice cream is on the screen now',
       iceIsNotShown: 'This ice cream is not on the screen now',
@@ -85,7 +85,7 @@ const resources = {
       main: "D'accueil",
       catalog: 'Catalogue',
 
-      // Ice cream themes
+      // Ice cream offers
       showPrevious: 'Afficher la glace précédente',
       showNext: 'Afficher la glace suivante',
 
@@ -101,7 +101,7 @@ const resources = {
       caramelCornDescription:
         'Un dessert sucré inhabituel avec une garniture au caramel et des morceaux de guimauve gagnera le cœur des becs sucrés de tous âges.',
 
-      // Themes bullet pagination
+      // offers bullet pagination
       iceCreamNo: 'Numéro de crème glacée',
       iceIsShown: "Cette glace est à l'écran maintenant",
       iceIsNotShown: "Cette glace n'est pas à l'écran maintenant",

@@ -14,18 +14,18 @@ interface ISliderTile {
 const SliderTile = ({ 'data-testid': testId }: ISliderTile) => {
   const { t } = useTranslation();
   const { activeItemIndex, setActiveItemIndex } = useSliderTileStore(activeIndexSelector, shallow);
-  const themes = useSliderTileStore((store: ISliderTileStore) => store.themes, shallow);
+  const offers = useSliderTileStore((store: ISliderTileStore) => store.offers, shallow);
 
-  const themesList = themes.map((item, idx) => {
+  const themesList = offers.map((item, idx) => {
     const { imgLink, title, id } = item;
     const isActive = idx === activeItemIndex;
-    const order = idx < activeItemIndex ? idx + themes.length - activeItemIndex : idx - activeItemIndex;
+    const order = idx < activeItemIndex ? idx + offers.length - activeItemIndex : idx - activeItemIndex;
     const isHidden = order > 2;
 
     const onClickHandler = (direction: 1 | -1) => {
       let current = activeItemIndex + direction;
-      current === themes.length && (current = 0);
-      current < 0 && (current = themes.length - 1);
+      current === offers.length && (current = 0);
+      current < 0 && (current = offers.length - 1);
       setActiveItemIndex(current);
     };
 

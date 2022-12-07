@@ -8,7 +8,7 @@ import { IIceCreamOffer } from '../../../mock/data/iceCreamOffers';
 
 interface IOfferTile {
   /** OnClick OrderButton Handler */
-  addToCart: (theme: IIceCreamOffer) => void;
+  addToCart: (offer: IIceCreamOffer) => void;
   /** Technical attributes */
   'data-testid': string;
 }
@@ -17,10 +17,10 @@ const OfferTile = ({ 'data-testid': testId, addToCart }: IOfferTile) => {
   const { t } = useTranslation();
 
   const { activeItemIndex } = useSliderTileStore(activeIndexSelector, shallow);
-  const themes = useSliderTileStore((store: ISliderTileStore) => store.themes, shallow);
-  const cartButtonOnClick = () => addToCart(themes[activeItemIndex]);
+  const offers = useSliderTileStore((store: ISliderTileStore) => store.offers, shallow);
+  const cartButtonOnClick = () => addToCart(offers[activeItemIndex]);
 
-  const { title, description } = themes[activeItemIndex];
+  const { title, description } = offers[activeItemIndex];
 
   return (
     <div className='offer-block' data-testid={`${testId}-offer-block-${activeItemIndex}`}>

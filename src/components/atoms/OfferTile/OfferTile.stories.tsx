@@ -19,12 +19,12 @@ export default {
 };
 
 interface IDemo {
-  onClickTest?: (theme: IIceCreamOffer) => void;
+  onClickTest?: (offer: IIceCreamOffer) => void;
 }
 
 export const Demo = ({ onClickTest }: IDemo) => {
-  const buttonOnClick = (theme: IIceCreamOffer) => {
-    onClickTest ? onClickTest(theme) : action('Add to cart')(theme);
+  const buttonOnClick = (offer: IIceCreamOffer) => {
+    onClickTest ? onClickTest(offer) : action('Add to cart')(offer);
   };
 
   return (

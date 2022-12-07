@@ -17,9 +17,9 @@ const extraTestTheme: IIceCreamOffer = {
 const iceCreamThemesTest: IIceCreamOffer[] = [...iceCreamOffers, extraTestTheme];
 
 const TestComponent = () => {
-  const setThemes = useSliderTileStore((store: ISliderTileStore) => store.setThemes, shallow);
+  const setOffers = useSliderTileStore((store: ISliderTileStore) => store.setOffers, shallow);
   useEffect(() => {
-    setThemes(iceCreamThemesTest);
+    setOffers(iceCreamThemesTest);
   }, []);
   return <SliderTile data-testid='test' />;
 };

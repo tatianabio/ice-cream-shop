@@ -2,21 +2,21 @@ import create from 'zustand';
 import { iceCreamOffers, IIceCreamOffer } from '../../../mock/data/iceCreamOffers';
 
 export interface ISliderTileStore {
-  /** The number of active theme */
+  /** The number of active offer */
   activeItemIndex: number;
-  /** Change the number of active theme */
+  /** Change the number of active offer */
   setActiveItemIndex: (num: number) => void;
-  /** The array including the list of ice cream themes */
-  themes: IIceCreamOffer[];
-  /** Change the list of ice cream themes */
-  setThemes: (themes: IIceCreamOffer[]) => void;
+  /** The array including the list of ice cream offers */
+  offers: IIceCreamOffer[];
+  /** Change the list of ice cream offers */
+  setOffers: (offers: IIceCreamOffer[]) => void;
 }
 
 export const useSliderTileStore = create<ISliderTileStore>((set) => ({
   activeItemIndex: 0,
   setActiveItemIndex: (num: number) => set(() => ({ activeItemIndex: num })),
-  themes: iceCreamOffers,
-  setThemes: (themes: IIceCreamOffer[]) => set(() => ({ themes })),
+  offers: iceCreamOffers,
+  setOffers: (offers: IIceCreamOffer[]) => set(() => ({ offers })),
 }));
 
 export const activeIndexSelector = (store: ISliderTileStore) => ({
