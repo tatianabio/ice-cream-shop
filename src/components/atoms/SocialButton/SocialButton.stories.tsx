@@ -10,7 +10,7 @@ export default {
 export const Demo = () => (
   <div
     style={{
-      backgroundColor: 'var(--special-light)',
+      backgroundColor: 'var(--special-pink)',
       padding: '16px',
       width: 'fit-content',
     }}

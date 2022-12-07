@@ -1,7 +1,9 @@
 .headings {
   display: flex;
   flex-direction: column;
+  margin-left: 30px;
   margin-bottom: 40px;
+  margin-top: 30px;
 }
 
 .paragraphs,
@@ -10,4 +12,5 @@
   grid-template-columns: 400px 400px;
   gap: 40px;
   margin-bottom: 40px;
+  margin-left: 30px;
 }
