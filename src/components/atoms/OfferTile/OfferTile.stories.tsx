@@ -29,7 +29,7 @@ export const Demo = ({ onClickTest }: IDemo) => {
 
   return (
     <StoryContainer title='Offer Tile'>
-      <OfferTile addToCart={buttonOnClick} data-testid='themes' />
+      <OfferTile addToCart={buttonOnClick} data-testid='demo' />
     </StoryContainer>
   );
 };

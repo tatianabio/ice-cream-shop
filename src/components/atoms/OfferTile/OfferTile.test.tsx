@@ -7,22 +7,22 @@ describe('Offer Tile Tests', () => {
   beforeEach(() => render(<Demo onClickTest={onClick} />));
 
   it('Offer Tile render', () => {
-    expect(screen.getByTestId('themes-offer-block-0')).toBeInTheDocument();
+    expect(screen.getByTestId('demo-offer-block-0')).toBeInTheDocument();
   });
 
   it('Order button focus', async () => {
     await userEvent.tab();
-    expect(screen.getByTestId('themes-offer-block-button-0')).toHaveFocus();
+    expect(screen.getByTestId('demo-offer-block-button-0')).toHaveFocus();
     userEvent.keyboard('{Enter}');
     expect(onClick).toBeCalledTimes(1);
     await userEvent.tab();
-    expect(screen.getByTestId('themes-offer-block-button-0')).not.toHaveFocus();
+    expect(screen.getByTestId('demo-offer-block-button-0')).not.toHaveFocus();
   });
 
   it('Order button action', async () => {
-    await userEvent.click(screen.getByTestId('themes-offer-block-button-0'));
+    await userEvent.click(screen.getByTestId('demo-offer-block-button-0'));
     expect(onClick).toBeCalledTimes(1);
-    await userEvent.click(screen.getByTestId('themes-offer-block-button-0'));
+    await userEvent.click(screen.getByTestId('demo-offer-block-button-0'));
     expect(onClick).toBeCalledTimes(2);
   });
 });
