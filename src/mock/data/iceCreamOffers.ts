@@ -19,7 +19,7 @@ export const iceCreamOffers: IIceCreamOffer[] = [
     title: 'strawberryCornTitle',
     description: 'strawberryCornDescription',
     imgLink: '/corn-strawberry',
-    backgroundColor: 'var(--special-light)',
+    backgroundColor: 'pink',
     productId: 4,
   },
   {
@@ -27,7 +27,7 @@ export const iceCreamOffers: IIceCreamOffer[] = [
     title: 'bananaCornTitle',
     description: 'bananaCornDescription',
     imgLink: '/corn-banana',
-    backgroundColor: 'var(--special-blue)',
+    backgroundColor: 'blue',
     productId: 5,
   },
   {
@@ -35,7 +35,7 @@ export const iceCreamOffers: IIceCreamOffer[] = [
     title: 'caramelCornTitle',
     description: 'caramelCornDescription',
     imgLink: '/corn-caramel',
-    backgroundColor: 'var(--special-yellow)',
+    backgroundColor: 'yellow',
     productId: 6,
   },
 ];

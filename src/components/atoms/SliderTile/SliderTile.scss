@@ -12,6 +12,18 @@
   }
 }
 
+.special-color-pink {
+  --second-background: var(--special-light-pink);
+}
+
+.special-color-blue {
+  --second-background: var(--special-light-blue);
+}
+
+.special-color-yellow {
+  --second-background: var(--special-light-yellow);
+}
+
 .ice-cream-item {
   position: relative;
   width: 100px;
@@ -27,7 +39,7 @@
     width: 100%;
     padding: 50%;
     border-radius: 50%;
-    background-color: var(--special-extra-light);
+    background-color: var(--second-background);
   }
 
   &--active {

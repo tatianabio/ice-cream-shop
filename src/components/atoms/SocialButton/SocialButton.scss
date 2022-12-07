@@ -5,8 +5,8 @@
   height: 24px;
   border-radius: 50%;
   background-color: var(--basic-extra-light);
-  color: var(--special-light);
-  box-shadow: 0 0 0 2px var(--special-extra-light);
+  color: var(--special-pink);
+  box-shadow: 0 0 0 2px var(--special-light-pink);
 
   svg {
     width: 14px;
@@ -25,6 +25,6 @@
 
   &:active {
     opacity: 50%;
-    box-shadow: 0 0 0 2px var(--special-extra-light);
+    box-shadow: 0 0 0 2px var(--special-light-pink);
   }
 }

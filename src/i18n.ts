@@ -4,12 +4,13 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
-      // Offer to buy Tile
-      order: 'Order',
-
       // Breadcrumbs
       main: 'Main',
       catalog: 'Catalog',
+
+      // Offer Section
+      order: 'Order',
+      offerSectionTitle: 'Order one of our best ice creams!',
 
       // Ice cream offers
       showPrevious: 'Show previous ice cream',
@@ -78,12 +79,13 @@ const resources = {
   },
   fr: {
     translation: {
-      // Offer to buy Tile
-      order: 'Ordre',
-
       // Breadcrumbs
       main: "D'accueil",
       catalog: 'Catalogue',
+
+      // Offer Section
+      order: 'Ordre',
+      offerSectionTitle: 'Commandez une de nos meilleures glaces!',
 
       // Ice cream offers
       showPrevious: 'Afficher la glace précédente',
