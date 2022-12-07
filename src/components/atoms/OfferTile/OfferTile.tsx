@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next';
 import shallow from 'zustand/shallow';
 import { activeIndexSelector, ISliderTileStore, useSliderTileStore } from '../SliderTile/SliderTile.store';
 import Button from '../Button';
-import { IIceCreamTheme } from '../../../mock/data/iceCreamThemes';
+import { IIceCreamOffer } from '../../../mock/data/iceCreamOffers';
 
 interface IOfferTile {
   /** OnClick OrderButton Handler */
-  addToCart: (theme: IIceCreamTheme) => void;
+  addToCart: (theme: IIceCreamOffer) => void;
   /** Technical attributes */
   'data-testid': string;
 }

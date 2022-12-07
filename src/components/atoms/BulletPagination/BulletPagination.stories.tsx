@@ -19,7 +19,7 @@ export default {
 export const Demo = () => {
   return (
     <StoryContainer title='Bullet pagination'>
-      <BulletPagination data-testid='themes' />
+      <BulletPagination data-testid='offers' />
     </StoryContainer>
   );
 };

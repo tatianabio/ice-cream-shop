@@ -1,4 +1,4 @@
-export interface IIceCreamTheme {
+export interface IIceCreamOffer {
   /** The unique identification number of the ice cream of the theme */
   id: number;
   /** The short description of the ice cream of the theme */
@@ -11,7 +11,7 @@ export interface IIceCreamTheme {
   backgroundColor: string;
 }
 
-export const iceCreamThemes: IIceCreamTheme[] = [
+export const iceCreamOffers: IIceCreamOffer[] = [
   {
     id: 0,
     title: 'strawberryCornTitle',

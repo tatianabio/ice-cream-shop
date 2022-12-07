@@ -2,11 +2,11 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import shallow from 'zustand/shallow';
 import { useEffect } from 'react';
-import { iceCreamThemes, IIceCreamTheme } from '../../../mock/data/iceCreamThemes';
+import { iceCreamOffers, IIceCreamOffer } from '../../../mock/data/iceCreamOffers';
 import SliderTile from './SliderTile';
 import { ISliderTileStore, useSliderTileStore } from './SliderTile.store';
 
-const extraTestTheme: IIceCreamTheme = {
+const extraTestTheme: IIceCreamOffer = {
   id: 3,
   title: 'bananaCornTitle',
   description: 'bananaCornDescription',
@@ -14,7 +14,7 @@ const extraTestTheme: IIceCreamTheme = {
   backgroundColor: 'var(--special-blue)',
 };
 
-const iceCreamThemesTest: IIceCreamTheme[] = [...iceCreamThemes, extraTestTheme];
+const iceCreamThemesTest: IIceCreamOffer[] = [...iceCreamOffers, extraTestTheme];
 
 const TestComponent = () => {
   const setThemes = useSliderTileStore((store: ISliderTileStore) => store.setThemes, shallow);
