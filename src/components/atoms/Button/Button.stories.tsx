@@ -90,7 +90,11 @@ Demo.parameters = {
 };
 
 export const Playground = (props: IButton) => {
-  return <Button {...props} onClick={action('onClick')} />;
+  return (
+    <StoryContainer style={{ minHeight: '100px' }}>
+      <Button {...props} onClick={action('onClick')} />
+    </StoryContainer>
+  );
 };
 
 Playground.argTypes = {
