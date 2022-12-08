@@ -12,6 +12,7 @@ const extraTestTheme: IIceCreamOffer = {
   description: 'bananaCornDescription',
   imgLink: '/corn-banana',
   backgroundColor: 'var(--special-blue)',
+  productId: 7,
 };
 
 const iceCreamThemesTest: IIceCreamOffer[] = [...iceCreamOffers, extraTestTheme];

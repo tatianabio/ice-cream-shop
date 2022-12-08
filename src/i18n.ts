@@ -28,7 +28,7 @@ const resources = {
       caramelCornDescription:
         'An unusual sweet dessert with caramel topping and marshmallow pieces will win the hearts of sweet teeth of all ages.',
 
-      // offers bullet pagination
+      // Offers bullet pagination
       iceCreamNo: 'Ice cream Number',
       iceIsShown: 'This ice cream is on the screen now',
       iceIsNotShown: 'This ice cream is not on the screen now',
@@ -103,7 +103,7 @@ const resources = {
       caramelCornDescription:
         'Un dessert sucré inhabituel avec une garniture au caramel et des morceaux de guimauve gagnera le cœur des becs sucrés de tous âges.',
 
-      // offers bullet pagination
+      // Offers bullet pagination
       iceCreamNo: 'Numéro de crème glacée',
       iceIsShown: "Cette glace est à l'écran maintenant",
       iceIsNotShown: "Cette glace n'est pas à l'écran maintenant",
