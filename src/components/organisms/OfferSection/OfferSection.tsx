@@ -1,5 +1,5 @@
 import React from 'react';
-import './OfficeSection.scss';
+import './OfferSection.scss';
 import { useTranslation } from 'react-i18next';
 import shallow from 'zustand/shallow';
 import cx from 'classnames';

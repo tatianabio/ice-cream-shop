@@ -2,12 +2,21 @@
 @use '../../../styles/variables' as v;
 
 .offer-block {
+  display: flex;
+  flex-direction: column;
+
   @media (max-width: v.$mobile-width-only) {
+    align-items: center;
+    min-height: 265px;
     text-align: center;
-    min-height: 240px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    min-height: 370px;
   }
 
   @media (min-width: v.$desktop-width) {
+    min-height: 300px;
     width: 460px;
   }
 }
@@ -35,4 +44,8 @@
     @include p1;
     margin-bottom: 48px;
   }
+}
+
+.offer-block__order-button {
+  margin-top: auto;
 }

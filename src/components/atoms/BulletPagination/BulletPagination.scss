@@ -1,7 +1,17 @@
+@use '../../../styles/variables' as v;
+
 .bullet-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+
+  @media (max-width: v.$mobile-width-only) {
+    max-width: 110px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    max-width: 260px;
+  }
 }
 
 .bullet-item {
