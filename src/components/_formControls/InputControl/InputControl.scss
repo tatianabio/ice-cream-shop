@@ -6,6 +6,11 @@
   gap: 8px;
 }
 
+.input-control__label-wrapper {
+  display: flex;
+  gap: 4px;
+}
+
 .input-control__label {
   @include p3-bold(var(--basic-extra-dark));
 }
@@ -14,4 +19,23 @@
   @include p3(var(--status-error));
   margin-top: 0;
   margin-bottom: 0;
+  min-height: 20px;
+}
+
+.input-control__tooltip {
+  display: block;
+  align-self: center;
+}
+
+.input-control__tooltip-toggle {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  background-image: url('../../../assets/svg/info.svg');
+  background-position: center;
+}
+
+.input-control__tooltip-text {
+  display: none;
 }

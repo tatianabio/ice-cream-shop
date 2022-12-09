@@ -1,6 +1,8 @@
 import { FormProvider, useForm } from 'react-hook-form';
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+import { number, object, string } from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import InputControl from './InputControl';
 import StoryContainer from '../../utils/StoryContainer';
 import Button from '../../atoms/Button';
@@ -21,19 +23,21 @@ interface IDemoForm {
   inputName2: string;
 }
 
+const schema = object({
+  inputName1: string().required('This field is required'),
+  inputName2: number().negative().required(),
+});
+
 export const Demo = () => {
   const form = useForm<IDemoForm>({
     defaultValues: {
       inputName1: 'Default Value 1',
       inputName2: 'Default Value 2',
     },
+    resolver: yupResolver(schema),
   });
 
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = form;
+  const { handleSubmit } = form;
 
   const onSubmit = (data: IDemoForm) => {
     action('onSubmit')(data);
@@ -57,6 +61,7 @@ export const Demo = () => {
             name='inputName1'
             isLabelHidden={false}
             label='The label of the input is visible'
+            hasTooltip
           />
           <InputControl
             type='text'
@@ -64,6 +69,7 @@ export const Demo = () => {
             name='inputName2'
             isLabelHidden
             label='The label of the input is hidden'
+            hasTooltip={false}
           />
 
           <Button data-testid='demo' text='Submit' variant='secondary' type='submit' />

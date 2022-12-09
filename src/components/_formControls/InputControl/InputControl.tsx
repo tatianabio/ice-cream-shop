@@ -2,6 +2,7 @@ import React from 'react';
 import './InputControl.scss';
 import { Controller, useFormContext } from 'react-hook-form';
 import cx from 'classnames';
+import { useTranslation } from 'react-i18next';
 import Input from '../../atoms/Input';
 import { IInput } from '../../atoms/Input/Input';
 
@@ -12,11 +13,19 @@ interface IInputControl extends Omit<IInput, 'initialValue' | 'onChange'> {
   label: string;
   /** Is the label hidden from users (NOT displayed on the screen)? */
   isLabelHidden: boolean;
+  /** Does the input have a tooltip? */
+  hasTooltip: boolean;
 }
 
-const InputControl = ({ name, label, isLabelHidden, ...props }: IInputControl) => {
-  const { control, getValues } = useFormContext();
+const InputControl = ({ name, label, isLabelHidden, hasTooltip, ...props }: IInputControl) => {
+  const {
+    control,
+    getValues,
+    formState: { errors },
+  } = useFormContext();
   const initial = getValues()[name];
+  const { t } = useTranslation();
+  const errorText = (errors[name]?.message as string) || '';
 
   return (
     <Controller
@@ -28,12 +37,22 @@ const InputControl = ({ name, label, isLabelHidden, ...props }: IInputControl) =
         };
         return (
           <div className='input-control'>
-            <label className={cx('input-control__label', isLabelHidden && 'visually-hidden')} htmlFor={name}>
-              {label}
-            </label>
-            <Input {...props} id={name} initialValue={initial} onChange={onChangeHandler} />
-            <p className='input-control__error-message'>Error-message</p>
-            {/* <p>{errors.name?.message}</p> */}
+            <div className='input-control__label-wrapper'>
+              <label
+                className={cx('input-control__label', isLabelHidden && 'visually-hidden')}
+                htmlFor={`${name}-input`}
+              >
+                {label}
+              </label>
+              {hasTooltip && (
+                <span className='input-control__tooltip'>
+                  <button type='button' aria-label='Show tooltip' className='input-control__tooltip-toggle' />
+                  <span className='input-control__tooltip-text'>{t('')}</span>
+                </span>
+              )}
+            </div>
+            <Input {...props} id={`${name}-input`} initialValue={initial} onChange={onChangeHandler} />
+            <p className='input-control__error-message'>{errorText}</p>
           </div>
         );
       }}
