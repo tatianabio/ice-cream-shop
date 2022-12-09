@@ -1,0 +1,17 @@
+@use '../../../styles/mixins' as *;
+
+.input-control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-control__label {
+  @include p3-bold(var(--basic-extra-dark));
+}
+
+.input-control__error-message {
+  @include p3(var(--status-error));
+  margin-top: 0;
+  margin-bottom: 0;
+}

@@ -29,7 +29,11 @@ export const Demo = () => {
     },
   });
 
-  const { control, handleSubmit } = form;
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = form;
 
   const onSubmit = (data: IDemoForm) => {
     action('onSubmit')(data);

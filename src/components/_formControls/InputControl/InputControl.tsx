@@ -1,4 +1,5 @@
 import React from 'react';
+import './InputControl.scss';
 import { Controller, useFormContext } from 'react-hook-form';
 import cx from 'classnames';
 import Input from '../../atoms/Input';
@@ -27,10 +28,12 @@ const InputControl = ({ name, label, isLabelHidden, ...props }: IInputControl) =
         };
         return (
           <div className='input-control'>
-            <label className={cx(isLabelHidden && 'visually-hidden')} htmlFor={name}>
+            <label className={cx('input-control__label', isLabelHidden && 'visually-hidden')} htmlFor={name}>
               {label}
             </label>
             <Input {...props} id={name} initialValue={initial} onChange={onChangeHandler} />
+            <p className='input-control__error-message'>Error-message</p>
+            {/* <p>{errors.name?.message}</p> */}
           </div>
         );
       }}
