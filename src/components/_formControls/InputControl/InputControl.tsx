@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import Input from '../../atoms/Input';
 import { IInput } from '../../atoms/Input/Input';
 
-interface IInputControl extends Omit<IInput, 'initialValue' | 'onChange'> {
+interface IInputControl extends Omit<IInput, 'initialValue' | 'onChange' | 'isInvalid'> {
   /** Name of the input used for the identification of the input's value */
   name: string;
   /** Label of the input describing the input for users */
@@ -51,7 +51,13 @@ const InputControl = ({ name, label, isLabelHidden, hasTooltip, ...props }: IInp
                 </span>
               )}
             </div>
-            <Input {...props} id={`${name}-input`} initialValue={initial} onChange={onChangeHandler} />
+            <Input
+              {...props}
+              id={`${name}-input`}
+              initialValue={initial}
+              onChange={onChangeHandler}
+              isInvalid={!!errorText}
+            />
             <p className='input-control__error-message'>{errorText}</p>
           </div>
         );
