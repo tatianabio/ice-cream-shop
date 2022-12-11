@@ -1,7 +1,7 @@
 import { FormProvider, useForm } from 'react-hook-form';
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { number, object, string } from 'yup';
+import { object, string } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import InputControl from './InputControl';
 import StoryContainer from '../../utils/StoryContainer';
@@ -23,12 +23,12 @@ interface IDemoForm {
   inputName2: string;
 }
 
-const schema = object({
-  inputName1: string().required('This field is required'),
-  inputName2: number().negative().required(),
-});
-
 export const Demo = () => {
+  const schema = object({
+    inputName1: string().required('This field is required.'),
+    inputName2: string().required('This field is required.'),
+  });
+
   const form = useForm<IDemoForm>({
     defaultValues: {
       inputName1: 'Default Value 1',
