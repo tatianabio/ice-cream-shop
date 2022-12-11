@@ -59,7 +59,6 @@ export const Demo = () => {
             type='text'
             data-testid='demo'
             name='inputName1'
-            isLabelHidden={false}
             label='The label of the input is visible'
             hasTooltip
           />
@@ -69,8 +68,6 @@ export const Demo = () => {
             name='inputName2'
             isLabelHidden
             label='The label of the input is hidden'
-            hasTooltip={false}
-            disabled
           />
 
           <Button data-testid='demo' text='Submit' variant='secondary' type='submit' />

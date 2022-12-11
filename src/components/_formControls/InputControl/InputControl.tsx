@@ -12,12 +12,12 @@ interface IInputControl extends Omit<IInput, 'initialValue' | 'onChange' | 'isIn
   /** Label of the input describing the input for users */
   label: string;
   /** Is the label hidden from users (NOT displayed on the screen)? */
-  isLabelHidden: boolean;
+  isLabelHidden?: boolean;
   /** Does the input have a tooltip? */
-  hasTooltip: boolean;
+  hasTooltip?: boolean;
 }
 
-const InputControl = ({ name, label, isLabelHidden, hasTooltip, ...props }: IInputControl) => {
+const InputControl = ({ name, label, isLabelHidden = false, hasTooltip = false, ...props }: IInputControl) => {
   const {
     control,
     getValues,
