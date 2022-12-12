@@ -29,25 +29,32 @@ export const Demo = () => {
   });
 
   useEffect(() => {
-    form.setError('fieldName1', { type: 'custom', message: 'custom error message' });
-    form.setError('fieldName2', { type: 'custom', message: 'custom error message' });
+    form.setError('fieldName1', { type: 'custom', message: 'Custom error message' });
+    form.setError('fieldName2', { type: 'custom', message: 'Custom error message' });
   }, []);
 
   return (
     <FormProvider {...form}>
       <form style={{ width: '400px', padding: '20px', display: 'flex', flexDirection: 'column' }}>
         <StoryContainer title='Form Field' text='Visible bold label with tooltip and error message'>
-          <FormField label='Test label' name='fieldName1'>
+          <FormField label='Test label' name='fieldName1' data-testid='test-1'>
             Test Field
           </FormField>
         </StoryContainer>
         <StoryContainer text='Visible normal label with error message, but without tooltip' hasPinkBackground={false}>
-          <FormField label='Test label' name='fieldName2' isLabelBold={false} hasTooltip={false}>
+          <FormField label='Test label' name='fieldName2' isLabelBold={false} hasTooltip={false} data-testid='test-2'>
             Test Field
           </FormField>
         </StoryContainer>
         <StoryContainer text='Hidden label without error message'>
-          <FormField label='Test label' name='fieldName3' isLabelHidden hasTooltip={false} hasErrorMessage={false}>
+          <FormField
+            label='Test label'
+            name='fieldName3'
+            isLabelHidden
+            hasTooltip={false}
+            hasErrorMessage={false}
+            data-testid='test-3'
+          >
             Test Field
           </FormField>
         </StoryContainer>

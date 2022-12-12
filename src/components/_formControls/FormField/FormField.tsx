@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import './FormField.scss';
-import cx from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { useFormContext } from 'react-hook-form';
+import cx from 'classnames';
 
 export interface IFormField {
   /** Name of the field used for the identification of the field's value(s) */
@@ -19,6 +19,8 @@ export interface IFormField {
   hasTooltip?: boolean;
   /** Does the field have some space for showing an error message? */
   hasErrorMessage?: boolean;
+  /** Technical attributes */
+  'data-testid': string;
 }
 
 const FormField = ({
@@ -29,6 +31,7 @@ const FormField = ({
   hasErrorMessage = true,
   isLabelBold = true,
   children,
+  'data-testid': testId,
 }: IFormField) => {
   const { t } = useTranslation();
   const {
@@ -37,8 +40,8 @@ const FormField = ({
   const errorText = (errors[name]?.message as string) || '';
 
   return (
-    <div className='form-field'>
-      <div className='form-field__label-wrapper'>
+    <div className='form-field' data-testid={`${testId}-form-field`}>
+      <div className='form-field__label-wrapper' data-testid={`${testId}-wrapper`}>
         <label
           className={cx(
             'form-field__label',
@@ -46,18 +49,23 @@ const FormField = ({
             isLabelBold && 'form-field__label--bold'
           )}
           htmlFor={`${name}-field`}
+          data-testid={`${testId}-label`}
         >
           {label}
         </label>
         {hasTooltip && (
-          <span className='form-field__tooltip'>
+          <span className='form-field__tooltip' data-testid={`${testId}-tooltip`}>
             <button type='button' aria-label='Show tooltip' className='form-field__tooltip-toggle' />
             <span className='form-field__tooltip-text'>{t('')}</span>
           </span>
         )}
       </div>
       {children}
-      {hasErrorMessage && <p className='form-field__error-message'>{errorText}</p>}
+      {hasErrorMessage && (
+        <p className='form-field__error-message' data-testid={`${testId}-error-message`}>
+          {errorText}
+        </p>
+      )}
     </div>
   );
 };
