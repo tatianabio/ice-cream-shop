@@ -61,6 +61,7 @@ export const Demo = () => {
             name='inputName1'
             label='The label of the input is visible'
             hasTooltip
+            placeholder='Input with visible label'
           />
           <InputControl
             type='text'
@@ -68,6 +69,7 @@ export const Demo = () => {
             name='inputName2'
             isLabelHidden
             label='The label of the input is hidden'
+            placeholder='Input with hidden label'
           />
 
           <Button data-testid='demo' text='Submit' variant='secondary' type='submit' />

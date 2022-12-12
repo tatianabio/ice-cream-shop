@@ -28,4 +28,10 @@ describe('Inputs tests', () => {
     await userEvent.tab();
     expect(screen.getByTestId('input-disabled')).not.toHaveFocus();
   });
+
+  it('Inputs onChange', async () => {
+    const myInput = screen.getByTestId('input-default');
+    await userEvent.type(myInput, '{t}{e}{s}{t}');
+    expect(myInput).toHaveValue('test');
+  });
 });
