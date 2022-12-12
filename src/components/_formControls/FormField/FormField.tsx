@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactNode } from 'react';
 import './FormField.scss';
 import cx from 'classnames';
 import { useTranslation } from 'react-i18next';
@@ -8,7 +8,7 @@ export interface IFormField {
   /** Name of the field used for the identification of the field's value(s) */
   name: string;
   /** The interactive element of the field */
-  children: ReactElement;
+  children: ReactNode | string;
   /** Label of the field describing the field for users */
   label: string;
   /** Is the label hidden from users (NOT displayed on the screen)? */
