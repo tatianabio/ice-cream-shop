@@ -1,34 +1,40 @@
 @use '../../../styles/mixins' as *;
 
-.input-control {
+.form-field {
   display: flex;
   flex-direction: column;
 }
 
-.input-control__label-wrapper {
+.form-field__label-wrapper {
   display: flex;
   gap: 4px;
 }
 
-.input-control__label {
-  @include p3-bold(var(--basic-extra-dark));
+.form-field__label {
+  @include s1(var(--basic-extra-dark));
   margin-bottom: 8px;
+  margin-left: 16px;
+
+  &--bold {
+    @include p3-bold(var(--basic-extra-dark));
+    margin-left: 0;
+  }
 }
 
-.input-control__error-message {
+.form-field__error-message {
   @include p3(var(--status-error));
   margin-top: 4px;
   margin-bottom: 0;
   min-height: 20px;
 }
 
-.input-control__tooltip {
+.form-field__tooltip {
   display: block;
   align-self: center;
   margin-bottom: 8px;
 }
 
-.input-control__tooltip-toggle {
+.form-field__tooltip-toggle {
   display: block;
   width: 14px;
   height: 14px;
@@ -37,6 +43,6 @@
   background-position: center;
 }
 
-.input-control__tooltip-text {
+.form-field__tooltip-text {
   display: none;
 }

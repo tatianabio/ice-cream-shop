@@ -56,19 +56,23 @@ export const Demo = () => {
           style={{ width: '400px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '40px' }}
         >
           <InputControl
+            formField={{
+              name: 'inputName1',
+              label: 'The label of the input is visible',
+            }}
             type='text'
             data-testid='demo'
-            name='inputName1'
-            label='The label of the input is visible'
-            hasTooltip
             placeholder='Input with visible label'
           />
           <InputControl
+            formField={{
+              name: 'inputName2',
+              label: 'The label of the input is hidden',
+              hasTooltip: false,
+              isLabelHidden: true,
+            }}
             type='text'
             data-testid='demo'
-            name='inputName2'
-            isLabelHidden
-            label='The label of the input is hidden'
             placeholder='Input with hidden label'
           />
 
