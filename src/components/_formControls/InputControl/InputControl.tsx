@@ -6,10 +6,12 @@ import FormField from '../FormField';
 import { IFormField } from '../FormField/FormField';
 
 interface IInputControl extends Omit<IInput, 'initialValue' | 'onChange' | 'isInvalid'> {
-  formField: Omit<IFormField, 'children'>;
+  formField: Omit<IFormField, 'children' | 'data-testid'>;
+  /** Technical attributes */
+  'data-testid': string;
 }
 
-const InputControl = ({ formField, ...props }: IInputControl) => {
+const InputControl = ({ formField, 'data-testid': testId, ...props }: IInputControl) => {
   const { name } = formField;
   const {
     control,
@@ -28,9 +30,10 @@ const InputControl = ({ formField, ...props }: IInputControl) => {
           field.onChange(value);
         };
         return (
-          <FormField {...formField}>
+          <FormField {...formField} data-testid={testId}>
             <Input
               {...props}
+              data-testid={testId}
               id={`${name}-field`}
               initialValue={initial}
               onChange={onChangeHandler}

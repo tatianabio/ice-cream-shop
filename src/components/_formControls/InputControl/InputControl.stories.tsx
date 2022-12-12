@@ -35,6 +35,7 @@ export const Demo = () => {
       inputName2: 'Default Value 2',
     },
     resolver: yupResolver(schema),
+    mode: 'all',
   });
 
   const { handleSubmit } = form;
@@ -61,7 +62,7 @@ export const Demo = () => {
               label: 'The label of the input is visible',
             }}
             type='text'
-            data-testid='demo'
+            data-testid='demo-1'
             placeholder='Input with visible label'
           />
           <InputControl
@@ -72,11 +73,11 @@ export const Demo = () => {
               isLabelHidden: true,
             }}
             type='text'
-            data-testid='demo'
+            data-testid='demo-2'
             placeholder='Input with hidden label'
           />
 
-          <Button data-testid='demo' text='Submit' variant='secondary' type='submit' />
+          <Button data-testid='demo-button' text='Submit' variant='secondary' type='submit' />
         </form>
       </FormProvider>
     </StoryContainer>

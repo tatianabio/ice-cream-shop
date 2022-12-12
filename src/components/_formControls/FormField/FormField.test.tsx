@@ -15,7 +15,7 @@ describe('FormFields Tests', () => {
     expect(screen.getByTestId('test-3-label')).toHaveClass('visually-hidden');
 
     // Tooltip(s) render
-    expect(screen.getByTestId('test-1-wrapper')).toContainElement(screen.getByTestId('test-1-tooltip'));
+    expect(screen.getByTestId('test-1-label-wrapper')).toContainElement(screen.getByTestId('test-1-tooltip'));
     expect(screen.queryByTestId('test-2-tooltip')).toBeNull();
     expect(screen.queryByTestId('test-3-tooltip')).toBeNull();
 

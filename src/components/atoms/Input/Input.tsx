@@ -14,7 +14,10 @@ export interface IInput extends Omit<HTMLProps<HTMLInputElement>, 'value' | 'def
 }
 
 const Input = forwardRef(
-  ({ isInvalid = false, initialValue = '', onChange, ...props }: IInput, ref?: ForwardedRef<HTMLInputElement>) => {
+  (
+    { isInvalid = false, initialValue = '', onChange, 'data-testid': testId, ...props }: IInput,
+    ref?: ForwardedRef<HTMLInputElement>
+  ) => {
     const [value, setValue] = useState<string>(initialValue);
 
     useEffect(() => {
@@ -29,6 +32,7 @@ const Input = forwardRef(
     return (
       <input
         {...props}
+        data-testid={`${testId}-input`}
         ref={ref}
         value={value}
         onChange={onChangeHandler}

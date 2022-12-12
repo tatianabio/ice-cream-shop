@@ -20,7 +20,7 @@ export interface IFormField {
   /** Does the field have some space for showing an error message? */
   hasErrorMessage?: boolean;
   /** Technical attributes */
-  'data-testid': string;
+  'data-testid'?: string;
 }
 
 const FormField = ({
@@ -41,7 +41,7 @@ const FormField = ({
 
   return (
     <div className='form-field' data-testid={`${testId}-form-field`}>
-      <div className='form-field__label-wrapper' data-testid={`${testId}-wrapper`}>
+      <div className='form-field__label-wrapper' data-testid={`${testId}-label-wrapper`}>
         <label
           className={cx(
             'form-field__label',
