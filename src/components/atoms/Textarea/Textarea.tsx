@@ -2,7 +2,7 @@ import React, { ChangeEvent, ForwardedRef, forwardRef, HTMLProps, useEffect, use
 import './Textarea.scss';
 import cx from 'classnames';
 
-interface ITextarea extends Omit<HTMLProps<HTMLTextAreaElement>, 'value' | 'defaultValue' | 'onChange' | 'ref'> {
+export interface ITextarea extends Omit<HTMLProps<HTMLTextAreaElement>, 'value' | 'defaultValue' | 'onChange' | 'ref'> {
   /** Does this textarea value invalid or not? */
   isInvalid?: boolean;
   /** Initial value of the textarea after rendering */
