@@ -4,6 +4,16 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
+      // Forms: common phrases
+      requiredField: 'This field is required.',
+      incorrectEmail: 'This email is incorrect.',
+      sendButton: 'Send',
+
+      // Subscription section
+      subscriptionDescription:
+        'Subscribe to our sweet newsletter and always be aware of all the most delicious that we have going on. We promise not to spam or send any unnecessary nonsense. Honestly =)',
+      subscriptionTitle: 'Subscribe to our newsletter!',
+
       // Breadcrumbs
       main: 'Main',
       catalog: 'Catalog',
@@ -79,6 +89,16 @@ const resources = {
   },
   fr: {
     translation: {
+      // Forms: common phrases
+      requiredField: 'Ce champ est requis.',
+      incorrectEmail: 'Cet e-mail est incorrect.',
+      sendButton: 'Envoyer',
+
+      // Subscription section
+      subscriptionDescription:
+        'Abonnez-vous à notre douce newsletter et soyez toujours au courant de tout ce que nous avons de plus délicieux. Nous nous engageons à ne pas spammer ni envoyer de bêtises inutiles. Franchement =)',
+      subscriptionTitle: 'Abonnez-vous à notre newsletter!',
+
       // Breadcrumbs
       main: "D'accueil",
       catalog: 'Catalogue',

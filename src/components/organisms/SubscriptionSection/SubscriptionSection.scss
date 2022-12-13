@@ -1,0 +1,46 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/variables' as v;
+
+.subscription-section {
+  max-width: 570px;
+  border-radius: 16px;
+  padding: 6px;
+  background-color: var(--special-blue);
+  background-image: url('../../../assets/img/postal-background.png');
+  background-size: cover;
+}
+
+.subscription-section__container {
+  border-radius: 16px;
+  padding: 26px;
+  background-color: var(--basic-white);
+}
+
+.subscription-section__description {
+  @include p2;
+  margin-top: 0;
+  margin-bottom: 24px;
+
+  @media (max-width: v.$mobile-width-only) {
+    text-align: center;
+  }
+}
+
+.subscription-section__form {
+  display: flex;
+
+  @media (min-width: v.$tablet-width) {
+    gap: 18px;
+    justify-content: space-between;
+  }
+
+  @media (max-width: v.$mobile-width-only) {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+.subscription-section__input-control {
+  width: 100%;
+}
