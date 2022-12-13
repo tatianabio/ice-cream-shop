@@ -1,15 +1,18 @@
 @use '../../../styles/mixins' as *;
 
-.input {
+.textarea {
   @include p3(var(--basic-extra-dark));
   @include text-field;
-  padding: 14px 16px;
+  display: block;
+  font-family: var(--basic-font);
+  resize: none;
+  padding: 16px;
 
-  &:hover:not([disabled]):not(.input--invalid) {
+  &:hover:not([disabled]):not(.textarea--invalid) {
     box-shadow: inset 0 0 0 1px var(--basic-extra-dark);
   }
 
-  &:focus:not(.input--invalid) {
+  &:focus:not(.textarea--invalid) {
     box-shadow: inset 0 0 0 2px var(--basic-extra-dark);
   }
 
@@ -26,8 +29,4 @@
   &--invalid:focus {
     box-shadow: inset 0 0 0 2px var(--status-error);
   }
-}
-
-.input::placeholder {
-  @include p3(var(--basic-neutral));
 }

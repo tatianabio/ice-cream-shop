@@ -6,6 +6,7 @@ import FormField from '../FormField';
 import { IFormField } from '../FormField/FormField';
 
 interface IInputControl extends Omit<IInput, 'initialValue' | 'onChange' | 'isInvalid'> {
+  /** The same list of attributes as the list of FormField Component apart from children element and data-testid */
   formField: Omit<IFormField, 'children' | 'data-testid'>;
   /** Technical attributes */
   'data-testid': string;
