@@ -15,10 +15,10 @@ export default {
 export const Demo = () => {
   return (
     <StoryContainer title='Textarea' text='Default, invalid, disabled' hasPinkBackground={false}>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', width: '440px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '30px', maxWidth: '440px' }}>
         <Textarea placeholder='Placeholder' data-testid='default' />
-        <Textarea isInvalid placeholder='Placeholder' data-testid='invalid' />
-        <Textarea disabled placeholder='Placeholder' data-testid='disabled' />
+        <Textarea initialValue='Invalid value' isInvalid placeholder='Placeholder' data-testid='invalid' />
+        <Textarea initialValue='Disabled' disabled placeholder='Placeholder' data-testid='disabled' />
       </div>
     </StoryContainer>
   );
