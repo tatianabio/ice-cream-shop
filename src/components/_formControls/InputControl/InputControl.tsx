@@ -38,6 +38,7 @@ const InputControl = ({ formField, 'data-testid': testId, ...props }: IInputCont
               initialValue={initial}
               onChange={onChangeHandler}
               isInvalid={!!errorText}
+              aria-invalid={!!errorText}
             />
           </FormField>
         );

@@ -62,7 +62,7 @@ const FormField = ({
       </div>
       {children}
       {hasErrorMessage && (
-        <p className='form-field__error-message' data-testid={`${testId}-error-message`}>
+        <p className='form-field__error-message' aria-hidden={!errorText} data-testid={`${testId}-error-message`}>
           {errorText}
         </p>
       )}
