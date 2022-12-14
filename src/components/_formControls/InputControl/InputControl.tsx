@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import Input from '../../atoms/Input';
 import { IInput } from '../../atoms/Input/Input';
@@ -17,9 +17,12 @@ const InputControl = ({ formField, 'data-testid': testId, ...props }: IInputCont
   const {
     control,
     getValues,
-    formState: { errors },
+    formState: { errors, dirtyFields },
   } = useFormContext();
-  const initial = getValues()[name];
+  const isDirtyField = dirtyFields[name];
+  const resetValue: string | undefined = useMemo(() => {
+    return !isDirtyField ? getValues()[name] : undefined;
+  }, [isDirtyField]);
   const errorText = (errors[name]?.message as string) || '';
 
   return (
@@ -36,7 +39,7 @@ const InputControl = ({ formField, 'data-testid': testId, ...props }: IInputCont
               {...props}
               data-testid={testId}
               id={`${name}-field`}
-              initialValue={initial}
+              initialValue={resetValue}
               onChange={onChangeHandler}
               isInvalid={!!errorText}
               aria-invalid={!!errorText}

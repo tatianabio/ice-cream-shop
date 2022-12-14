@@ -21,6 +21,7 @@ export interface IFormField {
   hasErrorMessage?: boolean;
   /** Technical attributes */
   'data-testid'?: string;
+  className?: string;
 }
 
 const FormField = ({
@@ -32,6 +33,7 @@ const FormField = ({
   isLabelBold = true,
   children,
   'data-testid': testId,
+  className,
 }: IFormField) => {
   const { t } = useTranslation();
   const {
@@ -40,7 +42,7 @@ const FormField = ({
   const errorText = (errors[name]?.message as string) || '';
 
   return (
-    <div className='form-field' data-testid={`${testId}-form-field`}>
+    <div className={cx('form-field', className)} data-testid={`${testId}-form-field`}>
       <div className='form-field__label-wrapper' data-testid={`${testId}-label-wrapper`}>
         <label
           className={cx(

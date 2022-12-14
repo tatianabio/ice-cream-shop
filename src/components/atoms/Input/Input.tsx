@@ -15,13 +15,13 @@ export interface IInput extends Omit<HTMLProps<HTMLInputElement>, 'value' | 'def
 
 const Input = forwardRef(
   (
-    { isInvalid = false, initialValue = '', onChange, 'data-testid': testId, ...props }: IInput,
+    { isInvalid = false, initialValue, onChange, 'data-testid': testId, ...props }: IInput,
     ref?: ForwardedRef<HTMLInputElement>
   ) => {
-    const [value, setValue] = useState<string>(initialValue);
+    const [value, setValue] = useState<string>(initialValue || '');
 
     useEffect(() => {
-      setValue(initialValue);
+      initialValue !== undefined && setValue(initialValue);
     }, [initialValue]);
 
     const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './SubscriptionSection.scss';
 import { useTranslation } from 'react-i18next';
 import { object, string } from 'yup';
@@ -7,18 +7,25 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { action } from '@storybook/addon-actions';
 import InputControl from '../../_formControls/InputControl';
 import Button from '../../atoms/Button';
+import useSubscriptionForm from './useSubscriptionForm';
 
 interface ISubscriptionSection {
   /** Technical attributes */
   'data-testid': string;
 }
 
-interface ISubscriptionForm {
+export interface ISubscriptionForm {
   email: string;
 }
 
 const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) => {
   const { t } = useTranslation();
+  const { sendData, loading, isSucceed } = useSubscriptionForm();
+
+  useEffect(() => {
+    !loading && isSucceed === false && console.warn('Error');
+    !loading && isSucceed === true && console.warn('Success');
+  }, [loading, isSucceed]);
 
   const schema = object({
     email: string()
@@ -36,8 +43,10 @@ const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) =>
 
   const { handleSubmit } = form;
 
-  const onSubmit = (data: ISubscriptionForm) => {
+  const onSubmit = async (data: ISubscriptionForm) => {
     action('onSubmit')(data);
+    await sendData(data);
+    form.reset();
   };
 
   return (
@@ -48,12 +57,12 @@ const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) =>
         <FormProvider {...form}>
           <form className='subscription-section__form' onSubmit={handleSubmit(onSubmit)}>
             <InputControl
-              className='subscription-section__input-control'
               formField={{
                 name: 'email',
                 label: 'email',
                 hasTooltip: false,
                 isLabelHidden: true,
+                className: 'subscription-section__input-control',
               }}
               type='email'
               data-testid={testId}
