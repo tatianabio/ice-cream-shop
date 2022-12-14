@@ -3,6 +3,7 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+import mswServer from './mock/mswServer/mswServer';
 
 jest.mock('react-i18next', () => ({
   // this mock makes sure any components using the translate
@@ -17,3 +18,7 @@ jest.mock('react-i18next', () => ({
     };
   },
 }));
+
+beforeEach(() => mswServer.listen());
+afterEach(() => mswServer.resetHandlers());
+afterAll(() => mswServer.close());

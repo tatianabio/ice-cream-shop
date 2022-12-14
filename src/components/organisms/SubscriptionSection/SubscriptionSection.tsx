@@ -74,6 +74,7 @@ const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) =>
               text={`${t('sendButton')}`}
               variant='secondary'
               type='submit'
+              loading={loading}
             />
           </form>
         </FormProvider>

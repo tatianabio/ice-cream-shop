@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ForwardedRef, forwardRef, HTMLProps, useEffect, useState } from 'react';
+import React, { ChangeEvent, ForwardedRef, forwardRef, HTMLProps, useCallback, useEffect, useState } from 'react';
 import cx from 'classnames';
 import './Input.scss';
 
@@ -24,10 +24,10 @@ const Input = forwardRef(
       initialValue !== undefined && setValue(initialValue);
     }, [initialValue]);
 
-    const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    const onChangeHandler = useCallback((event: ChangeEvent<HTMLInputElement>) => {
       setValue(event.target.value);
       onChange?.(event.target.value);
-    };
+    }, []);
 
     return (
       <input
