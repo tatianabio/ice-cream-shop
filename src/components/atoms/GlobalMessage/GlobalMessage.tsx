@@ -3,16 +3,18 @@ import shallow from 'zustand/shallow';
 import messageStore, { IMessageStore } from './GlobalMessage.store';
 
 const GlobalMessage = () => {
-  const messagesToShow = messageStore((store: IMessageStore) => store.messagesToShow, shallow);
-  const showMessages = messagesToShow.map((item) => {
+  const messagesToDisplay = messageStore((store: IMessageStore) => store.messagesToDisplay, shallow);
+  const displayMessagesList = messagesToDisplay.map((item) => {
+    const { id, message } = item;
+
     return (
-      <div key={item.id}>
-        <span>{item.message}</span>
-      </div>
+      <li key={id}>
+        <span>{message}</span>
+      </li>
     );
   });
 
-  return <div>{showMessages}</div>;
+  return <ul>{displayMessagesList}</ul>;
 };
 
 export default GlobalMessage;
