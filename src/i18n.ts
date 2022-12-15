@@ -4,6 +4,11 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
+      // Global Status Message
+      statusMessagesList: 'The list of status messages.',
+      success: 'Success!',
+      error: 'Error :-(',
+
       // Forms: common phrases
       requiredField: 'This field is required.',
       incorrectEmail: 'This email is incorrect.',
@@ -89,6 +94,11 @@ const resources = {
   },
   fr: {
     translation: {
+      // Global Status Message
+      statusMessagesList: "La liste des messages d'état.",
+      success: 'Succès!',
+      error: 'Erreur :-(',
+
       // Forms: common phrases
       requiredField: 'Ce champ est requis.',
       incorrectEmail: 'Cet e-mail est incorrect.',

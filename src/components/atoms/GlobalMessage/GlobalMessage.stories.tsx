@@ -10,13 +10,15 @@ export default {
 };
 
 export const Demo = () => {
-  const onClickHandler = () => sendMessageToDisplay('test');
+  const onClickHandlerSuccess = () => sendMessageToDisplay('test');
+  const onClickHandlerError = () => sendMessageToDisplay('test', 'error');
 
   return (
     <StoryContainer title='Global message'>
       <>
         <GlobalMessage />
-        <Button data-testid='demo' text='Show messages' variant='primary' onClick={onClickHandler} />
+        <Button data-testid='demo' text='Show success message' variant='primary' onClick={onClickHandlerSuccess} />
+        <Button data-testid='demo1' text='Show error message' variant='primary' onClick={onClickHandlerError} />
       </>
     </StoryContainer>
   );

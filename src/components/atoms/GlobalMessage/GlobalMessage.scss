@@ -1,0 +1,44 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/variables' as v;
+
+.global-message {
+  position: fixed;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.global-message__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.global-message__item {
+  min-width: 240px;
+  padding: 12px 20px 12px 36px;
+  background-color: var(--basic-white);
+  border-radius: 8px;
+  box-shadow: var(--strong-shadow);
+  background-repeat: no-repeat;
+  background-position: left 12px top 12px;
+
+  &--success {
+    background-image: url('../../../assets/svg/simple-tick.svg');
+  }
+
+  &--error {
+    background-image: url('../../../assets/svg/cross.svg');
+  }
+}
+
+.global-message__item-type {
+  @include p3-bold(var(--basic-extra-dark));
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.global-message__item-text {
+  @include p3;
+  display: block;
+}
