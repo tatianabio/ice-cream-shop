@@ -25,7 +25,7 @@ export const Demo = () => {
       style={{ maxWidth: '600px', minHeight: '250px', height: 'min-content', padding: '15px' }}
     >
       <>
-        <GlobalMessage />
+        <GlobalMessage data-testid='demo' />
         <SubscriptionSection data-testid='demo' />
       </>
     </StoryContainer>

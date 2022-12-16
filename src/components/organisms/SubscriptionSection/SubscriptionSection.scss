@@ -1,7 +1,7 @@
 @use '../../../styles/mixins' as *;
 @use '../../../styles/variables' as v;
 
-.subscription-section {
+.subscription {
   max-width: 570px;
   border-radius: 16px;
   padding: 6px;
@@ -10,13 +10,13 @@
   background-size: cover;
 }
 
-.subscription-section__container {
+.subscription__container {
   border-radius: 16px;
   padding: 26px;
   background-color: var(--basic-white);
 }
 
-.subscription-section__description {
+.subscription__description {
   @include p2;
   margin-top: 0;
   margin-bottom: 24px;
@@ -26,7 +26,7 @@
   }
 }
 
-.subscription-section__form {
+.subscription__form {
   display: flex;
 
   @media (min-width: v.$tablet-width) {
@@ -41,6 +41,6 @@
   }
 }
 
-.subscription-section__input-control {
+.subscription__input-control {
   width: 100%;
 }

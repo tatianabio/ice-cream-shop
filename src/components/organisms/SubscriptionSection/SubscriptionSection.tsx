@@ -51,26 +51,26 @@ const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) =>
   };
 
   return (
-    <section className='subscription-section' data-testid={`${testId}-subscription-section`}>
-      <div className='subscription-section__container'>
+    <section className='subscription' data-testid={`${testId}-subscription`}>
+      <div className='subscription__container'>
         <h2 className='visually-hidden'>{t('subscriptionTitle')}</h2>
-        <p className='subscription-section__description'>{t('subscriptionDescription')}</p>
+        <p className='subscription__description'>{t('subscriptionDescription')}</p>
         <FormProvider {...form}>
-          <form className='subscription-section__form' onSubmit={form.handleSubmit(onSubmit)}>
+          <form className='subscription__form' onSubmit={form.handleSubmit(onSubmit)}>
             <InputControl
               formField={{
                 name: 'email',
                 label: 'email',
                 hasTooltip: false,
                 isLabelHidden: true,
-                className: 'subscription-section__input-control',
+                className: 'subscription__input-control',
               }}
               type='email'
               data-testid={testId}
               placeholder='email@example.com'
             />
             <Button
-              className='subscription-section__submit-button'
+              className='subscription__submit-button'
               data-testid={`${testId}-button`}
               text={`${t('sendButton')}`}
               variant='secondary'
