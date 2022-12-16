@@ -21,7 +21,7 @@ export interface ISubscriptionForm {
 
 const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) => {
   const { t } = useTranslation();
-  const { sendData, loading, isSucceed } = useSubscriptionForm();
+  const { sendData, loading, isSuccessful } = useSubscriptionForm();
 
   const schema = object({
     email: string()
@@ -38,12 +38,12 @@ const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) =>
   });
 
   useEffect(() => {
-    !loading && isSucceed === false && sendMessageToDisplay('errorMessage', 'error');
-    if (!loading && isSucceed === true) {
+    !loading && isSuccessful === false && sendMessageToDisplay('errorMessage', 'error');
+    if (!loading && isSuccessful === true) {
       sendMessageToDisplay('successfulSubmission');
       form.reset();
     }
-  }, [loading, isSucceed]);
+  }, [loading, isSuccessful]);
 
   const onSubmit = async (data: ISubscriptionForm) => {
     action('onSubmit')(data);
@@ -71,7 +71,7 @@ const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) =>
             />
             <Button
               className='subscription__submit-button'
-              data-testid={`${testId}-button`}
+              data-testid={testId}
               text={`${t('sendButton')}`}
               variant='secondary'
               type='submit'

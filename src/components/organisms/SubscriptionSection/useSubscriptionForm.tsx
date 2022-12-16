@@ -4,22 +4,22 @@ import { ISubscriptionForm } from './SubscriptionSection';
 
 const useSubscriptionForm = () => {
   const [loading, setLoading] = useState(false);
-  const [isSucceed, setIsSucceed] = useState<boolean | undefined>(undefined);
+  const [isSuccessful, setIsSuccessful] = useState<boolean | undefined>(undefined);
 
   const sendData = useCallback(async (data: ISubscriptionForm) => {
     setLoading(true);
-    setIsSucceed(undefined);
+    setIsSuccessful(undefined);
 
     axios
       .post('https://my-server.com', data)
       .then(() => {
-        setIsSucceed(true);
+        setIsSuccessful(true);
       })
-      .catch(() => setIsSucceed(false))
+      .catch(() => setIsSuccessful(false))
       .finally(() => setLoading(false));
   }, []);
 
-  return { sendData, isSucceed, loading };
+  return { sendData, isSuccessful, loading };
 };
 
 export default useSubscriptionForm;
