@@ -8,6 +8,8 @@ const resources = {
       statusMessagesList: 'The list of status messages.',
       success: 'Success!',
       error: 'Error :-(',
+      successfulSubmission: 'The data was successfully submitted.',
+      errorMessage: 'Something went wrong. Please try again later.',
 
       // Forms: common phrases
       requiredField: 'This field is required.',
@@ -98,6 +100,8 @@ const resources = {
       statusMessagesList: "La liste des messages d'état.",
       success: 'Succès!',
       error: 'Erreur :-(',
+      successfulSubmission: 'Les données ont été soumises avec succès.',
+      errorMessage: "Quelque chose s'est mal passé. Veuillez réessayer plus tard.",
 
       // Forms: common phrases
       requiredField: 'Ce champ est requis.',

@@ -6,6 +6,7 @@
   top: 5px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 9999;
 }
 
 .global-message__list {
@@ -15,7 +16,7 @@
 }
 
 .global-message__item {
-  min-width: 240px;
+  max-width: 300px;
   padding: 12px 20px 12px 36px;
   background-color: var(--basic-white);
   border-radius: 8px;
@@ -41,4 +42,5 @@
 .global-message__item-text {
   @include p3;
   display: block;
+  max-width: 240px;
 }
