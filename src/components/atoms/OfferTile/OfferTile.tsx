@@ -30,7 +30,7 @@ const OfferTile = ({ 'data-testid': testId, addToCart, className }: IOfferTile) 
       <p className='offer-block__description'>{t(description)}</p>
       <Button
         className='offer-block__order-button'
-        data-testid={`${testId}-offer-block-button-${activeItemIndex}`}
+        data-testid={`${testId}-offer-block-${activeItemIndex}`}
         text={t('order')}
         variant='primary'
         onClick={cartButtonOnClick}

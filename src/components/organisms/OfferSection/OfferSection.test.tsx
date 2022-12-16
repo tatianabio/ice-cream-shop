@@ -26,7 +26,7 @@ describe('OfferSection Tests', () => {
   });
 
   it('Clicking on Order button', async () => {
-    await userEvent.click(await screen.findByTestId('demo-offer-block-button-0'));
+    await userEvent.click(await screen.findByTestId('demo-offer-block-0-button'));
     expect(jestFn).toBeCalledWith(iceCreamOffers[0]);
   });
 });

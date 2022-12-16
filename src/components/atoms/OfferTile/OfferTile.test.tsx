@@ -12,17 +12,17 @@ describe('Offer Tile Tests', () => {
 
   it('Order button focus', async () => {
     await userEvent.tab();
-    expect(screen.getByTestId('demo-offer-block-button-0')).toHaveFocus();
+    expect(screen.getByTestId('demo-offer-block-0-button')).toHaveFocus();
     userEvent.keyboard('{Enter}');
     expect(onClick).toBeCalledTimes(1);
     await userEvent.tab();
-    expect(screen.getByTestId('demo-offer-block-button-0')).not.toHaveFocus();
+    expect(screen.getByTestId('demo-offer-block-0-button')).not.toHaveFocus();
   });
 
   it('Order button action', async () => {
-    await userEvent.click(screen.getByTestId('demo-offer-block-button-0'));
+    await userEvent.click(screen.getByTestId('demo-offer-block-0-button'));
     expect(onClick).toBeCalledTimes(1);
-    await userEvent.click(screen.getByTestId('demo-offer-block-button-0'));
+    await userEvent.click(screen.getByTestId('demo-offer-block-0-button'));
     expect(onClick).toBeCalledTimes(2);
   });
 });

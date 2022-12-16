@@ -14,7 +14,7 @@ export interface IButton extends HTMLProps<HTMLButtonElement> {
   'data-testid': string;
 }
 
-const Button = ({ text, variant, loading, type = 'button', ...props }: IButton) => {
+const Button = ({ text, variant, loading, type = 'button', 'data-testid': testId, ...props }: IButton) => {
   const { t } = useTranslation();
 
   return (
@@ -24,6 +24,7 @@ const Button = ({ text, variant, loading, type = 'button', ...props }: IButton) 
       disabled={props.disabled || loading}
       className={cx('button', `button--${variant}`, loading && 'button--loading', props.className)}
       tabIndex={loading ? -1 : props.tabIndex}
+      data-testid={`${testId}-button`}
     >
       {t(text)}
     </button>
