@@ -21,14 +21,14 @@
   border-radius: 8px;
   box-shadow: var(--strong-shadow);
   background-repeat: no-repeat;
-  background-position: left 12px top 12px;
+  background-position: left 7px top 9px;
 
   &--success {
-    background-image: url('../../../assets/svg/simple-tick.svg');
+    background-image: url('../../../assets/svg/status-success.svg');
   }
 
   &--error {
-    background-image: url('../../../assets/svg/cross.svg');
+    background-image: url('../../../assets/svg/status-error.svg');
   }
 }
 
