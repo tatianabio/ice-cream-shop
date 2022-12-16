@@ -5,7 +5,12 @@ import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
 import messageStore, { IMessageStore } from './GlobalMessage.store';
 
-const GlobalMessage = () => {
+interface IGlobalMessage {
+  /** Technical attributes */
+  'data-testid': string;
+}
+
+const GlobalMessage = ({ 'data-testid': testId }: IGlobalMessage) => {
   const { t } = useTranslation();
   const messagesToDisplay = messageStore((store: IMessageStore) => store.messagesToDisplay, shallow);
   const displayMessagesList = messagesToDisplay.map((item) => {
@@ -19,6 +24,7 @@ const GlobalMessage = () => {
           type === 'error' && 'global-message__item--error'
         )}
         key={id}
+        data-testid={`${testId}-global-message`}
       >
         <h3 className='global-message__item-type'>{t(type)}</h3>
         <span className='global-message__item-text'>{t(message)}</span>

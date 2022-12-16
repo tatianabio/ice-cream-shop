@@ -33,9 +33,9 @@ export const Demo = () => {
       </StoryContainer>
       <StoryContainer text='Click the buttons below to see the global messages on the screen'>
         <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-          <GlobalMessage />
-          <Button data-testid='demo' text='Show success message(s)' variant='primary' onClick={onClickHandlerSuccess} />
-          <Button data-testid='demo1' text='Show error message(s)' variant='primary' onClick={onClickHandlerError} />
+          <GlobalMessage data-testid='demo' />
+          <Button data-testid='success' text='Show success message' variant='primary' onClick={onClickHandlerSuccess} />
+          <Button data-testid='error' text='Show error message' variant='primary' onClick={onClickHandlerError} />
         </div>
       </StoryContainer>
     </>
