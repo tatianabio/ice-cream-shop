@@ -1,6 +1,8 @@
+import React from 'react';
 import SubscriptionSection from './SubscriptionSection';
 import StoryContainer from '../../utils/StoryContainer';
 import globalMswHandlers from '../../../mock/mswHandlers';
+import GlobalMessage from '../../atoms/GlobalMessage';
 
 export default {
   title: 'Components/Organisms/SubscriptionSection',
@@ -22,7 +24,10 @@ export const Demo = () => {
       title='Subscription Section'
       style={{ maxWidth: '600px', minHeight: '250px', height: 'min-content', padding: '15px' }}
     >
-      <SubscriptionSection data-testid='demo' />
+      <>
+        <GlobalMessage />
+        <SubscriptionSection data-testid='demo' />
+      </>
     </StoryContainer>
   );
 };

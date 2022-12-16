@@ -8,6 +8,7 @@ import { action } from '@storybook/addon-actions';
 import InputControl from '../../_formControls/InputControl';
 import Button from '../../atoms/Button';
 import useSubscriptionForm from './useSubscriptionForm';
+import { sendMessageToDisplay } from '../../atoms/GlobalMessage';
 
 interface ISubscriptionSection {
   /** Technical attributes */
@@ -21,11 +22,6 @@ export interface ISubscriptionForm {
 const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) => {
   const { t } = useTranslation();
   const { sendData, loading, isSucceed } = useSubscriptionForm();
-
-  useEffect(() => {
-    !loading && isSucceed === false && console.warn('Error');
-    !loading && isSucceed === true && console.warn('Success');
-  }, [loading, isSucceed]);
 
   const schema = object({
     email: string()
@@ -41,12 +37,17 @@ const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) =>
     mode: 'onSubmit',
   });
 
-  const { handleSubmit } = form;
+  useEffect(() => {
+    !loading && isSucceed === false && sendMessageToDisplay('errorMessage', 'error');
+    if (!loading && isSucceed === true) {
+      sendMessageToDisplay('successfulSubmission');
+      form.reset();
+    }
+  }, [loading, isSucceed]);
 
   const onSubmit = async (data: ISubscriptionForm) => {
     action('onSubmit')(data);
     await sendData(data);
-    form.reset();
   };
 
   return (
@@ -55,7 +56,7 @@ const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) =>
         <h2 className='visually-hidden'>{t('subscriptionTitle')}</h2>
         <p className='subscription-section__description'>{t('subscriptionDescription')}</p>
         <FormProvider {...form}>
-          <form className='subscription-section__form' onSubmit={handleSubmit(onSubmit)}>
+          <form className='subscription-section__form' onSubmit={form.handleSubmit(onSubmit)}>
             <InputControl
               formField={{
                 name: 'email',
