@@ -64,7 +64,10 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
-  "jest": {
+
+  "jest": { "moduleNameMapper": {
+    "axios": "axios/dist/node/axios.cjs"
+  },
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
       "!src/**/*.stories.{ts,tsx}",
