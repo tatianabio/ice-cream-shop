@@ -31,7 +31,7 @@ describe('Inputs tests', () => {
 
   it('Inputs onChange', async () => {
     const myInput = screen.getByTestId('default-input');
-    await userEvent.type(myInput, '{t}{e}{s}{t}');
+    await userEvent.type(myInput, 'test');
     expect(myInput).toHaveValue('test');
   });
 });

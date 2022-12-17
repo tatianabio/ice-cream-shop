@@ -3,6 +3,8 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import GlobalMessage from '../../atoms/GlobalMessage';
 import SubscriptionSection from './SubscriptionSection';
+import mswServer from '../../../mock/mswServer/mswServer';
+import { postRequestWithoutDelaySuccess } from '../../../mock/mswHandlers/postRequest/postRequest';
 
 const TestComponent = () => {
   return (
@@ -30,7 +32,7 @@ describe('Subscription Section Tests', () => {
     await waitFor(() => {
       expect(myErrorMessage).toHaveTextContent('requiredField');
     });
-    await userEvent.type(myInput, '{t}{e}{s}{t}');
+    await userEvent.type(myInput, 'test');
     await userEvent.click(myButton);
     await waitFor(() => {
       expect(myErrorMessage).toHaveTextContent('incorrectEmail');
@@ -38,10 +40,12 @@ describe('Subscription Section Tests', () => {
 
     // Successful submission of the form
     await userEvent.clear(myInput);
-    await userEvent.type(myInput, '{t}{e}{s}{t}{@}{e}{m}{a}{i}{l}{.}{c}{o}{m}');
+    await userEvent.type(myInput, 'test@gmail.com');
+    mswServer.use(postRequestWithoutDelaySuccess);
     await userEvent.click(myButton);
-    // await waitFor(async () => {
-    //   expect(await screen.findByTestId('demo-global-message')).toHaveClass('global-message__item');
-    // });
+
+    await waitFor(() => {
+      expect(screen.getByTestId('demo-global-message')).toBeInTheDocument();
+    });
   });
 });

@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { object, string } from 'yup';
 import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { action } from '@storybook/addon-actions';
 import InputControl from '../../_formControls/InputControl';
 import Button from '../../atoms/Button';
 import useSubscriptionForm from './useSubscriptionForm';
@@ -44,7 +43,6 @@ const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) =>
   }, [loading, isSuccessful]);
 
   const onSubmit = async (data: ISubscriptionForm) => {
-    action('onSubmit')(data);
     await sendData(data);
   };
 

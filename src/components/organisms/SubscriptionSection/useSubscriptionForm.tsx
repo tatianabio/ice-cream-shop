@@ -15,8 +15,12 @@ const useSubscriptionForm = () => {
       .then(() => {
         setIsSuccessful(true);
       })
-      .catch(() => setIsSuccessful(false))
-      .finally(() => setLoading(false));
+      .catch(() => {
+        setIsSuccessful(false);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   return { sendData, isSuccessful, loading };
