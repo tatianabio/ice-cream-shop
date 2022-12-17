@@ -1,13 +1,13 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import GlobalMessage from './GlobalMessage';
 import Button from '../Button';
 import { sendMessageToDisplay } from './GlobalMessage.store';
 
 const TestComponent = () => {
-  const onClickHandlerSuccess = () => sendMessageToDisplay('successfulSubmission', 'success', 1000);
-  const onClickHandlerError = () => sendMessageToDisplay('errorMessage', 'error', 1000);
+  const onClickHandlerSuccess = () => sendMessageToDisplay('successfulSubmission', 'success', 10);
+  const onClickHandlerError = () => sendMessageToDisplay('errorMessage', 'error', 10);
   return (
     <div>
       <GlobalMessage data-testid='demo' />
@@ -21,13 +21,9 @@ describe('Global Message Tests', () => {
   const myUserEvent = userEvent.setup({ delay: null });
   it('Global Message Success Render', async () => {
     render(<TestComponent />);
-    // jest.useFakeTimers();
     await myUserEvent.click(screen.getByTestId('success-button'));
     expect(screen.getByTestId('demo-global-message')).toHaveClass('global-message__item--success');
-    // jest.advanceTimersByTime(1000);
-    // await waitForElementToBeRemoved(screen.getByTestId('demo-global-message'));
-    // jest.advanceTimersByTime(1000);
-    // jest.useRealTimers();
+    await waitForElementToBeRemoved(screen.getByTestId('demo-global-message'));
   });
 
   it('Global Message Error Render', async () => {

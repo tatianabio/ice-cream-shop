@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './GlobalMessage.scss';
 import shallow from 'zustand/shallow';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
-import messageStore, { IMessageStore } from './GlobalMessage.store';
+import messageStore, { IMessageStore, removeAllMessages } from './GlobalMessage.store';
 
 interface IGlobalMessage {
   /** Technical attributes */
@@ -12,6 +12,8 @@ interface IGlobalMessage {
 
 const GlobalMessage = ({ 'data-testid': testId }: IGlobalMessage) => {
   const { t } = useTranslation();
+
+  useEffect(() => () => removeAllMessages(), []);
   const messagesToDisplay = messageStore((store: IMessageStore) => store.messagesToDisplay, shallow);
   const displayMessagesList = messagesToDisplay.map((item) => {
     const { id, message, type } = item;
