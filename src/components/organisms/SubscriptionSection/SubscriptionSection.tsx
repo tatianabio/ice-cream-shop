@@ -24,9 +24,7 @@ const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) =>
   const { sendData, loading, isSuccessful } = useSubscriptionForm();
 
   const schema = object({
-    email: string()
-      .required(`${t('requiredField')}`)
-      .email(`${t('incorrectEmail')}`),
+    email: string().required('requiredField').email('incorrectEmail'),
   });
 
   const form = useForm<ISubscriptionForm>({

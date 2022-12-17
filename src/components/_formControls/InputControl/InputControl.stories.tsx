@@ -25,8 +25,8 @@ interface IDemoForm {
 
 export const Demo = () => {
   const schema = object({
-    inputName1: string().required('This field is required.'),
-    inputName2: string().required('This field is required.'),
+    inputName1: string().required('requiredField'),
+    inputName2: string().required('requiredField'),
   });
 
   const form = useForm<IDemoForm>({

@@ -23,7 +23,7 @@ describe('Input Control Tests', () => {
     render(<Demo />);
     await userEvent.clear(screen.getByTestId('demo-1-input'));
     await waitFor(() => {
-      expect(screen.getByTestId('demo-1-error-message')).toHaveTextContent('This field is required.');
+      expect(screen.getByTestId('demo-1-error-message')).toHaveTextContent('requiredField');
     });
   });
 });
