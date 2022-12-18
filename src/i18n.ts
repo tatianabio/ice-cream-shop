@@ -15,6 +15,7 @@ const resources = {
       requiredField: 'This field is required.',
       incorrectEmail: 'This email is incorrect.',
       sendButton: 'Send',
+      showTooltip: 'Show tooltip.',
 
       // Subscription section
       subscriptionDescription:
@@ -107,6 +108,7 @@ const resources = {
       requiredField: 'Ce champ est requis.',
       incorrectEmail: 'Cet e-mail est incorrect.',
       sendButton: 'Envoyer',
+      showTooltip: 'Afficher une infobulle.',
 
       // Subscription section
       subscriptionDescription:

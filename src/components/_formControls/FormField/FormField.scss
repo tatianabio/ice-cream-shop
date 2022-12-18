@@ -29,20 +29,6 @@
 }
 
 .form-field__tooltip {
-  display: block;
   align-self: center;
   margin-bottom: 8px;
-}
-
-.form-field__tooltip-toggle {
-  display: block;
-  width: 14px;
-  height: 14px;
-  background-color: transparent;
-  background-image: url('../../../assets/svg/info.svg');
-  background-position: center;
-}
-
-.form-field__tooltip-text {
-  display: none;
 }

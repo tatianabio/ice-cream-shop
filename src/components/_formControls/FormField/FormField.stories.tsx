@@ -37,7 +37,7 @@ export const Demo = () => {
     <FormProvider {...form}>
       <form style={{ width: '400px', padding: '20px', display: 'flex', flexDirection: 'column' }}>
         <StoryContainer title='Form Field' text='Visible bold label with tooltip and error message'>
-          <FormField label='Test label' name='fieldName1' data-testid='test-1'>
+          <FormField label='Test label' name='fieldName1' data-testid='test-1' tooltipText='tooltip text'>
             Test Field
           </FormField>
         </StoryContainer>

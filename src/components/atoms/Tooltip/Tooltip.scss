@@ -1,0 +1,52 @@
+@use '../../../styles/mixins' as *;
+
+.tooltip {
+  display: block;
+}
+
+.tooltip__toggle {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-color: transparent;
+  background-image: url('../../../assets/svg/info.svg');
+  background-position: center;
+}
+
+.tooltip__text-wrapper {
+  background-color: red;
+}
+
+.tooltip__arrow,
+.tooltip__arrow::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+}
+
+.tooltip__arrow {
+  visibility: hidden;
+}
+
+.tooltip__arrow::before {
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
+}
+
+.tooltip__text-wrapper[data-popper-placement^='top'] > .tooltip__arrow {
+  bottom: -4px;
+}
+
+.tooltip__text-wrapper[data-popper-placement^='bottom'] > .tooltip__arrow {
+  top: -4px;
+}
+
+.tooltip__text-wrapper[data-popper-placement^='left'] > .tooltip__arrow {
+  right: -4px;
+}
+
+.tooltip__text-wrapper[data-popper-placement^='right'] > .tooltip__arrow {
+  left: -4px;
+}

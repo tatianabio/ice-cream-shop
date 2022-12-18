@@ -3,6 +3,7 @@ import './FormField.scss';
 import { useTranslation } from 'react-i18next';
 import { useFormContext } from 'react-hook-form';
 import cx from 'classnames';
+import Tooltip from '../../atoms/Tooltip';
 
 export interface IFormField {
   /** Name of the field used for the identification of the field's value(s) */
@@ -17,6 +18,8 @@ export interface IFormField {
   isLabelBold?: boolean;
   /** Does the field have a tooltip? */
   hasTooltip?: boolean;
+  /** The text of the tooltip */
+  tooltipText?: string;
   /** Does the field have some space for showing an error message? */
   hasErrorMessage?: boolean;
   /** Technical attributes */
@@ -29,6 +32,7 @@ const FormField = ({
   label,
   isLabelHidden = false,
   hasTooltip = true,
+  tooltipText,
   hasErrorMessage = true,
   isLabelBold = true,
   children,
@@ -55,12 +59,7 @@ const FormField = ({
         >
           {label}
         </label>
-        {hasTooltip && (
-          <span className='form-field__tooltip' data-testid={`${testId}-tooltip`}>
-            <button type='button' aria-label='Show tooltip' className='form-field__tooltip-toggle' />
-            <span className='form-field__tooltip-text'>{t('')}</span>
-          </span>
-        )}
+        {hasTooltip && <Tooltip className='form-field__tooltip' text={tooltipText} data-testid={testId} />}
       </div>
       {children}
       {hasErrorMessage && (
