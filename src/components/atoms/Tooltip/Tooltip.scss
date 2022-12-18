@@ -14,7 +14,12 @@
 }
 
 .tooltip__text-wrapper {
-  background-color: red;
+  @include s2;
+  max-width: 168px;
+  background-color: var(--basic-extra-light);
+  border-radius: 1px;
+  padding: 10px 8px;
+  box-shadow: var(--medium-shadow), 0 0 0 1px var(--basic-neutral);
 }
 
 .tooltip__arrow,
@@ -33,6 +38,7 @@
   visibility: visible;
   content: '';
   transform: rotate(45deg);
+  box-shadow: -1px 1px 0 0 var(--basic-neutral);
 }
 
 .tooltip__text-wrapper[data-popper-placement^='top'] > .tooltip__arrow {
