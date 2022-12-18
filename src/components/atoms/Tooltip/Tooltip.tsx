@@ -1,4 +1,4 @@
-import React, { HTMLProps, useRef, useState } from 'react';
+import React, { HTMLProps, useCallback, useRef, useState } from 'react';
 import './Tooltip.scss';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
@@ -6,6 +6,7 @@ import { usePopper } from 'react-popper';
 import { createPortal } from 'react-dom';
 
 interface ITooltip extends HTMLProps<HTMLDivElement> {
+  /** Text inside the Tooltip */
   text?: string;
   /** Technical attributes */
   'data-testid'?: string;
@@ -37,12 +38,8 @@ const Tooltip = ({ text, className, 'data-testid': testId, ...props }: ITooltip)
     ],
   });
 
-  const onMouseEnterHandler = () => {
-    setIsTooltipShown(true);
-  };
-  const onMouseLeaveHandler = () => {
-    setIsTooltipShown(false);
-  };
+  const openTooltip = useCallback(() => setIsTooltipShown(true), []);
+  const closeTooltip = useCallback(() => setIsTooltipShown(false), []);
 
   return (
     <div {...props} className={cx('tooltip', className)} data-testid={`${testId}-tooltip`}>
@@ -53,8 +50,10 @@ const Tooltip = ({ text, className, 'data-testid': testId, ...props }: ITooltip)
         aria-label={`${t('showTooltip')}`}
         className='tooltip__toggle'
         data-testid={`${testId}-tooltip`}
-        onMouseEnter={onMouseEnterHandler}
-        onMouseLeave={onMouseLeaveHandler}
+        onMouseEnter={openTooltip}
+        onMouseLeave={closeTooltip}
+        onFocus={openTooltip}
+        onBlur={closeTooltip}
       />
 
       {isTooltipShown &&
