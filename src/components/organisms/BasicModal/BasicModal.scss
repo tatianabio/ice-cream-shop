@@ -1,3 +1,5 @@
+@use '../../../styles/variables' as v;
+
 .basic-modal__overlay {
   position: fixed;
   inset: 0;
@@ -6,17 +8,62 @@
 
 .basic-modal__content {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 50vh;
+  left: 50vw;
   transform: translate(-50%, -50%);
-  min-width: 280px;
-  max-width: 570px;
-  max-height: 50vh;
-  border: 1px solid #ccc;
-  background: #fff;
+  min-width: 260px;
+  width: max-content;
+  max-height: 90vh;
+  border: none;
+  background: var(--basic-extra-light);
   overflow: auto;
   --webkit-overflowscrolling: touch;
-  border-radius: 4px;
+  border-radius: 8px;
   outline: none;
-  padding: 20px;
+  box-shadow: var(--strong-shadow);
+
+  @media (max-width: v.$mobile-width-only) {
+    max-width: 300px;
+    padding: 44px 20px 20px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    max-width: 570px;
+    padding: 64px;
+  }
+}
+
+.basic-modal__close-button {
+  position: absolute;
+  display: grid;
+  place-content: center;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  color: var(--basic-extra-dark);
+  border-radius: 4px;
+
+  @media (max-width: v.$mobile-width-only) {
+    top: 16px;
+    right: 16px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    top: 28px;
+    right: 28px;
+  }
+
+  &:hover {
+    color: var(--basic-neutral);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 1px var(--basic-dark);
+    color: var(--basic-neutral);
+  }
+
+  &:active {
+    box-shadow: none;
+    color: var(--basic-light);
+  }
 }

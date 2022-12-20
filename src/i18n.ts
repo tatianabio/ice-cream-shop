@@ -4,6 +4,10 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
+      // Modal
+      modalWindow: 'Modal window.',
+      closeModal: 'Close the modal window.',
+
       // Global Status Message
       statusMessagesList: 'The list of status messages.',
       success: 'Success!',
@@ -97,6 +101,10 @@ const resources = {
   },
   fr: {
     translation: {
+      // Modal
+      modalWindow: 'Fenêtre modale.',
+      closeModal: 'Fermez la fenêtre modale.',
+
       // Global Status Message
       statusMessagesList: "La liste des messages d'état.",
       success: 'Succès!',
