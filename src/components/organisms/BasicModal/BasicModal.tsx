@@ -32,8 +32,13 @@ const BasicModal = ({
     !open && (document.body.style.overflow = 'auto');
   }, [open]);
   return (
-    <div data-testid={testId}>
-      <Button data-testid={testId} text={openingButtonText} onClick={openBasicModal} variant={openingButtonVariant} />
+    <div data-testid={`${testId}-modal-container`}>
+      <Button
+        data-testid={`${testId}-opening`}
+        text={openingButtonText}
+        onClick={openBasicModal}
+        variant={openingButtonVariant}
+      />
       <ReactModal
         isOpen={open}
         onRequestClose={closeBasicModal}
@@ -44,6 +49,7 @@ const BasicModal = ({
         ariaHideApp={false}
         role='dialog'
         contentLabel={`${t('modalWindow')}`}
+        testId={`${testId}-modal-content`}
       >
         <button
           type='button'
