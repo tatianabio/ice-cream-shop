@@ -21,6 +21,11 @@ const resources = {
       sendButton: 'Send',
       showTooltip: 'Show tooltip.',
 
+      // Feedback Form
+      feedbackFormTitle: 'We will definitely answer you!',
+      nameAndSurname: 'Name and surname',
+      freeForm: 'In free form',
+
       // Subscription section
       subscriptionDescription:
         'Subscribe to our sweet newsletter and always be aware of all the most delicious that we have going on. We promise not to spam or send any unnecessary nonsense. Honestly =)',
@@ -117,6 +122,11 @@ const resources = {
       incorrectEmail: 'Cet e-mail est incorrect.',
       sendButton: 'Envoyer',
       showTooltip: 'Afficher une infobulle.',
+
+      // Feedback Form
+      feedbackFormTitle: 'Nous vous répondrons certainement!',
+      nameAndSurname: 'Nom et surnom',
+      freeForm: 'Sous forme libre',
 
       // Subscription section
       subscriptionDescription:
