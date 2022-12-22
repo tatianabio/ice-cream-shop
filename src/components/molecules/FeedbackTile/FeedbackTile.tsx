@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './FeedbackCanvass.scss';
+import './FeedbackTile.scss';
 import { useTranslation } from 'react-i18next';
 import { object, string } from 'yup';
 import { FormProvider, useForm } from 'react-hook-form';
@@ -11,7 +11,7 @@ import InputControl from '../../_formControls/InputControl';
 import Button from '../../atoms/Button';
 import TextareaControl from '../../_formControls/TextareaControl';
 
-interface IFeedbackCanvass {
+interface IFeedbackTile {
   /** Technical attributes */
   'data-testid': string;
 }
@@ -22,7 +22,7 @@ export interface IFeedbackForm {
   feedback: string;
 }
 
-const FeedbackCanvass = ({ 'data-testid': testId }: IFeedbackCanvass) => {
+const FeedbackTile = ({ 'data-testid': testId }: IFeedbackTile) => {
   const { t } = useTranslation();
   const { sendData, loading, isSuccessful } = useFormSubmit('feedbackForm');
 
@@ -55,17 +55,17 @@ const FeedbackCanvass = ({ 'data-testid': testId }: IFeedbackCanvass) => {
   };
 
   return (
-    <section className='feedback-canvass' data-testid={`${testId}-feedback-canvass`}>
-      <h2 className='feedback-canvass__title'>{t('feedbackFormTitle')}</h2>
+    <section className='feedback' data-testid={`${testId}-feedback`}>
+      <h2 className='feedback__title'>{t('feedbackFormTitle')}</h2>
       <FormProvider {...form}>
-        <form className='feedback-canvass__form' onSubmit={form.handleSubmit(onSubmit)}>
+        <form className='feedback__form' onSubmit={form.handleSubmit(onSubmit)}>
           <InputControl
             formField={{
               name: 'name',
               label: `${t('nameAndSurname')}`,
               hasTooltip: false,
               isLabelHidden: true,
-              className: 'feedback-canvass__input-control',
+              className: 'feedback__input-control',
             }}
             type='text'
             data-testid={`${testId}-name`}
@@ -77,7 +77,7 @@ const FeedbackCanvass = ({ 'data-testid': testId }: IFeedbackCanvass) => {
               label: 'email',
               hasTooltip: false,
               isLabelHidden: true,
-              className: 'feedback-canvass__input-control',
+              className: 'feedback__input-control',
             }}
             type='email'
             data-testid={`${testId}-email`}
@@ -88,14 +88,14 @@ const FeedbackCanvass = ({ 'data-testid': testId }: IFeedbackCanvass) => {
             formField={{
               name: 'feedback',
               label: 'Written feedback',
-              className: 'feedback-canvass__input-control',
+              className: 'feedback__input-control',
               isLabelHidden: true,
               hasTooltip: false,
             }}
             placeholder={`${t('freeForm')}`}
           />
           <Button
-            className='feedback-canvass__submit-button'
+            className='feedback__submit-button'
             data-testid={testId}
             text={`${t('sendButton')}`}
             variant='secondary'
@@ -108,4 +108,4 @@ const FeedbackCanvass = ({ 'data-testid': testId }: IFeedbackCanvass) => {
   );
 };
 
-export default FeedbackCanvass;
+export default FeedbackTile;

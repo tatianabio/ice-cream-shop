@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import GlobalMessage from '../../atoms/GlobalMessage';
-import FeedbackCanvass from './FeedbackCanvass';
+import FeedbackTile from './FeedbackTile';
 import {
   postRequestWithoutDelayError,
   postRequestWithoutDelaySuccess,
@@ -13,7 +13,7 @@ const TestComponent = () => {
   return (
     <div>
       <GlobalMessage data-testid='demo' />
-      <FeedbackCanvass data-testid='demo' />
+      <FeedbackTile data-testid='demo' />
     </div>
   );
 };
@@ -28,7 +28,7 @@ describe('Feedback Canvass Tests', () => {
     render(<TestComponent />);
     const myErrorMessage = screen.getByTestId('demo-error-message');
     // Subscription section render
-    expect(screen.getByTestId('demo-feedback-canvass')).toBeInTheDocument();
+    expect(screen.getByTestId('demo-feedback')).toBeInTheDocument();
 
     // Unsuccessful validation of the form
     await userEvent.click(myButton());

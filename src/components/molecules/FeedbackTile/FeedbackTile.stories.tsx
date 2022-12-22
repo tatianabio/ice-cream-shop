@@ -1,12 +1,12 @@
 import React from 'react';
 import globalMswHandlers from '../../../mock/mswHandlers';
-import FeedbackCanvass from './FeedbackCanvass';
+import FeedbackTile from './FeedbackTile';
 import StoryContainer from '../../storybookUtils/StoryContainer';
 import GlobalMessage from '../../atoms/GlobalMessage';
 
 export default {
-  title: 'Components/Molecules/FeedbackCanvass',
-  component: FeedbackCanvass,
+  title: 'Components/Molecules/FeedbackTile',
+  component: FeedbackTile,
   parameters: {
     msw: {
       handlers: globalMswHandlers,
@@ -27,7 +27,7 @@ export const Demo = () => {
     >
       <>
         <GlobalMessage data-testid='demo' />
-        <FeedbackCanvass data-testid='demo' />
+        <FeedbackTile data-testid='demo' />
       </>
     </StoryContainer>
   );

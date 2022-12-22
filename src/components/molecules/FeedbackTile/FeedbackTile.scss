@@ -1,7 +1,7 @@
 @use '../../../styles/mixins' as *;
 @use '../../../styles/variables' as v;
 
-.feedback-canvass__title {
+.feedback__title {
   margin-top: 0;
 
   @media (max-width: v.$mobile-width-only) {
@@ -14,12 +14,12 @@
   }
 }
 
-.feedback-canvass__form {
+.feedback__form {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.feedback-canvass__submit-button {
+.feedback__submit-button {
   align-self: flex-end;
 }
