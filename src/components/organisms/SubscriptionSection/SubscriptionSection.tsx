@@ -6,8 +6,8 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import InputControl from '../../_formControls/InputControl';
 import Button from '../../atoms/Button';
-import useSubscriptionForm from './useSubscriptionForm';
 import { sendMessageToDisplay } from '../../atoms/GlobalMessage';
+import useFormSubmit from '../../utils/useFormSubmit';
 
 interface ISubscriptionSection {
   /** Technical attributes */
@@ -20,7 +20,7 @@ export interface ISubscriptionForm {
 
 const SubscriptionSection = ({ 'data-testid': testId }: ISubscriptionSection) => {
   const { t } = useTranslation();
-  const { sendData, loading, isSuccessful } = useSubscriptionForm();
+  const { sendData, loading, isSuccessful } = useFormSubmit('subscriptionForm');
 
   const schema = object({
     email: string().required('requiredField').email('incorrectEmail'),

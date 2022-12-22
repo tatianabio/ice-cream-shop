@@ -1,16 +1,15 @@
 import { useCallback, useState } from 'react';
-import { ISubscriptionForm } from './SubscriptionSection';
-import postDataRequest from '../../utils/commonFunctions';
+import postDataRequest from './commonFunctions';
 
-const useSubscriptionForm = () => {
+const useFormSubmit = (linkName: string) => {
   const [loading, setLoading] = useState(false);
   const [isSuccessful, setIsSuccessful] = useState<boolean | undefined>(undefined);
 
-  const sendData = useCallback(async (data: ISubscriptionForm) => {
+  const sendData = useCallback(async (data: unknown) => {
     setLoading(true);
     setIsSuccessful(undefined);
 
-    const response = await postDataRequest(data);
+    const response = await postDataRequest(data, linkName);
     setIsSuccessful(response);
     setLoading(false);
   }, []);
@@ -18,4 +17,4 @@ const useSubscriptionForm = () => {
   return { sendData, isSuccessful, loading };
 };
 
-export default useSubscriptionForm;
+export default useFormSubmit;
