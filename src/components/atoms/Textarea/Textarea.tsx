@@ -15,7 +15,7 @@ export interface ITextarea extends Omit<HTMLProps<HTMLTextAreaElement>, 'value' 
 
 const Textarea = forwardRef(
   (
-    { 'data-testid': testId, rows = 5, isInvalid = false, initialValue = '', onChange, ...props }: ITextarea,
+    { 'data-testid': testId, rows = 5, isInvalid = false, initialValue, onChange, ...props }: ITextarea,
     ref?: ForwardedRef<HTMLTextAreaElement>
   ) => {
     const [value, setValue] = useState<string>(initialValue || '');
