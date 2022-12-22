@@ -1,6 +1,6 @@
 import React from 'react';
 import SubscriptionSection from './SubscriptionSection';
-import StoryContainer from '../../utils/StoryContainer';
+import StoryContainer from '../../storybookUtils/StoryContainer';
 import globalMswHandlers from '../../../mock/mswHandlers';
 import GlobalMessage from '../../atoms/GlobalMessage';
 

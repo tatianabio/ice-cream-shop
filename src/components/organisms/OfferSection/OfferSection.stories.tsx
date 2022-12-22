@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions';
 import globalMswHandlers from '../../../mock/mswHandlers';
 import OfferSection from './OfferSection';
-import StoryContainer from '../../utils/StoryContainer';
+import StoryContainer from '../../storybookUtils/StoryContainer';
 import { IIceCreamOffer } from '../../../mock/data/iceCreamOffers';
 
 export default {

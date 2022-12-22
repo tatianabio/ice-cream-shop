@@ -1,6 +1,6 @@
 import globalMswHandlers from '../../../mock/mswHandlers';
 import SliderTile from './SliderTile';
-import StoryContainer from '../../utils/StoryContainer';
+import StoryContainer from '../../storybookUtils/StoryContainer';
 
 export default {
   title: 'Components/Atoms/SliderTile',

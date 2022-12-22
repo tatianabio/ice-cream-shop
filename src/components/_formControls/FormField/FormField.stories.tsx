@@ -2,7 +2,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import React, { useEffect } from 'react';
 import { object, string } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import StoryContainer from '../../utils/StoryContainer';
+import StoryContainer from '../../storybookUtils/StoryContainer';
 import FormField from './FormField';
 
 export default {

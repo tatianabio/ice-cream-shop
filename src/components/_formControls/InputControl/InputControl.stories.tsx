@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { object, string } from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import InputControl from './InputControl';
-import StoryContainer from '../../utils/StoryContainer';
+import StoryContainer from '../../storybookUtils/StoryContainer';
 import Button from '../../atoms/Button';
 
 export default {

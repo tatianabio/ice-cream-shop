@@ -1,7 +1,7 @@
 import React from 'react';
 import globalMswHandlers from '../../../mock/mswHandlers';
 import FeedbackCanvass from './FeedbackCanvass';
-import StoryContainer from '../../utils/StoryContainer';
+import StoryContainer from '../../storybookUtils/StoryContainer';
 import GlobalMessage from '../../atoms/GlobalMessage';
 
 export default {

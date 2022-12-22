@@ -1,5 +1,5 @@
 import Textarea from './Textarea';
-import StoryContainer from '../../utils/StoryContainer';
+import StoryContainer from '../../storybookUtils/StoryContainer';
 
 export default {
   title: 'Components/Atoms/Textarea',

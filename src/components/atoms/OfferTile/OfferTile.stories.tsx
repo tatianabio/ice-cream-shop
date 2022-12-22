@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions';
 import globalMswHandlers from '../../../mock/mswHandlers';
-import StoryContainer from '../../utils/StoryContainer';
+import StoryContainer from '../../storybookUtils/StoryContainer';
 import OfferTile from './OfferTile';
 import { IIceCreamOffer } from '../../../mock/data/iceCreamOffers';
 

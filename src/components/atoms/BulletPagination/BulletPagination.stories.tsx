@@ -1,6 +1,6 @@
 import globalMswHandlers from '../../../mock/mswHandlers';
 import BulletPagination from './BulletPagination';
-import StoryContainer from '../../utils/StoryContainer';
+import StoryContainer from '../../storybookUtils/StoryContainer';
 
 export default {
   title: 'Components/Atoms/BulletPagination',

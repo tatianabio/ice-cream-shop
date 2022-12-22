@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
-import axios from 'axios';
 import { ISubscriptionForm } from './SubscriptionSection';
+import postDataRequest from '../../utils/commonFunctions';
 
 const useSubscriptionForm = () => {
   const [loading, setLoading] = useState(false);
@@ -10,17 +10,9 @@ const useSubscriptionForm = () => {
     setLoading(true);
     setIsSuccessful(undefined);
 
-    axios
-      .post('https://my-server.com', data)
-      .then(() => {
-        setIsSuccessful(true);
-      })
-      .catch(() => {
-        setIsSuccessful(false);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    const response = await postDataRequest(data);
+    setIsSuccessful(response);
+    setLoading(false);
   }, []);
 
   return { sendData, isSuccessful, loading };

@@ -1,7 +1,7 @@
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 import React from 'react';
 import Breadcrumbs from './Breadcrumbs';
-import StoryContainer from '../../utils/StoryContainer';
+import StoryContainer from '../../storybookUtils/StoryContainer';
 import { routerArray } from './utils';
 
 export default {

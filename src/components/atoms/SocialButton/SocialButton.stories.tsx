@@ -1,6 +1,6 @@
 import React from 'react';
 import SocialButton from './SocialButton';
-import StoryContainer from '../../utils/StoryContainer';
+import StoryContainer from '../../storybookUtils/StoryContainer';
 
 export default {
   title: 'Components/Atoms/SocialButton',

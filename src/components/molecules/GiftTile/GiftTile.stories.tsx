@@ -1,7 +1,7 @@
 import GiftTile from './GiftTile';
 import globalMswHandlers from '../../../mock/mswHandlers';
 import { gifts } from '../../../mock/data/gifts';
-import StoryContainer from '../../utils/StoryContainer';
+import StoryContainer from '../../storybookUtils/StoryContainer';
 
 export default {
   title: 'Components/Molecules/GiftTile',

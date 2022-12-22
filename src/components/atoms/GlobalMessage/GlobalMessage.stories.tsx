@@ -3,7 +3,7 @@ import './GlobalMessage.scss';
 import cx from 'classnames';
 import { useTranslation } from 'react-i18next';
 import GlobalMessage from './GlobalMessage';
-import StoryContainer from '../../utils/StoryContainer';
+import StoryContainer from '../../storybookUtils/StoryContainer';
 import Button from '../Button';
 import { sendMessageToDisplay } from './GlobalMessage.store';
 
