@@ -58,7 +58,7 @@ export const Demo = () => {
         >
           <TextareaControl
             data-testid='demo-1'
-            formField={{ name: 'textareaName1', label: 'The label is visible' }}
+            formField={{ name: 'textareaName1', label: 'The label is visible', tooltipText: 'Tooltip text' }}
             placeholder='Textarea with visible label'
           />
           <TextareaControl

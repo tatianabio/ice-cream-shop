@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import Textarea, { ITextarea } from '../../atoms/Textarea/Textarea';
 import FormField, { IFormField } from '../FormField/FormField';
@@ -15,9 +15,12 @@ const TextareaControl = ({ formField, 'data-testid': testId, ...props }: ITextar
   const {
     control,
     getValues,
-    formState: { errors },
+    formState: { errors, dirtyFields },
   } = useFormContext();
-  const initial = getValues()[name];
+  const isDirtyField = dirtyFields[name];
+  const resetValue: string | undefined = useMemo(() => {
+    return !isDirtyField ? getValues()[name] : undefined;
+  }, [isDirtyField]);
   const errorText = (errors[name]?.message as string) || '';
 
   return (
@@ -32,7 +35,7 @@ const TextareaControl = ({ formField, 'data-testid': testId, ...props }: ITextar
           <FormField {...formField} data-testid={testId}>
             <Textarea
               {...props}
-              initialValue={initial}
+              initialValue={resetValue}
               id={`${name}-field`}
               data-testid={testId}
               onChange={onChangeHandler}

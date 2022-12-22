@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ForwardedRef, forwardRef, HTMLProps, useEffect, useState } from 'react';
+import React, { ChangeEvent, ForwardedRef, forwardRef, HTMLProps, useCallback, useEffect, useState } from 'react';
 import './Textarea.scss';
 import cx from 'classnames';
 
@@ -18,16 +18,16 @@ const Textarea = forwardRef(
     { 'data-testid': testId, rows = 5, isInvalid = false, initialValue = '', onChange, ...props }: ITextarea,
     ref?: ForwardedRef<HTMLTextAreaElement>
   ) => {
-    const [value, setValue] = useState<string>(initialValue);
+    const [value, setValue] = useState<string>(initialValue || '');
 
     useEffect(() => {
-      setValue(initialValue);
+      initialValue !== undefined && setValue(initialValue);
     }, [initialValue]);
 
-    const onChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    const onChangeHandler = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
       setValue(event.target.value);
       onChange?.(event.target.value);
-    };
+    }, []);
 
     return (
       <textarea
