@@ -14,6 +14,10 @@ const TestComponent = () => {
 };
 
 describe('Basic Modal Tests', () => {
+  beforeAll(() => {
+    jest.spyOn(console, 'error').mockImplementation(jest.fn());
+  });
+
   it('render', async () => {
     render(<TestComponent />);
     expect(screen.getByTestId('demo-modal-container')).toBeInTheDocument();
