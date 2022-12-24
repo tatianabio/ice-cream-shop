@@ -20,7 +20,7 @@ interface IBasicModal {
 const BasicModal = ({
   children,
   openingButtonText,
-  openingButtonVariant = 'primary',
+  openingButtonVariant = 'secondary',
   'data-testid': testId,
 }: IBasicModal) => {
   const { t } = useTranslation();

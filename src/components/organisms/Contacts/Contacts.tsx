@@ -1,4 +1,5 @@
 import React from 'react';
+import './Contacts.scss';
 import { useTranslation } from 'react-i18next';
 import BasicModal from '../BasicModal';
 import FeedbackTile from '../../molecules/FeedbackTile';

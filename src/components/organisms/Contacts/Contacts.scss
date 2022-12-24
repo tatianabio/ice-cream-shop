@@ -1,0 +1,78 @@
+@use '../../../styles/mixins' as *;
+@use '../../../styles/variables' as v;
+
+.contacts {
+  background-color: var(--special-light-pink);
+  width: 100%;
+  max-width: 1170px;
+  border-radius: 16px;
+  background-image: url('../../../assets/img/background/corns-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+
+  @media (max-width: v.$mobile-width-only) {
+    padding: 20px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    padding: 64px;
+  }
+}
+
+.contacts__container {
+  max-width: 343px;
+  background-color: var(--basic-extra-light);
+  border-radius: 8px;
+  box-shadow: var(--medium-shadow);
+
+  @media (max-width: v.$mobile-width-only) {
+    padding: 16px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    padding: 40px;
+  }
+}
+
+.contacts__list {
+  margin-top: 0;
+
+  @media (max-width: v.$mobile-width-only) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    margin-bottom: 32px;
+  }
+}
+
+.contacts__item-term {
+  @include p2;
+  margin-bottom: 12px;
+}
+
+.contacts__item-description {
+  margin-left: 0;
+}
+
+.contacts__item-description + .contacts__item-term {
+  margin-top: 24px;
+}
+
+.contacts__info {
+  margin: 0;
+
+  @media (max-width: v.$mobile-width-only) {
+    @include h5;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    @include h4;
+  }
+}
+
+.contacts__extra_info {
+  @include s1;
+  margin: 0;
+}
