@@ -62,6 +62,7 @@
 
 .contacts__info {
   margin: 0;
+  font-style: normal;
 
   @media (max-width: v.$mobile-width-only) {
     @include h5;
@@ -69,6 +70,21 @@
 
   @media (min-width: v.$tablet-width) {
     @include h4;
+  }
+}
+
+.contacts__phone {
+  &:hover {
+    color: var(--basic-dark);
+  }
+
+  &:focus {
+    color: inherit;
+    box-shadow: 0 0 0 2px var(--basic-dark);
+  }
+
+  &:active {
+    color: var(--basic-neutral);
   }
 }
 

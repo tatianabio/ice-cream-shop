@@ -9,7 +9,6 @@ const resources = {
       ourAddress: 'Address of our main office and offline store:',
       exactLocation: '15 Kingston Street, Toronto, Canada',
       ourPhoneContact: 'For phone orders:',
-      exactPhoneNumber: '+1(111)111-111',
       phoneSchedule: 'from 10 a.m. to 8 p.m. daily',
       openFeedbackForm: 'Feedback form',
 
@@ -120,7 +119,6 @@ const resources = {
       ourAddress: 'Adresse de notre bureau principal et magasin hors ligne:',
       exactLocation: '15 Kingston rue, Toronto, Canada',
       ourPhoneContact: 'Pour les commandes téléphoniques:',
-      exactPhoneNumber: '+1(111)111-111',
       phoneSchedule: 'de 10h à 20h du quotidien',
       openFeedbackForm: 'Formulaire de commentaires',
 
