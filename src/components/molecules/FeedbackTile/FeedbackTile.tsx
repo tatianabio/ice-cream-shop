@@ -12,6 +12,7 @@ import Button from '../../atoms/Button';
 import TextareaControl from '../../_formControls/TextareaControl';
 
 interface IFeedbackTile {
+  setOpenModal?: (isOpened: boolean) => void;
   /** Technical attributes */
   'data-testid': string;
 }
@@ -22,7 +23,7 @@ export interface IFeedbackForm {
   feedback: string;
 }
 
-const FeedbackTile = ({ 'data-testid': testId }: IFeedbackTile) => {
+const FeedbackTile = ({ 'data-testid': testId, setOpenModal }: IFeedbackTile) => {
   const { t } = useTranslation();
   const { sendData, loading, isSuccessful } = useFormSubmit('feedbackForm');
 
@@ -47,6 +48,7 @@ const FeedbackTile = ({ 'data-testid': testId }: IFeedbackTile) => {
     if (!loading && isSuccessful === true) {
       sendMessageToDisplay('successfulSubmission');
       form.reset();
+      setOpenModal?.(false);
     }
   }, [loading, isSuccessful]);
 

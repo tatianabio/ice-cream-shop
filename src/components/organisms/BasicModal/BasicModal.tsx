@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { ReactElement, ReactNode, useEffect, useState } from 'react';
 import './BasicModal.scss';
 import ReactModal from 'react-modal';
 import cx from 'classnames';
@@ -8,7 +8,7 @@ import Cross from '../../../assets/svg/cross';
 
 interface IBasicModal {
   /** The content of the modal */
-  children: ReactNode | string;
+  children: ReactNode;
   /** Text inside the button that opens the modal */
   openingButtonText: string;
   /** Variant the button that opens the modal */
@@ -24,13 +24,13 @@ const BasicModal = ({
   'data-testid': testId,
 }: IBasicModal) => {
   const { t } = useTranslation();
-  const [open, setOpen] = useState(false);
-  const openBasicModal = () => setOpen(true);
-  const closeBasicModal = () => setOpen(false);
+  const [openModal, setOpenModal] = useState(false);
+  const openBasicModal = () => setOpenModal(true);
+  const closeBasicModal = () => setOpenModal(false);
   useEffect(() => {
-    open && (document.body.style.overflow = 'hidden');
-    !open && (document.body.style.overflow = 'auto');
-  }, [open]);
+    openModal && (document.body.style.overflow = 'hidden');
+    !openModal && (document.body.style.overflow = 'auto');
+  }, [openModal]);
   return (
     <div data-testid={`${testId}-modal-container`}>
       <Button
@@ -40,7 +40,7 @@ const BasicModal = ({
         variant={openingButtonVariant}
       />
       <ReactModal
-        isOpen={open}
+        isOpen={openModal}
         onRequestClose={closeBasicModal}
         shouldCloseOnOverlayClick
         shouldCloseOnEsc
@@ -60,7 +60,7 @@ const BasicModal = ({
           <span className='visually-hidden'>{t('closeModal')}</span>
           <Cross />
         </button>
-        {children}
+        {React.cloneElement(children as ReactElement, { setOpenModal })}
       </ReactModal>
     </div>
   );
