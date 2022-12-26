@@ -36,8 +36,6 @@
 }
 
 .contacts__list {
-  margin-top: 0;
-
   @media (max-width: v.$mobile-width-only) {
     margin-bottom: 20px;
   }
@@ -47,22 +45,14 @@
   }
 }
 
-.contacts__item-term {
+.contacts__description {
   @include p2;
+  margin-top: 0;
   margin-bottom: 12px;
-}
-
-.contacts__item-description {
-  margin-left: 0;
-}
-
-.contacts__item-description + .contacts__item-term {
-  margin-top: 24px;
 }
 
 .contacts__info {
   margin: 0;
-  font-style: normal;
 
   @media (max-width: v.$mobile-width-only) {
     @include h5;
@@ -71,6 +61,10 @@
   @media (min-width: v.$tablet-width) {
     @include h4;
   }
+}
+
+.contacts__item + .contacts__item {
+  margin-top: 24px;
 }
 
 .contacts__phone {

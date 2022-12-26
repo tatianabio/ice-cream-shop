@@ -15,21 +15,19 @@ const Contacts = ({ 'data-testid': testId }: IContacts) => {
     <section className='contacts' data-testid={`${testId}-contacts`}>
       <div className='contacts__container'>
         <h2 className='visually-hidden'>{t('ourContacts')}</h2>
-        <dl className='contacts__list'>
-          <dt className='contacts__item-term'>{t('ourAddress')}</dt>
-          <dd className='contacts__item-description'>
-            <address className='contacts__info'>{t('exactLocation')}</address>
-          </dd>
-          <dt className='contacts__item-term'>{t('ourPhoneContact')}</dt>
-          <dd className='contacts__item-description'>
-            <address className='contacts__info'>
-              <a href='tel:+1111111111' className='contacts__phone'>
-                +1(111)111-111
-              </a>
-            </address>
+        <ul className='contacts__list'>
+          <li className='contacts__item'>
+            <p className='contacts__description'>{t('ourAddress')}</p>
+            <p className='contacts__info'>{t('exactLocation')}</p>
+          </li>
+          <li className='contacts__item'>
+            <p className='contacts__description'>{t('ourPhoneContact')}</p>
+            <a href='tel:+1111111111' className='contacts__info contacts__phone'>
+              +1(111)111-111
+            </a>
             <p className='contacts__extra_info'>{`(${t('phoneSchedule')})`}</p>
-          </dd>
-        </dl>
+          </li>
+        </ul>
         <BasicModal data-testid={testId} openingButtonText='openFeedbackForm'>
           <FeedbackTile data-testid={testId} />
         </BasicModal>
