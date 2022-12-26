@@ -4,6 +4,18 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
+      // Delivery Section
+      deliverySectionTitle: 'Delivery of your favorite ice cream',
+      deliverySectionInfo:
+        "Would you like to enjoy your favorite dessert, but don't have time to go to the store? Order ice cream delivery to your home, and the courier will bring your order to you within an hour!",
+      deliveryFormTitle: 'Enter your address and delivery date and we will contact you to confirm your order.',
+      deliveryFormDate: 'Date',
+      deliveryFormDateInfo: 'Enter the desired delivery date in the format DD.MM.YYYY',
+      deliveryFormPhone: 'Phone number',
+      deliveryFormAddress: 'Address',
+      deliveryFormAddressInfo: 'Enter the name of the street, house and apartment',
+      deliveryFormAddressPlaceholder: '14 King Street, 58',
+
       // Contacts
       ourContacts: 'Our contacts.',
       ourAddress: 'Address of our main office and offline store:',
@@ -114,6 +126,19 @@ const resources = {
   },
   fr: {
     translation: {
+      // Delivery Section
+      deliverySectionTitle: 'Livraison de votre glace préférée',
+      deliverySectionInfo:
+        "Vous aimeriez déguster votre dessert préféré, mais vous n'avez pas le temps d'aller au magasin ? Commandez la livraison de crème glacée à votre domicile et le coursier vous apportera votre commande dans l'heure qui suit!",
+      deliveryFormTitle:
+        'Entrez votre adresse et la date de livraison et nous vous contacterons pour confirmer votre commande.',
+      deliveryFormDate: 'Date',
+      deliveryFormDateInfo: 'Saisir la date de livraison souhaitée au format JJ.MM.AAAA',
+      deliveryFormPhone: 'Numéro de téléphone',
+      deliveryFormAddress: 'Adresse',
+      deliveryFormAddressInfo: "Entrez le nom de la rue, de la maison et de l'appartement",
+      deliveryFormAddressPlaceholder: '14, rue King, 58',
+
       // Contacts
       ourContacts: 'Nos contacts.',
       ourAddress: 'Adresse de notre bureau principal et magasin hors ligne:',
