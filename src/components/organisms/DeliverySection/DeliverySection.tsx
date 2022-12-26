@@ -73,7 +73,7 @@ const DeliverySection = ({ 'data-testid': testId }: IDeliverySection) => {
                   tooltipText: `${t('deliveryFormDateInfo')}`,
                 }}
                 type='text'
-                data-testid={testId}
+                data-testid={`${testId}-date`}
                 placeholder='01.04.2020'
               />
               <InputControl
@@ -85,7 +85,7 @@ const DeliverySection = ({ 'data-testid': testId }: IDeliverySection) => {
                   className: 'delivery__input-control delivery__input-control--phone',
                 }}
                 type='text'
-                data-testid={testId}
+                data-testid={`${testId}-phone`}
                 placeholder='+1(000)000-000'
               />
             </div>
@@ -99,7 +99,7 @@ const DeliverySection = ({ 'data-testid': testId }: IDeliverySection) => {
                 tooltipText: `${t('deliveryFormAddressInfo')}`,
               }}
               type='text'
-              data-testid={testId}
+              data-testid={`${testId}-address`}
               placeholder={`${t('deliveryFormAddressPlaceholder')}`}
             />
             <Button

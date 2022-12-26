@@ -46,9 +46,7 @@ describe('Subscription Section Tests', () => {
     await userEvent.type(myInput(), 'test@gmail.com');
     mswServer.use(postRequestWithoutDelaySuccess);
     await userEvent.click(myButton());
-    await waitFor(() => {
-      expect(screen.getByTestId('demo-global-message')).toHaveClass('global-message__item--success');
-    });
+    expect(await screen.findByTestId('demo-global-message')).toHaveClass('global-message__item--success');
   });
 
   it('Unsuccessful submission', async () => {
@@ -56,8 +54,6 @@ describe('Subscription Section Tests', () => {
     await userEvent.type(myInput(), 'test@gmail.com');
     mswServer.use(postRequestWithoutDelayError);
     await userEvent.click(myButton());
-    await waitFor(() => {
-      expect(screen.getByTestId('demo-global-message')).toHaveClass('global-message__item--error');
-    });
+    expect(await screen.findByTestId('demo-global-message')).toHaveClass('global-message__item--error');
   });
 });
