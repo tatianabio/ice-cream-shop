@@ -60,6 +60,7 @@ export const Demo = () => {
             formField={{
               name: 'inputName1',
               label: 'The label of the input is visible',
+              tooltipText: 'Tooltip text',
             }}
             type='text'
             data-testid='demo-1'
