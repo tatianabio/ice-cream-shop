@@ -25,6 +25,8 @@ const InputControl = ({ formField, 'data-testid': testId, ...props }: IInputCont
   }, [isDirtyField]);
   const errorText = (errors[name]?.message as string) || '';
 
+  // TODO: add masks for tel and date inputs
+
   return (
     <Controller
       name={name}

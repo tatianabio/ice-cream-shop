@@ -12,6 +12,8 @@ export interface ISliderTileStore {
   setOffers: (offers: IIceCreamOffer[]) => void;
 }
 
+// TODO: move this store to the component OfferSection
+
 export const useSliderTileStore = create<ISliderTileStore>((set) => ({
   activeItemIndex: 0,
   setActiveItemIndex: (num: number) => set(() => ({ activeItemIndex: num })),

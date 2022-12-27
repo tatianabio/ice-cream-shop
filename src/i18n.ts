@@ -4,6 +4,15 @@ import { initReactI18next } from 'react-i18next';
 const resources = {
   en: {
     translation: {
+      // Footer
+      footerTitle: 'Our social media and useful information about us.',
+      infoList: 'List of links to useful information about us.',
+      forPartners: 'For our partners',
+      aboutManufacture: 'About manufacture',
+      ourDocuments: 'Our documents',
+      ecoStandards: 'Environmental standards',
+      htmlAcademyDesign: 'Design by .html academy © 2021',
+
       // Delivery Section
       deliverySectionTitle: 'Delivery of your favorite ice cream',
       deliverySectionInfo:
@@ -126,6 +135,15 @@ const resources = {
   },
   fr: {
     translation: {
+      // Footer
+      footerTitle: 'Nos médias sociaux et des informations utiles sur nous.',
+      infoList: 'Liste de liens vers des informations utiles sur nous.',
+      forPartners: 'Pour nos partenaires',
+      aboutManufacture: 'À propos de la fabrication',
+      ourDocuments: 'Nos documentations',
+      ecoStandards: 'Normes environnementales',
+      htmlAcademyDesign: 'Conception par .html academy © 2021',
+
       // Delivery Section
       deliverySectionTitle: 'Livraison de votre glace préférée',
       deliverySectionInfo:
