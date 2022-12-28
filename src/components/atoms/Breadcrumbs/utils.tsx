@@ -1,6 +1,5 @@
 import React from 'react';
 import Breadcrumbs, { IBreadcrumb } from './Breadcrumbs';
-import GllacyLogo from '../GllacyLogo';
 
 export const breadcrumbsCatalog: IBreadcrumb[] = [
   {
@@ -27,15 +26,6 @@ export const routerArray = [
         <Breadcrumbs breadcrumbsArray={breadcrumbsCatalog} />
         <div data-testid='catalog-test'>Catalog page</div>
       </>
-    ),
-  },
-  {
-    path: '/demo',
-    element: (
-      <div data-testid='demo-test'>
-        <h2>Demo page</h2>
-        <GllacyLogo data-testid='demo' />
-      </div>
     ),
   },
 ];
