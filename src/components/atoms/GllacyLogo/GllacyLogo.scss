@@ -1,0 +1,18 @@
+.gllacy-logo {
+  display: block;
+  width: fit-content;
+  color: var(--basic-extra-dark);
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    opacity: 1;
+    box-shadow: 0 0 0 2px var(--basic-extra-dark);
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
