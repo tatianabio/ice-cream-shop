@@ -8,7 +8,7 @@ export const basicNavigation: IBasicNavigationItem[] = [
     isActive: false,
   },
   {
-    name: 'delivery',
+    name: 'shipping',
     link: '/catalog',
     isActive: false,
   },
