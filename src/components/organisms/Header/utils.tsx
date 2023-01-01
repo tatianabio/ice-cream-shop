@@ -1,20 +1,19 @@
 import React from 'react';
 import { IBasicNavigationItem } from './Header';
 
-export const basicNavigation: IBasicNavigationItem[] = [
+const basicNavigation: IBasicNavigationItem[] = [
   {
     name: 'catalog',
     link: '/catalog',
-    isActive: false,
   },
   {
     name: 'shipping',
-    link: '/catalog',
-    isActive: false,
+    link: '/shipping',
   },
   {
     name: 'aboutUs',
-    link: '/catalog',
-    isActive: false,
+    link: '/aboutUs',
   },
 ];
+
+export default basicNavigation;

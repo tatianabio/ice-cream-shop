@@ -60,11 +60,13 @@ const resources = {
         'Subscribe to our sweet newsletter and always be aware of all the most delicious that we have going on. We promise not to spam or send any unnecessary nonsense. Honestly =)',
       subscriptionTitle: 'Subscribe to our newsletter!',
 
-      // Pages
+      // Pages and Header
       main: 'Main',
       catalog: 'Catalog',
       shipping: 'Shipping and payment',
       aboutUs: 'About us',
+      toggleOpenMenu: 'Open menu.',
+      toggleCloseMenu: 'Close menu.',
 
       // Offer Section
       order: 'Order',
@@ -194,7 +196,7 @@ const resources = {
         'Abonnez-vous à notre douce newsletter et soyez toujours au courant de tout ce que nous avons de plus délicieux. Nous nous engageons à ne pas spammer ni envoyer de bêtises inutiles. Franchement =)',
       subscriptionTitle: 'Abonnez-vous à notre newsletter!',
 
-      // Pages
+      // Pages and Header
       main: "D'accueil",
       catalog: 'Catalogue',
       shipping: 'Expédition et paiement',

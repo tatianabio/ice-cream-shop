@@ -2,16 +2,16 @@ import React, { useCallback, useRef, useState } from 'react';
 import './Header.scss';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import GllacyLogo from '../../atoms/GllacyLogo';
+import Cross from '../../../assets/svg/cross';
+import ToggleMenu from '../../../assets/svg/toggle-menu';
 
 export interface IBasicNavigationItem {
   /** Displayed name of the navigation item */
   name: string;
   /** Link of the navigation item */
   link: string;
-  /** Is this navigation item active (represent the current page)? */
-  isActive: boolean;
 }
 
 interface IHeader {
@@ -28,19 +28,20 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
 
   const [isClosed, setIsClosed] = useState(true);
 
+  const toggleButtonText = isClosed ? t('toggleOpenMenu') : t('toggleCloseMenu');
+
+  const linkClassName = ({ isActive }: { isActive: boolean }) =>
+    `navigation__link ${isActive ? 'navigation__link--active' : ''}`;
+
   const onClickHandler = useCallback(() => setIsClosed(!isClosed), [isClosed]);
 
   const basicNavigation = basicNavigationArray.map((item) => {
-    const { name, link, isActive } = item;
+    const { name, link } = item;
     return (
       <li key={name} className={cx('navigation__basic-item')}>
-        <Link
-          className={cx('navigation__link', isActive && 'navigation__link--active')}
-          to={link}
-          tabIndex={isActive ? -1 : undefined}
-        >
+        <NavLink className={linkClassName} to={link} onClick={onClickHandler}>
           {t(name)}
-        </Link>
+        </NavLink>
       </li>
     );
   });
@@ -50,7 +51,9 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
       <GllacyLogo data-testid={testId} />
       <nav className={cx('header__navigation', 'navigation', isClosed && 'navigation--closed')}>
         <button className='navigation__toggle' type='button' onClick={onClickHandler}>
-          <span className='visually-hidden'>{t('')}</span>
+          <span className='visually-hidden'>{toggleButtonText}</span>
+          {!isClosed && <Cross />}
+          {isClosed && <ToggleMenu />}
         </button>
         <div className='navigation__container' style={{ top: headerRef.current?.clientHeight || 0 }}>
           <ul className='navigation__basic-list'>{basicNavigation}</ul>
