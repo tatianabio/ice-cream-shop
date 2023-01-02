@@ -1,0 +1,29 @@
+.language-toggle {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  background-size: contain;
+
+  &--en {
+    background-image: url('../../../assets/svg/lang-en.svg');
+  }
+
+  &--fr {
+    background-image: url('../../../assets/svg/lang-fr.svg');
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:focus-visible {
+    opacity: 1;
+    box-shadow: 0 0 0 3px var(--basic-extra-light);
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

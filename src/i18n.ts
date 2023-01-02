@@ -201,6 +201,8 @@ const resources = {
       catalog: 'Catalogue',
       shipping: 'Expédition et paiement',
       aboutUs: 'À propos de nous',
+      toggleOpenMenu: 'Ouvrir le menu.',
+      toggleCloseMenu: 'Fermer le menu.',
 
       // Offer Section
       order: 'Ordre',
