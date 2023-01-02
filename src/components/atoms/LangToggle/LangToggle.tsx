@@ -1,4 +1,4 @@
-import React, { HTMLProps } from 'react';
+import React, { HTMLProps, useEffect } from 'react';
 import './LangToggle.scss';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -11,13 +11,20 @@ interface ILangToggle extends HTMLProps<HTMLButtonElement> {
 }
 
 const LangToggle = ({ 'data-testid': testId, className }: ILangToggle) => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const getLanguage = () => i18next.language || window.localStorage.i18nextLng;
   const currentLanguage = getLanguage();
 
-  const onLangButtonHandler = () => {
-    const switchLanguageTo = (lang: string) => i18n.changeLanguage(lang).then();
-    currentLanguage === 'en' ? switchLanguageTo('fr') : switchLanguageTo('en');
+  useEffect(() => {
+    const localLang = localStorage.getItem('lang');
+    !localLang && localStorage.setItem('lang', 'en');
+    localLang && i18n.changeLanguage(localLang);
+  }, []);
+
+  const onLangButtonHandler = async () => {
+    const newLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+    localStorage.setItem('lang', newLanguage);
+    await i18n.changeLanguage(newLanguage);
   };
 
   const toggleLangButtonText =
