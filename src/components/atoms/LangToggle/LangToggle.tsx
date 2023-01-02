@@ -1,6 +1,5 @@
 import React, { HTMLProps, useEffect } from 'react';
 import './LangToggle.scss';
-import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
 
@@ -12,12 +11,12 @@ interface ILangToggle extends HTMLProps<HTMLButtonElement> {
 
 const LangToggle = ({ 'data-testid': testId, className }: ILangToggle) => {
   const { i18n } = useTranslation();
-  const getLanguage = () => i18next.language || window.localStorage.i18nextLng;
-  const currentLanguage = getLanguage();
+  // const getLanguage = () => i18n.language;
+  const currentLanguage = i18n.language;
 
   useEffect(() => {
     const localLang = localStorage.getItem('lang');
-    !localLang && localStorage.setItem('lang', 'en');
+    !localLang && localStorage.setItem('lang', currentLanguage);
     localLang && i18n.changeLanguage(localLang);
   }, []);
 
