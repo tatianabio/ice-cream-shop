@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import GllacyLogo from '../../atoms/GllacyLogo';
 import Cross from '../../../assets/svg/cross';
 import ToggleMenu from '../../../assets/svg/toggle-menu';
+import LangToggle from '../../atoms/LangToggle';
 
 export interface IBasicNavigationItem {
   /** Displayed name of the navigation item */
@@ -28,18 +29,18 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
 
   const [isClosed, setIsClosed] = useState(true);
 
-  const toggleMenuButtonText = isClosed ? t('toggleOpenMenu') : t('toggleCloseMenu');
+  const menuToggleText = isClosed ? t('toggleOpenMenu') : t('toggleCloseMenu');
 
   const linkClassName = ({ isActive }: { isActive: boolean }) =>
     `navigation__link ${isActive ? 'navigation__link--active' : ''}`;
 
-  const onNavigationToggleHandler = useCallback(() => setIsClosed(!isClosed), [isClosed]);
+  const onMenuToggleHandler = useCallback(() => setIsClosed(!isClosed), [isClosed]);
 
   const basicNavigation = basicNavigationArray.map((item) => {
     const { name, link } = item;
     return (
       <li key={name} className={cx('navigation__basic-item')}>
-        <NavLink className={linkClassName} to={link} onClick={onNavigationToggleHandler}>
+        <NavLink className={linkClassName} to={link} onClick={onMenuToggleHandler}>
           {t(name)}
         </NavLink>
       </li>
@@ -50,8 +51,8 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
     <header className='header' ref={headerRef}>
       <GllacyLogo data-testid={testId} />
       <nav className={cx('header__navigation', 'navigation', isClosed && 'navigation--closed')}>
-        <button className='navigation__toggle' type='button' onClick={onNavigationToggleHandler}>
-          <span className='visually-hidden'>{toggleMenuButtonText}</span>
+        <button className='navigation__menu-toggle' type='button' onClick={onMenuToggleHandler}>
+          <span className='visually-hidden'>{menuToggleText}</span>
           {!isClosed && <Cross />}
           {isClosed && <ToggleMenu />}
         </button>
@@ -60,6 +61,7 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
           <a href='tel:+1111111111' className='navigation__phone'>
             +1-111-111-111
           </a>
+          <LangToggle className='navigation__language-toggle' data-testid={testId} />
           <ul className='navigation__user-list' />
         </div>
       </nav>

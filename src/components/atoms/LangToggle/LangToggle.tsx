@@ -11,7 +11,6 @@ interface ILangToggle extends HTMLProps<HTMLButtonElement> {
 
 const LangToggle = ({ 'data-testid': testId, className }: ILangToggle) => {
   const { i18n } = useTranslation();
-  // const getLanguage = () => i18n.language;
   const currentLanguage = i18n.language;
 
   useEffect(() => {
