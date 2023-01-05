@@ -15,6 +15,8 @@ export default {
   },
 };
 
+// TODO: amend router like in the Header
+
 export const Demo = () => {
   const router = createMemoryRouter(routerArray, { initialEntries: ['/demo'] });
 

@@ -1,7 +1,12 @@
 import { rest } from 'msw';
 
-const postRequest = rest.post('*', (_, res, ctx) => {
-  return res(ctx.json({}), ctx.status(200), ctx.delay(1000));
+const postRequest = rest.post('*', (req, res, ctx) => {
+  let status = 200;
+  if (req.url.href.includes('/signIn')) {
+    status = 403;
+  }
+
+  return res(ctx.json({}), ctx.status(status), ctx.delay(1000));
 });
 
 export const postRequestWithoutDelaySuccess = rest.post('*', (_, res, ctx) => {

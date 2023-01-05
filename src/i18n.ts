@@ -43,6 +43,7 @@ const resources = {
       error: 'Error :-(',
       successfulSubmission: 'The data was successfully submitted.',
       errorMessage: 'Something went wrong. Please try again later.',
+      incorrectSignInDetails: 'The email or password is incorrect.',
 
       // Forms: common phrases
       requiredField: 'This field is required.',
@@ -54,6 +55,12 @@ const resources = {
       feedbackFormTitle: 'We will definitely answer you!',
       nameAndSurname: 'Name and surname',
       freeForm: 'In free form',
+
+      // Sign In Form
+      signInFormTitle: 'Sign In',
+      signInButton: 'Sign In',
+      forgotPasswordLink: 'Forgot password?',
+      signUpLink: 'Sign up',
 
       // Subscription section
       subscriptionDescription:
@@ -179,6 +186,7 @@ const resources = {
       error: 'Erreur :-(',
       successfulSubmission: 'Les données ont été soumises avec succès.',
       errorMessage: "Quelque chose s'est mal passé. Veuillez réessayer plus tard.",
+      incorrectSignInDetails: "L'e-mail ou le mot de passe est incorrect.",
 
       // Forms: common phrases
       requiredField: 'Ce champ est requis.',
@@ -190,6 +198,12 @@ const resources = {
       feedbackFormTitle: 'Nous vous répondrons certainement!',
       nameAndSurname: 'Nom et surnom',
       freeForm: 'Sous forme libre',
+
+      // Sign In Form
+      signInFormTitle: "S'identifier",
+      signInButton: "S'identifier",
+      forgotPasswordLink: 'Mot de passe oublié?',
+      signUpLink: "S'inscrire",
 
       // Subscription section
       subscriptionDescription:
