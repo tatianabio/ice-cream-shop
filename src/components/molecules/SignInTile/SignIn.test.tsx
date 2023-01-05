@@ -2,46 +2,34 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import GlobalMessage from '../../atoms/GlobalMessage';
-import FeedbackTile from './FeedbackTile';
 import {
   postRequestWithoutDelayError,
   postRequestWithoutDelaySuccess,
 } from '../../../mock/mswHandlers/postRequest/postRequest';
 import mswServer from '../../../mock/mswServer/mswServer';
+import SignInTile from './SignInTile';
 
 const TestComponent = () => {
   return (
     <div>
       <GlobalMessage data-testid='demo' />
-      <FeedbackTile data-testid='demo' />
+      <SignInTile data-testid='demo' />
     </div>
   );
 };
 
-const myInputName = () => screen.getByTestId('demo-name-input');
-const myInputEmail = () => screen.getByTestId('demo-email-input');
-const myTextarea = () => screen.getByTestId('demo-textarea');
 const myButton = () => screen.getByTestId('demo-button');
 
-describe('Feedback Tile Tests', () => {
+describe('Sign In Tile Tests', () => {
   it('render and validation', async () => {
     render(<TestComponent />);
-    const myErrorMessage = screen.getByTestId('demo-error-message');
-    // Feedback Tile render
-    expect(screen.getByTestId('demo-feedback')).toBeInTheDocument();
 
-    // Unsuccessful validation of the form
-    await userEvent.click(myButton());
-    await waitFor(() => {
-      expect(myErrorMessage).toHaveTextContent('requiredField');
-    });
+    // Sign In Tile render
+    expect(screen.getByTestId('demo-sign-in')).toBeInTheDocument();
   });
 
   it('Successful submission', async () => {
     render(<TestComponent />);
-    await userEvent.type(myInputName(), 'James Scott');
-    await userEvent.type(myInputEmail(), 'test@gmail.com');
-    await userEvent.type(myTextarea(), 'Everything was fine.');
     mswServer.use(postRequestWithoutDelaySuccess);
     await userEvent.click(myButton());
     await waitFor(() => {
@@ -51,9 +39,6 @@ describe('Feedback Tile Tests', () => {
 
   it('Unsuccessful submission', async () => {
     render(<TestComponent />);
-    await userEvent.type(myInputName(), 'James Scott');
-    await userEvent.type(myInputEmail(), 'test@gmail.com');
-    await userEvent.type(myTextarea(), 'Everything was fine.');
     mswServer.use(postRequestWithoutDelayError);
     await userEvent.click(myButton());
     await waitFor(() => {

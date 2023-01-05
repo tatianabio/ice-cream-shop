@@ -24,12 +24,20 @@
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+
+  @media (max-width: v.$mobile-width-only) {
+    justify-content: center;
+  }
 }
 
 .sign-in__links-wrapper {
   display: flex;
   flex-direction: column;
   gap: 4px;
+
+  @media (max-width: v.$mobile-width-only) {
+    align-items: center;
+  }
 }
 
 .sign-in__link {
