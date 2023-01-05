@@ -15,9 +15,10 @@ export default {
   },
 };
 
+// TODO: amend the router as in the header
+
 export const Demo = () => {
   const router = createMemoryRouter(routerArray, { initialEntries: ['/catalog'] });
-
   return (
     <StoryContainer title='Breadcrumbs' text='in Catalog page as an example'>
       <RouterProvider router={router} />
