@@ -26,20 +26,16 @@ const Popup = ({ 'data-testid': testId, children, openingButtonText, openingButt
   }, [isPopupOpen]);
 
   const openingButton = useRef<HTMLButtonElement | null>(null);
-  const popup = useRef<HTMLDivElement | null>(null);
-  const { styles, attributes } = usePopper(openingButton.current, popup.current, {
-    placement: 'bottom',
+  // const popup = useRef<HTMLDivElement | null>(null);
+  const [popup, setPopup] = useState<HTMLDivElement | null>(null);
+
+  const { styles, attributes } = usePopper(openingButton.current, popup, {
+    placement: 'bottom-end',
     modifiers: [
       {
         name: 'offset',
         options: {
-          offset: [0, 8],
-        },
-      },
-      {
-        name: 'flip',
-        options: {
-          fallbackPlacements: ['top', 'right'],
+          offset: [0, 9],
         },
       },
     ],
@@ -61,7 +57,7 @@ const Popup = ({ 'data-testid': testId, children, openingButtonText, openingButt
       {isPopupOpen &&
         createPortal(
           <div
-            ref={popup}
+            ref={setPopup}
             style={styles.popper}
             {...attributes.popper}
             className='popup__container'
@@ -74,6 +70,8 @@ const Popup = ({ 'data-testid': testId, children, openingButtonText, openingButt
               className='popup__close-button'
               data-testid={`${testId}-close-button`}
             >
+              <div className='tooltip__arrow' style={styles.arrow} />
+
               <span className='visually-hidden'>{t('')}</span>
               <Cross />
             </button>
