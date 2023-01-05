@@ -1,0 +1,52 @@
+@use '../../../styles/variables' as v;
+
+.popup__container {
+  position: relative;
+  background-color: var(--basic-extra-light);
+  border-radius: 4px;
+
+  @media (max-width: v.$mobile-width-only) {
+    max-width: 280px;
+    padding: 32px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    max-width: 440px;
+    padding: 48px;
+  }
+}
+
+.popup__close-button {
+  position: absolute;
+  display: grid;
+  place-content: center;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  color: var(--basic-extra-dark);
+  border-radius: 4px;
+
+  @media (max-width: v.$mobile-width-only) {
+    top: 8px;
+    right: 8px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    top: 20px;
+    right: 20px;
+  }
+
+  &:hover {
+    color: var(--basic-neutral);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 1px var(--basic-dark);
+    color: var(--basic-neutral);
+  }
+
+  &:active {
+    box-shadow: none;
+    color: var(--basic-light);
+  }
+}
