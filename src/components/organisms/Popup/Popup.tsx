@@ -3,6 +3,7 @@ import './Popup.scss';
 import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
 import { usePopper } from 'react-popper';
+import cx from 'classnames';
 import Cross from '../../../assets/svg/cross';
 
 interface IPopup {
@@ -26,7 +27,7 @@ const Popup = ({ 'data-testid': testId, children, openingButtonText, openingButt
   }, [isPopupOpen]);
 
   const openingButton = useRef<HTMLButtonElement | null>(null);
-  // const popup = useRef<HTMLDivElement | null>(null);
+
   const [popup, setPopup] = useState<HTMLDivElement | null>(null);
 
   const { styles, attributes } = usePopper(openingButton.current, popup, {
@@ -44,13 +45,15 @@ const Popup = ({ 'data-testid': testId, children, openingButtonText, openingButt
   const openPopup = useCallback(() => setIsPopupOpen(true), []);
   const closePopup = useCallback(() => setIsPopupOpen(false), []);
 
-  const onOpeningButtonClickHandler = () => {
-    isPopupOpen ? closePopup() : openPopup();
-  };
-
   return (
     <div data-testid={`${testId}-modal-container`}>
-      <button ref={openingButton} type='button' data-testid={`${testId}-opening`} onClick={onOpeningButtonClickHandler}>
+      <button
+        className={cx('popup__opening-button', isPopupOpen && 'popup__opening-button--current')}
+        ref={openingButton}
+        type='button'
+        data-testid={`${testId}-opening`}
+        onClick={openPopup}
+      >
         {openingButtonIcon}
         {t(`${openingButtonText}`)}
       </button>

@@ -1,4 +1,5 @@
 @use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as *;
 
 .popup__container {
   position: relative;
@@ -6,7 +7,7 @@
   border-radius: 4px;
 
   @media (max-width: v.$mobile-width-only) {
-    max-width: 280px;
+    max-width: 250px;
     padding: 32px;
   }
 
@@ -48,5 +49,38 @@
   &:active {
     box-shadow: none;
     color: var(--basic-light);
+  }
+}
+
+.popup__opening-button {
+  @include s1(var(--basic-extra-dark));
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  background-color: var(--basic-extra-light-icon);
+  padding: 8px 16px;
+  border-radius: 30px;
+
+  &:hover {
+    background-color: var(--basic-extra-light-hover);
+  }
+
+  &:focus-visible {
+    background-color: var(--basic-extra-light-hover);
+    box-shadow: inset 0 0 0 2px var(--basic-extra-dark);
+  }
+
+  &:active {
+    background-color: var(--basic-extra-light);
+  }
+
+  &--current,
+  &--current:hover,
+  &--current:focus,
+  &--current:active {
+    background-color: var(--special-bright);
+    color: var(--basic-extra-light);
+    cursor: default;
+    box-shadow: none;
   }
 }
