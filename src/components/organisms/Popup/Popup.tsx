@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import { usePopper } from 'react-popper';
 import cx from 'classnames';
 import Cross from '../../../assets/svg/cross';
+import useClickOutside from '../../utils/useClickOutside';
 
 interface IPopup {
   /** The content of the popup */
@@ -45,6 +46,8 @@ const Popup = ({ 'data-testid': testId, children, openingButtonText, openingButt
   const openPopup = useCallback(() => setIsPopupOpen(true), []);
   const closePopup = useCallback(() => setIsPopupOpen(false), []);
 
+  useClickOutside(popup, closePopup, isPopupOpen, openingButton.current);
+
   return (
     <div data-testid={`${testId}-modal-container`}>
       <button
@@ -73,8 +76,6 @@ const Popup = ({ 'data-testid': testId, children, openingButtonText, openingButt
               className='popup__close-button'
               data-testid={`${testId}-close-button`}
             >
-              <div className='tooltip__arrow' style={styles.arrow} />
-
               <span className='visually-hidden'>{t('')}</span>
               <Cross />
             </button>

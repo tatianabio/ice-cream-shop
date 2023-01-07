@@ -17,7 +17,7 @@ export const Demo = () => {
   return (
     <StoryContainer
       title='Popup'
-      style={{ maxWidth: '1200px', minHeight: '2000px', height: 'min-content', padding: '15px' }}
+      style={{ maxWidth: '1200px', minHeight: '2000px', height: 'min-content', padding: '5px' }}
     >
       <Popup data-testid='demo' openingButtonText='Open popup' openingButtonIcon={<Cart />}>
         <div>
