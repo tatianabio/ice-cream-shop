@@ -70,6 +70,7 @@ const Popup = ({ 'data-testid': testId, children, openingButtonText, openingButt
             data-testid={`${testId}-popup`}
             role='dialog'
           >
+            //TODO: create separated component for closing button
             <button
               type='button'
               onClick={closePopup}
