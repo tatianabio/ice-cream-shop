@@ -15,13 +15,23 @@ const TestComponent = () => {
 };
 
 describe('Popup Tests', () => {
-  it('open and close popup', async () => {
+  it('opening and closing popup by clicking outside', async () => {
     render(<TestComponent />);
     await userEvent.click(screen.getByTestId('demo-opening'));
     expect(screen.getByTestId('demo-popup')).toBeInTheDocument();
     await userEvent.click(screen.getByTestId('demo-opening'));
     expect(screen.getByTestId('demo-popup')).toBeInTheDocument();
     await userEvent.click(document.body);
+    expect(screen.queryByTestId('demo-popup')).toBeNull();
+  });
+
+  it('closing popup by pressing Escape', async () => {
+    render(<TestComponent />);
+    await userEvent.click(screen.getByTestId('demo-opening'));
+    expect(screen.getByTestId('demo-popup')).toBeInTheDocument();
+    await userEvent.keyboard('{Enter}');
+    expect(screen.getByTestId('demo-popup')).toBeInTheDocument();
+    await userEvent.keyboard('{Escape}');
     expect(screen.queryByTestId('demo-popup')).toBeNull();
   });
 });
