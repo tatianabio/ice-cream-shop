@@ -22,9 +22,32 @@ const Popup = ({ 'data-testid': testId, children, openingButtonText, openingButt
   const { t } = useTranslation();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+  const openPopup = useCallback(() => setIsPopupOpen(true), []);
+  const closePopup = useCallback(() => setIsPopupOpen(false), []);
+
+  // Changing the overflow and adding the listener for Escape pressing when the popup is open
   useEffect(() => {
-    isPopupOpen && (document.body.style.overflow = 'hidden');
-    !isPopupOpen && (document.body.style.overflow = 'auto');
+    // handler on Esc press
+    const closeOnEsc = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.stopPropagation();
+        closePopup();
+      }
+    };
+
+    // If the popup is open, add Esc press listener, otherwise, remove it
+    if (!isPopupOpen) {
+      document.body.style.overflow = 'auto';
+      window.removeEventListener('keyup', closeOnEsc);
+    } else {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keyup', closeOnEsc);
+    }
+
+    // If the popup content is destroyed, remove keyup listener
+    return () => {
+      window.removeEventListener('keyup', closeOnEsc);
+    };
   }, [isPopupOpen]);
 
   const openingButton = useRef<HTMLButtonElement | null>(null);
@@ -43,10 +66,9 @@ const Popup = ({ 'data-testid': testId, children, openingButtonText, openingButt
     ],
   });
 
-  const openPopup = useCallback(() => setIsPopupOpen(true), []);
-  const closePopup = useCallback(() => setIsPopupOpen(false), []);
-
   useClickOutside(popup, closePopup, isPopupOpen, openingButton.current);
+
+  // TODO: create separated component for closing button
 
   return (
     <div data-testid={`${testId}-modal-container`}>
@@ -70,7 +92,6 @@ const Popup = ({ 'data-testid': testId, children, openingButtonText, openingButt
             data-testid={`${testId}-popup`}
             role='dialog'
           >
-            //TODO: create separated component for closing button
             <button
               type='button'
               onClick={closePopup}
