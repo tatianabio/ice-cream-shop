@@ -10,7 +10,7 @@ import InputControl from '../../_formControls/InputControl';
 import Button from '../../atoms/Button';
 
 interface ISignInTile {
-  setOpenModal?: (isOpened: boolean) => void;
+  onClose?: () => void;
   /** Technical attributes */
   'data-testid': string;
 }
@@ -20,7 +20,7 @@ export interface ISignInForm {
   password: string;
 }
 
-const SignInTile = ({ 'data-testid': testId, setOpenModal }: ISignInTile) => {
+const SignInTile = ({ 'data-testid': testId, onClose }: ISignInTile) => {
   const { t } = useTranslation();
   const { sendData, loading, isSuccessful } = useFormSubmit('signIn');
 
@@ -43,7 +43,7 @@ const SignInTile = ({ 'data-testid': testId, setOpenModal }: ISignInTile) => {
     if (!loading && isSuccessful === true) {
       sendMessageToDisplay('successfulSubmission');
       form.reset();
-      setOpenModal?.(false);
+      onClose?.();
     }
   }, [loading, isSuccessful]);
 

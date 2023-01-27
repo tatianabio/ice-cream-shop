@@ -7,6 +7,9 @@ import GllacyLogo from '../../atoms/GllacyLogo';
 import Cross from '../../../assets/svg/cross';
 import ToggleMenu from '../../../assets/svg/toggle-menu';
 import LangToggle from '../../atoms/LangToggle';
+import Popup from '../Popup';
+import SignInTile from '../../molecules/SignInTile';
+import Cart from '../../../assets/svg/cart';
 
 export interface IBasicNavigationItem {
   /** Displayed name of the navigation item */
@@ -62,7 +65,11 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
             +1-111-111-111
           </a>
           <LangToggle className='navigation__language-toggle' data-testid={testId} />
-          <ul className='navigation__user-list' />
+          <ul className='navigation__user-list'>
+            <Popup data-testid={testId} openingButtonIcon={<Cart />} openingButtonText='Sign In'>
+              <SignInTile data-testid={testId} />
+            </Popup>
+          </ul>
         </div>
       </nav>
     </header>

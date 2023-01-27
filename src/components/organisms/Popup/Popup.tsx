@@ -1,4 +1,4 @@
-import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
+import React, { ReactElement, ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import './Popup.scss';
 import { useTranslation } from 'react-i18next';
 import { createPortal } from 'react-dom';
@@ -9,7 +9,7 @@ import useClickOutside from '../../utils/useClickOutside';
 
 interface IPopup {
   /** The content of the popup */
-  children: ReactNode;
+  children: ReactElement;
   /** Text inside the button that opens the popup */
   openingButtonText: string;
   /** Text inside the button that opens the popup */
@@ -98,10 +98,10 @@ const Popup = ({ 'data-testid': testId, children, openingButtonText, openingButt
               className='popup__close-button'
               data-testid={`${testId}-close-button`}
             >
-              <span className='visually-hidden'>{t('')}</span>
+              <span className='visually-hidden'>{t('closePopup')}</span>
               <Cross />
             </button>
-            {children}
+            {React.cloneElement(children, { onClose: closePopup })}
           </div>,
           document.body
         )}

@@ -37,6 +37,9 @@ const resources = {
       modalWindow: 'Modal window.',
       closeModal: 'Close the modal window.',
 
+      // Popup
+      closePopup: 'Close the popup.',
+
       // Global Status Message
       statusMessagesList: 'The list of status messages.',
       success: 'Success!',
@@ -179,6 +182,9 @@ const resources = {
       // Modal
       modalWindow: 'Fenêtre modale.',
       closeModal: 'Fermez la fenêtre modale.',
+
+      // Popup
+      closePopup: 'Fermer la pop-up.',
 
       // Global Status Message
       statusMessagesList: "La liste des messages d'état.",

@@ -1,10 +1,7 @@
 import { rest } from 'msw';
 
 const postRequest = rest.post('*', (req, res, ctx) => {
-  let status = 200;
-  if (req.url.href.includes('/signIn')) {
-    status = 403;
-  }
+  const status = 200;
 
   return res(ctx.json({}), ctx.status(status), ctx.delay(1000));
 });
