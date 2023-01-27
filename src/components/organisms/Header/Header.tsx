@@ -67,7 +67,7 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
           <LangToggle className='navigation__language-toggle' data-testid={testId} />
           <ul className='navigation__user-list'>
             <li className='navigation__user-item'>
-              <Popup data-testid={testId} openingButtonIcon={<LogIn />} openingButtonText='Sign In'>
+              <Popup data-testid={testId} openingButtonIcon={<LogIn />} openingButtonText={t('signInButton')}>
                 <SignInTile data-testid={testId} />
               </Popup>
             </li>
