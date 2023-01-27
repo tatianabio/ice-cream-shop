@@ -36,11 +36,12 @@ const Popup = ({ 'data-testid': testId, children, openingButtonText, openingButt
     };
 
     // If the popup is open, add Esc press listener, otherwise, remove it
+    // TODO: solve the problem with the overflow of popup (on mobile resolution it does not work) so that the lines below were commented
     if (!isPopupOpen) {
-      document.body.style.overflow = 'auto';
+      // document.body.style.overflow = 'auto';
       window.removeEventListener('keyup', closeOnEsc);
     } else {
-      document.body.style.overflow = 'hidden';
+      // document.body.style.overflow = 'hidden';
       window.addEventListener('keyup', closeOnEsc);
     }
 

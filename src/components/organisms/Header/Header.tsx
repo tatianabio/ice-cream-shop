@@ -9,7 +9,7 @@ import ToggleMenu from '../../../assets/svg/toggle-menu';
 import LangToggle from '../../atoms/LangToggle';
 import Popup from '../Popup';
 import SignInTile from '../../molecules/SignInTile';
-import Cart from '../../../assets/svg/cart';
+import LogIn from '../../../assets/svg/log-in';
 
 export interface IBasicNavigationItem {
   /** Displayed name of the navigation item */
@@ -66,9 +66,11 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
           </a>
           <LangToggle className='navigation__language-toggle' data-testid={testId} />
           <ul className='navigation__user-list'>
-            <Popup data-testid={testId} openingButtonIcon={<Cart />} openingButtonText='Sign In'>
-              <SignInTile data-testid={testId} />
-            </Popup>
+            <li className='navigation__user-item'>
+              <Popup data-testid={testId} openingButtonIcon={<LogIn />} openingButtonText='Sign In'>
+                <SignInTile data-testid={testId} />
+              </Popup>
+            </li>
           </ul>
         </div>
       </nav>
