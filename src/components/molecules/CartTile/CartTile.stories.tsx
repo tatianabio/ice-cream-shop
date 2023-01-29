@@ -21,7 +21,7 @@ export default {
 export const Demo = () => {
   return (
     <StoryContainer
-      title='Sign In form'
+      title='Cart Tile'
       style={{ maxWidth: '600px', minHeight: '250px', height: 'min-content', padding: '40px' }}
       hasPinkBackground={false}
     >
