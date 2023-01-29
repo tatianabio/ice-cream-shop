@@ -6,7 +6,7 @@ interface IInCartProduct {
   productInfo: IProduct;
 }
 
-interface ICartStore {
+export interface ICartStore {
   productList: Record<string, IInCartProduct>;
   addProduct: (product: IProduct) => void;
   deleteProduct: (product: IProduct) => void;
@@ -36,15 +36,3 @@ const cartStore = create<ICartStore>((set, get) => ({
 }));
 
 export default cartStore;
-
-export const addProductToCart = (product: IProduct) => {
-  cartStore.getState().addProduct(product);
-};
-
-export const removeProductFromCart = (product: IProduct) => {
-  cartStore.getState().deleteProduct(product);
-};
-
-export const removeAllProductsFromCart = () => {
-  cartStore.getState().removeAllProducts();
-};

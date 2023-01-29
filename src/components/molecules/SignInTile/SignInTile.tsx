@@ -10,6 +10,7 @@ import InputControl from '../../_formControls/InputControl';
 import Button from '../../atoms/Button';
 
 interface ISignInTile {
+  /** Callback for closing modal/popper after successful sending data */
   onClose?: () => void;
   /** Technical attributes */
   'data-testid': string;
