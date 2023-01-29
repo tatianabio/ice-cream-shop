@@ -15,8 +15,8 @@ const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
   const { t } = useTranslation();
 
   const productList = cartStore((store: ICartStore) => store.productList, shallow);
-  const [addProductToCart, removeProductFromCart, removeAllProductsFromCart] = cartStore(
-    (store: ICartStore) => [store.addProduct, store.deleteProduct, store.removeAllProducts],
+  const [removeProductFromCart, removeAllProductsFromCart] = cartStore(
+    (store: ICartStore) => [store.deleteProduct, store.removeAllProducts],
     shallow
   );
 
@@ -27,6 +27,7 @@ const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
       <h2 className={cx('cart__title', isCartEmpty && 'cart__title--empty')}>
         {isCartEmpty ? t('Your cart is empty') : t('Cart')}
       </h2>
+      {!isCartEmpty && <div className='cart__container'>{t('List of added products')}</div>}
     </section>
   );
 };

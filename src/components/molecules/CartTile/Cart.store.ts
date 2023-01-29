@@ -36,3 +36,7 @@ const cartStore = create<ICartStore>((set, get) => ({
 }));
 
 export default cartStore;
+
+export const addProductToCart = (product: IProduct) => {
+  cartStore.getState().addProduct(product);
+};

@@ -3,6 +3,9 @@ import globalMswHandlers from '../../../mock/mswHandlers';
 import StoryContainer from '../../storybookUtils/StoryContainer';
 import GlobalMessage from '../../atoms/GlobalMessage';
 import CartTile from './CartTile';
+import Button from '../../atoms/Button';
+import { addProductToCart } from './Cart.store';
+import { products } from '../../../mock/data/products';
 
 export default {
   title: 'Components/Molecules/CartTile',
@@ -19,6 +22,10 @@ export default {
 };
 
 export const Demo = () => {
+  const onClickHandler = () => {
+    addProductToCart(products[0]);
+  };
+
   return (
     <StoryContainer
       title='Cart Tile'
@@ -28,6 +35,7 @@ export const Demo = () => {
       <>
         <GlobalMessage data-testid='demo' />
         <CartTile data-testid='demo' />
+        <Button data-testid='demo' text='Add a product to Cart' variant='secondary' onClick={onClickHandler} />
       </>
     </StoryContainer>
   );
