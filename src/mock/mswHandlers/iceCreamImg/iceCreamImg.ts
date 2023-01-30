@@ -1,6 +1,7 @@
 import { rest } from 'msw';
 import raspberry from '../../../assets/img/iceCream/iceCreamScoops/raspberry.png';
 import pistachio from '../../../assets/img/iceCream/iceCreamScoops/pistachio.png';
+import bubblegum from '../../../assets/img/iceCream/iceCreamScoops/bubblegum.png';
 import fruitSorbets from '../../../assets/img/iceCream/fruit-sorbets.png';
 import cornRaspberry from '../../../assets/img/iceCream/corn-raspberry.png';
 import cornMarshmallow from '../../../assets/img/iceCream/corn-marshmallow.png';
@@ -16,6 +17,10 @@ const iceCreamImages = [
   {
     path: '/pistachio',
     content: pistachio,
+  },
+  {
+    path: '/bubblegum',
+    content: bubblegum,
   },
   {
     path: '/fruit-sorbets',

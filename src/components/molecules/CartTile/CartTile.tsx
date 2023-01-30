@@ -26,12 +26,7 @@ const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
       <h2 className={cx('cart__title', isCartEmpty && 'cart__title--empty')}>
         {isCartEmpty ? t('Your cart is empty') : t('Cart')}
       </h2>
-      {!isCartEmpty && (
-        <div className='cart__container'>
-          {t('List of added products')}
-          {productList[0].count}
-        </div>
-      )}
+      {!isCartEmpty && <div className='cart__container'>{t('List of added products')}</div>}
     </section>
   );
 };

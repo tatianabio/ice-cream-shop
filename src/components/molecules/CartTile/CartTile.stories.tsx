@@ -2,11 +2,11 @@ import React from 'react';
 import shallow from 'zustand/shallow';
 import globalMswHandlers from '../../../mock/mswHandlers';
 import StoryContainer from '../../storybookUtils/StoryContainer';
-import GlobalMessage from '../../atoms/GlobalMessage';
+import GlobalMessage, { sendMessageToDisplay } from '../../atoms/GlobalMessage';
 import CartTile from './CartTile';
 import Button from '../../atoms/Button';
 import cartStore, { ICartStore } from './Cart.store';
-import { products } from '../../../mock/data/products';
+import { IProduct, products } from '../../../mock/data/products';
 
 export default {
   title: 'Components/Molecules/CartTile',
@@ -22,16 +22,28 @@ export default {
   },
 };
 
-export const TestComponent = () => {
+export const DemoComponent = () => {
   const addProductToCart = cartStore((store: ICartStore) => store.addProduct, shallow);
 
-  const onClickHandler = () => {
-    addProductToCart({ ...products[0] });
+  const onClickHandler = (product: IProduct) => {
+    addProductToCart(product);
+    sendMessageToDisplay('successfulAddingToCart');
   };
 
   return (
     <>
-      <Button data-testid='demo' text='Add a product to Cart' variant='secondary' onClick={onClickHandler} />
+      <Button
+        data-testid='demo'
+        text='Add Raspberry ice cream, 1kg'
+        variant='secondary'
+        onClick={() => onClickHandler(products[0])}
+      />
+      <Button
+        data-testid='demo'
+        text='Add Bubblegum ice cream, 1kg'
+        variant='secondary'
+        onClick={() => onClickHandler(products[1])}
+      />
       <CartTile data-testid='demo' />
     </>
   );
@@ -41,12 +53,13 @@ export const Demo = () => {
   return (
     <StoryContainer
       title='Cart Tile'
+      text='Buttons for adding products to cart are not included in the Cart Tile component'
       style={{ maxWidth: '600px', minHeight: '250px', height: 'min-content', padding: '40px' }}
       hasPinkBackground={false}
     >
       <>
         <GlobalMessage data-testid='demo' />
-        <TestComponent />
+        <DemoComponent />
       </>
     </StoryContainer>
   );

@@ -61,4 +61,15 @@ export const products: IProduct[] = [
     fillers: [fillers[4]],
     isAvailable: true,
   },
+  {
+    id: 1,
+    name: 'bubblegum',
+    description: 'bubblegumDescription',
+    price: 5.5,
+    fatContent: 9,
+    rating: 95,
+    imgLink: '/bubblegum',
+    fillers: [fillers[1]],
+    isAvailable: true,
+  },
 ];

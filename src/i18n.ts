@@ -120,6 +120,9 @@ const resources = {
       sprinkles: 'Sprinkles',
       chocolate: 'Chocolate',
 
+      // Cart
+      successfulAddingToCart: '1 kg of selected ice cream has been added to your cart!',
+
       // Product Card
       iceCreamScoop: 'Scoop of ice cream',
       addToCart: 'Add one kilogram of the ice cream to the cart',
@@ -128,6 +131,8 @@ const resources = {
       // Ice cream tastes
       raspberry: 'Raspberry',
       raspberryDescription: 'Vanilla ice cream with raspberry jam',
+      bubblegum: 'Bubblegum',
+      bubblegumDescription: 'Vanilla ice cream with sweet sprinkles',
 
       // Blog article tile
       recentInBlog: 'New in our blog',
@@ -268,6 +273,9 @@ const resources = {
       sprinkles: 'Pépites de sucre',
       chocolate: 'Chocolat',
 
+      // Cart
+      successfulAddingToCart: '1 kg de glace sélectionnée a été ajouté à votre panier!',
+
       // Product Card
       iceCreamScoop: 'Boule de crème glacée',
       addToCart: 'Ajouter un kilogramme de crème glacée au panier',
@@ -276,6 +284,8 @@ const resources = {
       // Ice cream tastes
       raspberry: 'Framboise',
       raspberryDescription: 'Glace vanille à la confiture de framboise',
+      bubblegum: 'Chewing-gum',
+      bubblegumDescription: 'Glace à la vanille avec pépites sucrées',
 
       // Blog article tile
       recentInBlog: 'Nouveau dans notre blog',
