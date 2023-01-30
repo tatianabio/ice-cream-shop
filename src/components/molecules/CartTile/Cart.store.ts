@@ -16,14 +16,17 @@ export interface ICartStore {
 const cartStore = create<ICartStore>((set, get) => ({
   productList: {},
   addProduct: (product: IProduct) => {
-    const { productList } = get();
-    if (productList[product.id]) {
-      productList[product.id].count += 1;
-    } else {
-      productList[product.id] = { count: 1, productInfo: product };
-    }
+    set(() => {
+      const productList = { ...get().productList };
 
-    set(() => ({ productList }));
+      if (productList[product.id]) {
+        productList[product.id].count += 1;
+      } else {
+        productList[product.id] = { count: 1, productInfo: product };
+      }
+
+      return { productList: { ...productList } };
+    });
   },
   deleteProduct: (product: IProduct) => {
     const { productList } = get();

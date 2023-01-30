@@ -1,10 +1,11 @@
 import React from 'react';
+import shallow from 'zustand/shallow';
 import globalMswHandlers from '../../../mock/mswHandlers';
 import StoryContainer from '../../storybookUtils/StoryContainer';
 import GlobalMessage from '../../atoms/GlobalMessage';
 import CartTile from './CartTile';
 import Button from '../../atoms/Button';
-import { addProductToCart } from './Cart.store';
+import cartStore, { ICartStore } from './Cart.store';
 import { products } from '../../../mock/data/products';
 
 export default {
@@ -21,11 +22,22 @@ export default {
   },
 };
 
-export const Demo = () => {
+export const TestComponent = () => {
+  const addProductToCart = cartStore((store: ICartStore) => store.addProduct, shallow);
+
   const onClickHandler = () => {
-    addProductToCart(products[0]);
+    addProductToCart({ ...products[0] });
   };
 
+  return (
+    <>
+      <Button data-testid='demo' text='Add a product to Cart' variant='secondary' onClick={onClickHandler} />
+      <CartTile data-testid='demo' />
+    </>
+  );
+};
+
+export const Demo = () => {
   return (
     <StoryContainer
       title='Cart Tile'
@@ -34,8 +46,7 @@ export const Demo = () => {
     >
       <>
         <GlobalMessage data-testid='demo' />
-        <CartTile data-testid='demo' />
-        <Button data-testid='demo' text='Add a product to Cart' variant='secondary' onClick={onClickHandler} />
+        <TestComponent />
       </>
     </StoryContainer>
   );

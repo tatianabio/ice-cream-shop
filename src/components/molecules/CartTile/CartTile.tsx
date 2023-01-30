@@ -1,5 +1,4 @@
 import React from 'react';
-import shallow from 'zustand/shallow';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
 import cartStore, { ICartStore } from './Cart.store';
@@ -14,12 +13,12 @@ interface ICartTile {
 const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
   const { t } = useTranslation();
 
-  const productList = cartStore((store: ICartStore) => store.productList, shallow);
-  const [removeProductFromCart, removeAllProductsFromCart] = cartStore(
-    (store: ICartStore) => [store.deleteProduct, store.removeAllProducts],
-    shallow
-  );
-
+  const productList = cartStore((store: ICartStore) => store.productList);
+  // const [removeProductFromCart, removeAllProductsFromCart] = cartStore(
+  //   (store: ICartStore) => [store.deleteProduct, store.removeAllProducts],
+  //   shallow
+  // );
+  console.log(productList);
   const isCartEmpty: boolean = Object.keys(productList).length === 0;
 
   return (
@@ -27,7 +26,12 @@ const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
       <h2 className={cx('cart__title', isCartEmpty && 'cart__title--empty')}>
         {isCartEmpty ? t('Your cart is empty') : t('Cart')}
       </h2>
-      {!isCartEmpty && <div className='cart__container'>{t('List of added products')}</div>}
+      {!isCartEmpty && (
+        <div className='cart__container'>
+          {t('List of added products')}
+          {productList[0].count}
+        </div>
+      )}
     </section>
   );
 };
