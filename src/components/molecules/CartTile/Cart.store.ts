@@ -4,6 +4,7 @@ import { IProduct } from '../../../mock/data/products';
 interface IInCartProduct {
   count: number;
   productInfo: IProduct;
+  time: number;
 }
 
 export interface ICartStore {
@@ -20,7 +21,7 @@ const cartStore = create<ICartStore>((set, get) => ({
     if (productList[product.id]) {
       productList[product.id].count += 1;
     } else {
-      productList[product.id] = { count: 1, productInfo: product };
+      productList[product.id] = { count: 1, productInfo: product, time: new Date().getTime() };
     }
 
     set(() => ({ productList: JSON.parse(JSON.stringify(productList)) }));
