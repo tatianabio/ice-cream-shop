@@ -24,9 +24,27 @@
 }
 
 .cart__product-list {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  @media (max-width: v.$mobile-width-only) {
+    padding-bottom: 16px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    padding-bottom: 32px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--basic-light);
+  }
 }
 
 .cart__product-item {
