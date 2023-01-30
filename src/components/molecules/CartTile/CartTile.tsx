@@ -1,9 +1,11 @@
 import React from 'react';
+import './CartTile.scss';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
 import { shallow } from 'zustand/shallow';
 import cartStore, { ICartStore } from './Cart.store';
 import { sendMessageToDisplay } from '../../atoms/GlobalMessage';
+import Cross from '../../../assets/svg/cross';
 
 interface ICartTile {
   /** Callback for closing modal/popper after successful sending data */
@@ -40,15 +42,18 @@ const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
           width='46px'
           height='46px'
         />
-        <h3 className='cart__product-name'>{t(name)}</h3>
-        <span className='cart__product-count'>{t(`${count} kg x ${price}$`)}</span>
+        <div className='cart__product-info'>
+          <h3 className='cart__product-name'>{t(name)}</h3>
+          <span className='cart__product-count'>{t(`${count} kg x ${price}$`)}</span>
+        </div>
         <span className='cart__product-price'>{t(`${(price * count).toFixed(2)} $`)}</span>
         <button
           className='cart__product-removing'
           type='button'
           onClick={() => onDeleteButtonClickHandler(productInfo.id)}
         >
-          Delete product
+          <span className='visually-hidden'>Delete product</span>
+          <Cross />
         </button>
       </li>
     );

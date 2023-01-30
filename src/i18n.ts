@@ -123,7 +123,7 @@ const resources = {
       // Cart
       cart: 'Cart',
       successfulAddingToCart: '1 kg of selected ice cream has been added to your cart!',
-      successfulRemovingFromCart: 'Selected ice cream has been been removed from your cart!',
+      successfulRemovingFromCart: 'Selected item has been been removed from your cart!',
       emptyCart: 'Your cart is empty',
       sendOrder: 'Send order',
       totalOrderPrice: 'Total',
@@ -281,7 +281,7 @@ const resources = {
       // Cart
       cart: 'Chariot',
       successfulAddingToCart: '1 kg de glace sélectionnée a été ajouté à votre panier!',
-      successfulRemovingFromCart: 'La glace sélectionnée a été supprimée de votre panier!',
+      successfulRemovingFromCart: "L'article sélectionné a été supprimé de votre panier!",
       emptyCart: 'Votre panier est vide',
       sendOrder: "Envoyer l'ordre",
       totalOrderPrice: 'Le total',
