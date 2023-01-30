@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
+import shallow from 'zustand/shallow';
 import cartStore, { ICartStore } from './Cart.store';
 
 interface ICartTile {
@@ -13,12 +14,11 @@ interface ICartTile {
 const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
   const { t } = useTranslation();
 
-  const productList = cartStore((store: ICartStore) => store.productList);
+  const productList = cartStore((store: ICartStore) => store.productList, shallow);
   // const [removeProductFromCart, removeAllProductsFromCart] = cartStore(
   //   (store: ICartStore) => [store.deleteProduct, store.removeAllProducts],
   //   shallow
   // );
-  console.log(productList);
   const isCartEmpty: boolean = Object.keys(productList).length === 0;
 
   return (
