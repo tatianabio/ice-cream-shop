@@ -1,7 +1,7 @@
 import React from 'react';
 import './BulletPagination.scss';
 import { useTranslation } from 'react-i18next';
-import shallow from 'zustand/shallow';
+import { shallow } from 'zustand/shallow';
 import cx from 'classnames';
 import { activeIndexSelector, ISliderTileStore, useSliderTileStore } from '../SliderTile/SliderTile.store';
 

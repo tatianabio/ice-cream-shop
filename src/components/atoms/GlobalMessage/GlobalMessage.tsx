@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './GlobalMessage.scss';
-import shallow from 'zustand/shallow';
+import { shallow } from 'zustand/shallow';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
 import messageStore, { IMessageStore, removeAllMessages } from './GlobalMessage.store';

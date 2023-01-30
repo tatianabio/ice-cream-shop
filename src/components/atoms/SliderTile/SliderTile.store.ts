@@ -1,4 +1,4 @@
-import create from 'zustand';
+import { create } from 'zustand';
 import { iceCreamOffers, IIceCreamOffer } from '../../../mock/data/iceCreamOffers';
 
 export interface ISliderTileStore {

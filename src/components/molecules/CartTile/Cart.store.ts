@@ -1,4 +1,4 @@
-import create from 'zustand';
+import { create } from 'zustand';
 import { IProduct } from '../../../mock/data/products';
 
 interface IInCartProduct {
@@ -28,7 +28,7 @@ const cartStore = create<ICartStore>((set, get) => ({
   deleteProduct: (product: IProduct) => {
     const { productList } = get();
     delete productList[product.id];
-    set(() => ({ productList }));
+    set(() => ({ productList: JSON.parse(JSON.stringify(productList)) }));
   },
   removeAllProducts: () => {
     set(() => ({ productList: {} }));

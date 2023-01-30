@@ -2,7 +2,7 @@ import React from 'react';
 import './SliderTile.scss';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
-import shallow from 'zustand/shallow';
+import { shallow } from 'zustand/shallow';
 import Chevron from '../../../assets/svg/chevron';
 import { activeIndexSelector, ISliderTileStore, useSliderTileStore } from './SliderTile.store';
 

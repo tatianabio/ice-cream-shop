@@ -1,7 +1,7 @@
 import React from 'react';
 import './OfferSection.scss';
 import { useTranslation } from 'react-i18next';
-import shallow from 'zustand/shallow';
+import { shallow } from 'zustand/shallow';
 import cx from 'classnames';
 import OfferTile from '../../atoms/OfferTile';
 import { activeIndexSelector, ISliderTileStore, useSliderTileStore } from '../../atoms/SliderTile/SliderTile.store';

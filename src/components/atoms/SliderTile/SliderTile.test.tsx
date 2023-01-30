@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import shallow from 'zustand/shallow';
+import { shallow } from 'zustand/shallow';
 import { useEffect } from 'react';
 import { iceCreamOffers, IIceCreamOffer } from '../../../mock/data/iceCreamOffers';
 import SliderTile from './SliderTile';
