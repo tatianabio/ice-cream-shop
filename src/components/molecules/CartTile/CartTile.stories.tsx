@@ -1,5 +1,5 @@
 import React from 'react';
-import shallow from 'zustand/shallow';
+import { shallow } from 'zustand/shallow';
 import globalMswHandlers from '../../../mock/mswHandlers';
 import StoryContainer from '../../storybookUtils/StoryContainer';
 import GlobalMessage, { sendMessageToDisplay } from '../../atoms/GlobalMessage';
@@ -22,7 +22,7 @@ export default {
   },
 };
 
-export const DemoComponent = () => {
+const DemoComponent = () => {
   const addProductToCart = cartStore((store: ICartStore) => store.addProduct, shallow);
 
   const onClickHandler = (product: IProduct) => {

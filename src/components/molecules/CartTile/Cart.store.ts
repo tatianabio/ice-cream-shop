@@ -9,7 +9,7 @@ interface IInCartProduct {
 export interface ICartStore {
   productList: Record<string, IInCartProduct>;
   addProduct: (product: IProduct) => void;
-  deleteProduct: (product: IProduct) => void;
+  deleteProduct: (productId: number) => void;
   removeAllProducts: () => void;
 }
 
@@ -25,10 +25,10 @@ const cartStore = create<ICartStore>((set, get) => ({
 
     set(() => ({ productList: JSON.parse(JSON.stringify(productList)) }));
   },
-  deleteProduct: (product: IProduct) => {
-    const { productList } = get();
-    delete productList[product.id];
-    set(() => ({ productList: JSON.parse(JSON.stringify(productList)) }));
+  deleteProduct: (productId) => {
+    const productList = { ...get().productList };
+    delete productList[productId];
+    set(() => ({ productList: { ...productList } }));
   },
   removeAllProducts: () => {
     set(() => ({ productList: {} }));
@@ -36,7 +36,3 @@ const cartStore = create<ICartStore>((set, get) => ({
 }));
 
 export default cartStore;
-
-export const addProductToCart = (product: IProduct) => {
-  cartStore.getState().addProduct(product);
-};

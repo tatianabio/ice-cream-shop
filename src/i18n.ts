@@ -121,7 +121,12 @@ const resources = {
       chocolate: 'Chocolate',
 
       // Cart
+      cart: 'Cart',
       successfulAddingToCart: '1 kg of selected ice cream has been added to your cart!',
+      successfulRemovingFromCart: 'Selected ice cream has been been removed from your cart!',
+      emptyCart: 'Your cart is empty',
+      sendOrder: 'Send order',
+      totalOrderPrice: 'Total',
 
       // Product Card
       iceCreamScoop: 'Scoop of ice cream',
@@ -274,7 +279,12 @@ const resources = {
       chocolate: 'Chocolat',
 
       // Cart
+      cart: 'Chariot',
       successfulAddingToCart: '1 kg de glace sélectionnée a été ajouté à votre panier!',
+      successfulRemovingFromCart: 'La glace sélectionnée a été supprimée de votre panier!',
+      emptyCart: 'Votre panier est vide',
+      sendOrder: "Envoyer l'ordre",
+      totalOrderPrice: 'Le total',
 
       // Product Card
       iceCreamScoop: 'Boule de crème glacée',
