@@ -62,6 +62,12 @@ const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
       );
     });
 
+  const totalPrice = Object.keys(productList).reduce((sum: number, key) => {
+    const { count, productInfo } = productList[key];
+    const { price } = productInfo;
+    return sum + count * price;
+  }, 0);
+
   return (
     <section className='cart' data-testid={`${testId}-cart`}>
       <h2 className={cx('cart__title', isCartEmpty && 'cart__title--empty')}>
@@ -71,8 +77,8 @@ const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
         <div className='cart__container'>
           <ul className='cart__product-list'>{displayedProductList}</ul>
           <div className='cart__submit-wrapper'>
-            <Button data-testid={testId} text={t('sendOrder')} variant='secondary' type='submit' />
-            <span className='cart__total-price'>{t('totalOrderPrice')}</span>
+            <Button data-testid={testId} text={t('sendOrder')} variant='secondary' />
+            <span className='cart__total-price'>{`${t('totalOrderPrice')}: ${totalPrice.toFixed(2)}$`}</span>
           </div>
         </div>
       )}

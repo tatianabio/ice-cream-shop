@@ -126,3 +126,25 @@
   width: 10px;
   height: 10px;
 }
+
+.cart__submit-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: v.$mobile-width-only) {
+    padding-top: 20px;
+    flex-direction: column-reverse;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    padding-top: 32px;
+    flex-direction: row;
+  }
+}
+
+.cart__total-price {
+  @include h5;
+}
