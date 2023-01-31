@@ -54,7 +54,7 @@ export const Demo = () => {
     <StoryContainer
       title='Cart Tile'
       text='Buttons for adding products to cart are not included in the Cart Tile component'
-      style={{ maxWidth: '600px', minHeight: '250px', height: 'min-content', padding: '40px' }}
+      style={{ maxWidth: '600px', minHeight: '250px', height: 'min-content', padding: '20px' }}
       hasPinkBackground={false}
     >
       <>

@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { IProduct } from '../../../mock/data/products';
 
-interface IInCartProduct {
+export interface IInCartProduct {
   count: number;
   productInfo: IProduct;
   time: number;

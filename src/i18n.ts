@@ -127,6 +127,7 @@ const resources = {
       emptyCart: 'Your cart is empty',
       sendOrder: 'Send order',
       totalOrderPrice: 'Total',
+      successfulOrderSending: 'Your order has been submitted!',
 
       // Product Card
       iceCreamScoop: 'Scoop of ice cream',
@@ -285,6 +286,7 @@ const resources = {
       emptyCart: 'Votre panier est vide',
       sendOrder: "Envoyer l'ordre",
       totalOrderPrice: 'Le total',
+      successfulOrderSending: 'Votre commande a été soumise!',
 
       // Product Card
       iceCreamScoop: 'Boule de crème glacée',
