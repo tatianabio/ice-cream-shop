@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'zustand/shallow';
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import cartStore, { ICartStore } from './Cart.store';
 import { IProduct, products } from '../../../mock/data/products';
@@ -8,7 +8,10 @@ import GlobalMessage, { sendMessageToDisplay } from '../../atoms/GlobalMessage';
 import Button from '../../atoms/Button';
 import CartTile from './CartTile';
 import mswServer from '../../../mock/mswServer/mswServer';
-import { postRequestWithoutDelaySuccess } from '../../../mock/mswHandlers/postRequest/postRequest';
+import {
+  postRequestWithoutDelayError,
+  postRequestWithoutDelaySuccess,
+} from '../../../mock/mswHandlers/postRequest/postRequest';
 
 describe('Cart Tile tests', () => {
   const TestComponent = () => {
@@ -52,5 +55,17 @@ describe('Cart Tile tests', () => {
     await userEvent.click(screen.getByTestId('raspberry-button'));
     await userEvent.click(screen.getByTestId('demo-cart-submit-button'));
     await waitForElementToBeRemoved(screen.queryByTestId('demo-cart-container'));
+  });
+
+  it('Order sending error', async () => {
+    render(<TestComponent />);
+    mswServer.use(postRequestWithoutDelayError);
+    await userEvent.click(screen.getByTestId('bubblegum-button'));
+    await userEvent.click(screen.getByTestId('demo-cart-submit-button'));
+    expect(screen.getByTestId('demo-cart-container')).toBeInTheDocument();
+    await waitFor(
+      () => expect(screen.getAllByTestId('demo-global-message')[1]).toHaveClass('global-message__item--error')
+      // eslint-disable-next-line function-paren-newline
+    );
   });
 });
