@@ -32,14 +32,15 @@ const DemoComponent = () => {
 
   return (
     <>
+      <GlobalMessage data-testid='demo' />
       <Button
-        data-testid='demo'
+        data-testid='demo-raspberry'
         text='Add Raspberry ice cream, 1kg'
         variant='secondary'
         onClick={() => onClickHandler(products[0])}
       />
       <Button
-        data-testid='demo'
+        data-testid='demo-bubblegum'
         text='Add Bubblegum ice cream, 1kg'
         variant='secondary'
         onClick={() => onClickHandler(products[1])}
