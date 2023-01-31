@@ -54,7 +54,7 @@ const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
       const { name, price, imgLink } = productInfo;
 
       return (
-        <li className='cart__product-item' key={key}>
+        <li className='cart__product-item' key={key} data-testid={`${testId}-${key}-product`}>
           <img
             className='cart__product-img'
             src={imgLink}
@@ -71,6 +71,7 @@ const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
             className='cart__product-removing'
             type='button'
             onClick={() => onDeleteButtonClickHandler(productInfo.id)}
+            data-testid={`${testId}-${key}-delete-button`}
           >
             <span className='visually-hidden'>Delete product</span>
             <Cross />
@@ -100,11 +101,11 @@ const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
         {isCartEmpty ? t('emptyCart') : t('cart')}
       </h2>
       {!isCartEmpty && (
-        <div className='cart__container'>
+        <div className='cart__container' data-testid={`${testId}-cart-container`}>
           <ul className='cart__product-list'>{displayedProductList}</ul>
           <div className='cart__submit-wrapper'>
             <Button
-              data-testid={testId}
+              data-testid={`${testId}-cart-submit`}
               text={t('sendOrder')}
               variant='secondary'
               loading={loading}

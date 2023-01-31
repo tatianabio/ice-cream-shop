@@ -15,3 +15,8 @@ export const postRequestWithoutDelayError = rest.post('*', (_, res, ctx) => {
 });
 
 export default postRequest;
+
+const postRequestFn = (status = 200, delay = 1000) =>
+  rest.post('*', (_, res, ctx) => {
+    return res(ctx.json({}), ctx.status(status), ctx.delay(delay));
+  });
