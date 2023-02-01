@@ -3,6 +3,7 @@ import './Header.scss';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
 import { NavLink } from 'react-router-dom';
+import { shallow } from 'zustand/shallow';
 import GllacyLogo from '../../atoms/GllacyLogo';
 import Cross from '../../../assets/svg/cross';
 import ToggleMenu from '../../../assets/svg/toggle-menu';
@@ -10,6 +11,9 @@ import LangToggle from '../../atoms/LangToggle';
 import Popup from '../Popup';
 import SignInTile from '../../molecules/SignInTile';
 import LogIn from '../../../assets/svg/log-in';
+import Cart from '../../../assets/svg/cart';
+import CartTile from '../../molecules/CartTile';
+import cartStore, { ICartStore } from '../../molecules/CartTile/Cart.store';
 
 export interface IBasicNavigationItem {
   /** Displayed name of the navigation item */
@@ -50,6 +54,12 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
     );
   });
 
+  const productList = cartStore((store: ICartStore) => store.productList, shallow);
+
+  const cartItemsNumber = Object.keys(productList).length;
+
+  const cartButtonName = cartItemsNumber === 0 ? 'cart' : `${cartItemsNumber} ${t('itemsNumber')}`;
+
   return (
     <header className='header' ref={headerRef}>
       <GllacyLogo data-testid={testId} />
@@ -69,6 +79,11 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
             <li className='navigation__user-item'>
               <Popup data-testid={testId} openingButtonIcon={<LogIn />} openingButtonText={t('signInButton')}>
                 <SignInTile data-testid={testId} />
+              </Popup>
+            </li>
+            <li className='navigation__user-item'>
+              <Popup data-testid={testId} openingButtonIcon={<Cart />} openingButtonText={cartButtonName}>
+                <CartTile data-testid={testId} />
               </Popup>
             </li>
           </ul>

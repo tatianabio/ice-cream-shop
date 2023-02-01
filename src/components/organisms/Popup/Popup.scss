@@ -9,6 +9,7 @@
   @media (max-width: v.$mobile-width-only) {
     width: 90%;
     padding: 32px;
+    z-index: 3;
   }
 
   @media (min-width: v.$tablet-width) {

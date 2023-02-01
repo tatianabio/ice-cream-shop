@@ -128,6 +128,7 @@ const resources = {
       sendOrder: 'Send order',
       totalOrderPrice: 'Total',
       successfulOrderSending: 'Your order has been submitted!',
+      itemsNumber: 'item(s)',
 
       // Product Card
       iceCreamScoop: 'Scoop of ice cream',
@@ -287,6 +288,7 @@ const resources = {
       sendOrder: "Envoyer l'ordre",
       totalOrderPrice: 'Le total',
       successfulOrderSending: 'Votre commande a été soumise!',
+      itemsNumber: 'élément(s)',
 
       // Product Card
       iceCreamScoop: 'Boule de crème glacée',

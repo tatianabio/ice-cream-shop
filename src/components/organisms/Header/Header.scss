@@ -71,10 +71,16 @@
 }
 
 .navigation__user-list {
+  display: flex;
+
   @media (max-width: v.$mobile-width-only) {
     flex-direction: column;
     width: 100%;
     box-shadow: 0 2px 0 rgba(45, 52, 64, 0.12);
+  }
+
+  @media (min-width: v.$tablet-width) {
+    gap: 16px;
   }
 }
 
