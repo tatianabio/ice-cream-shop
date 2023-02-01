@@ -10,11 +10,12 @@ interface ISectionTile {
   'data-testid': string;
 }
 
-const SectionTile = () => {
+const SectionTile = ({ 'data-testid': testId, children, title }: ISectionTile) => {
   const { t } = useTranslation();
   return (
-    <section className='section'>
-      <h2 className='section__title'>{t('')}</h2>
+    <section className='section' data-testid={`${testId}-section`}>
+      <h2 className='section__title'>{t(`${title}`)}</h2>
+      {children}
     </section>
   );
 };
