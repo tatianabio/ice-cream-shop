@@ -140,6 +140,10 @@ const resources = {
       raspberryDescription: 'Vanilla ice cream with raspberry jam',
       bubblegum: 'Bubblegum',
       bubblegumDescription: 'Vanilla ice cream with sweet sprinkles',
+      pistachio: 'Pistachio',
+      pistachioDescription: 'Pistachio ice cream with chocolate chips',
+      blueberry: 'Blueberry',
+      blueberryDescription: 'Creme brulee with blueberry jam',
 
       // Blog article tile
       recentInBlog: 'New in our blog',
@@ -300,6 +304,10 @@ const resources = {
       raspberryDescription: 'Glace vanille à la confiture de framboise',
       bubblegum: 'Chewing-gum',
       bubblegumDescription: 'Glace à la vanille avec pépites sucrées',
+      pistachio: 'Pistache',
+      pistachioDescription: 'Glace pistache aux pépites de chocolat',
+      blueberry: 'Myrtille',
+      blueberryDescription: 'Crème brûlée à la confiture de myrtilles',
 
       // Blog article tile
       recentInBlog: 'Nouveau dans notre blog',
