@@ -58,10 +58,7 @@ export const Demo = () => {
       style={{ maxWidth: '600px', minHeight: '250px', height: 'min-content', padding: '20px' }}
       hasPinkBackground={false}
     >
-      <>
-        <GlobalMessage data-testid='demo' />
-        <DemoComponent />
-      </>
+      <DemoComponent />
     </StoryContainer>
   );
 };
