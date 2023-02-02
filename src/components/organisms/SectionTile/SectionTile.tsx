@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import './SectionTile.scss';
 import { useTranslation } from 'react-i18next';
 
 interface ISectionTile {

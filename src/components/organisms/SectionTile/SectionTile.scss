@@ -1,0 +1,24 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as *;
+
+.section {
+  max-width: 1170px;
+}
+
+.section__title {
+  margin-top: 0;
+  max-width: 650px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (max-width: v.$mobile-width-only) {
+    @include h5;
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    @include h2;
+    margin-bottom: 55px;
+  }
+}
