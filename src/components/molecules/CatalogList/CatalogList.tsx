@@ -7,7 +7,7 @@ import cartStore, { ICartStore } from '../CartTile/Cart.store';
 import { sendMessageToDisplay } from '../../atoms/GlobalMessage';
 
 interface ICatalogList {
-  /** The list of products (incl. after  if applicable) */
+  /** The list of products (incl. after sorting if applicable) */
   productsList: IProduct[];
   /** The number of products displayed on the screen */
   displayedProductsNumber: number;
