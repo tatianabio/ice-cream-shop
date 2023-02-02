@@ -23,7 +23,7 @@ export const Demo = () => {
   return (
     <StoryContainer
       title='Catalog List'
-      style={{ maxWidth: '600px', minHeight: '250px', height: 'min-content', padding: '20px' }}
+      style={{ maxWidth: '1200px', minHeight: '700px', height: 'min-content', padding: '10px' }}
     >
       <>
         <GlobalMessage data-testid='demo' />

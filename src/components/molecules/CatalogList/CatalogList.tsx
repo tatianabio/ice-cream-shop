@@ -1,4 +1,5 @@
 import React from 'react';
+import './CatalogList.scss';
 import { shallow } from 'zustand/shallow';
 import { IProduct } from '../../../mock/data/products';
 import ProductCard from '../../atoms/ProductCard';

@@ -1,0 +1,23 @@
+@use '../../../styles/variables' as v;
+
+.catalog-list {
+  display: grid;
+  gap: 30px;
+
+  @media (max-width: v.$mobile-width-only) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: v.$desktop-width) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.catalog-item {
+  display: grid;
+  place-content: center;
+}
