@@ -1,0 +1,15 @@
+@use '../../../styles/variables' as v;
+
+.tile-container {
+  display: grid;
+
+  @media (max-width: v.$mobile-width-only) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}

@@ -2,6 +2,8 @@
 @use '../../../styles/variables' as v;
 
 .subscription {
+  display: grid;
+  place-content: center;
   max-width: 570px;
   border-radius: 16px;
   padding: 6px;
