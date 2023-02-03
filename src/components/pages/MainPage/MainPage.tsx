@@ -1,7 +1,7 @@
 import React from 'react';
 
 const MainPage = () => {
-  return <div />;
+  return <main className='main-page' />;
 };
 
 export default MainPage;
