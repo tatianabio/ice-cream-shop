@@ -2,14 +2,19 @@
 
 .tile-container {
   display: grid;
+  place-items: center;
 
   @media (max-width: v.$mobile-width-only) {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
 
   @media (min-width: v.$tablet-width) {
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: v.$desktop-width) {
     gap: 30px;
   }
 }

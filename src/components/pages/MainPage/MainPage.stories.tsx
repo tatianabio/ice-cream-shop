@@ -22,7 +22,7 @@ export const Demo = () => {
   return (
     <StoryContainer
       title='Main Page'
-      style={{ maxWidth: '1366px', minHeight: '600px', height: 'min-content', padding: '0px' }}
+      style={{ maxWidth: '1190px', minHeight: '600px', height: 'min-content', padding: '10px' }}
     >
       <>
         <GlobalMessage data-testid='demo' />

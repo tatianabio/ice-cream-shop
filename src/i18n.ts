@@ -78,6 +78,9 @@ const resources = {
       toggleOpenMenu: 'Open menu.',
       toggleCloseMenu: 'Close menu.',
 
+      // Catalog
+      popularProductsTitle: 'Try our most popular ice cream flavors',
+
       // Offer Section
       order: 'Order',
       offerSectionTitle: 'Order one of our best ice creams!',
@@ -150,6 +153,7 @@ const resources = {
       serveFruitSorbets: '10 ways to serve fruit sorbets to the table',
 
       // Gift tile
+      giftTileTitle: 'Order ice cream and get gifts!',
       readGiftDetails: 'More details',
       giftIllustration: 'Illustrative representation of the gift',
 
@@ -240,6 +244,9 @@ const resources = {
       toggleOpenMenu: 'Ouvrir le menu.',
       toggleCloseMenu: 'Fermer le menu.',
 
+      // Catalog
+      popularProductsTitle: 'Essayez nos saveurs de crème glacée les plus populaires',
+
       // Offer Section
       order: 'Ordre',
       offerSectionTitle: 'Commandez une de nos meilleures glaces!',
@@ -314,6 +321,7 @@ const resources = {
       serveFruitSorbets: '10 façons de servir des sorbets aux fruits à table',
 
       // Gift tile
+      giftTileTitle: 'Commandez des glaces et recevez des cadeaux!',
       readGiftDetails: 'Plus de détails',
       giftIllustration: 'Représentation illustrative du cadeau',
 

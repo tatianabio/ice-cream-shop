@@ -4,6 +4,7 @@
 .gift-tile {
   display: flex;
   max-width: 570px;
+  overflow: hidden;
 
   background-color: var(--special-neutral);
   border-radius: 16px;
