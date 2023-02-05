@@ -4,7 +4,7 @@ import GlobalMessage from './components/atoms/GlobalMessage';
 import Page from './components/pages/Page';
 import MainPage from './components/pages/MainPage';
 
-// TODO include images/server, router and Catalog page
+// TODO include images/server, router and Catalog page, check the tablet and mobile version, check header menu in the mobile
 
 function App() {
   return (
