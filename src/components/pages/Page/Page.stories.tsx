@@ -23,7 +23,7 @@ export const Demo = () => {
   return (
     <StoryContainer
       title='Page'
-      text='as for Main Page as an example (sticky footer does not work due to Storybook container)'
+      text='as for Main Page as an example'
       style={{ maxWidth: '1400px', minHeight: '600px', height: 'min-content', padding: '10px' }}
       hasPinkBackground={false}
     >
