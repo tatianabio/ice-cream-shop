@@ -76,7 +76,7 @@
   margin: 0;
 
   @media (max-width: v.$mobile-width-only) {
-    @include p3-bold(var(--basic-extra-dark));
+    @include s1-bold(var(--basic-extra-dark));
   }
 
   @media (min-width: v.$tablet-width) {

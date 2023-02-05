@@ -16,6 +16,8 @@ import { blogArticleInfo } from '../../../mock/data/blogArticleInfo';
 import SubscriptionSection from '../../organisms/SubscriptionSection';
 import DeliverySection from '../../organisms/DeliverySection';
 import Contacts from '../../organisms/Contacts';
+import cartStore, { ICartStore } from '../../molecules/CartTile/Cart.store';
+import { sendMessageToDisplay } from '../../atoms/GlobalMessage';
 
 interface IMainPage {
   /** Technical attributes */
@@ -23,9 +25,11 @@ interface IMainPage {
 }
 
 const MainPage = ({ 'data-testid': testId }: IMainPage) => {
-  // TODO: create a callback for adding a product to the Cart, check data-testId
+  const addProductToCart = cartStore((store: ICartStore) => store.addProduct, shallow);
+
   const onClickHandler = async (data: IIceCreamOffer) => {
-    console.log(data);
+    addProductToCart(data.productInfo);
+    sendMessageToDisplay('successfulAddingToCart');
   };
 
   const { activeItemIndex } = useSliderTileStore(activeIndexSelector, shallow);
@@ -38,7 +42,7 @@ const MainPage = ({ 'data-testid': testId }: IMainPage) => {
       data-testid={`${testId}-main-page`}
       style={{ backgroundColor: `var(--special-${backgroundColor})` }}
     >
-      <OfferSection addToCart={onClickHandler} data-testid='demo' />
+      <OfferSection addToCart={onClickHandler} data-testid='main-page' />
       <SectionTile data-testid='gift' title='giftTileTitle'>
         <TileContainer data-testid='gift-tile-container'>
           <>
