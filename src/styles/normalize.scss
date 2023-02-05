@@ -6,7 +6,13 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  display: grid;
+  min-height: 100%;
   font-family: var(--basic-font);
   margin: 0;
 }

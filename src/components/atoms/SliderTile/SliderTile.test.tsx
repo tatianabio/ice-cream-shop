@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { iceCreamOffers, IIceCreamOffer } from '../../../mock/data/iceCreamOffers';
 import SliderTile from './SliderTile';
 import { ISliderTileStore, useSliderTileStore } from './SliderTile.store';
+import { fillers } from '../../../mock/data/products';
 
 const extraTestTheme: IIceCreamOffer = {
   id: 3,
@@ -12,7 +13,17 @@ const extraTestTheme: IIceCreamOffer = {
   description: 'bananaCornDescription',
   imgLink: '/corn-banana',
   backgroundColor: 'var(--special-blue)',
-  productId: 7,
+  productInfo: {
+    id: 5,
+    name: 'banana',
+    description: 'bananaDescription',
+    price: 6.0,
+    fatContent: 10,
+    rating: 75,
+    imgLink: '/banana',
+    fillers: [fillers[2]],
+    isAvailable: true,
+  },
 };
 
 const iceCreamThemesTest: IIceCreamOffer[] = [...iceCreamOffers, extraTestTheme];
