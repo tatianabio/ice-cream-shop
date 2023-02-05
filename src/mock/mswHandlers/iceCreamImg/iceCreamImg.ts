@@ -3,6 +3,9 @@ import raspberry from '../../../assets/img/iceCream/iceCreamScoops/raspberry.png
 import pistachio from '../../../assets/img/iceCream/iceCreamScoops/pistachio.png';
 import bubblegum from '../../../assets/img/iceCream/iceCreamScoops/bubblegum.png';
 import blueberry from '../../../assets/img/iceCream/iceCreamScoops/blueberry.png';
+import strawberry from '../../../assets/img/iceCream/iceCreamScoops/strawberry.png';
+import banana from '../../../assets/img/iceCream/iceCreamScoops/banana.png';
+import caramel from '../../../assets/img/iceCream/iceCreamScoops/caramel.png';
 import fruitSorbets from '../../../assets/img/iceCream/fruit-sorbets.png';
 import cornRaspberry from '../../../assets/img/iceCream/corn-raspberry.png';
 import cornMarshmallow from '../../../assets/img/iceCream/corn-marshmallow.png';
@@ -26,6 +29,18 @@ const iceCreamImages = [
   {
     path: '/blueberry',
     content: blueberry,
+  },
+  {
+    path: '/strawberry',
+    content: strawberry,
+  },
+  {
+    path: '/banana',
+    content: banana,
+  },
+  {
+    path: '/caramel',
+    content: caramel,
   },
   {
     path: '/fruit-sorbets',

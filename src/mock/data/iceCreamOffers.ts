@@ -1,3 +1,5 @@
+import { fillers, IProduct } from './products';
+
 export interface IIceCreamOffer {
   /** The unique identification number of the ice cream of the offer */
   id: number;
@@ -9,8 +11,8 @@ export interface IIceCreamOffer {
   description: string;
   /** The color of the page's background stated by the offer */
   backgroundColor: string;
-  /** The unique identification number of the ice cream product proposed by the offer */
-  productId: number;
+  /** Detailed information about the ice cream product proposed by the offer */
+  productInfo: IProduct;
 }
 
 export const iceCreamOffers: IIceCreamOffer[] = [
@@ -20,7 +22,17 @@ export const iceCreamOffers: IIceCreamOffer[] = [
     description: 'strawberryCornDescription',
     imgLink: '/corn-strawberry',
     backgroundColor: 'pink',
-    productId: 4,
+    productInfo: {
+      id: 4,
+      name: 'strawberry',
+      description: 'strawberryDescription',
+      price: 4.8,
+      fatContent: 5,
+      rating: 80,
+      imgLink: '/strawberry',
+      fillers: [fillers[4]],
+      isAvailable: true,
+    },
   },
   {
     id: 1,
@@ -28,7 +40,17 @@ export const iceCreamOffers: IIceCreamOffer[] = [
     description: 'bananaCornDescription',
     imgLink: '/corn-banana',
     backgroundColor: 'blue',
-    productId: 5,
+    productInfo: {
+      id: 5,
+      name: 'banana',
+      description: 'bananaDescription',
+      price: 6.0,
+      fatContent: 10,
+      rating: 75,
+      imgLink: '/banana',
+      fillers: [fillers[2]],
+      isAvailable: true,
+    },
   },
   {
     id: 2,
@@ -36,6 +58,16 @@ export const iceCreamOffers: IIceCreamOffer[] = [
     description: 'caramelCornDescription',
     imgLink: '/corn-caramel',
     backgroundColor: 'yellow',
-    productId: 6,
+    productInfo: {
+      id: 6,
+      name: 'caramel',
+      description: 'caramelDescription',
+      price: 5.8,
+      fatContent: 8,
+      rating: 70,
+      imgLink: '/caramel',
+      fillers: [fillers[3]],
+      isAvailable: true,
+    },
   },
 ];

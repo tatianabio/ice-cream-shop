@@ -26,7 +26,7 @@ export interface IFillers {
   id: number;
 }
 
-const fillers: IFillers[] = [
+export const fillers: IFillers[] = [
   {
     name: 'chocolate',
     id: 0,
@@ -92,6 +92,39 @@ export const products: IProduct[] = [
     rating: 90,
     imgLink: '/blueberry',
     fillers: [fillers[2]],
+    isAvailable: true,
+  },
+  {
+    id: 4,
+    name: 'strawberry',
+    description: 'strawberryDescription',
+    price: 4.8,
+    fatContent: 5,
+    rating: 80,
+    imgLink: '/strawberry',
+    fillers: [fillers[4]],
+    isAvailable: true,
+  },
+  {
+    id: 5,
+    name: 'banana',
+    description: 'bananaDescription',
+    price: 6.0,
+    fatContent: 10,
+    rating: 75,
+    imgLink: '/banana',
+    fillers: [fillers[2]],
+    isAvailable: true,
+  },
+  {
+    id: 6,
+    name: 'caramel',
+    description: 'caramelDescription',
+    price: 5.8,
+    fatContent: 8,
+    rating: 70,
+    imgLink: '/caramel',
+    fillers: [fillers[3]],
     isAvailable: true,
   },
 ];

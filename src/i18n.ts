@@ -147,6 +147,12 @@ const resources = {
       pistachioDescription: 'Pistachio ice cream with chocolate chips',
       blueberry: 'Blueberry',
       blueberryDescription: 'Creme brulee with blueberry jam',
+      strawberry: 'Strawberry',
+      strawberryDescription: 'Creamy ice cream with strawberry flavor',
+      banana: 'Banana',
+      bananaDescription: 'Creamy ice cream with banana flavor',
+      caramel: 'Caramel',
+      caramelDescription: 'Caramel ice cream with marshmallows',
 
       // Blog article tile
       recentInBlog: 'New in our blog',
@@ -315,6 +321,12 @@ const resources = {
       pistachioDescription: 'Glace pistache aux pépites de chocolat',
       blueberry: 'Myrtille',
       blueberryDescription: 'Crème brûlée à la confiture de myrtilles',
+      strawberry: 'Fraise',
+      strawberryDescription: 'Crème glacée crémeuse au goût de fraise',
+      banana: 'Banane',
+      bananaDescription: 'Crème glacée crémeuse au goût de banane',
+      caramel: 'Caramel',
+      caramelDescription: 'Glace au caramel avec des guimauves',
 
       // Blog article tile
       recentInBlog: 'Nouveau dans notre blog',
