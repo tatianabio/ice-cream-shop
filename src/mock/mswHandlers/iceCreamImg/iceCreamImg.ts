@@ -6,6 +6,11 @@ import blueberry from '../../../assets/img/iceCream/iceCreamScoops/blueberry.png
 import strawberry from '../../../assets/img/iceCream/iceCreamScoops/strawberry.png';
 import banana from '../../../assets/img/iceCream/iceCreamScoops/banana.png';
 import caramel from '../../../assets/img/iceCream/iceCreamScoops/caramel.png';
+import blackberry from '../../../assets/img/iceCream/iceCreamScoops/blackberry.png';
+import chocolate from '../../../assets/img/iceCream/iceCreamScoops/chocolate.png';
+import lemon from '../../../assets/img/iceCream/iceCreamScoops/lemon.png';
+import menthol from '../../../assets/img/iceCream/iceCreamScoops/menthol.png';
+import nut from '../../../assets/img/iceCream/iceCreamScoops/nut.png';
 import fruitSorbets from '../../../assets/img/iceCream/fruit-sorbets.png';
 import cornRaspberry from '../../../assets/img/iceCream/corn-raspberry.png';
 import cornMarshmallow from '../../../assets/img/iceCream/corn-marshmallow.png';
@@ -41,6 +46,26 @@ const iceCreamImages = [
   {
     path: '/caramel',
     content: caramel,
+  },
+  {
+    path: '/blackberry',
+    content: blackberry,
+  },
+  {
+    path: '/chocolate',
+    content: chocolate,
+  },
+  {
+    path: '/lemon',
+    content: lemon,
+  },
+  {
+    path: '/menthol',
+    content: menthol,
+  },
+  {
+    path: '/nut',
+    content: nut,
   },
   {
     path: '/fruit-sorbets',
