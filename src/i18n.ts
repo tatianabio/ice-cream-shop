@@ -121,7 +121,7 @@ const resources = {
       syrups: 'Syrups',
       fruit: 'Fruit',
       sprinkles: 'Sprinkles',
-      chocolate: 'Chocolate',
+      chocolateFiller: 'Chocolate',
 
       // Cart
       cart: 'Cart',
@@ -153,6 +153,16 @@ const resources = {
       bananaDescription: 'Creamy ice cream with banana flavor',
       caramel: 'Caramel',
       caramelDescription: 'Caramel ice cream with marshmallows',
+      blackberry: 'Blackberry',
+      blackberryDescription: 'Creamy ice cream with blackberry jam',
+      chocolate: 'Chocolate',
+      chocolateDescription: 'Classic chocolate ice cream',
+      lemon: 'Lemon',
+      lemonDescription: 'Refreshing lemon sorbet',
+      menthol: 'Menthol',
+      mentholDescription: 'Creamy ice cream with menthol syrup',
+      nut: 'Nut',
+      nutDescription: 'Pistachio ice cream with chocolate syrup',
 
       // Blog article tile
       recentInBlog: 'New in our blog',
@@ -295,7 +305,7 @@ const resources = {
       syrups: 'Sirops',
       fruit: 'Fruit',
       sprinkles: 'Pépites de sucre',
-      chocolate: 'Chocolat',
+      chocolateFiller: 'Chocolat',
 
       // Cart
       cart: 'Chariot',
@@ -327,6 +337,16 @@ const resources = {
       bananaDescription: 'Crème glacée crémeuse au goût de banane',
       caramel: 'Caramel',
       caramelDescription: 'Glace au caramel avec des guimauves',
+      blackberry: 'Mûre',
+      blackberryDescription: 'Crème glacée crémeuse à la confiture de mûres',
+      chocolate: 'Chocolat',
+      chocolateDescription: 'Glace au chocolat classique',
+      lemon: 'Citron',
+      lemonDescription: 'Sorbet citron rafraîchissant',
+      menthol: 'Menthol',
+      mentholDescription: 'Crème glacée crémeuse au sirop de menthol',
+      nut: 'Noix',
+      nutDescription: 'Glace pistache au sirop de chocolat',
 
       // Blog article tile
       recentInBlog: 'Nouveau dans notre blog',

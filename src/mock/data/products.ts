@@ -28,7 +28,7 @@ export interface IFillers {
 
 export const fillers: IFillers[] = [
   {
-    name: 'chocolate',
+    name: 'chocolateFiller',
     id: 0,
   },
   {
@@ -179,7 +179,7 @@ export const products: IProduct[] = [
     fatContent: 6,
     rating: 45,
     imgLink: '/nut',
-    fillers: [fillers[0]],
+    fillers: [fillers[0], fillers[3]],
     isAvailable: true,
   },
 ];
