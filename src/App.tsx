@@ -1,18 +1,20 @@
 import React from 'react';
-import './App.scss';
+import { RouterProvider } from 'react-router-dom';
 import GlobalMessage from './components/atoms/GlobalMessage';
-import Page from './components/pages/Page';
-import MainPage from './components/pages/MainPage';
+import router from './router';
+import useMSW from './components/utils/useMSW';
 
 // TODO include images/server, router and Catalog page, check the tablet and mobile version, check header menu in the mobile
 
 function App() {
+  const isLoading = useMSW();
+  if (!isLoading) {
+    return <div>Loading</div>;
+  }
   return (
     <>
       <GlobalMessage data-testid='app' />
-      <Page data-testid='app'>
-        <MainPage data-testid='app' />
-      </Page>
+      <RouterProvider router={router} />
     </>
   );
 }

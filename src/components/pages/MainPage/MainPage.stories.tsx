@@ -1,4 +1,5 @@
 import React from 'react';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import StoryContainer from '../../storybookUtils/StoryContainer';
 import globalMswHandlers from '../../../mock/mswHandlers';
 import GlobalMessage from '../../atoms/GlobalMessage';
@@ -18,15 +19,28 @@ export default {
   },
 };
 
+// TODO add Router for Main page component
+
 export const Demo = () => {
   return (
     <StoryContainer
       title='Main Page'
-      style={{ maxWidth: '1190px', minHeight: '600px', height: 'min-content', padding: '10px' }}
+      style={{ maxWidth: '1386px', minHeight: '600px', height: 'min-content', padding: '10px' }}
     >
       <>
         <GlobalMessage data-testid='demo' />
-        <MainPage data-testid='demo' />
+
+        <MemoryRouter initialEntries={['/main']}>
+          <Routes>
+            <Route
+              element={
+                // eslint-disable-next-line react/jsx-wrap-multilines
+                <MainPage data-testid='demo' />
+              }
+              path='/main'
+            />
+          </Routes>
+        </MemoryRouter>
       </>
     </StoryContainer>
   );

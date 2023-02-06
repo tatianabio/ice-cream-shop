@@ -18,6 +18,7 @@ import DeliverySection from '../../organisms/DeliverySection';
 import Contacts from '../../organisms/Contacts';
 import cartStore, { ICartStore } from '../../molecules/CartTile/Cart.store';
 import { sendMessageToDisplay } from '../../atoms/GlobalMessage';
+import Page from '../Page';
 
 interface IMainPage {
   /** Technical attributes */
@@ -37,33 +38,35 @@ const MainPage = ({ 'data-testid': testId }: IMainPage) => {
   const { backgroundColor } = offers[activeItemIndex];
 
   return (
-    <main
-      className='main-page'
-      data-testid={`${testId}-main-page`}
-      style={{ backgroundColor: `var(--special-${backgroundColor})` }}
-    >
-      <OfferSection addToCart={onClickHandler} data-testid='main-page' />
-      <SectionTile data-testid='gift' title='giftTileTitle'>
-        <TileContainer data-testid='gift-tile-container'>
+    <Page data-testid='app'>
+      <main
+        className='main-page'
+        data-testid={`${testId}-main-page`}
+        style={{ backgroundColor: `var(--special-${backgroundColor})` }}
+      >
+        <OfferSection addToCart={onClickHandler} data-testid='main-page' />
+        <SectionTile data-testid='gift' title='giftTileTitle'>
+          <TileContainer data-testid='gift-tile-container'>
+            <>
+              <GiftTile data-testid='raspberry-gift' data={gifts[0]} />
+              <GiftTile data-testid='marshmallow-gift' data={gifts[1]} />
+            </>
+          </TileContainer>
+        </SectionTile>
+        <SectionTile data-testid='popular-products' title='popularProductsTitle'>
+          <CatalogList data-testid='main-page' displayedProductsNumber={4} productsList={products} />
+        </SectionTile>
+        <BenefitsTile />
+        <TileContainer data-testid='blog-article'>
           <>
-            <GiftTile data-testid='raspberry-gift' data={gifts[0]} />
-            <GiftTile data-testid='marshmallow-gift' data={gifts[1]} />
+            <BlogArticleTile data-testid='fruit-sorbets' info={blogArticleInfo} />
+            <SubscriptionSection data-testid='main-page' />
           </>
         </TileContainer>
-      </SectionTile>
-      <SectionTile data-testid='popular-products' title='popularProductsTitle'>
-        <CatalogList data-testid='main-page' displayedProductsNumber={4} productsList={products} />
-      </SectionTile>
-      <BenefitsTile />
-      <TileContainer data-testid='blog-article'>
-        <>
-          <BlogArticleTile data-testid='fruit-sorbets' info={blogArticleInfo} />
-          <SubscriptionSection data-testid='main-page' />
-        </>
-      </TileContainer>
-      <DeliverySection data-testid='main-page' />
-      <Contacts data-testid='main-page' />
-    </main>
+        <DeliverySection data-testid='main-page' />
+        <Contacts data-testid='main-page' />
+      </main>
+    </Page>
   );
 };
 
