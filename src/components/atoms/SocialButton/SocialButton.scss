@@ -28,3 +28,11 @@
     box-shadow: 0 0 0 2px var(--special-light-pink);
   }
 }
+
+.special-color-blue {
+  --second-background: var(--special-light-blue);
+}
+
+.special-color-yellow {
+  --second-background: var(--special-light-yellow);
+}

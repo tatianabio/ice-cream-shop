@@ -4,6 +4,8 @@ import SocialTelegram from '../../../assets/svg/social-telegram';
 import './SocialButton.scss';
 import SocialYoutube from '../../../assets/svg/social-youtube';
 import SocialVkontakte from '../../../assets/svg/social-vkontakte';
+import { activeIndexSelector, ISliderTileStore, useSliderTileStore } from '../SliderTile/SliderTile.store';
+import { shallow } from 'zustand/shallow';
 
 export type ISocial = 'vkontakte' | 'youtube' | 'telegram';
 
@@ -25,11 +27,16 @@ export const socialNetworks: ISocialNetworksList = {
 function SocialButton({ socialNetwork, ...props }: ISocialButton) {
   const currentNetwork = socialNetworks[socialNetwork];
 
+  const { activeItemIndex } = useSliderTileStore(activeIndexSelector, shallow);
+  const offers = useSliderTileStore((store: ISliderTileStore) => store.offers, shallow);
+
+  const { backgroundColor } = offers[activeItemIndex];
+
   return (
     <a
       {...props}
       href={currentNetwork.link}
-      className={cx('social-network-link', props.className)}
+      className={cx('social-network-link', `special-color-${backgroundColor}`, props.className)}
       target='_blank'
       rel='noreferrer'
     >
