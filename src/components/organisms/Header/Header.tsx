@@ -14,6 +14,7 @@ import LogIn from '../../../assets/svg/log-in';
 import Cart from '../../../assets/svg/cart';
 import CartTile from '../../molecules/CartTile';
 import cartStore, { ICartStore } from '../../molecules/CartTile/Cart.store';
+import { activeIndexSelector, ISliderTileStore, useSliderTileStore } from '../../atoms/SliderTile/SliderTile.store';
 
 export interface IBasicNavigationItem {
   /** Displayed name of the navigation item */
@@ -60,6 +61,11 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
 
   const cartButtonName = cartItemsNumber === 0 ? 'cart' : `${cartItemsNumber} ${t('itemsNumber')}`;
 
+  const { activeItemIndex } = useSliderTileStore(activeIndexSelector, shallow);
+  const offers = useSliderTileStore((store: ISliderTileStore) => store.offers, shallow);
+
+  const { backgroundColor } = offers[activeItemIndex];
+
   return (
     <header className='header' ref={headerRef}>
       <GllacyLogo data-testid={testId} />
@@ -74,7 +80,10 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
           {!isClosed && <Cross data-testid={`${testId}-cross-icon`} />}
           {isClosed && <ToggleMenu />}
         </button>
-        <div className='navigation__container' style={{ top: headerRef.current?.clientHeight || 0 }}>
+        <div
+          className='navigation__container'
+          style={{ top: headerRef.current?.clientHeight || 0, backgroundColor: `var(--special-${backgroundColor})` }}
+        >
           <ul className='navigation__basic-list'>{basicNavigation}</ul>
           <a href='tel:+1111111111' className='navigation__phone'>
             +1-111-111-111

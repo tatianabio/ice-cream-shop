@@ -19,8 +19,6 @@ export default {
   },
 };
 
-// TODO add Router for Main page component
-
 export const Demo = () => {
   return (
     <StoryContainer

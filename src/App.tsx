@@ -4,8 +4,6 @@ import GlobalMessage from './components/atoms/GlobalMessage';
 import router from './router';
 import useMSW from './components/utils/useMSW';
 
-// TODO include images/server, router and Catalog page, check the tablet and mobile version, check header menu in the mobile
-
 function App() {
   const isLoading = useMSW();
   if (!isLoading) {

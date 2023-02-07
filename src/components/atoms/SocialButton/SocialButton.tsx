@@ -23,7 +23,7 @@ export const socialNetworks: ISocialNetworksList = {
   youtube: { link: 'https://www.youtube.com/', icon: <SocialYoutube /> },
   telegram: { link: 'https://telegram.org/', icon: <SocialTelegram /> },
 };
-// TODO add change of the color depending on the background color
+
 function SocialButton({ socialNetwork, ...props }: ISocialButton) {
   const currentNetwork = socialNetworks[socialNetwork];
 
