@@ -8,6 +8,7 @@
   min-width: 280px;
   min-height: 100vh;
   margin: 0 auto;
+  box-shadow: var(--strong-shadow);
 
   @media (max-width: v.$mobile-width-only) {
     padding-left: 8px;
