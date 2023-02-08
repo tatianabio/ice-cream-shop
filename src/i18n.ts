@@ -117,11 +117,18 @@ const resources = {
         'Delivery of our ice cream is carried out in a special thermal pack, which prevents the ice cream from melting and leads to keeping an excellent taste.',
 
       // Fillers
-      jams: 'Jams',
-      syrups: 'Syrups',
-      fruit: 'Fruit',
-      sprinkles: 'Sprinkles',
-      chocolateFiller: 'Chocolate',
+      fillers: 'Fillers',
+      jams: 'jams',
+      syrups: 'syrups',
+      fruit: 'fruit',
+      sprinkles: 'sprinkles',
+      chocolateFiller: 'chocolate',
+
+      // Fat content
+      fatContent: 'Fat content',
+      under10: 'up to 10%',
+      under30: 'up to 30%',
+      above30: 'more than 30%',
 
       // Cart
       cart: 'Cart',
@@ -301,11 +308,18 @@ const resources = {
         'La livraison de nos glaces est effectuée dans un pack thermique spécial, qui ne permet pas à la glace de fondre et vous permet de conserver un excellent goût.',
 
       // Fillers
-      jams: 'Confitures',
-      syrups: 'Sirops',
-      fruit: 'Fruit',
-      sprinkles: 'Pépites de sucre',
-      chocolateFiller: 'Chocolat',
+      fillers: 'Charges',
+      jams: 'confitures',
+      syrups: 'sirops',
+      fruit: 'fruit',
+      sprinkles: 'pépites de sucre',
+      chocolateFiller: 'chocolat',
+
+      // Fat content
+      fatContent: 'Teneur en matières grasses',
+      under10: "jusqu'à 10%",
+      under30: "jusqu'à 30%",
+      above30: 'plus de 30%',
 
       // Cart
       cart: 'Chariot',

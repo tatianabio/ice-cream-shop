@@ -1,6 +1,7 @@
 import React from 'react';
 import './CheckGroup.scss';
 import cx from 'classnames';
+import { useTranslation } from 'react-i18next';
 import { ICheckList } from './utils';
 import CheckboxChecked from '../../../assets/svg/checkboxChecked';
 import CheckboxFrame from '../../../assets/svg/checkboxFrame';
@@ -17,6 +18,7 @@ interface ICheckGroup {
 }
 
 const CheckGroup = ({ checkGroup, inputType, 'data-testid': testId }: ICheckGroup) => {
+  const { t } = useTranslation();
   const { list, listTitle } = checkGroup;
   const displayedCheckGroup = list.map((item) => {
     const { label, valueName, isChecked } = item;
@@ -40,7 +42,7 @@ const CheckGroup = ({ checkGroup, inputType, 'data-testid': testId }: ICheckGrou
             name={inputType === 'radio' ? listTitle : valueName}
           />
           <span className={cx('check-group__mark-box', `check-group__mark-box--${inputType}`)}>{mountMarkBox()}</span>
-          <span className='check-group__displayed-label'>{label}</span>
+          <span className='check-group__displayed-label'>{t(`${label}`)}</span>
         </label>
       </li>
     );

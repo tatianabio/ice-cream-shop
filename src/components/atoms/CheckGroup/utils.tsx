@@ -22,22 +22,20 @@ export const filterFatContent: ICheckList = {
       valueName: '0',
     },
     {
-      label: 'up to 10%',
+      label: 'under10',
       valueName: 'under-10',
       isChecked: true,
     },
     {
-      label: 'up to 30%',
+      label: 'under30',
       valueName: 'under-30',
     },
     {
-      label: 'more than 30%',
+      label: 'above30',
       valueName: 'above-30',
     },
   ],
 };
-
-// TODO: add Fr and En translations for all words
 
 export const filterFillers: ICheckList = {
   listTitle: 'fillers',
