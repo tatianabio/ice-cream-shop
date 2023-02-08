@@ -19,3 +19,11 @@
 .check-group__label {
   @include s1(var(--basic-extra-dark));
 }
+
+.check-group__mark-box {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  color: var(--basic-dark);
+}
