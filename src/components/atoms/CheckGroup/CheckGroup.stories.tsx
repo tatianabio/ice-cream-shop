@@ -13,7 +13,7 @@ export default {
     },
     design: {
       type: 'figma',
-      url: '',
+      url: 'https://www.figma.com/file/PGyn99Nrq2fXcnwGJqj0hR/HTML-1-%2F-%D0%93%D0%BB%D0%B5%D0%B9%D1%81%D0%B8-(34)-(Copy)?node-id=8177%3A3516&t=IwFiqkkG9l4CJkM8-4',
     },
   },
 };
