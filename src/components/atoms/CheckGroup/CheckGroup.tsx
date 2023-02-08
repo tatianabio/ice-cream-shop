@@ -1,4 +1,5 @@
 import React from 'react';
+import './CheckGroup.scss';
 import { ICheckList } from './utils';
 
 interface ICheckGroup {
@@ -15,7 +16,7 @@ const CheckGroup = ({ checkGroup, inputType, 'data-testid': testId }: ICheckGrou
   const displayedCheckGroup = list.map((item) => {
     const { label, valueName, isChecked } = item;
     return (
-      <li key={valueName}>
+      <li className='check-group__item' key={valueName}>
         <input
           type={inputType}
           id={valueName}
@@ -23,12 +24,18 @@ const CheckGroup = ({ checkGroup, inputType, 'data-testid': testId }: ICheckGrou
           value={valueName}
           name={inputType === 'radio' ? listTitle : valueName}
         />
-        <label htmlFor={valueName}>{label}</label>
+        <label className='check-group__label' htmlFor={valueName}>
+          {label}
+        </label>
       </li>
     );
   });
 
-  return <ul data-testid={`${testId}-${inputType}-${listTitle}`}>{displayedCheckGroup}</ul>;
+  return (
+    <ul className='check-group' data-testid={`${testId}-${inputType}-${listTitle}`}>
+      {displayedCheckGroup}
+    </ul>
+  );
 };
 
 export default CheckGroup;

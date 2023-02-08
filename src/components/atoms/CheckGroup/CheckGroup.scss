@@ -1,0 +1,21 @@
+@use '../../../styles/mixins' as *;
+
+.check-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: fit-content;
+  border-radius: 18px;
+  background-color: var(--second-background);
+  padding: 8px 24px;
+}
+
+.check-group__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.check-group__label {
+  @include s1(var(--basic-extra-dark));
+}

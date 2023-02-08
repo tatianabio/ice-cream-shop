@@ -22,7 +22,7 @@ export const Demo = () => {
   return (
     <StoryContainer
       title='Check Group'
-      text='Radio-buttons and checkbox as examples'
+      text='Two check groups are displayed as examples: radio-buttons and checkbox'
       style={{ maxWidth: '800px', minHeight: '600px', height: 'min-content', padding: '15px' }}
     >
       <>
