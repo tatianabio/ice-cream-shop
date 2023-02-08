@@ -10,14 +10,12 @@
   padding: 8px 24px;
 }
 
-.check-group__item {
+.check-group__label {
+  @include s1(var(--basic-extra-dark));
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.check-group__label {
-  @include s1(var(--basic-extra-dark));
+  cursor: pointer;
 }
 
 .check-group__mark-box {
@@ -26,4 +24,22 @@
   height: 16px;
   background-color: transparent;
   color: var(--basic-dark);
+}
+
+.check-group__input:hover + .check-group__mark-box {
+  color: var(--basic-extra-light);
+}
+
+.check-group__input:focus + .check-group__mark-box {
+  color: var(--basic-extra-light);
+}
+
+.check-group__input:active + .check-group__mark-box {
+  color: var(--basic-extra-light);
+  opacity: 0.4;
+}
+
+.check-group__input:disabled + .check-group__mark-box {
+  color: var(--basic-extra-dark);
+  opacity: 0.5;
 }

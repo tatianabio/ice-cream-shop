@@ -30,16 +30,17 @@ const CheckGroup = ({ checkGroup, inputType, 'data-testid': testId }: ICheckGrou
 
     return (
       <li className='check-group__item' key={valueName}>
-        <input
-          type={inputType}
-          id={valueName}
-          // checked={isChecked}
-          // value={valueName}
-          name={inputType === 'radio' ? listTitle : valueName}
-        />
-        <span className={cx('check-group__mark-box', `check-group__mark-box--${inputType}`)}>{mountMarkBox()}</span>
         <label className='check-group__label' htmlFor={valueName}>
-          {label}
+          <input
+            className={cx('check-group__input', 'visually-hidden')}
+            type={inputType}
+            id={valueName}
+            // checked={isChecked}
+            // value={valueName}
+            name={inputType === 'radio' ? listTitle : valueName}
+          />
+          <span className={cx('check-group__mark-box', `check-group__mark-box--${inputType}`)}>{mountMarkBox()}</span>
+          <span className='check-group__displayed-label'>{label}</span>
         </label>
       </li>
     );
