@@ -26,7 +26,7 @@ export const Demo = () => {
       style={{ maxWidth: '800px', minHeight: '600px', height: 'min-content', padding: '15px' }}
     >
       <>
-        <CheckGroup checkGroup={filterFatContent} data-testid='demo' inputType='radio' />
+        <CheckGroup checkGroup={filterFatContent} name='test' data-testid='demo' inputType='radio' />
         <CheckGroup checkGroup={filterFillers} data-testid='demo' inputType='checkbox' />
       </>
     </StoryContainer>
