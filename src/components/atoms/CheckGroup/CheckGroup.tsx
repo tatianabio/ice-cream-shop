@@ -24,20 +24,28 @@ const CheckGroup = ({ checkGroup, inputType, 'data-testid': testId, name = '' }:
   const [list, setList] = useState(checkGroup);
 
   const displayedCheckGroup = list.map((item, index) => {
-    const { label, valueName, isInitiallyChecked } = item;
+    const { label, valueName, isChecked } = item;
 
-    const mountMarkBox = (isChecked: boolean) => {
+    const mountMarkBox = (isBoxChecked: boolean) => {
       console.log('item', item);
       if (inputType === 'checkbox') {
-        return isChecked ? <CheckboxChecked /> : <CheckboxFrame />;
+        return isBoxChecked ? <CheckboxChecked /> : <CheckboxFrame />;
       }
-      return isChecked ? <RadioChecked /> : <RadioFrame />;
+      return isBoxChecked ? <RadioChecked /> : <RadioFrame />;
     };
+
+    // const onChangeBoxHandler = () => {
+    //   setList(
+    //     list.map((old) => {
+    //       return { ...old, isInitiallyChecked: old.valueName === valueName };
+    //     })
+    //   );
+    // };
 
     const onChangeBoxHandler = () => {
       setList(
         list.map((old) => {
-          return { ...old, isInitiallyChecked: old.valueName === valueName };
+          return { ...old, isChecked: old.valueName === valueName };
         })
       );
     };
@@ -49,13 +57,13 @@ const CheckGroup = ({ checkGroup, inputType, 'data-testid': testId, name = '' }:
             className={cx('check-group__input')}
             type={inputType}
             id={valueName}
-            checked={isInitiallyChecked}
+            checked={isChecked}
             // value={valueName}
             name={inputType === 'radio' ? name : valueName}
             onChange={onChangeBoxHandler}
           />
           <span className={cx('check-group__mark-box', `check-group__mark-box--${inputType}`)}>
-            {mountMarkBox(isInitiallyChecked)}
+            {mountMarkBox(isChecked)}
           </span>
           <span className='check-group__displayed-label'>{t(`${label}`)}</span>
         </label>
