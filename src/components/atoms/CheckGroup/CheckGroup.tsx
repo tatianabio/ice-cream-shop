@@ -23,7 +23,6 @@ const CheckGroup = ({ checkGroup, inputType, 'data-testid': testId, name = '' }:
 
   const [list, setList] = useState(checkGroup);
 
-  // const { list, listTitle } = checkGroup;
   const displayedCheckGroup = list.map((item, index) => {
     const { label, valueName, isInitiallyChecked } = item;
 

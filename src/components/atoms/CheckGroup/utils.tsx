@@ -14,32 +14,6 @@ export interface ICheckList {
   list: ICheckItem[];
 }
 
-// export const filterFatContent: ICheckList = {
-//   listTitle: 'fat-content',
-//   list: [
-//     {
-//       label: '0%',
-//       valueName: '0',
-//       isInitiallyChecked: false,
-//     },
-//     {
-//       label: 'under10',
-//       valueName: 'under-10',
-//       isInitiallyChecked: true,
-//     },
-//     {
-//       label: 'under30',
-//       valueName: 'under-30',
-//       isInitiallyChecked: false,
-//     },
-//     {
-//       label: 'above30',
-//       valueName: 'above-30',
-//       isInitiallyChecked: false,
-//     },
-//   ],
-// };
-
 export const filterFatContent: ICheckList['list'] = [
   {
     label: '0%',
