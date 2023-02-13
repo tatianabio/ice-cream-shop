@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './CheckGroup.scss';
 import cx from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { ICheckList } from './utils';
+import { ICheckItem } from './utils';
 import CheckboxChecked from '../../../assets/svg/checkboxChecked';
 import CheckboxFrame from '../../../assets/svg/checkboxFrame';
 import RadioChecked from '../../../assets/svg/radioChecked';
@@ -10,55 +10,52 @@ import RadioFrame from '../../../assets/svg/radioFrame';
 
 interface ICheckGroup {
   /** The list of radio-buttons or checkboxes  */
-  checkGroup: ICheckList['list'];
+  checkGroup: ICheckItem[];
   /** The type of inputs: radio-button or checkbox */
   inputType: 'radio' | 'checkbox';
+  /** The name of the checkbox group */
+  name?: string;
   /** Technical attributes */
   'data-testid': string;
-  name?: string;
 }
 
 const CheckGroup = ({ checkGroup, inputType, 'data-testid': testId, name = '' }: ICheckGroup) => {
   const { t } = useTranslation();
 
-  const [list, setList] = useState(checkGroup);
+  const [group, setGroup] = useState(checkGroup);
 
-  const displayedCheckGroup = list.map((item, index) => {
+  const displayedCheckGroup = group.map((item, index) => {
     const { label, valueName, isChecked } = item;
 
     const mountMarkBox = (isBoxChecked: boolean) => {
-      console.log('item', item);
       if (inputType === 'checkbox') {
         return isBoxChecked ? <CheckboxChecked /> : <CheckboxFrame />;
       }
       return isBoxChecked ? <RadioChecked /> : <RadioFrame />;
     };
 
-    // const onChangeBoxHandler = () => {
-    //   setList(
-    //     list.map((old) => {
-    //       return { ...old, isInitiallyChecked: old.valueName === valueName };
-    //     })
-    //   );
-    // };
-
     const onChangeBoxHandler = () => {
-      setList(
-        list.map((old) => {
-          return { ...old, isChecked: old.valueName === valueName };
-        })
-      );
+      if (inputType === 'checkbox') {
+        const newGroup: ICheckItem[] = [...group];
+        newGroup[index].isChecked = !isChecked;
+        setGroup(newGroup);
+      } else {
+        setGroup(
+          group.map((oldItem) => {
+            return { ...oldItem, isChecked: oldItem.valueName === valueName };
+          })
+        );
+      }
     };
 
     return (
       <li className='check-group__item' key={valueName}>
         <label className='check-group__label' htmlFor={valueName}>
           <input
-            className={cx('check-group__input')}
+            className={cx('check-group__input', 'visually-hidden')}
             type={inputType}
             id={valueName}
             checked={isChecked}
-            // value={valueName}
             name={inputType === 'radio' ? name : valueName}
             onChange={onChangeBoxHandler}
           />

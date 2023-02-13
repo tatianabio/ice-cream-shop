@@ -1,4 +1,4 @@
-interface ICheckItem {
+export interface ICheckItem {
   /** The label of the item */
   label: string;
   /** A unique value name of the item that will be sent to a server */
@@ -7,14 +7,7 @@ interface ICheckItem {
   isChecked: boolean;
 }
 
-export interface ICheckList {
-  /** The title of the list */
-  listTitle: string;
-  /** The items that are included into the list */
-  list: ICheckItem[];
-}
-
-export const filterFatContent: ICheckList['list'] = [
+export const filterFatContent: ICheckItem[] = [
   {
     label: '0%',
     valueName: '0',
@@ -37,7 +30,7 @@ export const filterFatContent: ICheckList['list'] = [
   },
 ];
 
-export const filterFillers: ICheckList['list'] = [
+export const filterFillers: ICheckItem[] = [
   {
     label: 'chocolateFiller',
     valueName: 'chocolateFiller',
