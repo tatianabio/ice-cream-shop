@@ -8,7 +8,7 @@ import CheckboxFrame from '../../../assets/svg/checkboxFrame';
 import RadioChecked from '../../../assets/svg/radioChecked';
 import RadioFrame from '../../../assets/svg/radioFrame';
 
-interface ICheckGroup {
+export interface ICheckGroup {
   /** The list of radio-buttons or checkboxes  */
   checkGroup: ICheckItem[];
   /** The type of inputs: radio-button or checkbox */
@@ -17,16 +17,26 @@ interface ICheckGroup {
   name?: string;
   /** Technical attributes */
   'data-testid': string;
+  onChange?: (checked: ICheckItem[]) => void;
+  initiallyChecked?: ICheckItem[];
 }
 
-const CheckGroup = ({ checkGroup, inputType, 'data-testid': testId, name = '' }: ICheckGroup) => {
+const CheckGroup = ({
+  checkGroup,
+  initiallyChecked,
+  onChange,
+  inputType,
+  'data-testid': testId,
+  name = '',
+}: ICheckGroup) => {
   const { t } = useTranslation();
 
-  const [group, setGroup] = useState(checkGroup);
+  const [checked, setChecked] = useState(initiallyChecked || []);
 
-  const displayedCheckGroup = group.map((item, index) => {
-    const { label, valueName, isChecked } = item;
+  const displayedCheckGroup = checkGroup.map((item) => {
+    const { label, valueName } = item;
 
+    const isChecked = !!checked.find((checkedItem) => checkedItem.valueName === item.valueName);
     const mountMarkBox = (isBoxChecked: boolean) => {
       if (inputType === 'checkbox') {
         return isBoxChecked ? <CheckboxChecked /> : <CheckboxFrame />;
@@ -36,15 +46,16 @@ const CheckGroup = ({ checkGroup, inputType, 'data-testid': testId, name = '' }:
 
     const onChangeBoxHandler = () => {
       if (inputType === 'checkbox') {
-        const newGroup: ICheckItem[] = [...group];
-        newGroup[index].isChecked = !isChecked;
-        setGroup(newGroup);
-      } else {
-        setGroup(
-          group.map((oldItem) => {
-            return { ...oldItem, isChecked: oldItem.valueName === valueName };
-          })
+        const alreadyCheckedIndex = checked.indexOf(item);
+
+        setChecked(
+          alreadyCheckedIndex === -1
+            ? [...checked, item]
+            : checked.filter((_: ICheckItem, index: number) => index !== alreadyCheckedIndex)
         );
+      } else {
+        const newChecked: ICheckItem[] = [item];
+        setChecked(newChecked);
       }
     };
 
