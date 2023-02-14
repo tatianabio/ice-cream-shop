@@ -4,7 +4,6 @@ import { action } from '@storybook/addon-actions';
 import StoryContainer from '../../storybookUtils/StoryContainer';
 import Button from '../../atoms/Button';
 import CheckGroupControl from './CheckGroupControl';
-import InputControl from '../InputControl';
 import { filterFatContent, filterFillers, ICheckItem } from '../../atoms/CheckGroup/utils';
 
 export default {
@@ -19,7 +18,6 @@ export default {
 };
 
 interface IDemoForm {
-  inputName1: string;
   fatContent: ICheckItem[];
   fillers: ICheckItem[];
 }
@@ -27,7 +25,6 @@ interface IDemoForm {
 export const Demo = () => {
   const form = useForm<IDemoForm>({
     defaultValues: {
-      inputName1: 'Default Value 1',
       fatContent: [filterFatContent[1]],
       fillers: [filterFillers[0], filterFillers[1]],
     },
@@ -43,25 +40,14 @@ export const Demo = () => {
 
   return (
     <StoryContainer
-      title='CheckGroup Control: radio-buttons, checkboxes'
+      title='CheckGroup Control: radio-buttons as checkboxes examples'
       text='Submit button is not included in the CheckGroup Control Component'
-      hasPinkBackground={false}
     >
       <FormProvider {...form}>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          style={{ width: '500px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '40px' }}
+          style={{ width: '500px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '20px' }}
         >
-          <InputControl
-            formField={{
-              name: 'inputName1',
-              label: 'The label of the input is visible',
-              tooltipText: 'Tooltip text',
-            }}
-            type='text'
-            data-testid='demo-1'
-            placeholder='Input with visible label'
-          />
           <CheckGroupControl
             checkGroup={filterFatContent}
             data-testid='demo'
@@ -86,7 +72,7 @@ export const Demo = () => {
             }}
             inputType='checkbox'
           />
-          <Button data-testid='demo-button' text='Submit' variant='secondary' type='submit' />
+          <Button data-testid='demo-button' text='Submit' variant='thirdly' type='submit' />
         </form>
       </FormProvider>
     </StoryContainer>
