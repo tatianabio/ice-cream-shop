@@ -57,7 +57,7 @@ const FormField = ({
           htmlFor={`${name}-field`}
           data-testid={`${testId}-label`}
         >
-          {label}
+          {t(`${label}`)}
         </label>
         {hasTooltip && <Tooltip className='form-field__tooltip' text={tooltipText} data-testid={testId} />}
       </div>

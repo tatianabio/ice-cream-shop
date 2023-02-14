@@ -13,7 +13,7 @@ export default {
   parameters: {
     design: {
       type: 'figma',
-      url: '',
+      url: 'https://www.figma.com/file/PGyn99Nrq2fXcnwGJqj0hR/HTML-1-%2F-%D0%93%D0%BB%D0%B5%D0%B9%D1%81%D0%B8-(34)-(Copy)?node-id=22%3A3645&t=flHdb82fTzhp034H-4',
     },
   },
 };
@@ -27,7 +27,7 @@ export const Demo = () => {
   const form = useForm<IDemoForm>({
     defaultValues: {
       inputName1: 'Default Value 1',
-      fatContent: [filterFatContent[2]],
+      fatContent: [filterFatContent[1]],
     },
     mode: 'all',
   });
@@ -41,14 +41,14 @@ export const Demo = () => {
 
   return (
     <StoryContainer
-      title='Input Control: visible label, hidden label'
-      text='Submit button is not included in the Input Control Component'
+      title='CheckGroup Control: radio-buttons, checkboxes'
+      text='Submit button is not included in the CheckGroup Control Component'
       hasPinkBackground={false}
     >
       <FormProvider {...form}>
         <form
           onSubmit={handleSubmit(onSubmit)}
-          style={{ width: '400px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '40px' }}
+          style={{ width: '500px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '40px' }}
         >
           <InputControl
             formField={{
@@ -65,9 +65,10 @@ export const Demo = () => {
             data-testid='demo'
             formField={{
               name: 'fatContent',
-              label: 'Fat content',
+              label: 'fatContent',
               hasTooltip: false,
-              isLabelHidden: true,
+              isLabelHidden: false,
+              isLabelBold: false,
             }}
             inputType='radio'
           />

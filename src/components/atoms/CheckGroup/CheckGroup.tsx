@@ -57,6 +57,8 @@ const CheckGroup = ({
         const newChecked: ICheckItem[] = [item];
         setChecked(newChecked);
       }
+      console.log('checked', checked);
+      onChange?.(checked);
     };
 
     return (
