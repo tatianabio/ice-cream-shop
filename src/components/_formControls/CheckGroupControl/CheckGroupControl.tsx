@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import CheckGroup, { ICheckGroup } from '../../atoms/CheckGroup/CheckGroup';
 import { IFormField } from '../FormField/FormField';
@@ -13,9 +13,17 @@ interface ICheckGroupControl extends Omit<ICheckGroup, 'name'> {
 
 const CheckGroupControl = ({ formField, 'data-testid': testId, ...props }: ICheckGroupControl) => {
   const { name } = formField;
-  const { control, getValues } = useFormContext();
+  const {
+    control,
+    getValues,
+    formState: { dirtyFields },
+  } = useFormContext();
 
-  const currentValue = getValues()[name];
+  const isDirtyField = dirtyFields[name];
+
+  const resetValue = useMemo(() => {
+    return isDirtyField ? undefined : getValues()[name];
+  }, [isDirtyField]);
 
   return (
     <Controller
@@ -24,12 +32,11 @@ const CheckGroupControl = ({ formField, 'data-testid': testId, ...props }: IChec
       render={({ field }) => {
         const onChangeHandler = (checked: ICheckItem[]) => {
           field.onChange(checked);
-          console.log('getValues()', getValues());
         };
 
         return (
           <FormField {...formField} data-testid={testId}>
-            <CheckGroup {...props} data-testid={testId} initiallyChecked={currentValue} onChange={onChangeHandler} />
+            <CheckGroup {...props} data-testid={testId} initiallyChecked={resetValue} onChange={onChangeHandler} />
           </FormField>
         );
       }}

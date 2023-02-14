@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './CheckGroup.scss';
 import cx from 'classnames';
 import { useTranslation } from 'react-i18next';
@@ -31,7 +31,11 @@ const CheckGroup = ({
 }: ICheckGroup) => {
   const { t } = useTranslation();
 
-  const [checked, setChecked] = useState(initiallyChecked || []);
+  const [checked, setChecked] = useState<ICheckItem[]>([]);
+
+  useEffect(() => {
+    initiallyChecked && setChecked(initiallyChecked);
+  }, [initiallyChecked]);
 
   const displayedCheckGroup = checkGroup.map((item) => {
     const { label, valueName } = item;
@@ -45,20 +49,20 @@ const CheckGroup = ({
     };
 
     const onChangeBoxHandler = () => {
+      let newChecked: ICheckItem[];
+
       if (inputType === 'checkbox') {
         const alreadyCheckedIndex = checked.indexOf(item);
-
-        setChecked(
+        newChecked =
           alreadyCheckedIndex === -1
             ? [...checked, item]
-            : checked.filter((_: ICheckItem, index: number) => index !== alreadyCheckedIndex)
-        );
+            : checked.filter((_: ICheckItem, index: number) => index !== alreadyCheckedIndex);
       } else {
-        const newChecked: ICheckItem[] = [item];
-        setChecked(newChecked);
+        newChecked = [item];
       }
-      console.log('checked', checked);
-      onChange?.(checked);
+
+      setChecked(newChecked);
+      onChange?.(newChecked);
     };
 
     return (
