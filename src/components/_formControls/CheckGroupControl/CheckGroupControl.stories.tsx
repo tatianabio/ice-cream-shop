@@ -5,7 +5,7 @@ import StoryContainer from '../../storybookUtils/StoryContainer';
 import Button from '../../atoms/Button';
 import CheckGroupControl from './CheckGroupControl';
 import InputControl from '../InputControl';
-import { filterFatContent, ICheckItem } from '../../atoms/CheckGroup/utils';
+import { filterFatContent, filterFillers, ICheckItem } from '../../atoms/CheckGroup/utils';
 
 export default {
   title: 'Components/_FormControls/CheckGroupControl',
@@ -21,6 +21,7 @@ export default {
 interface IDemoForm {
   inputName1: string;
   fatContent: ICheckItem[];
+  fillers: ICheckItem[];
 }
 
 export const Demo = () => {
@@ -28,6 +29,7 @@ export const Demo = () => {
     defaultValues: {
       inputName1: 'Default Value 1',
       fatContent: [filterFatContent[1]],
+      fillers: [filterFillers[0], filterFillers[1]],
     },
     mode: 'all',
   });
@@ -71,6 +73,18 @@ export const Demo = () => {
               isLabelBold: false,
             }}
             inputType='radio'
+          />
+          <CheckGroupControl
+            checkGroup={filterFillers}
+            data-testid='demo'
+            formField={{
+              name: 'fillers',
+              label: 'fillers',
+              hasTooltip: false,
+              isLabelHidden: false,
+              isLabelBold: false,
+            }}
+            inputType='checkbox'
           />
           <Button data-testid='demo-button' text='Submit' variant='secondary' type='submit' />
         </form>

@@ -41,6 +41,7 @@ const CheckGroup = ({
     const { label, valueName } = item;
 
     const isChecked = !!checked.find((checkedItem) => checkedItem.valueName === item.valueName);
+
     const mountMarkBox = (isBoxChecked: boolean) => {
       if (inputType === 'checkbox') {
         return isBoxChecked ? <CheckboxChecked /> : <CheckboxFrame />;
@@ -52,7 +53,7 @@ const CheckGroup = ({
       let newChecked: ICheckItem[];
 
       if (inputType === 'checkbox') {
-        const alreadyCheckedIndex = checked.indexOf(item);
+        const alreadyCheckedIndex = checked.findIndex((checkedItem) => checkedItem.valueName === item.valueName);
         newChecked =
           alreadyCheckedIndex === -1
             ? [...checked, item]
