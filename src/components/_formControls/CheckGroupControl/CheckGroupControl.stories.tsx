@@ -57,6 +57,7 @@ export const Demo = () => {
               hasTooltip: false,
               isLabelHidden: false,
               isLabelBold: false,
+              hasErrorMessage: false,
             }}
             inputType='radio'
           />
@@ -69,6 +70,7 @@ export const Demo = () => {
               hasTooltip: false,
               isLabelHidden: false,
               isLabelBold: false,
+              hasErrorMessage: false,
             }}
             inputType='checkbox'
           />
