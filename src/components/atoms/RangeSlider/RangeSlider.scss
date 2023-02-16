@@ -30,18 +30,30 @@
   background-color: var(--basic-extra-dark);
   border: none;
   opacity: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../../../assets/svg/circle-white.svg');
 
   &:hover {
     background-color: var(--basic-extra-light);
     border: none;
+    background-image: url('../../../assets/svg/circle-black.svg');
+  }
+
+  &:focus {
+    background-color: var(--basic-extra-light);
+    box-shadow: 0 0 0 2px var(--basic-extra-dark);
+    background-image: url('../../../assets/svg/circle-black.svg');
   }
 
   &:active {
     background-color: var(--basic-extra-dark);
+    background-image: none;
   }
 }
 
 .rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
   background-color: var(--basic-extra-light);
   box-shadow: none;
+  background-image: url('../../../assets/svg/circle-black.svg');
 }
