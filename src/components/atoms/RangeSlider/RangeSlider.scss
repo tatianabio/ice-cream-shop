@@ -1,0 +1,47 @@
+.range-slider {
+  max-width: 196px;
+  border-radius: 18px;
+  background-color: var(--second-background);
+  padding: 10px 16px;
+}
+
+.range-slider__wrapper {
+  height: 16px;
+  padding: 7px 0;
+}
+
+// Customization of the default styles
+
+.rc-slider-track {
+  background-color: var(--basic-dark);
+  height: 2px;
+}
+
+.rc-slider-rail {
+  background-color: var(--basic-dark);
+  height: 2px;
+  opacity: 0.3;
+}
+
+.rc-slider-handle {
+  width: 16px;
+  height: 16px;
+  margin-top: -7px;
+  background-color: var(--basic-extra-dark);
+  border: none;
+  opacity: 1;
+
+  &:hover {
+    background-color: var(--basic-extra-light);
+    border: none;
+  }
+
+  &:active {
+    background-color: var(--basic-extra-dark);
+  }
+}
+
+.rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
+  background-color: var(--basic-extra-light);
+  box-shadow: none;
+}
