@@ -116,6 +116,9 @@ const resources = {
       benefitDelivery:
         'Delivery of our ice cream is carried out in a special thermal pack, which prevents the ice cream from melting and leads to keeping an excellent taste.',
 
+      // Filter
+      price: 'Price',
+
       // Fillers
       fillers: 'Fillers:',
       jams: 'jams',
@@ -306,6 +309,9 @@ const resources = {
         "L'achat d'ingrédients se fait uniquement auprès de fermes éprouvées avec lesquelles nous avons une coopération à long terme.",
       benefitDelivery:
         'La livraison de nos glaces est effectuée dans un pack thermique spécial, qui ne permet pas à la glace de fondre et vous permet de conserver un excellent goût.',
+
+      // Filter
+      price: 'Prix',
 
       // Fillers
       fillers: 'Charges:',

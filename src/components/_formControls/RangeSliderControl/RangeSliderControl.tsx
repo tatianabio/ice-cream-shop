@@ -1,26 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { IFormField } from '../FormField/FormField';
 import FormField from '../FormField';
 import RangeSlider, { IRangeSlider } from '../../atoms/RangeSlider/RangeSlider';
 
 interface IRangeSliderControl extends IRangeSlider {
   formField: Omit<IFormField, 'children' | 'data-testid'>;
+  /** Measurement units for the range slider if applicable */
+  measurementUnits?: string;
   /** Technical attributes */
   'data-testid': string;
 }
 
-const RangeSliderControl = ({ formField, 'data-testid': testId, ...props }: IRangeSliderControl) => {
-  const { name } = formField;
+const RangeSliderControl = ({
+  formField,
+  'data-testid': testId,
+  measurementUnits = '',
+  ...props
+}: IRangeSliderControl) => {
+  const { t } = useTranslation();
+  const { name, label } = formField;
   const {
     control,
     getValues,
     formState: { dirtyFields },
   } = useFormContext();
+  const [[min, max], setRangeNumbers] = useState<number[]>(getValues()[name]);
 
-  const isDirtyField = dirtyFields[name];
+  const defaultValue = dirtyFields[name] ? undefined : getValues()[name];
 
-  const defaultValue = isDirtyField ? undefined : getValues()[name];
+  useEffect(() => {
+    defaultValue && setRangeNumbers(defaultValue);
+  }, [defaultValue]);
+
+  const fullLabel = `${t(label)}: ${min} ${measurementUnits} - ${max} ${measurementUnits}`;
 
   return (
     <Controller
@@ -28,11 +42,12 @@ const RangeSliderControl = ({ formField, 'data-testid': testId, ...props }: IRan
       control={control}
       render={({ field }) => {
         const onChangeHandler = (value: number[]) => {
+          setRangeNumbers(value);
           field.onChange(value);
         };
 
         return (
-          <FormField {...formField} data-testid={testId}>
+          <FormField {...formField} data-testid={testId} label={fullLabel}>
             <RangeSlider
               {...props}
               value={defaultValue || field.value}

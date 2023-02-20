@@ -37,7 +37,7 @@ export const Demo = () => {
 
   return (
     <StoryContainer
-      title='Range Slider Control'
+      title='Range Slider Control: price range as an example'
       text='Submit button is not included in the Range Slider Control Component'
     >
       <FormProvider {...form}>
@@ -47,6 +47,7 @@ export const Demo = () => {
         >
           <RangeSliderControl
             data-testid='demo'
+            measurementUnits='$'
             formField={{
               name: 'range',
               label: 'price',

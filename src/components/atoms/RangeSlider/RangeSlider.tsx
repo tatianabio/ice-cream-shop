@@ -11,7 +11,7 @@ export interface IRangeSlider extends Omit<SliderProps<number | number[]>, 'onCh
 const sliderDefaults = {
   min: 3,
   max: 10,
-  step: 0.5,
+  step: 1,
   pushable: 1,
 };
 
