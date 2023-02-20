@@ -4,6 +4,10 @@ import 'rc-slider/assets/index.css';
 import './RangeSlider.scss';
 import { SliderProps } from 'rc-slider/lib/Slider';
 
+export interface IRangeSlider extends Omit<SliderProps<number | number[]>, 'onChange'> {
+  onChange?: (value: number[]) => void;
+}
+
 const sliderDefaults = {
   min: 3,
   max: 10,
@@ -11,9 +15,9 @@ const sliderDefaults = {
   pushable: 1,
 };
 
-const RangeSlider = (props: SliderProps<number | number[]>) => {
-  const onChangeHandler = (data: number[]) => {
-    console.log(data);
+const RangeSlider = ({ onChange, ...props }: IRangeSlider) => {
+  const onChangeHandler = (data: number | number[]) => {
+    Array.isArray(data) && onChange?.(data);
   };
 
   return (
@@ -23,9 +27,8 @@ const RangeSlider = (props: SliderProps<number | number[]>) => {
         {...props}
         className='range-slider__wrapper'
         range
-        defaultValue={[4, 7.5]}
         allowCross={false}
-        onChange={() => onChangeHandler}
+        onChange={onChangeHandler}
       />
     </div>
   );
