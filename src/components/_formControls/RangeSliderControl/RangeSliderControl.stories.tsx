@@ -17,13 +17,13 @@ export default {
 };
 
 interface IDemoForm {
-  range: number[];
+  price: number[];
 }
 
 export const Demo = () => {
   const form = useForm<IDemoForm>({
     defaultValues: {
-      range: [4, 9],
+      price: [4, 9],
     },
     mode: 'all',
   });
@@ -49,7 +49,7 @@ export const Demo = () => {
             data-testid='demo'
             measurementUnits='$'
             formField={{
-              name: 'range',
+              name: 'price',
               label: 'price',
               hasTooltip: false,
               isLabelHidden: false,

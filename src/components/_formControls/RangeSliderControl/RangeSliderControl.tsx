@@ -53,6 +53,10 @@ const RangeSliderControl = ({
               value={defaultValue || field.value}
               data-testid={testId}
               onChange={onChangeHandler}
+              ariaLabelForHandle={[
+                `Change the minimum limit of ${name} range.`,
+                `Change the maximum limit of ${name} range.`,
+              ]}
             />
           </FormField>
         );
