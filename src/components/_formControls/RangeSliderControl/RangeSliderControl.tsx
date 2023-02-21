@@ -3,7 +3,8 @@ import { Controller, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { IFormField } from '../FormField/FormField';
 import FormField from '../FormField';
-import RangeSlider, { IRangeSlider } from '../../atoms/RangeSlider/RangeSlider';
+import RangeSlider from '../../atoms/RangeSlider';
+import { IRangeSlider } from '../../atoms/RangeSlider/RangeSlider';
 
 interface IRangeSliderControl extends IRangeSlider {
   formField: Omit<IFormField, 'children' | 'data-testid'>;
