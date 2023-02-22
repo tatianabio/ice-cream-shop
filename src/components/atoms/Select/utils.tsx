@@ -1,3 +1,3 @@
-const sortingOptions: string[] = ['most popular', 'cheapest', 'most expensive'];
+const sortingOptions: string[] = ['byPopularity', 'cheapestFirst', 'expensiveFirst'];
 
 export default sortingOptions;

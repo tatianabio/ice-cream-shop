@@ -1,5 +1,6 @@
 import StoryContainer from '../../storybookUtils/StoryContainer';
 import Select from './Select';
+import sortingOptions from './utils';
 
 export default {
   title: 'Components/Atoms/Select',
@@ -15,7 +16,7 @@ export default {
 export const Demo = () => {
   return (
     <StoryContainer title='Select' style={{ maxWidth: '800px', minHeight: '500px', paddingLeft: '30px' }}>
-      <Select data-testid='demo' selectLabel='demo' />
+      <Select data-testid='demo' selectLabel='demo' optionsList={sortingOptions} />
     </StoryContainer>
   );
 };

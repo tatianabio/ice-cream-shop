@@ -118,6 +118,10 @@ const resources = {
 
       // Filter
       price: 'Price',
+      sorting: 'Sorting:',
+      byPopularity: 'by popularity',
+      cheapestFirst: 'cheapest first',
+      expensiveFirst: 'expensive first',
 
       // Fillers
       fillers: 'Fillers:',
@@ -312,6 +316,10 @@ const resources = {
 
       // Filter
       price: 'Prix',
+      sorting: 'Tri:',
+      byPopularity: 'par popularité',
+      cheapestFirst: 'le moins cher en premier',
+      expensiveFirst: "cher d'abord",
 
       // Fillers
       fillers: 'Charges:',
