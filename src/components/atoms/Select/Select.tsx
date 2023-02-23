@@ -1,22 +1,34 @@
-import React, { HTMLProps } from 'react';
+import React, { HTMLProps, useEffect, useState } from 'react';
 import './Select.scss';
 import { useTranslation } from 'react-i18next';
+import { IOption } from './utils';
 
-interface ISelect extends HTMLProps<HTMLSelectElement> {
+export interface ISelect extends HTMLProps<HTMLSelectElement> {
   /** List of options for the select */
-  optionsList: string[];
+  optionsList: IOption[];
   /** Label of the select accessible to sreenreaders */
   selectLabel: string;
+  initiallySelected: IOption;
   /** Technical attributes */
   'data-testid': string;
 }
 
-const Select = ({ 'data-testid': testId, selectLabel, optionsList, ...props }: ISelect) => {
+const Select = ({ 'data-testid': testId, selectLabel, optionsList, initiallySelected, ...props }: ISelect) => {
   const { t } = useTranslation();
+  const [selected, setSelected] = useState<IOption>();
+
+  useEffect(() => {
+    initiallySelected && setSelected(initiallySelected);
+  }, [initiallySelected]);
+
   const displayedOptions = optionsList.map((option) => {
+    const { key, label } = option;
+
+    const isSelected = selected?.key === key;
+
     return (
-      <option className='select__option' key={option} value={option}>
-        {t(option)}
+      <option className='select__option' key={key} value={key} selected={isSelected}>
+        {t(label)}
       </option>
     );
   });

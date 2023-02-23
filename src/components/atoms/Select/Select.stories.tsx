@@ -16,7 +16,12 @@ export default {
 export const Demo = () => {
   return (
     <StoryContainer title='Select' style={{ maxWidth: '800px', minHeight: '500px', paddingLeft: '30px' }}>
-      <Select data-testid='demo' selectLabel='demo' optionsList={sortingOptions} />
+      <Select
+        data-testid='demo'
+        selectLabel='demo'
+        optionsList={sortingOptions}
+        initiallySelected={sortingOptions[0]}
+      />
     </StoryContainer>
   );
 };
