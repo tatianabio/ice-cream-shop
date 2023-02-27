@@ -122,6 +122,7 @@ const resources = {
       byPopularity: 'by popularity',
       cheapestFirst: 'cheapest first',
       expensiveFirst: 'expensive first',
+      applyFilters: 'Apply',
 
       // Fillers
       fillers: 'Fillers:',
@@ -320,6 +321,7 @@ const resources = {
       byPopularity: 'par popularité',
       cheapestFirst: 'le moins cher en premier',
       expensiveFirst: "cher d'abord",
+      applyFilters: 'Appliquer',
 
       // Fillers
       fillers: 'Charges:',
