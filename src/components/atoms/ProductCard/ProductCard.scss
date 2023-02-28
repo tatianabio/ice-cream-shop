@@ -10,6 +10,7 @@
 
 .product-card__info-wrapper {
   display: flex;
+  min-height: 280px;
   flex-direction: column;
   align-items: center;
   padding: 132px 40px 24px;
@@ -45,6 +46,7 @@
 .product-card__price-wrapper {
   width: 100%;
   display: flex;
+  margin-top: auto;
   justify-content: space-between;
   align-items: center;
 }

@@ -2,12 +2,14 @@ import React from 'react';
 import './CatalogFilter.scss';
 import { FormProvider, useForm } from 'react-hook-form';
 import { action } from '@storybook/addon-actions';
+import { shallow } from 'zustand/shallow';
 import sortingOptions, { IOption } from '../../atoms/Select/utils';
 import SelectControl from '../../_formControls/SelectControl';
 import Button from '../../atoms/Button';
 import RangeSliderControl from '../../_formControls/RangeSliderControl';
 import { filterFatContent, filterFillers, ICheckItem } from '../../atoms/CheckGroup/utils';
 import CheckGroupControl from '../../_formControls/CheckGroupControl/CheckGroupControl';
+import useCatalogFilterStore from './CatalogFilter.store';
 
 interface ICatalogFilter {
   /** Technical attributes */
@@ -34,13 +36,16 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
 
   const { handleSubmit } = form;
 
+  const setFilteredProductList = useCatalogFilterStore((store) => store.setFilteredProductList, shallow);
+
   const onSubmit = (data: ICatalogFilterForm) => {
     action('onSubmit')(data);
+    setFilteredProductList();
     form.reset();
   };
 
   return (
-    <section className='catalog-filter'>
+    <div className='catalog-filter'>
       <FormProvider {...form}>
         <form className='catalog-filter__form' onSubmit={handleSubmit(onSubmit)}>
           <SelectControl
@@ -98,7 +103,7 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
           <Button data-testid={testId} text='applyFilters' variant='thirdly' type='submit' />
         </form>
       </FormProvider>
-    </section>
+    </div>
   );
 };
 

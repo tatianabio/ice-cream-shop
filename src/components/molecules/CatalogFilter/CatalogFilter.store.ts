@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { IProduct, products } from '../../../mock/data/products';
 
-interface ICatalogFilterStore {
+export interface ICatalogFilterStore {
   allProductsList: IProduct[];
   filteredProductList: IProduct[];
   filterSettings: {
@@ -11,16 +11,17 @@ interface ICatalogFilterStore {
     selectedFillers: string[];
   };
   setFilteredProductList: () => void;
+  // setSortingOrder: (selectedOption: string) => void;
 }
 
 const useCatalogFilterStore = create<ICatalogFilterStore>((set, get) => ({
   allProductsList: products,
   filteredProductList: products,
   filterSettings: {
-    selectedOrder: 'popularity',
-    selectedPriceRange: [4, 9],
-    selectedFatContent: 'under-10',
-    selectedFillers: ['chocolateFiller', 'sprinkles'],
+    selectedOrder: 'expensive',
+    selectedPriceRange: [3, 10],
+    selectedFatContent: 'under-30',
+    selectedFillers: [],
   },
   setFilteredProductList: () => {
     const { selectedOrder, selectedPriceRange, selectedFillers, selectedFatContent } = get().filterSettings;
@@ -51,8 +52,25 @@ const useCatalogFilterStore = create<ICatalogFilterStore>((set, get) => ({
 
       return isSuitable;
     });
-    console.log(filtered);
+
+    const sorted = filtered.sort((a, b) => {
+      switch (selectedOrder) {
+        case 'popularity':
+          return b.rating - a.rating;
+        case 'cheap':
+          return a.price - b.price;
+        case 'expensive':
+          return b.price - a.price;
+        default:
+          return 0;
+      }
+    });
+
+    set(() => ({ filteredProductList: sorted }));
   },
+  // setSortingOrder: (selectedOption) => {
+  //   set(() => ({filterSettings }));
+  // },
 }));
 
 export default useCatalogFilterStore;

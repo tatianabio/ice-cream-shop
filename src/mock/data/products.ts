@@ -124,7 +124,7 @@ export const products: IProduct[] = [
     fatContent: 25,
     rating: 70,
     imgLink: '/caramel',
-    fillers: [fillers[3]],
+    fillers: [fillers[1], fillers[3]],
     isAvailable: true,
   },
   {
@@ -168,7 +168,7 @@ export const products: IProduct[] = [
     fatContent: 0,
     rating: 50,
     imgLink: '/menthol',
-    fillers: [fillers[3]],
+    fillers: [fillers[1], fillers[3]],
     isAvailable: true,
   },
   {
