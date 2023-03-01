@@ -9,7 +9,7 @@ import Button from '../../atoms/Button';
 import RangeSliderControl from '../../_formControls/RangeSliderControl';
 import { filterFatContent, filterFillers, ICheckItem } from '../../atoms/CheckGroup/utils';
 import CheckGroupControl from '../../_formControls/CheckGroupControl/CheckGroupControl';
-import useCatalogFilterStore from './CatalogFilter.store';
+import useCatalogFilterStore, { ICatalogFilterStore } from './CatalogFilter.store';
 
 interface ICatalogFilter {
   /** Technical attributes */
@@ -24,12 +24,24 @@ interface ICatalogFilterForm {
 }
 
 const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
+  const { selectedOrder, selectedFillers, selectedFatContent, selectedPriceRange } = useCatalogFilterStore(
+    (store: ICatalogFilterStore) => store.filterSettings,
+    shallow
+  );
+
+  const defaultSortingOption = sortingOptions.find((item) => item.key === selectedOrder);
+  const defaultFatContent = filterFatContent.find((item) => item.valueName === selectedFatContent);
+  const defaultFilers = selectedFillers.reduce((acc, selectedFiller) => {
+    const filler = filterFillers.find((item) => item.valueName === selectedFiller);
+    return filler ? [...acc, filler] : acc;
+  }, [] as ICheckItem[]);
+
   const form = useForm<ICatalogFilterForm>({
     defaultValues: {
-      sorting: sortingOptions[0],
-      price: [4, 9],
-      fatContent: [filterFatContent[1]],
-      fillers: [filterFillers[0], filterFillers[1]],
+      sorting: defaultSortingOption,
+      price: selectedPriceRange,
+      fatContent: [defaultFatContent],
+      fillers: defaultFilers,
     },
     mode: 'all',
   });
