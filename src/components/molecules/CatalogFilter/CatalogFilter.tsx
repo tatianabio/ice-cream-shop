@@ -49,11 +49,11 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
   const { handleSubmit } = form;
 
   const setFilteredProductList = useCatalogFilterStore((store) => store.setFilteredProductList, shallow);
+  const setSortingOrder = useCatalogFilterStore((store) => store.setSortingOrder, shallow);
 
   const onSubmit = (data: ICatalogFilterForm) => {
     action('onSubmit')(data);
     setFilteredProductList();
-    form.reset();
   };
 
   return (
@@ -72,6 +72,9 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
             }}
             optionsList={sortingOptions}
             selectLabel='sorting'
+            onChange={(option: IOption) => {
+              setSortingOrder(option.key);
+            }}
           />
           <RangeSliderControl
             data-testid={testId}

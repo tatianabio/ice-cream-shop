@@ -11,7 +11,7 @@ interface ISelectControl extends ISelect {
   'data-testid': string;
 }
 
-const SelectControl = ({ formField, 'data-testid': testId, ...props }: ISelectControl) => {
+const SelectControl = ({ formField, 'data-testid': testId, onChange, ...props }: ISelectControl) => {
   const { name } = formField;
   const { control, getValues } = useFormContext();
 
@@ -24,6 +24,7 @@ const SelectControl = ({ formField, 'data-testid': testId, ...props }: ISelectCo
       render={({ field }) => {
         const onChangeHandler = (selected: IOption) => {
           field.onChange(selected);
+          onChange?.(selected);
         };
 
         return (

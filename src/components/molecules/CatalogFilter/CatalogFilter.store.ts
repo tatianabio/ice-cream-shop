@@ -1,17 +1,19 @@
 import { create } from 'zustand';
 import { IProduct, products } from '../../../mock/data/products';
 
+type ISelectedOrder = 'popularity' | 'cheap' | 'expensive';
+
 export interface ICatalogFilterStore {
   allProductsList: IProduct[];
   filteredProductList: IProduct[];
   filterSettings: {
-    selectedOrder: 'popularity' | 'cheap' | 'expensive';
+    selectedOrder: ISelectedOrder;
     selectedPriceRange: number[];
     selectedFatContent: '0' | 'under-10' | 'under-30' | 'above-30';
     selectedFillers: string[];
   };
   setFilteredProductList: () => void;
-  // setSortingOrder: (selectedOption: string) => void;
+  setSortingOrder: (selectedOption: string) => void;
 }
 
 const useCatalogFilterStore = create<ICatalogFilterStore>((set, get) => ({
@@ -68,9 +70,11 @@ const useCatalogFilterStore = create<ICatalogFilterStore>((set, get) => ({
 
     set(() => ({ filteredProductList: sorted }));
   },
-  // setSortingOrder: (selectedOption) => {
-  //   set(() => ({filterSettings }));
-  // },
+  setSortingOrder: (selectedOption) => {
+    set((store: ICatalogFilterStore) => ({
+      filterSettings: { ...store.filterSettings, selectedOrder: selectedOption as ISelectedOrder },
+    }));
+  },
 }));
 
 export default useCatalogFilterStore;
