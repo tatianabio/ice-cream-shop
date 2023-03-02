@@ -50,6 +50,7 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
 
   const setFilteredProductList = useCatalogFilterStore((store) => store.setFilteredProductList, shallow);
   const setSortingOrder = useCatalogFilterStore((store) => store.setSortingOrder, shallow);
+  const setPriceRange = useCatalogFilterStore((store) => store.setPriceRange, shallow);
 
   const onSubmit = (data: ICatalogFilterForm) => {
     action('onSubmit')(data);
@@ -86,6 +87,9 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
               isLabelHidden: false,
               isLabelBold: false,
               hasErrorMessage: false,
+            }}
+            onChange={(range) => {
+              setPriceRange(range);
             }}
           />
           <CheckGroupControl

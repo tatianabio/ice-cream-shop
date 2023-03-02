@@ -14,6 +14,7 @@ export interface ICatalogFilterStore {
   };
   setFilteredProductList: () => void;
   setSortingOrder: (selectedOption: string) => void;
+  setPriceRange: (priceRange: number[]) => void;
 }
 
 const useCatalogFilterStore = create<ICatalogFilterStore>((set, get) => ({
@@ -73,6 +74,11 @@ const useCatalogFilterStore = create<ICatalogFilterStore>((set, get) => ({
   setSortingOrder: (selectedOption) => {
     set((store: ICatalogFilterStore) => ({
       filterSettings: { ...store.filterSettings, selectedOrder: selectedOption as ISelectedOrder },
+    }));
+  },
+  setPriceRange: (priceRange) => {
+    set((store: ICatalogFilterStore) => ({
+      filterSettings: { ...store.filterSettings, selectedPriceRange: priceRange },
     }));
   },
 }));

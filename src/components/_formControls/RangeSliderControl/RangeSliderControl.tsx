@@ -18,6 +18,7 @@ const RangeSliderControl = ({
   formField,
   'data-testid': testId,
   measurementUnits = '',
+  onChange,
   ...props
 }: IRangeSliderControl) => {
   const { t } = useTranslation();
@@ -45,6 +46,7 @@ const RangeSliderControl = ({
         const onChangeHandler = (value: number[]) => {
           setRangeNumbers(value);
           field.onChange(value);
+          onChange?.(value);
         };
 
         return (
