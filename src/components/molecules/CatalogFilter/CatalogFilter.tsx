@@ -52,6 +52,7 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
   const setSortingOrder = useCatalogFilterStore((store) => store.setSortingOrder, shallow);
   const setPriceRange = useCatalogFilterStore((store) => store.setPriceRange, shallow);
   const setFatContent = useCatalogFilterStore((store) => store.setFatContent, shallow);
+  const setFillers = useCatalogFilterStore((store) => store.setFillers, shallow);
 
   const onSubmit = (data: ICatalogFilterForm) => {
     action('onSubmit')(data);
@@ -117,6 +118,9 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
               isLabelHidden: false,
               isLabelBold: false,
               hasErrorMessage: false,
+            }}
+            onChange={(checked) => {
+              setFillers(checked.map((item) => item.valueName));
             }}
             inputType='checkbox'
           />
