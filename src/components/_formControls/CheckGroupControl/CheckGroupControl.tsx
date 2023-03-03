@@ -11,7 +11,7 @@ interface ICheckGroupControl extends Omit<ICheckGroup, 'name'> {
   'data-testid': string;
 }
 
-const CheckGroupControl = ({ formField, 'data-testid': testId, ...props }: ICheckGroupControl) => {
+const CheckGroupControl = ({ formField, 'data-testid': testId, onChange, ...props }: ICheckGroupControl) => {
   const { name } = formField;
   const {
     control,
@@ -32,6 +32,7 @@ const CheckGroupControl = ({ formField, 'data-testid': testId, ...props }: IChec
       render={({ field }) => {
         const onChangeHandler = (checked: ICheckItem[]) => {
           field.onChange(checked);
+          onChange?.(checked);
         };
 
         return (

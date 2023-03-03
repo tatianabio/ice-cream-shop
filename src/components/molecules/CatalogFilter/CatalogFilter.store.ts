@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { IProduct, products } from '../../../mock/data/products';
 
 type ISelectedOrder = 'popularity' | 'cheap' | 'expensive';
+type ISelectedFatContent = '0' | 'under-10' | 'under-30' | 'above-30';
 
 export interface ICatalogFilterStore {
   allProductsList: IProduct[];
@@ -9,12 +10,13 @@ export interface ICatalogFilterStore {
   filterSettings: {
     selectedOrder: ISelectedOrder;
     selectedPriceRange: number[];
-    selectedFatContent: '0' | 'under-10' | 'under-30' | 'above-30';
+    selectedFatContent: ISelectedFatContent;
     selectedFillers: string[];
   };
   setFilteredProductList: () => void;
   setSortingOrder: (selectedOption: string) => void;
   setPriceRange: (priceRange: number[]) => void;
+  setFatContent: (selectedFatContent: string) => void;
 }
 
 const useCatalogFilterStore = create<ICatalogFilterStore>((set, get) => ({
@@ -79,6 +81,11 @@ const useCatalogFilterStore = create<ICatalogFilterStore>((set, get) => ({
   setPriceRange: (priceRange) => {
     set((store: ICatalogFilterStore) => ({
       filterSettings: { ...store.filterSettings, selectedPriceRange: priceRange },
+    }));
+  },
+  setFatContent: (selectedFatContent) => {
+    set((store: ICatalogFilterStore) => ({
+      filterSettings: { ...store.filterSettings, selectedFatContent: selectedFatContent as ISelectedFatContent },
     }));
   },
 }));
