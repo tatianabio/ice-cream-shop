@@ -17,7 +17,11 @@ const CatalogSection = () => {
     <section className='catalog-section'>
       <h2>Ice cream</h2>
       <CatalogFilter data-testid='test' />
-      <CatalogList data-testid='test' displayedProductsNumber={20} productsList={filteredProductList} />
+      {filteredProductList.length ? (
+        <CatalogList data-testid='test' displayedProductsNumber={20} productsList={filteredProductList} />
+      ) : (
+        <p>Sorry, too strict filters :-( </p>
+      )}
     </section>
   );
 };
