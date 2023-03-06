@@ -1,5 +1,6 @@
 import { create } from 'zustand';
-import { IProduct, products } from '../../../mock/data/products';
+import axios from 'axios';
+import { IProduct } from '../../../mock/data/products';
 
 type ISelectedOrder = 'popularity' | 'cheap' | 'expensive';
 type ISelectedFatContent = '0' | 'under-10' | 'under-30' | 'above-30';
@@ -13,25 +14,27 @@ export interface ICatalogFilterStore {
     selectedFatContent: ISelectedFatContent;
     selectedFillers: string[];
   };
-  setFilteredProductList: () => void;
+  setFilteredProductList: (products?: IProduct[]) => void;
   setSortingOrder: (selectedOption: string) => void;
   setPriceRange: (priceRange: number[]) => void;
   setFatContent: (selectedFatContent: string) => void;
   setFillers: (selectedFillers: string[]) => void;
+  loadProducts: () => void;
 }
 
 const useCatalogFilterStore = create<ICatalogFilterStore>((set, get) => ({
-  allProductsList: products,
-  filteredProductList: products,
+  allProductsList: [],
+  filteredProductList: [],
   filterSettings: {
     selectedOrder: 'popularity',
     selectedPriceRange: [3, 10],
     selectedFatContent: 'under-30',
     selectedFillers: [],
   },
-  setFilteredProductList: () => {
+  setFilteredProductList: (products?: IProduct[]) => {
     const { selectedOrder, selectedPriceRange, selectedFillers, selectedFatContent } = get().filterSettings;
-    const filtered = get().allProductsList.filter((product) => {
+    const currentProducts = products || get().allProductsList;
+    const filtered = currentProducts.filter((product) => {
       const { price, fillers, fatContent } = product;
 
       let isSuitable = true;
@@ -93,6 +96,11 @@ const useCatalogFilterStore = create<ICatalogFilterStore>((set, get) => ({
     set((store: ICatalogFilterStore) => ({
       filterSettings: { ...store.filterSettings, selectedFillers },
     }));
+  },
+  loadProducts: async () => {
+    const response = await axios.get<IProduct[]>('https://my-server.com/products');
+    get().setFilteredProductList(response.data);
+    set(() => ({ allProductsList: response.data }));
   },
 }));
 

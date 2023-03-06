@@ -6,11 +6,13 @@ import CatalogList from '../../molecules/CatalogList';
 import useCatalogFilterStore, { ICatalogFilterStore } from '../../molecules/CatalogFilter/CatalogFilter.store';
 
 const CatalogSection = () => {
-  const setFilteredProductList = useCatalogFilterStore((store) => store.setFilteredProductList, shallow);
-
-  useEffect(() => setFilteredProductList(), []);
-
+  const loadProducts = useCatalogFilterStore((store) => store.loadProducts, shallow);
   const filteredProductList = useCatalogFilterStore((store: ICatalogFilterStore) => store.filteredProductList, shallow);
+
+  useEffect(() => {
+    loadProducts();
+  }, []);
+
   return (
     <section className='catalog-section'>
       <h2>Ice cream</h2>
