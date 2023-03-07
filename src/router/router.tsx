@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import React from 'react';
 import MainPage from '../components/pages/MainPage';
+import CatalogPage from '../components/pages/CatalogPage';
 
 const router = createBrowserRouter([
   {
@@ -9,7 +10,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/catalog',
-    element: <div>Catalog</div>,
+    element: <CatalogPage data-testid='app' />,
   },
   {
     path: '*',
