@@ -4,15 +4,36 @@
 .catalog-section {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+
+  @media (max-width: v.$mobile-width-only) {
+    gap: 20px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    gap: 40px;
+  }
 }
 
 .catalog-section__title {
-  @include h2;
   margin: 0;
+
+  @media (max-width: v.$mobile-width-only) {
+    @include h3;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    @include h2;
+  }
 }
 
 .catalog-section__strict-filters-notice {
-  @include h4;
-  margin: 0 auto;
+  text-align: center;
+
+  @media (max-width: v.$mobile-width-only) {
+    @include h5;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    @include h4;
+  }
 }
