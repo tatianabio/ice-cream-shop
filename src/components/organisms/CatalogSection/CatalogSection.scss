@@ -1,5 +1,17 @@
+@use '../../../styles/mixins' as *;
+
 .catalog-section {
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+
+.catalog-section__title {
+  @include h2;
+  margin: 0;
+}
+
+.catalog-section__strict-filters-notice {
+  @include h4;
+  margin: 0 auto;
 }

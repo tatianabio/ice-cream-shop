@@ -80,6 +80,8 @@ const resources = {
 
       // Catalog
       popularProductsTitle: 'Try our most popular ice cream flavors',
+      iceCreamCatalogTitle: 'Our delicious ice cream',
+      strictFilters: 'Sorry, nothing was found, too strict filters :-(',
 
       // Offer Section
       order: 'Order',
@@ -277,6 +279,8 @@ const resources = {
 
       // Catalog
       popularProductsTitle: 'Essayez nos saveurs de crème glacée les plus populaires',
+      iceCreamCatalogTitle: 'Nos délicieuses glaces',
+      strictFilters: "Désolé, rien n'a été trouvé, filtres trop stricts :-(",
 
       // Offer Section
       order: 'Ordre',
