@@ -1,6 +1,12 @@
+@use '../../../styles/variables' as v;
+
 .catalog-filter__form {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   align-items: end;
+
+  @media (max-width: v.$mobile-width-only) {
+    justify-content: center;
+  }
 }
