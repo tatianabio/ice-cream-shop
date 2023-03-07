@@ -1,0 +1,14 @@
+@use '../../../styles/variables' as v;
+
+.catalog-page {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (max-width: v.$mobile-width-only) {
+    gap: 12px;
+  }
+
+  @media (min-width: v.$tablet-width) {
+    gap: 16px;
+  }
+}
