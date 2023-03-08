@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { MouseEvent, useCallback, useEffect, useState } from 'react';
 import './CartTile.scss';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
@@ -51,7 +51,13 @@ const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
     .sort(([, a], [, b]) => a.time - b.time)
     .map((item) => {
       const [key, { productInfo, count }] = item;
-      const { name, price, imgLink } = productInfo;
+      const { name, price, imgLink, id } = productInfo;
+
+      const onDeleteButtonClickHandler = (event: MouseEvent<HTMLButtonElement>) => {
+        event.stopPropagation();
+        removeProductFromCart(id);
+        sendMessageToDisplay('successfulRemovingFromCart');
+      };
 
       return (
         <li className='cart__product-item' key={key} data-testid={`${testId}-${key}-product`}>
@@ -70,7 +76,7 @@ const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
           <button
             className='cart__product-removing'
             type='button'
-            onClick={() => onDeleteButtonClickHandler(productInfo.id)}
+            onClick={onDeleteButtonClickHandler}
             data-testid={`${testId}-${key}-delete-button`}
           >
             <span className='visually-hidden'>Delete product</span>
@@ -85,11 +91,6 @@ const CartTile = ({ 'data-testid': testId, onClose }: ICartTile) => {
     const { price } = productInfo;
     return sum + count * price;
   }, 0);
-
-  const onDeleteButtonClickHandler = (productId: number) => {
-    removeProductFromCart(productId);
-    sendMessageToDisplay('successfulRemovingFromCart');
-  };
 
   const onClickHandler = async (data: Record<string, IInCartProduct>) => {
     await sendData(data, 'cart');
