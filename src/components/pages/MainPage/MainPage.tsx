@@ -37,6 +37,8 @@ const MainPage = ({ 'data-testid': testId }: IMainPage) => {
   const offers = useSliderTileStore((store: ISliderTileStore) => store.offers, shallow);
   const { backgroundColor } = offers[activeItemIndex];
 
+  // TODO: Added Gift list from MSW
+
   return (
     <Page data-testid='app'>
       <main
