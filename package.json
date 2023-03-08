@@ -18,7 +18,8 @@
     "react-popper": "^2.3.0",
     "@popperjs/core": "^2.11.6",
     "react-modal":"^3.16.1",
-    "rc-slider": "^10.1.1"
+    "rc-slider": "^10.1.1",
+    "react-scripts": "5.0.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.15",
@@ -54,7 +55,7 @@
     "eslint-plugin-react-hooks": "4.3.0",
     "eslint-plugin-react": "7.31.11",
     "prettier": "^2.7.1",
-    "react-scripts": "5.0.1",
+
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "storybook-react-i18next": "^1.1.2",
