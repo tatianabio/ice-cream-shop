@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { MouseEvent, useCallback, useRef, useState } from 'react';
 import './Header.scss';
 import { useTranslation } from 'react-i18next';
 import cx from 'classnames';
@@ -15,6 +15,7 @@ import Cart from '../../../assets/svg/cart';
 import CartTile from '../../molecules/CartTile';
 import cartStore, { ICartStore } from '../../molecules/CartTile/Cart.store';
 import { activeIndexSelector, ISliderTileStore, useSliderTileStore } from '../../atoms/SliderTile/SliderTile.store';
+import useClickOutside from '../../utils/useClickOutside';
 
 export interface IBasicNavigationItem {
   /** Displayed name of the navigation item */
@@ -34,6 +35,8 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
   const { t } = useTranslation();
 
   const headerRef = useRef<HTMLHeadElement>(null);
+  const navigationContainerRef = useRef<HTMLDivElement>(null);
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
 
   const [isClosed, setIsClosed] = useState(true);
 
@@ -42,7 +45,22 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
   const linkClassName = ({ isActive }: { isActive: boolean }) =>
     `navigation__link ${isActive ? 'navigation__link--active' : ''}`;
 
-  const onMenuToggleHandler = useCallback(() => setIsClosed(!isClosed), [isClosed]);
+  const onMenuToggleHandler = useCallback(
+    (event: MouseEvent) => {
+      event.stopPropagation();
+      setIsClosed(!isClosed);
+    },
+    [isClosed]
+  );
+
+  useClickOutside(
+    navigationContainerRef.current,
+    () => {
+      setIsClosed(true);
+    },
+    !isClosed,
+    menuToggleRef.current
+  );
 
   const basicNavigation = basicNavigationArray.map((item) => {
     const { name, link } = item;
@@ -65,13 +83,14 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
   const offers = useSliderTileStore((store: ISliderTileStore) => store.offers, shallow);
 
   const { backgroundColor } = offers[activeItemIndex];
-
+  // TODO: add closing the menu on Click outside
   return (
     <header className='header' ref={headerRef}>
       <GllacyLogo data-testid={testId} />
       <nav className={cx('header__navigation', 'navigation', isClosed && 'navigation--closed')}>
         <button
           className='navigation__menu-toggle'
+          ref={menuToggleRef}
           type='button'
           onClick={onMenuToggleHandler}
           data-testid={`${testId}-menu-toggle`}
@@ -82,6 +101,7 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
         </button>
         <div
           className='navigation__container'
+          ref={navigationContainerRef}
           style={{ top: headerRef.current?.clientHeight || 0, backgroundColor: `var(--special-${backgroundColor})` }}
         >
           <ul className='navigation__basic-list'>{basicNavigation}</ul>

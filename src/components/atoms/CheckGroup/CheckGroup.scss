@@ -3,6 +3,7 @@
 .check-group {
   display: flex;
   flex-wrap: wrap;
+  //TODO: remove gap in flex-boxes
   gap: 16px;
   width: fit-content;
   border-radius: 18px;

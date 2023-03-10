@@ -4,7 +4,7 @@ const useClickOutside = (
   ref: HTMLDivElement | null,
   handler: () => void,
   isElementShown: boolean,
-  openingButtonRef: HTMLButtonElement | null
+  openingButtonRef?: HTMLButtonElement | null
 ) => {
   useEffect(() => {
     // A function for monitoring a click event outside the ref element
