@@ -309,7 +309,7 @@ const resources = {
 
       // Benefits tile
       benefitsTitle:
-        'Gllacy Shop est une boutique en ligne et hors ligne vendant des glaces de sa propre production au poids',
+        'Magasin Gllacy est une  boutique en ligne et un producteur qui vend en personne de la glace faite à la maison au poids',
       benefitManufacturing:
         "Toutes nos glaces sont fabriquées en interne à l'aide d'équipements modernes et de technologies éprouvées.",
       benefitQuality:
