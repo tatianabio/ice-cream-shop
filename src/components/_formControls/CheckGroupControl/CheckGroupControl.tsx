@@ -6,6 +6,7 @@ import FormField from '../FormField';
 import { ICheckItem } from '../../atoms/CheckGroup/utils';
 
 interface ICheckGroupControl extends Omit<ICheckGroup, 'name'> {
+  /** A desired field inside the Control */
   formField: Omit<IFormField, 'children' | 'data-testid'>;
   /** Technical attributes */
   'data-testid': string;
