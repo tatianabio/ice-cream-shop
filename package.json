@@ -72,7 +72,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "eslint src --fix",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "npx chromatic --project-token=130d308e8cc0"
   },
   "jest": {
     "moduleNameMapper": {
