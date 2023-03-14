@@ -64,7 +64,7 @@
     "chromatic": "^6.17.1"
   },
   "scripts": {
-    "start": "node server.js #Production only!",
+    "start": "node server.js",
     "build": "react-scripts build",
     "dev": "react-scripts start",
     "test": "react-scripts test src --coverage --watchAll=false",

@@ -1,0 +1,9 @@
+{
+  "short_name": "Ice Cream Shop",
+  "name": "Ice Cream Shop Gllacy",
+  "icons": [
+    { "src": "../src/assets/favicons/favicon-152x152.png", "type": "image/png", "sizes": "152x152" },
+    { "src": "../src/assets/favicons/favicon-192x192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "../src/assets/favicons/favicon-512x512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
