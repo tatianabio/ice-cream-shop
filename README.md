@@ -43,3 +43,10 @@ ___
 * Responsive design fits any devices and screens
 
 ![Demo: responsive design](gif/demo-responsive.gif)
+
+* Switch languages
+* Zustand: cart and switching background colors
+* Forms: validation
+* Popups
+* Storybook
+* Tests
