@@ -12,7 +12,7 @@
 * Main technologies: `Typescript`, `React.js`, `SCSS`
 * Components library: `Storybook`
 * Storybook publication: `Chromatic`
-* State management: `Zustand`
+* State manager: `Zustand`
 * Form control: `React Hook Form`
 * HTTP client: `Axios`
 * Setting up: `CRA` (`Create React App`)
@@ -59,7 +59,7 @@ ___
 
 ---
 
-### 3. 
+### 3. State manager Zustand for changing 
 
 * Zustand: cart and switching background colors
 * Catalog page: filters and cart
