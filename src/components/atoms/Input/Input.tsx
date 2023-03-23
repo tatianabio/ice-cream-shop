@@ -33,6 +33,7 @@ const Input = forwardRef(
       <input
         {...props}
         data-testid={`${testId}-input`}
+        autoComplete='off'
         ref={ref}
         value={value}
         onChange={onChangeHandler}
