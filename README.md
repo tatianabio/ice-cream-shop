@@ -43,6 +43,10 @@ ___
 
 ![Demo: responsive design of ](gif/demo-responsive.gif)
 
+---
+
+---
+
 ### 2. Switching languages EN ⇆ FR in one click
 
 ![Demo: switching languages ](gif/demo-switch-lang.gif)
