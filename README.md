@@ -12,7 +12,7 @@
 * Main technologies: `Typescript`, `React.js`, `SCSS`
 * Components library: `Storybook`
 * Storybook publication: `Chromatic`
-* State manager: `Zustand`
+* State management library: `Zustand`
 * Form control: `React Hook Form`
 * API mocking: `MSW`
 * HTTP client: `Axios`
@@ -42,15 +42,17 @@ ___
 
 ### 1. Responsive design fits all devices and screens
 
+https://user-images.githubusercontent.com/105217283/227369074-0d6905c1-8006-46d7-91ad-ff0d7303062e.mp4
 
 ---
 
 ### 2. Switching languages EN ⇆ FR in one click
 
+https://user-images.githubusercontent.com/105217283/227368843-58258425-1930-4022-9a1d-a0ee3b10ca91.mp4
 
 ---
 
-### 3. Changing themes and working with cart  
+### 3. Changing themes and cart interaction implemented with Zustand as a state management library  
 
 * Zustand: cart and switching background colors
 * Catalog page: filters and cart
