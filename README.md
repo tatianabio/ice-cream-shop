@@ -63,7 +63,7 @@ https://user-images.githubusercontent.com/105217283/227374753-c4850fa9-ae68-4435
 ### 4. Catalog filters for refining users' searches 
 * implemented with Zustand as a state management library
 
-
+https://user-images.githubusercontent.com/105217283/227385278-a298e320-655b-4953-a8d7-7331f066132f.mp4
 
 ---
 
