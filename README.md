@@ -35,6 +35,7 @@
 ## Limitations
 
 * The project doesn't imply any other pages except *Main* and *Catalog*. So any links to other pages were NOT implemented.
+* Custom styling for Sorting Select Menu in *Catalog* filters was NOT implemented. 
 
 ___
 
@@ -52,11 +53,29 @@ https://user-images.githubusercontent.com/105217283/227368843-58258425-1930-4022
 
 ---
 
-### 3. Changing themes and cart interaction implemented with Zustand as a state management library  
+### 3. Changing themes and cart interaction 
+* implemented with Zustand as a state management library
 
-* Zustand: cart and switching background colors
-* Catalog page: filters and cart
-* Forms: validation
-* Popups
-* Storybook
-* Tests
+https://user-images.githubusercontent.com/105217283/227374753-c4850fa9-ae68-4435-b03d-5cc8da35a192.mp4
+
+---
+
+### 4. Catalog filters for refining users' searches 
+* implemented with Zustand as a state management library
+
+
+
+---
+
+### 5. Validation of forms by React Hook Form
+
+---
+
+### 6.Storybook components library
+
+---
+
+### 7. Unit testing
+
+
+
