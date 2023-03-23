@@ -9,8 +9,7 @@
 
 ## Used technologies
 
-* Language: `TypeScript`
-* Technologies: `React.js`, `SCSS`
+* Main technologies: `Typescript`, `React.js`, `SCSS`
 * Components library: `Storybook`
 * Storybook publication: `Chromatic`
 * State management: `Zustand`
@@ -34,17 +33,20 @@
 
 ## Limitations
 
-* The project doesn't imply any other pages except *Main* and *Catalog*. So any links to other pages weren't implemented.
+* The project doesn't imply any other pages except *Main* and *Catalog*. So any links to other pages were NOT implemented.
 
 ___
 
 ## Demo
 
-* Responsive design fits any devices and screens
+### 1. Responsive design fits all devices and screens
 
-![Demo: responsive design](gif/demo-responsive.gif)
+![Demo: responsive design of ](gif/demo-responsive.gif)
 
-* Switch languages
+### 2. Switching languages EN ⇆ FR in one click
+
+![Demo: switching languages ](gif/demo-switch-lang.gif)
+
 * Zustand: cart and switching background colors
 * Forms: validation
 * Popups
