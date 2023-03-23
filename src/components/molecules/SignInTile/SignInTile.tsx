@@ -33,7 +33,7 @@ const SignInTile = ({ 'data-testid': testId, onClose }: ISignInTile) => {
   const form = useForm<ISignInForm>({
     defaultValues: {
       email: 'email@example.com',
-      password: '123456',
+      password: 'wseftrgtasde',
     },
     resolver: yupResolver(schema),
     mode: 'onSubmit',

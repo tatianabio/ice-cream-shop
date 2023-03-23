@@ -47,11 +47,22 @@ ___
 
 ---
 
+---
+
 ### 2. Switching languages EN ⇆ FR in one click
 
 ![Demo: switching languages ](gif/demo-switch-lang.gif)
 
+---
+
+---
+
+---
+
+### 3. 
+
 * Zustand: cart and switching background colors
+* Catalog page: filters and cart
 * Forms: validation
 * Popups
 * Storybook
