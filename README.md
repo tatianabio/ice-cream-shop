@@ -14,6 +14,7 @@
 * Storybook publication: `Chromatic`
 * State manager: `Zustand`
 * Form control: `React Hook Form`
+* API mocking: `MSW`
 * HTTP client: `Axios`
 * Setting up: `CRA` (`Create React App`)
 * Multi-language support: `react-i18next`
@@ -41,25 +42,15 @@ ___
 
 ### 1. Responsive design fits all devices and screens
 
-![Demo: responsive design of ](gif/demo-responsive.gif)
-
----
-
----
 
 ---
 
 ### 2. Switching languages EN ⇆ FR in one click
 
-![Demo: switching languages ](gif/demo-switch-lang.gif)
 
 ---
 
----
-
----
-
-### 3. State manager Zustand for changing 
+### 3. Changing themes and working with cart  
 
 * Zustand: cart and switching background colors
 * Catalog page: filters and cart
