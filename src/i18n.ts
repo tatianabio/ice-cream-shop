@@ -143,7 +143,7 @@ const resources = {
       // Cart
       cart: 'Cart',
       successfulAddingToCart: '1 kg of selected ice cream has been added to your cart!',
-      successfulRemovingFromCart: 'Selected item has been been removed from your cart!',
+      successfulRemovingFromCart: 'Selected item has been removed from your cart!',
       emptyCart: 'Your cart is empty',
       sendOrder: 'Send order',
       totalOrderPrice: 'Total',
