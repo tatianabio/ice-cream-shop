@@ -69,9 +69,11 @@ https://user-images.githubusercontent.com/105217283/227385278-a298e320-655b-4953
 
 ### 5. Validation of forms by React Hook Form
 
+https://user-images.githubusercontent.com/105217283/227622926-16d59544-146e-4837-b5e4-6e4aa8cae715.mp4
+
 ---
 
-### 6.Storybook components library
+### 6. Storybook components library
 
 ---
 
