@@ -54,26 +54,29 @@ https://user-images.githubusercontent.com/105217283/227368843-58258425-1930-4022
 ---
 
 ### 3. Changing themes and cart interaction 
-* implemented with Zustand as a state management library
+* implemented with `Zustand` as a state management library
 
 https://user-images.githubusercontent.com/105217283/227374753-c4850fa9-ae68-4435-b03d-5cc8da35a192.mp4
 
 ---
 
 ### 4. Catalog filters for refining users' searches 
-* implemented with Zustand as a state management library
+* implemented with `Zustand` as a state management library
 
 https://user-images.githubusercontent.com/105217283/227385278-a298e320-655b-4953-a8d7-7331f066132f.mp4
 
 ---
 
-### 5. Validation of forms by React Hook Form
+### 5. Validation of forms by `React Hook Form`
 
 https://user-images.githubusercontent.com/105217283/227622926-16d59544-146e-4837-b5e4-6e4aa8cae715.mp4
 
 ---
 
 ### 6. Storybook components library
+* published with `Chromatic`
+
+https://user-images.githubusercontent.com/105217283/227629163-90eb15b1-880b-452e-ab66-a03c70d5e2f5.mp4
 
 ---
 
