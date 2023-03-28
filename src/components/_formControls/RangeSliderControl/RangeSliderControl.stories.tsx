@@ -47,7 +47,6 @@ export const Demo = () => {
         >
           <RangeSliderControl
             data-testid='demo'
-            measurementUnits='$'
             formField={{
               name: 'price',
               label: 'price',
