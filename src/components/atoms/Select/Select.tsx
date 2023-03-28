@@ -40,7 +40,7 @@ const Select = ({
     const { key, label } = option;
 
     return (
-      <option className='select__option' key={key} value={key}>
+      <option className='select__option' data-testid={`${testId}-select-option`} key={key} value={key}>
         {t(label)}
       </option>
     );
