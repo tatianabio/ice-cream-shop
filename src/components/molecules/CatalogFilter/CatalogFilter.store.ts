@@ -29,7 +29,7 @@ const useCatalogFilterStore = create<ICatalogFilterStore>((set, get) => ({
     selectedOrder: 'popularity',
     selectedPriceRange: [3, 10],
     selectedFatContent: 'under-30',
-    selectedFillers: [],
+    selectedFillers: ['fruit'],
   },
   setFilteredProductList: (products?: IProduct[]) => {
     const { selectedOrder, selectedPriceRange, selectedFillers, selectedFatContent } = get().filterSettings;

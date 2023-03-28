@@ -125,7 +125,7 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
             inputType='checkbox'
           />
 
-          <Button data-testid={testId} text='applyFilters' variant='thirdly' type='submit' />
+          <Button data-testid={`${testId}-filter-apply`} text='applyFilters' variant='thirdly' type='submit' />
         </form>
       </FormProvider>
     </div>
