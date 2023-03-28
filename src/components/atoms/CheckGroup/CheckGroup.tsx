@@ -76,6 +76,7 @@ const CheckGroup = ({
             checked={isChecked}
             name={inputType === 'radio' ? name : valueName}
             onChange={onChangeBoxHandler}
+            data-testid={`${testId}-${inputType}-${valueName}`}
           />
           <span className={cx('check-group__mark-box', `check-group__mark-box--${inputType}`)}>
             {mountMarkBox(isChecked)}
