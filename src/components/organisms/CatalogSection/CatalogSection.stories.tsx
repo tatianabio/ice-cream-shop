@@ -23,7 +23,7 @@ export const Demo = () => {
       title='Catalog Section'
       style={{ maxWidth: '1400px', minHeight: '1800px', height: 'min-content', padding: '15px' }}
     >
-      <CatalogSection />
+      <CatalogSection data-testid='demo' />
     </StoryContainer>
   );
 };
