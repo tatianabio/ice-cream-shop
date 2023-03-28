@@ -50,7 +50,7 @@ export const Demo = () => {
         >
           <CheckGroupControl
             checkGroup={filterFatContent}
-            data-testid='demo'
+            data-testid='fat-content'
             formField={{
               name: 'fatContent',
               label: 'fatContent',
@@ -63,7 +63,7 @@ export const Demo = () => {
           />
           <CheckGroupControl
             checkGroup={filterFillers}
-            data-testid='demo'
+            data-testid='fillers'
             formField={{
               name: 'fillers',
               label: 'fillers',
