@@ -6,6 +6,8 @@ import { SliderProps } from 'rc-slider/lib/Slider';
 
 export interface IRangeSlider extends Omit<SliderProps<number | number[]>, 'onChange'> {
   onChange?: (value: number[]) => void;
+  /** Technical attributes */
+  'data-testid': string;
 }
 
 const sliderDefaults = {
@@ -15,13 +17,13 @@ const sliderDefaults = {
   pushable: 1,
 };
 
-const RangeSlider = ({ onChange, ...props }: IRangeSlider) => {
+const RangeSlider = ({ onChange, 'data-testid': testId, ...props }: IRangeSlider) => {
   const onChangeHandler = (data: number | number[]) => {
     Array.isArray(data) && onChange?.(data);
   };
 
   return (
-    <div className='range-slider'>
+    <div className='range-slider' data-testid={`${testId}-range-slider`}>
       <Slider
         {...sliderDefaults}
         {...props}

@@ -15,7 +15,7 @@ export default {
 export const Demo = () => {
   return (
     <StoryContainer title='Range Slider' style={{ maxWidth: '800px', minHeight: '500px', paddingLeft: '30px' }}>
-      <RangeSlider defaultValue={[4, 9]} />
+      <RangeSlider defaultValue={[4, 9]} data-testid='demo' />
     </StoryContainer>
   );
 };
