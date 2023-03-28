@@ -25,7 +25,7 @@ const CatalogPage = ({ 'data-testid': testId }: ICatalogPage) => {
         style={{ backgroundColor: `var(--special-${backgroundColor})` }}
       >
         <Breadcrumbs breadcrumbsArray={breadcrumbsCatalog} />
-        <CatalogSection />
+        <CatalogSection data-testid={testId} />
       </main>
     </Page>
   );
