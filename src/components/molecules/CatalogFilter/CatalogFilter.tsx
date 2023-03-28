@@ -60,7 +60,7 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
   };
 
   return (
-    <div className='catalog-filter'>
+    <div className='catalog-filter' data-testid={`${testId}-catalog-filter`}>
       <FormProvider {...form}>
         <form className='catalog-filter__form' onSubmit={handleSubmit(onSubmit)}>
           <SelectControl
