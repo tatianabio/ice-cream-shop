@@ -87,5 +87,6 @@ describe('Header tests', () => {
     expect(screen.getByTestId('catalog-popup-cart-opening')).toHaveTextContent('1 itemsNumber');
     await userEvent.click(screen.getByTestId('catalog-menu-toggle'));
     expect(screen.getByTestId('catalog-cross-icon')).toBeInTheDocument();
+    await userEvent.click(document.body);
   });
 });
