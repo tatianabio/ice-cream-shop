@@ -26,7 +26,7 @@
 ## Brief description
 
 * "Ice cream shop" is a bilingual English-French online ice cream store.
-* 70% Jest Unit tests coverage
+* Jest Unit tests coverage: > 95%
 * Pages developed: *Main*, *Catalog*.
 * All pages have responsive design and follow accessibility standards.
 
@@ -35,7 +35,9 @@
 ## Limitations
 
 * The project doesn't imply any other pages except *Main* and *Catalog*. So any links to other pages were NOT implemented.
-* Custom styling for Sorting Select Menu in *Catalog* filters was NOT implemented. 
+* Custom styling for Sorting Select Menu in *Catalog* filters was NOT implemented.
+* Pagination in *Catalog* was NOT implemented.
+* CSS property "gap" was used for flexbox in the project. Older browsers' versions (i.e. Safari < 14) do NOT support this.
 
 ___
 
@@ -80,7 +82,8 @@ https://user-images.githubusercontent.com/105217283/227629163-90eb15b1-880b-452e
 
 ---
 
-### 7. Unit testing
+### 7. Unit testing coverage >95%
 
 
+![Jest test coverage](https://user-images.githubusercontent.com/105217283/228634578-9889229f-928f-4ea0-bfa0-c06499fa9a7b.jpg)
 
