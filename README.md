@@ -85,5 +85,6 @@ https://user-images.githubusercontent.com/105217283/227629163-90eb15b1-880b-452e
 ### 7. Unit tests coverage >95%
 
 
-![Jest test coverage](https://user-images.githubusercontent.com/105217283/228634578-9889229f-928f-4ea0-bfa0-c06499fa9a7b.jpg)
+![Jest test coverage](https://user-images.githubusercontent.com/105217283/228913615-531d4b37-5081-4ef8-afeb-6f4d0e204254.jpg)
+
 
