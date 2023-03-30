@@ -1,7 +1,6 @@
 import React from 'react';
 import './CatalogFilter.scss';
 import { FormProvider, useForm } from 'react-hook-form';
-import { action } from '@storybook/addon-actions';
 import { shallow } from 'zustand/shallow';
 import sortingOptions, { IOption } from '../../atoms/Select/utils';
 import SelectControl from '../../_formControls/SelectControl';
@@ -54,8 +53,7 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
   const setFatContent = useCatalogFilterStore((store) => store.setFatContent, shallow);
   const setFillers = useCatalogFilterStore((store) => store.setFillers, shallow);
 
-  const onSubmit = (data: ICatalogFilterForm) => {
-    action('onSubmit')(data);
+  const onSubmit = () => {
     setFilteredProductList();
   };
 

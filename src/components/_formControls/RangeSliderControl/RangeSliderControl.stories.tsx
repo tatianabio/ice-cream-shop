@@ -1,5 +1,6 @@
 import { FormProvider, useForm } from 'react-hook-form';
 import React from 'react';
+
 import { action } from '@storybook/addon-actions';
 import StoryContainer from '../../storybookUtils/StoryContainer';
 import Button from '../../atoms/Button';
@@ -47,6 +48,7 @@ export const Demo = () => {
         >
           <RangeSliderControl
             data-testid='demo'
+            onChange={action('onChange')}
             formField={{
               name: 'price',
               label: 'price',
@@ -57,7 +59,7 @@ export const Demo = () => {
             }}
           />
 
-          <Button data-testid='demo-button' text='Submit' variant='thirdly' type='submit' />
+          <Button data-testid='demo' text='Submit' variant='thirdly' type='submit' />
         </form>
       </FormProvider>
     </StoryContainer>

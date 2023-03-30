@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { act, render, screen } from '@testing-library/react';
+import { userEvent } from '@storybook/testing-library';
 import { Demo } from './CatalogFilter.stories';
 import { filterFatContent, filterFillers } from '../../atoms/CheckGroup/utils';
 import sortingOptions from '../../atoms/Select/utils';
@@ -15,12 +15,15 @@ describe('Catalog Filter tests', () => {
     // applying filters
     await userEvent.click(screen.getByTestId(`demo-radio-${filterFatContent[3].valueName}`));
     await userEvent.click(screen.getByTestId(`demo-checkbox-${filterFillers[0].valueName}`));
+    await userEvent.click(screen.getByTestId(`demo-checkbox-${filterFillers[0].valueName}`));
     await userEvent.click(screen.getByTestId(`demo-checkbox-${filterFillers[3].valueName}`));
     await userEvent.selectOptions(screen.getByTestId('demo-select'), sortingOptions[1].key);
     await userEvent.tab();
     await userEvent.keyboard('{ArrowRight}');
     await userEvent.tab();
     await userEvent.keyboard('{ArrowLeft}');
-    await userEvent.click(applyButton);
+    await act(async () => {
+      await userEvent.click(applyButton);
+    });
   });
 });
