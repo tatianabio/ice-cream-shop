@@ -83,7 +83,6 @@ const Header = ({ basicNavigationArray, 'data-testid': testId }: IHeader) => {
   const offers = useSliderTileStore((store: ISliderTileStore) => store.offers, shallow);
 
   const { backgroundColor } = offers[activeItemIndex];
-  // TODO: add closing the menu on Click outside
   return (
     <header className='header' ref={headerRef}>
       <GllacyLogo data-testid={testId} />

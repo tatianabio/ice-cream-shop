@@ -62,7 +62,7 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
       <FormProvider {...form}>
         <form className='catalog-filter__form' onSubmit={handleSubmit(onSubmit)}>
           <SelectControl
-            data-testid={testId}
+            data-testid={`${testId}-catalog-filter`}
             formField={{
               name: 'sorting',
               label: 'sorting',
@@ -78,7 +78,7 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
             }}
           />
           <RangeSliderControl
-            data-testid={testId}
+            data-testid={`${testId}-catalog-filter`}
             measurementUnits='$'
             formField={{
               name: 'price',
@@ -94,7 +94,7 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
           />
           <CheckGroupControl
             checkGroup={filterFatContent}
-            data-testid={testId}
+            data-testid={`${testId}-catalog-filter`}
             formField={{
               name: 'fatContent',
               label: 'fatContent',
@@ -108,7 +108,7 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
           />
           <CheckGroupControl
             checkGroup={filterFillers}
-            data-testid={testId}
+            data-testid={`${testId}-catalog-filter`}
             formField={{
               name: 'fillers',
               label: 'fillers',

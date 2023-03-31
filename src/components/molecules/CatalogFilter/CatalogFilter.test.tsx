@@ -13,11 +13,11 @@ describe('Catalog Filter tests', () => {
     expect(screen.getByTestId('demo-catalog-filter')).toBeInTheDocument();
 
     // applying filters
-    await userEvent.click(screen.getByTestId(`demo-radio-${filterFatContent[3].valueName}`));
-    await userEvent.click(screen.getByTestId(`demo-checkbox-${filterFillers[0].valueName}`));
-    await userEvent.click(screen.getByTestId(`demo-checkbox-${filterFillers[0].valueName}`));
-    await userEvent.click(screen.getByTestId(`demo-checkbox-${filterFillers[3].valueName}`));
-    await userEvent.selectOptions(screen.getByTestId('demo-select'), sortingOptions[1].key);
+    await userEvent.click(screen.getByTestId(`demo-catalog-filter-radio-${filterFatContent[3].valueName}`));
+    await userEvent.click(screen.getByTestId(`demo-catalog-filter-checkbox-${filterFillers[0].valueName}`));
+    await userEvent.click(screen.getByTestId(`demo-catalog-filter-checkbox-${filterFillers[0].valueName}`));
+    await userEvent.click(screen.getByTestId(`demo-catalog-filter-checkbox-${filterFillers[3].valueName}`));
+    await userEvent.selectOptions(screen.getByTestId('demo-catalog-filter-select'), sortingOptions[1].key);
     await userEvent.tab();
     await userEvent.keyboard('{ArrowRight}');
     await userEvent.tab();
