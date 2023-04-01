@@ -11,6 +11,7 @@ const CheckboxFrame = (props: React.SVGProps<SVGSVGElement>) => {
       fill='none'
       aria-hidden='true'
       focusable='false'
+      data-testid='checkbox-frame'
     >
       <path
         fillRule='evenodd'

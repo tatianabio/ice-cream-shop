@@ -1,17 +1,22 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
 import App from './App';
-import * as testUseMSW from './components/utils/useMSW';
 
+jest.mock('msw', () => ({
+  setupWorker: () => ({
+    start: jest.fn().mockImplementation(
+      () =>
+        new Promise((resolve) => {
+          resolve(true);
+        })
+    ),
+    stop: jest.fn(),
+  }),
+}));
 describe('App tests', () => {
-  it('successful render', () => {
-    jest.spyOn(testUseMSW, 'default').mockImplementation(() => true);
-    render(<App />);
-    expect(screen.queryByText('Loading')).not.toBeInTheDocument();
-    expect(screen.getByTestId('app-page-container')).toBeInTheDocument();
-  });
-  it('failed render', () => {
-    jest.spyOn(testUseMSW, 'default').mockImplementation(() => false);
+  it('successful render', async () => {
     render(<App />);
     expect(screen.getByText('Loading')).toBeInTheDocument();
+    await waitForElementToBeRemoved(screen.queryByText('Loading'));
+    expect(await screen.findByTestId('app-page-container')).toBeInTheDocument();
   });
 });

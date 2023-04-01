@@ -31,8 +31,8 @@ const CatalogFilter = ({ 'data-testid': testId }: ICatalogFilter) => {
   const defaultSortingOption = sortingOptions.find((item) => item.key === selectedOrder);
   const defaultFatContent = filterFatContent.find((item) => item.valueName === selectedFatContent);
   const defaultFilers = selectedFillers.reduce((acc, selectedFiller) => {
-    const filler = filterFillers.find((item) => item.valueName === selectedFiller);
-    return filler ? [...acc, filler] : acc;
+    const filler = filterFillers.find((item) => item.valueName === selectedFiller) as ICheckItem;
+    return [...acc, filler];
   }, [] as ICheckItem[]);
 
   const form = useForm<ICatalogFilterForm>({

@@ -68,10 +68,9 @@ const useCatalogFilterStore = create<ICatalogFilterStore>((set, get) => ({
           return b.rating - a.rating;
         case 'cheap':
           return a.price - b.price;
-        case 'expensive':
-          return b.price - a.price;
+
         default:
-          return 0;
+          return b.price - a.price; // expensive
       }
     });
 
