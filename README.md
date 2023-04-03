@@ -26,7 +26,7 @@
 ## Brief description
 
 * "Ice cream shop" is a bilingual English-French online ice cream store.
-* Jest Unit tests coverage: > 95%
+* Jest Unit tests coverage: 100%
 * Pages developed: *Main*, *Catalog*.
 * All pages have responsive design and follow accessibility standards.
 
@@ -82,9 +82,9 @@ https://user-images.githubusercontent.com/105217283/227629163-90eb15b1-880b-452e
 
 ---
 
-### 7. Unit tests coverage >95%
+### 7. Unit tests coverage: 100%
 
 
-![Jest test coverage](https://user-images.githubusercontent.com/105217283/228913615-531d4b37-5081-4ef8-afeb-6f4d0e204254.jpg)
+![Jest test coverage](https://user-images.githubusercontent.com/105217283/229604779-136addae-3065-4e00-bc4b-8479e9e58dd7.jpg)
 
 
