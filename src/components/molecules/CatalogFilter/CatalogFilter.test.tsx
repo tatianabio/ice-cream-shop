@@ -14,6 +14,8 @@ describe('Catalog Filter tests', () => {
 
     // render
     expect(screen.getByTestId('demo-catalog-filter')).toBeInTheDocument();
+
+    // tests on select for sorting order
     await userEvent.selectOptions(screen.getByTestId('demo-catalog-filter-select'), sortingOptions[2].key);
 
     await act(async () => {
@@ -26,7 +28,7 @@ describe('Catalog Filter tests', () => {
       await userEvent.click(applyButton);
     });
 
-    // applying filters
+    // tests on radio, checkboxes and slider range
     await userEvent.click(screen.getByTestId(`demo-catalog-filter-radio-${filterFatContent[3].valueName}`));
     await userEvent.click(screen.getByTestId(`demo-catalog-filter-checkbox-${filterFillers[0].valueName}`));
     await userEvent.click(screen.getByTestId(`demo-catalog-filter-checkbox-${filterFillers[0].valueName}`));
@@ -36,6 +38,16 @@ describe('Catalog Filter tests', () => {
     await userEvent.keyboard('{ArrowRight}');
     await userEvent.tab();
     await userEvent.keyboard('{ArrowLeft}');
+    await act(async () => {
+      await userEvent.click(applyButton);
+    });
+    // tests on the rest of radio-buttons
+    await userEvent.click(screen.getByTestId(`demo-catalog-filter-radio-${filterFatContent[1].valueName}`));
+    await act(async () => {
+      await userEvent.click(applyButton);
+    });
+
+    await userEvent.click(screen.getByTestId(`demo-catalog-filter-radio-${filterFatContent[0].valueName}`));
     await act(async () => {
       await userEvent.click(applyButton);
     });
