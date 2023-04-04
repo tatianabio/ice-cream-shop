@@ -11,6 +11,7 @@ const RadioChecked = (props: React.SVGProps<SVGSVGElement>) => {
       fill='none'
       aria-hidden='true'
       focusable='false'
+      data-testid='svg-radio-checked'
     >
       <path
         fillRule='evenodd'

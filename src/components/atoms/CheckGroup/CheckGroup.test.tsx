@@ -33,7 +33,19 @@ describe('CheckGroup tests', () => {
     expect(screen.getByTestId('demo-checkbox')).toBeInTheDocument();
 
     // radio buttons onChange
+    expect(screen.getByTestId(`demo-radio-${filterFatContent[1].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId('svg-radio-checked')
+    );
+    expect(screen.getByTestId(`demo-radio-${filterFatContent[3].valueName}-mark-box`)).not.toContainElement(
+      screen.getByTestId('svg-radio-checked')
+    );
     await userEvent.click(screen.getByTestId(`demo-radio-${filterFatContent[3].valueName}`));
+    expect(screen.getByTestId(`demo-radio-${filterFatContent[3].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId('svg-radio-checked')
+    );
+    expect(screen.getByTestId(`demo-radio-${filterFatContent[1].valueName}-mark-box`)).not.toContainElement(
+      screen.getByTestId('svg-radio-checked')
+    );
 
     // checkboxes onChange
     await userEvent.click(screen.getByTestId(`demo-checkbox-${filterFillers[0].valueName}`));
