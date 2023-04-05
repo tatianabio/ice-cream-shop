@@ -11,7 +11,6 @@ const RadioFrame = (props: React.SVGProps<SVGSVGElement>) => {
       fill='none'
       aria-hidden='true'
       focusable='false'
-      data-testid='svg-radio-frame'
     >
       <path
         fillRule='evenodd'

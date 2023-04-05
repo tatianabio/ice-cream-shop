@@ -34,21 +34,39 @@ describe('CheckGroup tests', () => {
 
     // radio buttons onChange
     expect(screen.getByTestId(`demo-radio-${filterFatContent[1].valueName}-mark-box`)).toContainElement(
-      screen.getByTestId('svg-radio-checked')
+      screen.getByTestId(`demo-${filterFatContent[1].valueName}-radio-checked`)
     );
-    expect(screen.getByTestId(`demo-radio-${filterFatContent[3].valueName}-mark-box`)).not.toContainElement(
-      screen.getByTestId('svg-radio-checked')
-    );
-    await userEvent.click(screen.getByTestId(`demo-radio-${filterFatContent[3].valueName}`));
     expect(screen.getByTestId(`demo-radio-${filterFatContent[3].valueName}-mark-box`)).toContainElement(
-      screen.getByTestId('svg-radio-checked')
+      screen.getByTestId(`demo-${filterFatContent[3].valueName}-radio-frame`)
     );
-    expect(screen.getByTestId(`demo-radio-${filterFatContent[1].valueName}-mark-box`)).not.toContainElement(
-      screen.getByTestId('svg-radio-checked')
+
+    await userEvent.click(screen.getByTestId(`demo-radio-${filterFatContent[3].valueName}`));
+    expect(screen.getByTestId(`demo-radio-${filterFatContent[1].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId(`demo-${filterFatContent[1].valueName}-radio-frame`)
+    );
+    expect(screen.getByTestId(`demo-radio-${filterFatContent[3].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId(`demo-${filterFatContent[3].valueName}-radio-checked`)
     );
 
     // checkboxes onChange
+    expect(screen.getByTestId(`demo-checkbox-${filterFillers[0].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId(`demo-${filterFillers[0].valueName}-checkbox-checked`)
+    );
+    expect(screen.getByTestId(`demo-checkbox-${filterFillers[3].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId(`demo-${filterFillers[3].valueName}-checkbox-frame`)
+    );
+
     await userEvent.click(screen.getByTestId(`demo-checkbox-${filterFillers[0].valueName}`));
+    expect(screen.getByTestId(`demo-checkbox-${filterFillers[0].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId(`demo-${filterFillers[0].valueName}-checkbox-frame`)
+    );
+    expect(screen.getByTestId(`demo-checkbox-${filterFillers[3].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId(`demo-${filterFillers[3].valueName}-checkbox-frame`)
+    );
+
     await userEvent.click(screen.getByTestId(`demo-checkbox-${filterFillers[3].valueName}`));
+    expect(screen.getByTestId(`demo-checkbox-${filterFillers[3].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId(`demo-${filterFillers[3].valueName}-checkbox-checked`)
+    );
   });
 });

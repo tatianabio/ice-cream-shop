@@ -44,9 +44,17 @@ const CheckGroup = ({
 
     const mountMarkBox = (isBoxChecked: boolean) => {
       if (inputType === 'checkbox') {
-        return isBoxChecked ? <CheckboxChecked /> : <CheckboxFrame />;
+        return isBoxChecked ? (
+          <CheckboxChecked data-testid={`${testId}-${valueName}-checkbox-checked`} />
+        ) : (
+          <CheckboxFrame data-testid={`${testId}-${valueName}-checkbox-frame`} />
+        );
       }
-      return isBoxChecked ? <RadioChecked /> : <RadioFrame />;
+      return isBoxChecked ? (
+        <RadioChecked data-testid={`${testId}-${valueName}-radio-checked`} />
+      ) : (
+        <RadioFrame data-testid={`${testId}-${valueName}-radio-frame`} />
+      );
     };
 
     const onChangeBoxHandler = () => {
