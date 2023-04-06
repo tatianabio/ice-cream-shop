@@ -33,7 +33,6 @@ export const Demo = () => {
 
   const onSubmit = (data: IDemoForm) => {
     action('onSubmit')(data);
-    form.reset();
   };
 
   return (
