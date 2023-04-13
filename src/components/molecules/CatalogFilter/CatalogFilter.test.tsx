@@ -21,12 +21,14 @@ describe('Catalog Filter tests', () => {
     await act(async () => {
       await userEvent.click(applyButton);
     });
+    expect(screen.getByTestId('demo-catalog-filter-select')).toHaveValue(sortingOptions[2].key);
 
     await userEvent.selectOptions(screen.getByTestId('demo-catalog-filter-select'), sortingOptions[1].key);
 
     await act(async () => {
       await userEvent.click(applyButton);
     });
+    expect(screen.getByTestId('demo-catalog-filter-select')).toHaveValue(sortingOptions[1].key);
 
     // tests on radio, checkboxes and slider range
     await userEvent.click(screen.getByTestId(`demo-catalog-filter-radio-${filterFatContent[3].valueName}`));
