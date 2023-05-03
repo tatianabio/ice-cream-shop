@@ -15,8 +15,12 @@ export interface ISliderTileStore {
 // TODO: move this store to the component OfferSection
 
 export const useSliderTileStore = create<ISliderTileStore>((set) => ({
-  activeItemIndex: 0,
-  setActiveItemIndex: (num: number) => set(() => ({ activeItemIndex: num })),
+  activeItemIndex: +(localStorage.getItem('theme') || 0),
+  setActiveItemIndex: (num: number) =>
+    set(() => {
+      localStorage.setItem('theme', `${num}`);
+      return { activeItemIndex: num };
+    }),
   offers: iceCreamOffers,
   setOffers: (offers: IIceCreamOffer[]) => set(() => ({ offers })),
 }));

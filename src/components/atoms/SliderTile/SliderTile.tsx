@@ -14,6 +14,7 @@ interface ISliderTile {
 
 const SliderTile = ({ 'data-testid': testId, className }: ISliderTile) => {
   const { t } = useTranslation();
+
   const { activeItemIndex, setActiveItemIndex } = useSliderTileStore(activeIndexSelector, shallow);
   const offers = useSliderTileStore((store: ISliderTileStore) => store.offers, shallow);
 
