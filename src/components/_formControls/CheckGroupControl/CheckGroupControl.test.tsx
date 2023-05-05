@@ -11,7 +11,13 @@ describe('CheckGroupControl tests', () => {
     expect(screen.getByTestId('fillers-form-field')).toBeInTheDocument();
 
     // radio buttons onChange
+    expect(screen.getByTestId(`fat-content-radio-${filterFatContent[1].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId(`fat-content-${filterFatContent[1].valueName}-radio-checked`)
+    );
     await userEvent.click(screen.getByTestId(`fat-content-radio-${filterFatContent[3].valueName}`));
+    expect(screen.getByTestId(`fat-content-radio-${filterFatContent[3].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId(`fat-content-${filterFatContent[3].valueName}-radio-checked`)
+    );
 
     // checkboxes onChange
     await userEvent.click(screen.getByTestId(`fillers-checkbox-${filterFillers[0].valueName}`));
