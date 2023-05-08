@@ -20,7 +20,19 @@ describe('CheckGroupControl tests', () => {
     );
 
     // checkboxes onChange
+    expect(screen.getByTestId(`fillers-checkbox-${filterFillers[3].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId(`fillers-${filterFillers[3].valueName}-checkbox-frame`)
+    );
+    expect(screen.getByTestId(`fillers-checkbox-${filterFillers[0].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId(`fillers-${filterFillers[0].valueName}-checkbox-checked`)
+    );
     await userEvent.click(screen.getByTestId(`fillers-checkbox-${filterFillers[0].valueName}`));
+    expect(screen.getByTestId(`fillers-checkbox-${filterFillers[0].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId(`fillers-${filterFillers[0].valueName}-checkbox-frame`)
+    );
     await userEvent.click(screen.getByTestId(`fillers-checkbox-${filterFillers[3].valueName}`));
+    expect(screen.getByTestId(`fillers-checkbox-${filterFillers[3].valueName}-mark-box`)).toContainElement(
+      screen.getByTestId(`fillers-${filterFillers[3].valueName}-checkbox-checked`)
+    );
   });
 });
